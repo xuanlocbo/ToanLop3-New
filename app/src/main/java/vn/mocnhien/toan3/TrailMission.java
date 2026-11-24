@@ -202,8 +202,12 @@ public final class TrailMission {
     }
     public String trace(int[] s){
         if(kind!=Kind.STEPS)return "";
-        int n=start;StringBuilder b=new StringBuilder(Integer.toString(n));
-        for(int i:s){if(i<0)break;n=operate(n,operations[i]);b.append(" ").append(operations[i]).append(" = ").append(n);}
-        return b.toString();
+        int n=start;StringBuilder b=new StringBuilder();
+        for(int i:s){
+            if(i<0)break;
+            int old=n;n=operate(n,operations[i]);if(b.length()>0)b.append("\n");
+            b.append(old).append(" ").append(operations[i].charAt(0)).append(" ").append(operations[i].substring(1)).append(" = ").append(n);
+        }
+        return b.length()==0?"Bắt đầu: "+start:b.toString();
     }
 }
