@@ -7,7 +7,7 @@ import android.widget.*;
 
 /** Foreground-only game loop. Motion is persisted at important events and periodic checkpoints. */
 final class AdventurePanel extends LinearLayout {
-    interface Host { void openGate(); void returnMap(); void sound(boolean positive); }
+    interface Host { void openGate(); void returnMap(); void nextStage(); void sound(boolean positive); }
     final NativeUi ui;
     final ProgressStore store;
     final AdventureWorld world;
@@ -45,7 +45,7 @@ final class AdventurePanel extends LinearLayout {
             if(disposed)return;
             if(blocked){if(flush()){blocked=false;update();start();}return;}
             if(!flush())return;
-            if(state.pending)host.openGate();else if(state.finished)host.returnMap();
+            if(state.pending)host.openGate();else if(state.finished){if(world.lesson<AdventurePlan.LAST)host.nextStage();else host.returnMap();}
         });
         ui.weight(controls,action,1.7f);
         lastSave=SystemClock.uptimeMillis();update();
@@ -78,7 +78,7 @@ final class AdventurePanel extends LinearLayout {
             status.setText("Chưa lưu được. Hãy lưu lại trước khi tiếp tục.");action.setText("Lưu lại");
         }else if(state.finished){
             status.setText("Hoàn thành!  ✿ "+state.flowerCount()+"/12 cánh hoa • huy hiệu đã lưu");
-            action.setText("Về bản đồ");
+            action.setText(world.lesson<AdventurePlan.LAST?"Màn tiếp theo →":"Về bản đồ");
         }else if(state.pending){
             status.setText("Cổng "+(state.gate+1)+"/4 • "+(state.answered?"Đã giải đúng!":"Giải toán để qua cổng")+"   ✿ "+state.flowerCount()+"/12");
             action.setText(state.answered?"Tiếp tục qua cổng":"Mở nhiệm vụ toán");
