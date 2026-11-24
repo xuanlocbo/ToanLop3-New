@@ -26,16 +26,17 @@ public final class NativeGrader {
                 JSONObject notes=Json.obj(d,"notes");
                 for(Object f:Json.list(fields))if(notes.optString(String.valueOf(f)).trim().isEmpty())return false;
                 return true;
-            case "number":case "multiplication":case "ruler":case "scale":case "balance":case "cup":case "thermometer":
+            case "number":case "ruler":case "scale":case "balance":case "cup":case "thermometer":
                 return Json.integer(value,Integer.MIN_VALUE)!=Integer.MIN_VALUE&&Json.same(a,value);
+            case "multiplication":return Json.integer(value,Integer.MIN_VALUE)!=Integer.MIN_VALUE&&Json.same(a,value)&&written(v,d,false);
             case "choice":case "match_value":case "point_select":
                 return Json.same(a,value)&&(!Json.obj(q,"grading").optBoolean("requiresReason")||!d.optString("reason").trim().isEmpty());
             case "division":case "division_story":
                 return Json.same(key.opt("quotient"),d.opt("quotient"))&&
-                    Json.same(key.opt("remainder"),d.has("remainder")?d.opt("remainder"):0);
+                    Json.same(key.opt("remainder"),d.opt("remainder"))&&(!"long_division".equals(v.optString("type"))||written(v,d,true));
             case "steps":case "compose_story":
                 return Json.same(key.opt("intermediate"),d.opt("intermediate"))&&Json.same(key.opt("final"),d.opt("final"))&&
-                    (!kind.equals("compose_story")||d.optBoolean("adult")&&!d.optString("story").trim().isEmpty());
+                    worked(q,d)&&(!kind.equals("compose_story")||d.optBoolean("adult")&&!d.optString("story").trim().isEmpty());
             case "multi":return a instanceof JSONArray&&Json.unordered((JSONArray)a,Json.arr(d,"values"));
             case "segment_multi":return a instanceof JSONArray&&segments((JSONArray)a,Json.arr(d,"values"));
             case "order":return Json.same(a,d.optJSONArray("values"));
@@ -53,6 +54,24 @@ public final class NativeGrader {
             case "board_game":return BoardState.finished(q,d);
             default:return false;
         }
+    }
+    static boolean written(JSONObject v,JSONObject d,boolean div){
+        JSONArray steps=Json.arr(v,"steps");
+        String[] keys=div?new String[]{"partialDividend","quotientDigit","product","remainder"}:new String[]{"product","resultDigit","carryOut"};
+        for(int i=0;i<steps.length();i++){JSONObject step=steps.optJSONObject(i);if(step==null)return false;
+            for(String key:keys){Object actual=d.opt("work"+i+"_"+key);if(Json.integer(actual,Integer.MIN_VALUE)==Integer.MIN_VALUE||!Json.same(step.opt(key),actual))return false;}
+        }return true;
+    }
+    static boolean worked(JSONObject q,JSONObject d){
+        JSONArray work=Json.arr(q,"workedSteps");
+        for(int i=0;i<work.length();i++){
+            JSONObject t=work.optJSONObject(i);JSONArray operands=Json.arr(t,"operands");
+            Object x=d.opt("s"+i+"a"),y=d.opt("s"+i+"b"),op=d.opt("s"+i+"op");
+            if(!Json.same(t.opt("op"),op))return false;
+            boolean straight=Json.same(operands.opt(0),x)&&Json.same(operands.opt(1),y);
+            boolean reverse=t.optBoolean("acceptReversed")&&Json.same(operands.opt(0),y)&&Json.same(operands.opt(1),x);
+            if(!straight&&!reverse)return false;
+        }return true;
     }
     static boolean accepted(JSONObject key,JSONArray answer){
         for(Object x:Json.list(key.optJSONArray("accepted")))if(Json.same(x,answer))return true;return false;
