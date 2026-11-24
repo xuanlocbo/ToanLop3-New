@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MocNhienTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorAccent">#B93E7A</item>
+        <item name="android:windowBackground">#FFF4F8</item>
+        <item name="android:statusBarColor">#FFF4F8</item>
+        <item name="android:navigationBarColor">#FFF4F8</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
