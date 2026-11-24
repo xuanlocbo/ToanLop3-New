@@ -1,0 +1,1326 @@
+{
+  "schemaVersion": 2,
+  "source": {
+    "book": "BONUS",
+    "title": "Thử thách kho báu — câu tự soạn theo kiến thức từng bài",
+    "original": true
+  },
+  "lessons": [
+    {
+      "lesson": 26,
+      "title": "Chia số có hai chữ số cho số có một chữ số",
+      "items": [
+        {
+          "id": "BONUS.26.1",
+          "book": "BONUS",
+          "lesson": 26,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Mật mã là số lớn nhất có hai chữ số, chia cho 7 dư 4. Mật mã là số nào?",
+          "answer": 95,
+          "hint": "Thử các số từ 99 trở xuống, hoặc tìm bội của 7 rồi cộng 4.",
+          "solution": "7 × 13 + 4 = 95; số tiếp theo là 102, không còn hai chữ số.",
+          "check": {
+            "op": "bounded_remainder",
+            "min": 10,
+            "max": 99,
+            "divisor": 7,
+            "remainder": 4,
+            "extreme": "max"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.26.1"
+          },
+          "theme": "Thuyền ngọc trai"
+        },
+        {
+          "id": "BONUS.26.2",
+          "book": "BONUS",
+          "lesson": 26,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 83 hành khách. Mỗi thuyền chở tối đa 6 người. Cần ít nhất bao nhiêu thuyền để không ai bị bỏ lại?",
+          "answer": 14,
+          "hint": "Chia 83 cho 6. Nếu còn dư người, cần thêm một thuyền.",
+          "solution": "83 : 6 = 13 dư 5; thêm một thuyền, được 14 thuyền.",
+          "check": {
+            "op": "ceil_div",
+            "args": [
+              83,
+              6
+            ]
+          },
+          "visual": {
+            "type": "capacity_grouping",
+            "total": 83,
+            "capacity": 6,
+            "object": "Thuyền"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.26.2"
+          },
+          "theme": "Thuyền ngọc trai"
+        }
+      ]
+    },
+    {
+      "lesson": 27,
+      "title": "Giảm một số đi một số lần",
+      "items": [
+        {
+          "id": "BONUS.27.1",
+          "book": "BONUS",
+          "lesson": 27,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Một số bị giảm 3 lần, rồi giảm tiếp 2 lần thì còn 8. Số ban đầu là bao nhiêu?",
+          "answer": 48,
+          "hint": "Đi ngược qua hai cánh cổng, đổi phép chia thành phép nhân.",
+          "solution": "8 × 2 = 16; 16 × 3 = 48.",
+          "check": {
+            "op": "expression",
+            "expression": "8×2×3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": null,
+            "end": 8,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 2
+              }
+            ],
+            "missing": "start"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.27.1"
+          },
+          "theme": "Rừng phép thuật"
+        },
+        {
+          "id": "BONUS.27.2",
+          "book": "BONUS",
+          "lesson": 27,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Vườn có 96 bông hoa. Sau khi giảm số hoa đi 4 lần, bé tặng bạn 7 bông. Còn bao nhiêu bông?",
+          "answer": 17,
+          "hint": "Giảm 4 lần khác với bớt 4 bông.",
+          "solution": "96 : 4 = 24; 24 − 7 = 17 bông.",
+          "check": {
+            "op": "expression",
+            "expression": "96:4−7"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.27.2"
+          },
+          "theme": "Rừng phép thuật"
+        }
+      ]
+    },
+    {
+      "lesson": 28,
+      "title": "Bài toán giải bằng hai bước tính",
+      "items": [
+        {
+          "id": "BONUS.28.1",
+          "book": "BONUS",
+          "lesson": 28,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Vườn có 12 hoa cúc, hoa hồng gấp 3 lần hoa cúc. Có 8 hoa hồng bị héo. Còn tất cả bao nhiêu bông hoa tươi?",
+          "answer": {
+            "intermediate": 36,
+            "final": 40,
+            "unit": "bông"
+          },
+          "hint": "Tìm số hoa hồng lúc đầu, sau đó tính tổng hoa tươi.",
+          "solution": "12 × 3 = 36 hoa hồng; 12 + 36 − 8 = 40 bông tươi.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "12×3",
+              "12+36−8"
+            ]
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 12,
+            "multiple": 3,
+            "removed": 8,
+            "labels": [
+              "Hoa cúc",
+              "Hoa hồng"
+            ]
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.28.1"
+          },
+          "theme": "Cầu cầu vồng"
+        },
+        {
+          "id": "BONUS.28.2",
+          "book": "BONUS",
+          "lesson": 28,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Có 36 bút đỏ, bút xanh ít hơn 12 chiếc. Chia đều tất cả vào 6 túi. Mỗi túi có bao nhiêu bút?",
+          "answer": {
+            "intermediate": 24,
+            "final": 10,
+            "unit": "chiếc"
+          },
+          "hint": "Tìm bút xanh rồi tổng số bút trước khi chia.",
+          "solution": "36 − 12 = 24 bút xanh; 36 + 24 = 60; 60 : 6 = 10 bút.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "36−12",
+              "(36+24):6"
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.28.2"
+          },
+          "theme": "Cầu cầu vồng"
+        }
+      ]
+    },
+    {
+      "lesson": 29,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "BONUS.29.1",
+          "book": "BONUS",
+          "lesson": 29,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Tìm số nhỏ nhất có hai chữ số chia cho 9 dư 4.",
+          "answer": 13,
+          "hint": "Các số chia 9 dư 4 cách nhau 9 đơn vị.",
+          "solution": "4 là số có một chữ số; 4 + 9 = 13, là số hai chữ số nhỏ nhất thỏa mãn.",
+          "check": {
+            "op": "bounded_remainder",
+            "min": 10,
+            "max": 99,
+            "divisor": 9,
+            "remainder": 4,
+            "extreme": "min"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.29.1"
+          },
+          "theme": "Hang pha lê"
+        },
+        {
+          "id": "BONUS.29.2",
+          "book": "BONUS",
+          "lesson": 29,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 92 viên bi, mỗi hộp đúng 5 viên. Cần thêm ít nhất mấy viên để không còn hộp thiếu bi?",
+          "answer": 3,
+          "hint": "Tìm số dư rồi bù cho đủ 5.",
+          "solution": "92 : 5 = 18 dư 2; 5 − 2 = 3 viên.",
+          "check": {
+            "op": "fill_remainder",
+            "args": [
+              92,
+              5
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.29.2"
+          },
+          "theme": "Hang pha lê"
+        }
+      ]
+    },
+    {
+      "lesson": 30,
+      "title": "Mi-li-mét",
+      "items": [
+        {
+          "id": "BONUS.30.1",
+          "book": "BONUS",
+          "lesson": 30,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Dải ruy-băng dài 8 cm. Cắt đi hai đoạn dài 17 mm và 24 mm. Còn bao nhiêu mm?",
+          "answer": 39,
+          "hint": "Đổi 8 cm sang mm trước.",
+          "solution": "8 cm = 80 mm; 80 − 17 − 24 = 39 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "80−17−24"
+          },
+          "visual": {
+            "type": "route_length",
+            "initialMm": 80,
+            "removedMm": [
+              17,
+              24
+            ]
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.30.1"
+          },
+          "theme": "Xưởng cầu tí hon"
+        },
+        {
+          "id": "BONUS.30.2",
+          "book": "BONUS",
+          "lesson": 30,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Ghép sát đầu ba đoạn gỗ dài 18 mm và hai đoạn gỗ dài 23 mm. Đường ghép dài bao nhiêu mm?",
+          "answer": 100,
+          "hint": "Tính độ dài từng nhóm đoạn.",
+          "solution": "18 × 3 = 54 mm; 23 × 2 = 46 mm; 54 + 46 = 100 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "18×3+23×2"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.30.2"
+          },
+          "theme": "Xưởng cầu tí hon"
+        }
+      ]
+    },
+    {
+      "lesson": 31,
+      "title": "Gam",
+      "items": [
+        {
+          "id": "BONUS.31.1",
+          "book": "BONUS",
+          "lesson": 31,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 1 kg bột. Mỗi lần làm bánh dùng 175 g, dùng 3 lần. Còn bao nhiêu gam bột?",
+          "answer": 475,
+          "hint": "Đổi 1 kg sang gam, rồi tính phần đã dùng.",
+          "solution": "1000 − 175 × 3 = 1000 − 525 = 475 g.",
+          "check": {
+            "op": "expression",
+            "expression": "1000−175×3"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.31.1"
+          },
+          "theme": "Tiệm bánh thần kỳ"
+        },
+        {
+          "id": "BONUS.31.2",
+          "book": "BONUS",
+          "lesson": 31,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Ba quả táo giống nhau nặng 360 g. Mỗi quả lê nặng hơn một quả táo 30 g. Hai quả lê nặng bao nhiêu gam?",
+          "answer": {
+            "intermediate": 120,
+            "final": 300,
+            "unit": "g"
+          },
+          "hint": "Tìm khối lượng một quả táo trước.",
+          "solution": "360 : 3 = 120 g; mỗi lê 150 g; 150 × 2 = 300 g.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "360:3",
+              "(120+30)×2"
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.31.2"
+          },
+          "theme": "Tiệm bánh thần kỳ"
+        }
+      ]
+    },
+    {
+      "lesson": 32,
+      "title": "Mi-li-lít",
+      "items": [
+        {
+          "id": "BONUS.32.1",
+          "book": "BONUS",
+          "lesson": 32,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Bình có 1 l nước. Rót vào 4 cốc, mỗi cốc 175 ml. Còn bao nhiêu ml trong bình?",
+          "answer": 300,
+          "hint": "Đổi 1 l thành 1000 ml.",
+          "solution": "175 × 4 = 700 ml; 1000 − 700 = 300 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "1000−175×4"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.32.1"
+          },
+          "theme": "Suối nước màu"
+        },
+        {
+          "id": "BONUS.32.2",
+          "book": "BONUS",
+          "lesson": 32,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "pour",
+          "prompt": "Có hai ca 500 ml và 300 ml. Hãy dùng các thao tác đổ đầy, rót sang ca kia và đổ hết để lấy đúng 200 ml trong một ca.",
+          "answer": {
+            "targetMl": 200,
+            "anyCup": true
+          },
+          "hint": "Đổ đầy ca 500 ml trước; thử rót sang ca 300 ml.",
+          "solution": "Đổ đầy ca 500 ml, rót sang ca 300 ml cho đầy. Ca lớn còn 200 ml.",
+          "check": {
+            "op": "pour_sequence",
+            "capacitiesMl": [
+              500,
+              300
+            ],
+            "targetMl": 200,
+            "actions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          },
+          "visual": {
+            "type": "pour",
+            "capacitiesMl": [
+              500,
+              300
+            ],
+            "initialMl": [
+              0,
+              0
+            ],
+            "allowedActions": [
+              "fill",
+              "empty",
+              "pour"
+            ],
+            "targetMl": 200,
+            "solutionActions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.32.2"
+          },
+          "theme": "Suối nước màu"
+        }
+      ]
+    },
+    {
+      "lesson": 33,
+      "title": "Nhiệt độ. Đơn vị đo nhiệt độ",
+      "items": [
+        {
+          "id": "BONUS.33.1",
+          "book": "BONUS",
+          "lesson": 33,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Sáng 18°C, trưa tăng 12°C so với sáng, tối giảm 8°C so với trưa. Tối là bao nhiêu độ C?",
+          "answer": 22,
+          "hint": "Tìm nhiệt độ buổi trưa trước.",
+          "solution": "18 + 12 = 30°C; 30 − 8 = 22°C.",
+          "check": {
+            "op": "expression",
+            "expression": "18+12−8"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.33.1"
+          },
+          "theme": "Đỉnh núi tuyết"
+        },
+        {
+          "id": "BONUS.33.2",
+          "book": "BONUS",
+          "lesson": 33,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Ngày đầu 24°C, ngày hai cao hơn 5°C, ngày ba thấp hơn ngày hai 9°C. Nhiệt độ ngày đầu cao hơn ngày ba bao nhiêu độ C?",
+          "answer": 4,
+          "hint": "Tính nhiệt độ ngày ba rồi so với ngày đầu.",
+          "solution": "Ngày hai 29°C, ngày ba 20°C; 24 − 20 = 4°C.",
+          "check": {
+            "op": "expression",
+            "expression": "24−(24+5−9)"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.33.2"
+          },
+          "theme": "Đỉnh núi tuyết"
+        }
+      ]
+    },
+    {
+      "lesson": 34,
+      "title": "Thực hành và trải nghiệm với các đơn vị mi-li-mét, gam, mi-li-lít, độ C",
+      "items": [
+        {
+          "id": "BONUS.34.1",
+          "book": "BONUS",
+          "lesson": 34,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "balance_select",
+          "prompt": "Có các quả cân 500 g, 200 g, 200 g, 100 g, 50 g. Chọn đúng ba quả cân có tổng 750 g.",
+          "answer": {
+            "targetG": 750,
+            "selectedWeightsG": [
+              500,
+              200,
+              50
+            ],
+            "count": 3
+          },
+          "hint": "Thử bắt đầu bằng quả cân 500 g.",
+          "solution": "500 + 200 + 50 = 750 g. Chọn một trong hai quả 200 g.",
+          "check": {
+            "op": "weight_selection",
+            "available": [
+              500,
+              200,
+              200,
+              100,
+              50
+            ],
+            "target": 750,
+            "count": 3
+          },
+          "visual": {
+            "type": "balance_select",
+            "availableWeightsG": [
+              500,
+              200,
+              200,
+              100,
+              50
+            ],
+            "targetG": 750,
+            "selectCount": 3,
+            "allowEquivalentSelection": true
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.34.1"
+          },
+          "theme": "Phòng thí nghiệm"
+        },
+        {
+          "id": "BONUS.34.2",
+          "book": "BONUS",
+          "lesson": 34,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Một bình có 1 l nước. Rót ra hai ca, mỗi ca 250 ml, rồi thêm lại 80 ml. Trong bình có bao nhiêu ml?",
+          "answer": 580,
+          "hint": "Tính lượng rót ra và lượng còn lại.",
+          "solution": "1000 − 250 × 2 + 80 = 580 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "1000−250×2+80"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.34.2"
+          },
+          "theme": "Phòng thí nghiệm"
+        }
+      ]
+    },
+    {
+      "lesson": 35,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "BONUS.35.1",
+          "book": "BONUS",
+          "lesson": 35,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Dây dài 1 m. Bé dùng 235 mm và ba đoạn 120 mm. Còn bao nhiêu mm?",
+          "answer": 405,
+          "hint": "Đổi m sang mm, tính tổng phần đã dùng.",
+          "solution": "1 m = 1000 mm; 235 + 120 × 3 = 595 mm; còn 405 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "1000−235−120×3"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.35.1"
+          },
+          "theme": "Đảo đo lường"
+        },
+        {
+          "id": "BONUS.35.2",
+          "book": "BONUS",
+          "lesson": 35,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Hai hộp giống nhau cùng quả cân 100 g cân bằng với 700 g. Một hộp nặng bao nhiêu gam?",
+          "answer": 300,
+          "hint": "Trừ quả cân 100 g trước khi chia đôi.",
+          "solution": "700 − 100 = 600 g; 600 : 2 = 300 g.",
+          "check": {
+            "op": "expression",
+            "expression": "(700−100):2"
+          },
+          "visual": {
+            "type": "balance",
+            "leftObjects": [
+              "Hộp",
+              "Hộp"
+            ],
+            "leftWeightsG": [
+              100
+            ],
+            "rightWeightsG": [
+              500,
+              200
+            ],
+            "sameMassObjects": true
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.35.2"
+          },
+          "theme": "Đảo đo lường"
+        }
+      ]
+    },
+    {
+      "lesson": 36,
+      "title": "Nhân số có ba chữ số với số có một chữ số",
+      "items": [
+        {
+          "id": "BONUS.36.1",
+          "book": "BONUS",
+          "lesson": 36,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Tìm số lớn nhất có ba chữ số mà khi nhân với 4, kết quả vẫn không lớn hơn 1000.",
+          "answer": 250,
+          "hint": "Tìm số nhân 4 bằng 1000 rồi kiểm tra số kế tiếp.",
+          "solution": "250 × 4 = 1000; 251 × 4 = 1004, vượt quá giới hạn.",
+          "check": {
+            "op": "bounded_product",
+            "min": 100,
+            "max": 999,
+            "multiplier": 4,
+            "limit": 1000,
+            "extreme": "max"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.36.1"
+          },
+          "theme": "Xưởng đèn sao"
+        },
+        {
+          "id": "BONUS.36.2",
+          "book": "BONUS",
+          "lesson": 36,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Ba kho, mỗi kho có 218 hộp đồ chơi. Chuyển đi 175 hộp. Còn bao nhiêu hộp?",
+          "answer": {
+            "intermediate": 654,
+            "final": 479,
+            "unit": "hộp"
+          },
+          "hint": "Tính số hộp ban đầu.",
+          "solution": "218 × 3 = 654; 654 − 175 = 479 hộp.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "218×3",
+              "654−175"
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.36.2"
+          },
+          "theme": "Xưởng đèn sao"
+        }
+      ]
+    },
+    {
+      "lesson": 37,
+      "title": "Chia số có ba chữ số cho số có một chữ số",
+      "items": [
+        {
+          "id": "BONUS.37.1",
+          "book": "BONUS",
+          "lesson": 37,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Mật mã chia cho 8 được thương 107, dư 5. Mật mã là bao nhiêu?",
+          "answer": 861,
+          "hint": "Lấy thương nhân số chia rồi cộng số dư.",
+          "solution": "107 × 8 + 5 = 861. Kiểm tra 861 : 8 = 107 dư 5.",
+          "check": {
+            "op": "expression",
+            "expression": "107×8+5"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.37.1"
+          },
+          "theme": "Mỏ kim cương"
+        },
+        {
+          "id": "BONUS.37.2",
+          "book": "BONUS",
+          "lesson": 37,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 967 học sinh xếp thành các nhóm, mỗi nhóm tối đa 9 bạn. Cần ít nhất bao nhiêu nhóm?",
+          "answer": 108,
+          "hint": "Nếu còn dư bạn thì phải có thêm một nhóm.",
+          "solution": "967 : 9 = 107 dư 4; cần 108 nhóm.",
+          "check": {
+            "op": "ceil_div",
+            "args": [
+              967,
+              9
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.37.2"
+          },
+          "theme": "Mỏ kim cương"
+        }
+      ]
+    },
+    {
+      "lesson": 38,
+      "title": "Biểu thức số. Tính giá trị của biểu thức số",
+      "items": [
+        {
+          "id": "BONUS.38.1",
+          "book": "BONUS",
+          "lesson": 38,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Điền số vào ô: 8 × (□ − 3) = 56.",
+          "answer": 10,
+          "hint": "Tìm giá trị trong ngoặc trước, rồi tìm số còn thiếu.",
+          "solution": "56 : 8 = 7; 7 + 3 = 10. Kiểm tra 8 × (10 − 3) = 56.",
+          "check": {
+            "op": "expression",
+            "expression": "56:8+3"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.38.1"
+          },
+          "theme": "Cổng biểu thức"
+        },
+        {
+          "id": "BONUS.38.2",
+          "book": "BONUS",
+          "lesson": 38,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Tính nhanh 125 × 2 × 4 + 36 − 36.",
+          "answer": 1000,
+          "hint": "Nhóm 2 × 4, nhận ra cộng rồi trừ cùng một số.",
+          "solution": "125 × (2 × 4) = 125 × 8 = 1000; 36 − 36 = 0.",
+          "check": {
+            "op": "expression",
+            "expression": "125×2×4+36−36"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.38.2"
+          },
+          "theme": "Cổng biểu thức"
+        }
+      ]
+    },
+    {
+      "lesson": 39,
+      "title": "So sánh số lớn gấp mấy lần số bé",
+      "items": [
+        {
+          "id": "BONUS.39.1",
+          "book": "BONUS",
+          "lesson": 39,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Số lớn là 72, số bé bằng một phần tám số lớn. Hai số hơn kém nhau bao nhiêu đơn vị?",
+          "answer": 63,
+          "hint": "Tìm số bé bằng phép chia trước.",
+          "solution": "72 : 8 = 9; 72 − 9 = 63.",
+          "check": {
+            "op": "expression",
+            "expression": "72−72:8"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.39.1"
+          },
+          "theme": "Vườn khổng lồ"
+        },
+        {
+          "id": "BONUS.39.2",
+          "book": "BONUS",
+          "lesson": 39,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Cây thứ nhất cao 90 cm, cây thứ hai cao 30 cm. Cây thứ hai cao thêm 15 cm. Khi đó cây thứ nhất cao gấp mấy lần cây thứ hai?",
+          "answer": {
+            "intermediate": 45,
+            "final": 2,
+            "unit": "lần"
+          },
+          "hint": "Tìm chiều cao mới của cây thứ hai.",
+          "solution": "30 + 15 = 45 cm; 90 : 45 = 2 lần.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "30+15",
+              "90:45"
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.39.2"
+          },
+          "theme": "Vườn khổng lồ"
+        }
+      ]
+    },
+    {
+      "lesson": 40,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "BONUS.40.1",
+          "book": "BONUS",
+          "lesson": 40,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Một số được gấp 5 lần rồi giảm 4 lần thì được 95. Số ban đầu là bao nhiêu?",
+          "answer": 76,
+          "hint": "Đi ngược thứ tự: nhân 4 rồi chia 5.",
+          "solution": "95 × 4 = 380; 380 : 5 = 76.",
+          "check": {
+            "op": "expression",
+            "expression": "95×4:5"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.40.1"
+          },
+          "theme": "Thành phố trên mây"
+        },
+        {
+          "id": "BONUS.40.2",
+          "book": "BONUS",
+          "lesson": 40,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Hai thùng, mỗi thùng 168 quả. Bán 96 quả rồi chia đều số còn lại vào 6 giỏ. Mỗi giỏ có bao nhiêu quả?",
+          "answer": {
+            "intermediate": 240,
+            "final": 40,
+            "unit": "quả"
+          },
+          "hint": "Tính tổng số quả còn lại sau khi bán.",
+          "solution": "168 × 2 − 96 = 240; 240 : 6 = 40 quả.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "168×2−96",
+              "240:6"
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.40.2"
+          },
+          "theme": "Thành phố trên mây"
+        }
+      ]
+    },
+    {
+      "lesson": 41,
+      "title": "Ôn tập phép nhân, phép chia trong phạm vi 100, 1 000",
+      "items": [
+        {
+          "id": "BONUS.41.1",
+          "book": "BONUS",
+          "lesson": 41,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "digit_fill",
+          "prompt": "Dùng mỗi chữ số 0, 2, 4, 8 đúng một lần để tạo phép nhân □□□ × □ = 832.",
+          "answer": {
+            "digits": [
+              2,
+              0,
+              8,
+              4
+            ]
+          },
+          "hint": "Thử chữ số nhân sao cho tích có 3 chữ số.",
+          "solution": "208 × 4 = 832. Thử các chữ số nhân còn lại sẽ không có tích này.",
+          "check": {
+            "op": "digit_product",
+            "patterns": [
+              "???",
+              "?",
+              "832"
+            ],
+            "digitOptions": [
+              0,
+              2,
+              4,
+              8
+            ],
+            "useEachOnce": true
+          },
+          "visual": {
+            "type": "vertical_digit_fill",
+            "multiplicand": "???",
+            "multiplier": "?",
+            "product": "832",
+            "digitOptions": [
+              0,
+              2,
+              4,
+              8
+            ],
+            "useEachOnce": true
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.41.1"
+          },
+          "theme": "Đấu trường con số"
+        },
+        {
+          "id": "BONUS.41.2",
+          "book": "BONUS",
+          "lesson": 41,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 853 bánh, mỗi hộp đủ 8 bánh. Thêm ít nhất bao nhiêu bánh để xếp đầy hết các hộp?",
+          "answer": 3,
+          "hint": "Tìm số dư rồi bù đủ một hộp.",
+          "solution": "853 : 8 = 106 dư 5; 8 − 5 = 3 bánh.",
+          "check": {
+            "op": "fill_remainder",
+            "args": [
+              853,
+              8
+            ]
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.41.2"
+          },
+          "theme": "Đấu trường con số"
+        }
+      ]
+    },
+    {
+      "lesson": 42,
+      "title": "Ôn tập biểu thức số",
+      "items": [
+        {
+          "id": "BONUS.42.1",
+          "book": "BONUS",
+          "lesson": 42,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Điền số vào ô: (□ + 18) : 6 = 9.",
+          "answer": 36,
+          "hint": "Tìm giá trị biểu thức trong ngoặc bằng phép nhân.",
+          "solution": "9 × 6 = 54; 54 − 18 = 36.",
+          "check": {
+            "op": "expression",
+            "expression": "9×6−18"
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.42.1"
+          },
+          "theme": "Mê cung bí mật"
+        },
+        {
+          "id": "BONUS.42.2",
+          "book": "BONUS",
+          "lesson": 42,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Tính 96 : (2 × 3) + 8 × (14 − 9).",
+          "answer": 56,
+          "hint": "Tính hai biểu thức trong ngoặc, rồi nhân chia trước cộng.",
+          "solution": "96 : 6 + 8 × 5 = 16 + 40 = 56.",
+          "check": {
+            "op": "expression",
+            "expression": "96:(2×3)+8×(14−9)"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.42.2"
+          },
+          "theme": "Mê cung bí mật"
+        }
+      ]
+    },
+    {
+      "lesson": 43,
+      "title": "Ôn tập hình học và đo lường",
+      "items": [
+        {
+          "id": "BONUS.43.1",
+          "book": "BONUS",
+          "lesson": 43,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Ghép 27 khối lập phương nhỏ thành khối lớn 3 × 3 × 3 rồi sơn tất cả mặt ngoài. Có bao nhiêu khối nhỏ không được sơn mặt nào?",
+          "answer": 1,
+          "hint": "Hãy tưởng tượng ba lớp khối. Tìm khối không chạm bất kỳ mặt ngoài nào.",
+          "solution": "Chỉ có khối nằm chính giữa lớp giữa không chạm mặt ngoài: 1 khối.",
+          "check": {
+            "op": "painted_cube_count",
+            "dimensions": [
+              3,
+              3,
+              3
+            ],
+            "paintedFaces": 0
+          },
+          "visual": {
+            "type": "painted_cuboid",
+            "dimensions": [
+              3,
+              3,
+              3
+            ],
+            "paintOuterFaces": true
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.43.1"
+          },
+          "theme": "Lâu đài hình khối"
+        },
+        {
+          "id": "BONUS.43.2",
+          "book": "BONUS",
+          "lesson": 43,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Một hình tròn nằm vừa khít trong hình vuông cạnh 8 cm, chạm cả bốn cạnh. Bán kính hình tròn dài bao nhiêu cm?",
+          "answer": 4,
+          "hint": "Đường kính chính bằng cạnh hình vuông.",
+          "solution": "Đường kính 8 cm; bán kính bằng 8 : 2 = 4 cm.",
+          "check": {
+            "op": "expression",
+            "expression": "8:2"
+          },
+          "visual": {
+            "type": "inscribed_circle",
+            "squareSideCm": 8
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.43.2"
+          },
+          "theme": "Lâu đài hình khối"
+        }
+      ]
+    },
+    {
+      "lesson": 44,
+      "title": "Ôn tập chung",
+      "items": [
+        {
+          "id": "BONUS.44.1",
+          "book": "BONUS",
+          "lesson": 44,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 1,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Hai thùng, mỗi thùng 180 quyển sách. Tặng 72 quyển, rồi chia đều phần còn lại vào 8 kệ. Mỗi kệ có bao nhiêu quyển?",
+          "answer": {
+            "intermediate": 288,
+            "final": 36,
+            "unit": "quyển"
+          },
+          "hint": "Tính tổng số sách còn lại trước khi chia.",
+          "solution": "180 × 2 − 72 = 288; 288 : 8 = 36 quyển.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "180×2−72",
+              "288:8"
+            ]
+          },
+          "difficulty": "challenge",
+          "reward": {
+            "coins": 80,
+            "claimId": "BONUS.44.1"
+          },
+          "theme": "Kho báu học kỳ"
+        },
+        {
+          "id": "BONUS.44.2",
+          "book": "BONUS",
+          "lesson": 44,
+          "page": null,
+          "pdfPage": null,
+          "section": "NC",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Dải dây 1 m. Cắt 4 đoạn 135 mm và 2 đoạn 80 mm. Còn bao nhiêu mm?",
+          "answer": 300,
+          "hint": "Đổi m sang mm, tính hai nhóm đã cắt.",
+          "solution": "1000 − 135 × 4 − 80 × 2 = 300 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "1000−135×4−80×2"
+          },
+          "difficulty": "expert",
+          "reward": {
+            "coins": 120,
+            "claimId": "BONUS.44.2"
+          },
+          "theme": "Kho báu học kỳ"
+        }
+      ]
+    }
+  ]
+}
