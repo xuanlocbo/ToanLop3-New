@@ -168,9 +168,17 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         }
         JSONObject q=bank.questions.get(AdventurePlan.questionId(lesson,a.gate));
         ui.label(body,"🐇 Bài "+lesson+" • Cổng "+(a.gate+1)+"/4 • "+AdventurePlan.name(lesson),23,true);
-        ui.label(body,a.gate<2?"Giải đúng để mở cổng.":"Thử thách kho báu! Giải đúng để đi tiếp.",18,false);
+        ui.label(body,a.gate<2?"Giải đúng để mở cổng.":"Thử thách kho báu! Giải đúng để nhận thưởng lớn; có thể làm sau.",18,false);
         LinearLayout card=ui.card(NativeUi.WHITE);ui.add(body,card);
         card.addView(new QuestionPanel(this,q,store,this,lesson,a.gate),new LinearLayout.LayoutParams(-1,-2));
+        if(a.gate>=2&&!a.answered){
+            ui.action(body,"Thử thách này để sau",NativeUi.PALE,()->new android.app.AlertDialog.Builder(this)
+                .setTitle("Làm thử thách sau?")
+                .setMessage("Em vẫn có thể về đích. Câu này sẽ chưa được tính hoàn thành và không nhận sao. Có thể làm lại trong Kho báu.")
+                .setNegativeButton("Ở lại",null).setPositiveButton("Đi tiếp",(d,w)->{
+                    if(store.skipAdventureBonus(lesson,a.gate))go("game");else Toast.makeText(this,"Chưa lưu được. Hãy thử lại.",Toast.LENGTH_LONG).show();
+                }).show());
+        }
         ui.action(body,"Về màn chơi (giữ bài đang làm)",NativeUi.PALE,()->go("game"));
     }
     void progress(LinearLayout p,int current,int total){
