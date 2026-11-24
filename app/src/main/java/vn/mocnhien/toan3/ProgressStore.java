@@ -150,6 +150,15 @@ public final class ProgressStore {
         // Award, study completion, gate answer and draft commit together.
         return save(n)?new Result(true,correct,earned):new Result(false,false,0);
     }
+    /** Optional treasure gates may be bypassed without granting any credit or coins. */
+    public synchronized boolean skipAdventureBonus(int lesson,int gate){
+        AdventureWorld.State s=adventureState(lesson);
+        if(gate<2||gate>=AdventurePlan.GATES||!s.pending||s.answered||s.gate!=gate)return false;
+        JSONObject n=Json.copy(state);
+        JSONObject a=mutableAdventure(n,lesson);
+        s.answered=true;s.advance();Json.put(a,"motion",s.json());a.remove("draft");
+        return save(n);
+    }
     public synchronized boolean advanceAdventure(int lesson,int gate){
         AdventureWorld.State s=adventureState(lesson);
         if(!s.pending||!s.answered||s.gate!=gate)return false;
