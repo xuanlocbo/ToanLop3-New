@@ -118,9 +118,15 @@ def fixture(lesson,screen,gate=0,pending=False):
     # Write only into this debug emulator package, after force-stop.
     adb("shell","run-as",PKG,"mkdir","-p","shared_prefs")
     adb("shell","run-as",PKG,"rm","-f",PREF+".bak")
-    adb("shell","run-as",PKG,"sh","-c","cat > "+PREF,data=ET.tostring(root,encoding="utf-8",xml_declaration=True))
+    adb("shell",f"run-as {PKG} sh -c 'cat > {PREF}'",data=ET.tostring(root,encoding="utf-8",xml_declaration=True))
     print("FIXTURE",lesson,screen,gate,flush=True)
     launch()
+
+def hide_ime():
+    ime=adb("shell","dumpsys","input_method").decode(errors="replace")
+    if re.search(r"(?:mInputShown|mIsInputViewShown|mShowRequested|isInputViewShown)=true",ime):
+        adb("shell","input","keyevent","4")
+        wait(.3)
 
 def no_crash():
     assert adb("shell","pidof",PKG).strip()
@@ -135,6 +141,7 @@ apk=next(Path("output").glob("MocNhien-Toan3-*.apk"))
 adb("logcat","-c")
 adb("install","-r",apk)
 adb("shell","pm","clear",PKG)
+adb("shell","settings","put","secure","show_ime_with_hard_keyboard","1")
 launch()
 capture("01-home")
 # Actual navigation and completion of an original SGK example.
@@ -144,12 +151,12 @@ click(r"Bắt đầu / tiếp tục mục chưa hoàn thành")
 find(r"48 : 2",scrollable=False)
 capture("02-sgk-example")
 click(r"^Em đã hiểu$")
-find(r"Đã học xong",scrollable=False)
+find(r"Đã học xong")
 s=snapshot()
 assert s["done"]["SGK.26.75.KP.1.a"] is True
 capture("03-example-done")
 restart()
-find(r"Đã học xong",scrollable=False)
+find(r"Đã học xong")
 assert snapshot()["done"]["SGK.26.75.KP.1.a"]
 # Actual movement through the map; first steps are not fixture-based.
 fixture(26,"home")
@@ -180,11 +187,11 @@ capture("07-pour-solved")
 click(r"^Kiểm tra$")
 assert snapshot()["adventures"]["32"]["trail"]["complete"] is True
 # Answer source question in actual native input field, check wrong answer then retry.
-find(r"Rót hết nước trong bình",scrollable=False)
+find(r"Rót hết nước trong bình")
 capture("08-source-gate")
 click(r"^Đáp án$",cls="android.widget.EditText",desc=True)
 adb("shell","input","text","1")
-adb("shell","input","keyevent","4")
+hide_ime()
 click(r"^Kiểm tra$")
 s=snapshot()
 gate_id="SGK.32.89.HD.1.b"
@@ -193,7 +200,7 @@ assert gate_id not in s["claims"]
 click(r"^Đáp án$",cls="android.widget.EditText",desc=True)
 adb("shell","input","keyevent","123","67")
 adb("shell","input","text","1000")
-adb("shell","input","keyevent","4")
+hide_ime()
 click(r"^Kiểm tra$")
 s=snapshot()
 assert s["done"][gate_id] and s["claims"][gate_id] and gate_id not in s["review"]
