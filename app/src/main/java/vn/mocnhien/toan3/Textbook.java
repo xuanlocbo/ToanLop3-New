@@ -129,8 +129,8 @@ public final class Textbook {
   a(31,88,12,BookBank.Kind.CHOICE,"Chọn khối lượng phù hợp nhất cho con bò.","200 kg","Ước lượng từ kích thước vật.","bò: 200 kg.",new String[]{"20 kg","2 kg","200 kg","200 g"},0,0);
  }
  private static void l32(){
-  a(32,89,1,BookBank.Kind.CUP,"Mô phỏng: đọc lượng nước trong ca B (ml).","200","Quan sát dụng cụ, đọc các vạch chia hoặc số ghi trên quả cân.","200 ml.",new String[]{},200,500);
-  a(32,89,2,BookBank.Kind.CUP,"Mô phỏng: đọc lượng nước trong ca C (ml).","300","Quan sát dụng cụ, đọc các vạch chia hoặc số ghi trên quả cân.","300 ml.",new String[]{},300,500);
+  a(32,89,1,BookBank.Kind.CUP,"Đọc lượng nước trong ca B (ml).","200","Quan sát dụng cụ, đọc các vạch chia hoặc số ghi trên quả cân.","200 ml.",new String[]{},200,500);
+  a(32,89,2,BookBank.Kind.CUP,"Đọc lượng nước trong ca C (ml).","300","Quan sát dụng cụ, đọc các vạch chia hoặc số ghi trên quả cân.","300 ml.",new String[]{},300,500);
   a(32,89,3,BookBank.Kind.NUMBER,"Ca A có 500 ml, B có 200 ml, C có 300 ml. Bình ban đầu có bao nhiêu ml?","1000","Cộng 3 ca.","500 + 200 + 300 = 1000 ml.",new String[]{},0,0);
   a(32,90,1,BookBank.Kind.NUMBER,"1 l = ? ml","1000","Đổi lít thành mi-li-lít.","1 l = 1000 ml.",new String[]{},0,0);
   a(32,90,2,BookBank.Kind.NUMBER,"Phích 1 l rót ra 200 ml, 200 ml và 100 ml. Còn bao nhiêu ml?","500","Đổi 1 l sang ml rồi trừ.","1000 − 200 − 200 − 100 = 500 ml.",new String[]{},0,0);
@@ -156,7 +156,7 @@ public final class Textbook {
   a(34,93,2,BookBank.Kind.CHOICE,"Chọn khối lượng thích hợp của cục tẩy.","20 g","Chọn đơn vị và mức cân hợp lý.","20 g",new String[]{"20 kg","20 g"},0,0);
   a(34,93,3,BookBank.Kind.CHOICE,"Chọn khối lượng thích hợp của hộp sữa.","400 g","Chọn đơn vị và mức cân hợp lý.","400 g",new String[]{"400 g","40 g"},0,0);
   a(34,93,4,BookBank.Kind.CHOICE,"Chọn khối lượng thích hợp của quả bí đao.","3 kg","Chọn đơn vị và mức cân hợp lý.","3 kg",new String[]{"3 kg","3 g"},0,0);
-  a(34,93,5,BookBank.Kind.NUMBER,"Chọn 2 quả 100 g, 2 quả 200 g và 1 quả 500 g để cân 1 kg. Cần tổng số gam bao nhiêu?","1000","1 kg = 1000 g.","1000 g; có thể chọn 500 + 200 + 200 + 100.",new String[]{},0,0);
+  a(34,93,5,BookBank.Kind.NUMBER,"Có 2 quả 100 g, 2 quả 200 g và 1 quả 500 g. Cần chọn tổng bao nhiêu gam quả cân để cân 1 kg?","1000","1 kg = 1000 g.","1000 g; có thể chọn 500 + 200 + 200 + 100.",new String[]{},0,0);
   a(34,93,6,BookBank.Kind.PRACTICE,"Đo nhiệt độ không khí vào thứ Hai, thứ Ba, thứ Tư, ghi lại từng ngày.","done","Dùng nhiệt kế cùng người lớn.","Không có số đo cố định.",new String[]{},0,0);
   a(34,94,1,BookBank.Kind.CHOICE,"Khối lượng phù hợp với quả trứng?","100 g","Ước lượng khối lượng.","100 g",new String[]{"100 kg","1 kg","100 g"},0,0);
   a(34,94,2,BookBank.Kind.CHOICE,"Khối lượng phù hợp với quả tạ?","100 kg","Ước lượng khối lượng.","100 kg",new String[]{"100 kg","1 kg","100 g"},0,0);
@@ -164,6 +164,9 @@ public final class Textbook {
   a(34,94,4,BookBank.Kind.CHOICE,"A 300 ml, B 150 ml, C 200 ml, D 250 ml. Ca nào ít nước nhất?","B","Tìm số nhỏ nhất.","150 ml.",new String[]{"A","B","C","D"},0,0);
   a(34,94,5,BookBank.Kind.CHOICE,"A 300 ml, B 150 ml, C 200 ml, D 250 ml. Chọn hai ca được 350 ml.","B và C","Cộng hai số.","150 + 200 = 350 ml.",new String[]{"A và B","B và C","A và D"},0,0);
   a(34,94,6,BookBank.Kind.CHOICE,"A 300 ml, B 150 ml, C 200 ml, D 250 ml. Chọn hai ca được 550 ml.","A và D","Cộng hai số.","300 + 250 = 550 ml.",new String[]{"A và B","B và C","A và D"},0,0);
+  a(34,94,7,BookBank.Kind.CHOICE,"A chỉ khoảng 2°C, B khoảng 24°C, C 40°C. Nhiệt kế nào hợp với cảnh ngồi đọc sách trong thời tiết dễ chịu?","B","So sánh lạnh, dễ chịu và rất nóng.","B ứng với nhiệt độ vừa phải.",new String[]{"A","B","C"},0,0);
+  a(34,94,8,BookBank.Kind.CHOICE,"A khoảng 2°C, B khoảng 24°C, C 40°C. Nhiệt kế nào hợp với cảnh trời rất nóng, bạn đang quạt?","C","Tìm mức nhiệt cao nhất.","40°C là mức cao nhất.",new String[]{"A","B","C"},0,0);
+  a(34,94,9,BookBank.Kind.CHOICE,"A khoảng 2°C, B khoảng 24°C, C 40°C. Nhiệt kế nào hợp với cảnh trời lạnh, mặc áo ấm?","A","Tìm mức nhiệt thấp nhất.","A là nhiệt độ thấp nhất.",new String[]{"A","B","C"},0,0);
  }
  private static void l35(){
   a(35,95,1,BookBank.Kind.NUMBER,"329 − 135 = ? (ml)","194","Tính từng bước, kiểm tra thứ tự phép tính.","329 − 135 = 194 ml",new String[]{},0,0);
@@ -417,10 +420,10 @@ public final class Textbook {
   a(43,118,10,BookBank.Kind.NUMBER,"Khối hộp chữ nhật 3 × 2 × 2 khối nhỏ, sơn tất cả mặt ngoài. Có bao nhiêu khối nhỏ được sơn đúng 3 mặt?","8","Các khối ở góc.","8 khối ở 8 đỉnh.",new String[]{},0,0);
   a(43,119,1,BookBank.Kind.NUMBER,"AB, BC, CD mỗi đoạn dài 28 mm. Đường gấp khúc ABCD dài bao nhiêu mm?","84","Nhân 28 với 3.","28 × 3 = 84 mm.",new String[]{},0,0);
   a(43,119,2,BookBank.Kind.NUMBER,"Hai quả cân 500 g cân bằng quả bưởi và quả cân 100 g. Bưởi nặng bao nhiêu gam?","900","Cộng hai quả cân rồi trừ 100.","500 + 500 − 100 = 900 g.",new String[]{},0,0);
-  a(43,119,3,BookBank.Kind.CHOICE,"Sách Toán lớp 3 dày khoảng?","5 mm","Chọn số đo hợp lý.","5 mm",new String[]{"5 mm","5 cm","5 dm"},0,0);
-  a(43,119,4,BookBank.Kind.CHOICE,"Bút mực nặng khoảng?","20 g","Chọn số đo hợp lý.","20 g",new String[]{"2 g","2 kg","20 g"},0,0);
-  a(43,119,5,BookBank.Kind.CHOICE,"Lọ thuốc nhỏ mắt chứa khoảng?","15 ml","Chọn số đo hợp lý.","15 ml",new String[]{"15 ml","15 l","150 ml"},0,0);
-  a(43,119,6,BookBank.Kind.CHOICE,"Mức nhiệt độ cơ thể thường dùng làm mốc trong bài toán?","37°C","Chọn số đo hợp lý.","37°C",new String[]{"35°C","37°C","38°C"},0,0);
+  a(43,119,3,BookBank.Kind.CHOICE,"Sách Toán lớp 3 dày khoảng bao nhiêu?","5 mm","Chọn số đo hợp lý.","5 mm",new String[]{"5 mm","5 cm","5 dm"},0,0);
+  a(43,119,4,BookBank.Kind.CHOICE,"Bút mực nặng khoảng bao nhiêu?","20 g","Chọn số đo hợp lý.","20 g",new String[]{"2 g","2 kg","20 g"},0,0);
+  a(43,119,5,BookBank.Kind.CHOICE,"Lọ thuốc nhỏ mắt chứa khoảng bao nhiêu?","15 ml","Chọn số đo hợp lý.","15 ml",new String[]{"15 ml","15 l","150 ml"},0,0);
+  a(43,119,6,BookBank.Kind.CHOICE,"Mốc nhiệt độ cơ thể được sử dụng trong bài toán là bao nhiêu?","37°C","Chọn số đo hợp lý.","37°C",new String[]{"35°C","37°C","38°C"},0,0);
   a(43,119,7,BookBank.Kind.NUMBER,"480 + 120 = ? (mm)","600","Tính từng bước, kiểm tra thứ tự phép tính.","480 + 120 = 600 mm",new String[]{},0,0);
   a(43,119,8,BookBank.Kind.NUMBER,"545 − 45 = ? (mm)","500","Tính từng bước, kiểm tra thứ tự phép tính.","545 − 45 = 500 mm",new String[]{},0,0);
   a(43,119,9,BookBank.Kind.NUMBER,"840 : 3 = ? (mm)","280","Tính từng bước, kiểm tra thứ tự phép tính.","840 : 3 = 280 mm",new String[]{},0,0);
@@ -431,6 +434,8 @@ public final class Textbook {
   a(43,119,14,BookBank.Kind.NUMBER,"1000 − 500 = ? (ml)","500","Tính từng bước, kiểm tra thứ tự phép tính.","1000 − 500 = 500 ml",new String[]{},0,0);
   a(43,119,15,BookBank.Kind.NUMBER,"250 × 3 = ? (ml)","750","Tính từng bước, kiểm tra thứ tự phép tính.","250 × 3 = 750 ml",new String[]{},0,0);
   a(43,119,16,BookBank.Kind.NUMBER,"Gói mì 80 g, hộp sữa 455 g. 3 gói mì và một hộp sữa nặng bao nhiêu gam?","695","Nhân 80 với 3 rồi cộng.","80 × 3 + 455 = 695 g.",new String[]{},0,0);
+  a(43,118,11,BookBank.Kind.GEOMETRY,"Quan sát tháp hình khối theo SGK trang 118. Có bao nhiêu khối trụ?","3","Đếm từng khối trụ chồng lên nhau.","Có một khối trụ xanh, một khối trụ đỏ, một khối trụ vàng.",new String[]{"2","3","4"},43,2);
+  a(43,118,12,BookBank.Kind.GEOMETRY,"Quan sát tháp có đế gồm 4 hàng, mỗi hàng 4 khối lập phương. Có bao nhiêu khối lập phương?","16","Đếm cả khối nằm dưới tháp.","4 × 4 = 16 khối.",new String[]{"12","16","20"},43,2);
  }
  private static void l44(){
   a(44,120,1,BookBank.Kind.MULTIPLY,"213 × 3","639","Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.","213 × 3 = 639",new String[]{},213,3);
