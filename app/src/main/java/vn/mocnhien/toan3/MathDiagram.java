@@ -53,7 +53,7 @@ public final class MathDiagram extends View {
         int max=Math.max(10,r.optInt("maxMm",50));float start=65,step=770f/max;
         rect(40,140,820,112,GOLD);
         for(int i=0;i<=max;i++){float x=start+i*step;line(x,140,x,i%10==0?205:i%5==0?190:176,1.8f,INK);if(i%10==0||max<=15&&i%5==0)label(""+i,x,235,21,INK);}
-        float a=start+seg.optDouble("startMm",0)*step,b=start+seg.optDouble("endMm",0)*step;
+        float a=start+(float)seg.optDouble("startMm",0)*step,b=start+(float)seg.optDouble("endMm",0)*step;
         line(a,98,b,98,8,PINK);line(a,108,a,140,1.8f,INK);line(b,108,b,140,1.8f,INK);
         JSONArray labels=Json.arr(r,"labels");label(labels.optString(0,"A"),a,77,25,INK);label(labels.optString(1,"B"),b,77,25,INK);label("mm",828,279,23,INK);
     }
@@ -77,7 +77,7 @@ public final class MathDiagram extends View {
         c.save();c.translate(x,y);c.scale(z,z);JSONArray range=Json.arr(t,"rangeC");int low=range.optInt(0,-30),high=range.optInt(1,50);float val=(float)t.optDouble("valueC");
         if(high<=low){c.restore();return;}
         rect(-23,25,46,238,INK);rect(-17,31,34,226,WHITE);
-        float top=42+(high-val)*196/(high-low);rect(-8,top,16,248-top,PINK);circle(0,263,25,INK);circle(0,263,19,PINK);
+        float top=238-(val-low)*196/(high-low);rect(-8,top,16,248-top,PINK);circle(0,263,25,INK);circle(0,263,19,PINK);
         float small=(float)t.optDouble("stepC",high-low<=10?.1:1);int major=t.optInt("majorTickC",high-low<=10?1:5);
         int count=Math.round((high-low)/small);for(int i=0;i<=count;i++){float n=low+i*small,yy=238-(n-low)*196/(high-low);boolean m=Math.abs(n/major-Math.round(n/major))<.001;line(23,yy,m?46:34,yy,2,INK);if(m)label(""+Math.round(n),73,yy+6,18,INK);}
         label("°C",-48,45,20,INK);label(t.optString("object",""),0,310,23,INK);c.restore();
