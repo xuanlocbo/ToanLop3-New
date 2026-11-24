@@ -22,6 +22,9 @@ final class NativeUi {
     NativeUi(Context c){this.c=c;}
     int dp(float n){return (int)(c.getResources().getDisplayMetrics().density*n+.5f);}
     int widthDp(){return c.getResources().getConfiguration().screenWidthDp;}
+    int heightDp(){return c.getResources().getConfiguration().screenHeightDp;}
+    boolean compact(){return heightDp()<450;}
+    boolean sideBySide(){return widthDp()>=520&&widthDp()>heightDp();}
     GradientDrawable bg(int color,int radius){
         GradientDrawable d=new GradientDrawable();d.setColor(color);d.setCornerRadius(dp(radius));return d;
     }
