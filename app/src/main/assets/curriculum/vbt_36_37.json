@@ -1,0 +1,2217 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "VBT",
+    "title": "Vở bài tập Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      88,
+      93
+    ],
+    "pdfPages": [
+      89,
+      94
+    ],
+    "sha256": "cadef7165ad41318d6e93698b49d8f42a1ec909bfed4f22e22c3ad43cf3ce822"
+  },
+  "notes": "Chuyển thể theo bản PDF gốc. Giữ ID nền hoặc legacyId khi sửa trang. study là mẫu không tính điểm; visual dùng dựng hình native, không lộ đáp án.",
+  "lessons": [
+    {
+      "lesson": 36,
+      "title": "Nhân số có ba chữ số với số có một chữ số",
+      "items": [
+        {
+          "id": "VBT.36.1.88.1.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "multiplication",
+          "prompt": "314 × 2",
+          "answer": 628,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "4 × 2 = 8, viết 8; 1 × 2 = 2, viết 2; 3 × 2 = 6, viết 6. Kết quả 628.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 314,
+            "multiplier": 2,
+            "steps": [
+              {
+                "digit": 4,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 2,
+                "resultDigit": 2,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "314×2"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.1.2",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "multiplication",
+          "prompt": "150 × 5",
+          "answer": 750,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "0 × 5 = 0, viết 0; 5 × 5 = 25, viết 5, nhớ 2; 1 × 5 + 2 = 7, viết 7. Kết quả 750.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 150,
+            "multiplier": 5,
+            "steps": [
+              {
+                "digit": 0,
+                "carryIn": 0,
+                "product": 0,
+                "resultDigit": 0,
+                "carryOut": 0
+              },
+              {
+                "digit": 5,
+                "carryIn": 0,
+                "product": 25,
+                "resultDigit": 5,
+                "carryOut": 2
+              },
+              {
+                "digit": 1,
+                "carryIn": 2,
+                "product": 7,
+                "resultDigit": 7,
+                "carryOut": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "150×5"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.1.3",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "multiplication",
+          "prompt": "251 × 3",
+          "answer": 753,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "1 × 3 = 3, viết 3; 5 × 3 = 15, viết 5, nhớ 1; 2 × 3 + 1 = 7, viết 7. Kết quả 753.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 251,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 3,
+                "resultDigit": 3,
+                "carryOut": 0
+              },
+              {
+                "digit": 5,
+                "carryIn": 0,
+                "product": 15,
+                "resultDigit": 5,
+                "carryOut": 1
+              },
+              {
+                "digit": 2,
+                "carryIn": 1,
+                "product": 7,
+                "resultDigit": 7,
+                "carryOut": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "251×3"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.1.4",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "multiplication",
+          "prompt": "224 × 4",
+          "answer": 896,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "4 × 4 = 16, viết 6, nhớ 1; 2 × 4 + 1 = 9, viết 9; 2 × 4 = 8, viết 8. Kết quả 896.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 224,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 4,
+                "carryIn": 0,
+                "product": 16,
+                "resultDigit": 6,
+                "carryOut": 1
+              },
+              {
+                "digit": 2,
+                "carryIn": 1,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "224×4"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.2.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "multiplication",
+          "prompt": "230 × 3",
+          "answer": 690,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "0 × 3 = 0, viết 0; 3 × 3 = 9, viết 9; 2 × 3 = 6, viết 6. Kết quả 690.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 230,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 0,
+                "carryIn": 0,
+                "product": 0,
+                "resultDigit": 0,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "230×3"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.2.2",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "multiplication",
+          "prompt": "123 × 2",
+          "answer": 246,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "3 × 2 = 6, viết 6; 2 × 2 = 4, viết 4; 1 × 2 = 2, viết 2. Kết quả 246.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 123,
+            "multiplier": 2,
+            "steps": [
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 4,
+                "resultDigit": 4,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 2,
+                "resultDigit": 2,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "123×2"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.2.3",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "multiplication",
+          "prompt": "237 × 2",
+          "answer": 474,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "7 × 2 = 14, viết 4, nhớ 1; 3 × 2 + 1 = 7, viết 7; 2 × 2 = 4, viết 4. Kết quả 474.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 237,
+            "multiplier": 2,
+            "steps": [
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 14,
+                "resultDigit": 4,
+                "carryOut": 1
+              },
+              {
+                "digit": 3,
+                "carryIn": 1,
+                "product": 7,
+                "resultDigit": 7,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 4,
+                "resultDigit": 4,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "237×2"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.2.4",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 2,
+          "part": "4",
+          "kind": "multiplication",
+          "prompt": "205 × 4",
+          "answer": 820,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "5 × 4 = 20, viết 0, nhớ 2; 0 × 4 + 2 = 2, viết 2; 2 × 4 = 8, viết 8. Kết quả 820.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 205,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 5,
+                "carryIn": 0,
+                "product": 20,
+                "resultDigit": 0,
+                "carryOut": 2
+              },
+              {
+                "digit": 0,
+                "carryIn": 2,
+                "product": 2,
+                "resultDigit": 2,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "205×4"
+          }
+        },
+        {
+          "id": "VBT.36.1.88.3.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Mai chạy 250 m, Việt chạy gấp 3 lần. Việt chạy bao nhiêu m?",
+          "answer": 750,
+          "hint": "250 × 3",
+          "solution": "250×3 = 750 m.",
+          "check": {
+            "op": "expression",
+            "expression": "250×3"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 250,
+            "multiple": 3,
+            "labels": [
+              "Mai",
+              "Việt"
+            ]
+          }
+        },
+        {
+          "id": "VBT.36.1.88.4.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 1,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Dùng 4 số trong 2, 3, 5, 100, 250 để lập hai tích bằng nhau. Số nào không dùng?",
+          "answer": "3",
+          "hint": "2 × 250 = 5 × 100",
+          "solution": "2 × 250 = 5 × 100 = 500; không dùng số 3.",
+          "visual": {
+            "type": "equal_products",
+            "options": [
+              "2",
+              "3",
+              "5",
+              "250"
+            ],
+            "numbers": [
+              2,
+              3,
+              5,
+              100,
+              250
+            ],
+            "template": "? × ? = ? × ?",
+            "useEachOnce": true
+          },
+          "check": {
+            "op": "unused_equal_product",
+            "numbers": [
+              2,
+              3,
+              5,
+              100,
+              250
+            ]
+          }
+        },
+        {
+          "id": "VBT.36.2.89.1.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "105 × 2 = ?",
+          "answer": 210,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "105×2 = 210.",
+          "check": {
+            "op": "expression",
+            "expression": "105×2"
+          },
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Thừa số",
+              105,
+              120,
+              126,
+              141
+            ],
+            "rows": [
+              [
+                "Thừa số",
+                2,
+                5,
+                4,
+                6
+              ],
+              [
+                "Tích",
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "activeColumn": 1
+          }
+        },
+        {
+          "id": "VBT.36.2.89.1.2",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "120 × 5 = ?",
+          "answer": 600,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "120×5 = 600.",
+          "check": {
+            "op": "expression",
+            "expression": "120×5"
+          },
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Thừa số",
+              105,
+              120,
+              126,
+              141
+            ],
+            "rows": [
+              [
+                "Thừa số",
+                2,
+                5,
+                4,
+                6
+              ],
+              [
+                "Tích",
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "activeColumn": 2
+          }
+        },
+        {
+          "id": "VBT.36.2.89.1.3",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "126 × 4 = ?",
+          "answer": 504,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "126×4 = 504.",
+          "check": {
+            "op": "expression",
+            "expression": "126×4"
+          },
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Thừa số",
+              105,
+              120,
+              126,
+              141
+            ],
+            "rows": [
+              [
+                "Thừa số",
+                2,
+                5,
+                4,
+                6
+              ],
+              [
+                "Tích",
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "activeColumn": 3
+          }
+        },
+        {
+          "id": "VBT.36.2.89.1.4",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "141 × 6 = ?",
+          "answer": 846,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "141×6 = 846.",
+          "check": {
+            "op": "expression",
+            "expression": "141×6"
+          },
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Thừa số",
+              105,
+              120,
+              126,
+              141
+            ],
+            "rows": [
+              [
+                "Thừa số",
+                2,
+                5,
+                4,
+                6
+              ],
+              [
+                "Tích",
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "activeColumn": 4
+          }
+        },
+        {
+          "id": "VBT.36.2.89.2.mau",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 2,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Nhẩm 200 × 4.",
+          "answer": null,
+          "hint": "Quan sát mẫu, rồi thực hiện tương tự.",
+          "solution": "2 trăm × 4 = 8 trăm; 200 × 4 = 800."
+        },
+        {
+          "id": "VBT.36.2.89.2.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "200 × 3 = ?",
+          "answer": 600,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "200×3 = 600.",
+          "check": {
+            "op": "expression",
+            "expression": "200×3"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.2.2",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "500 × 2 = ?",
+          "answer": 1000,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "500×2 = 1000.",
+          "check": {
+            "op": "expression",
+            "expression": "500×2"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.2.3",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "300 × 2 = ?",
+          "answer": 600,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "300×2 = 600.",
+          "check": {
+            "op": "expression",
+            "expression": "300×2"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.2.4",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 2,
+          "part": "4",
+          "kind": "number",
+          "prompt": "600 × 1 = ?",
+          "answer": 600,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "600×1 = 600.",
+          "check": {
+            "op": "expression",
+            "expression": "600×1"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.3.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "steps",
+          "prompt": "Đảo có 420 con cừu, mỗi năm tăng 180 con. Sau 2 năm có bao nhiêu con?",
+          "answer": {
+            "intermediate": 360,
+            "final": 780,
+            "unit": "con"
+          },
+          "hint": "420 + 180 × 2",
+          "solution": "180 × 2 = 360 con tăng thêm; 420 + 360 = 780 con.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "180×2",
+              "420+360"
+            ]
+          },
+          "visual": {
+            "type": "equal_groups",
+            "initial": 420,
+            "groups": 2,
+            "each": 180
+          }
+        },
+        {
+          "id": "VBT.36.2.89.4.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "steps",
+          "prompt": "1 kg bột mì, dùng làm 3 bánh, mỗi bánh 200 g. Còn bao nhiêu gam?",
+          "answer": {
+            "intermediate": 600,
+            "final": 400,
+            "unit": "g"
+          },
+          "hint": "1 000 − 3 × 200",
+          "solution": "1 kg = 1000 g; 200 × 3 = 600 g; 1000 − 600 = 400 g.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "200×3",
+              "1000−600"
+            ]
+          },
+          "visual": {
+            "type": "equal_groups",
+            "initial": {
+              "value": 1,
+              "unit": "kg"
+            },
+            "groups": 3,
+            "each": 200,
+            "unit": "g"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.5.mau",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 5,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Nhẩm 120 × 2.",
+          "answer": null,
+          "hint": "Quan sát mẫu, rồi thực hiện tương tự.",
+          "solution": "12 chục × 2 = 24 chục; 120 × 2 = 240."
+        },
+        {
+          "id": "VBT.36.2.89.5.1",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 5,
+          "part": "1",
+          "kind": "number",
+          "prompt": "210 × 3 = ?",
+          "answer": 630,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "210×3 = 630.",
+          "check": {
+            "op": "expression",
+            "expression": "210×3"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.5.2",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 5,
+          "part": "2",
+          "kind": "number",
+          "prompt": "340 × 2 = ?",
+          "answer": 680,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "340×2 = 680.",
+          "check": {
+            "op": "expression",
+            "expression": "340×2"
+          }
+        },
+        {
+          "id": "VBT.36.2.89.5.3",
+          "book": "VBT",
+          "lesson": 36,
+          "period": 2,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "T2",
+          "exercise": 5,
+          "part": "3",
+          "kind": "number",
+          "prompt": "110 × 4 = ?",
+          "answer": 440,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "110×4 = 440.",
+          "check": {
+            "op": "expression",
+            "expression": "110×4"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 37,
+      "title": "Chia số có ba chữ số cho số có một chữ số",
+      "items": [
+        {
+          "id": "VBT.37.1.90.1.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "375 : 3",
+          "answer": {
+            "quotient": 125,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "3 : 3 được 1, dư 0; 7 : 3 được 2, dư 1; 15 : 3 được 5, dư 0. 375 = 3 × 125 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 375,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 7,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 15,
+                "quotientDigit": 5,
+                "product": 15,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              375,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.1.90.1.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "448 : 2",
+          "answer": {
+            "quotient": 224,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "4 : 2 được 2, dư 0; 4 : 2 được 2, dư 0; 8 : 2 được 4, dư 0. 448 = 2 × 224 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 448,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 4,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 8,
+                "quotientDigit": 4,
+                "product": 8,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              448,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.1.90.1.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "627 : 4",
+          "answer": {
+            "quotient": 156,
+            "remainder": 3
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 4 được 1, dư 2; 22 : 4 được 5, dư 2; 27 : 4 được 6, dư 3. 627 = 4 × 156 + 3.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 627,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 22,
+                "quotientDigit": 5,
+                "product": 20,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 27,
+                "quotientDigit": 6,
+                "product": 24,
+                "remainder": 3
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              627,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.1.90.2.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Thuyền phó có 548 đồng vàng, gấp 2 lần thuyền trưởng. Thuyền trưởng có bao nhiêu đồng?",
+          "answer": 274,
+          "hint": "548 : 2",
+          "solution": "548:2 = 274 đồng vàng.",
+          "check": {
+            "op": "expression",
+            "expression": "548:2"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "total": 548,
+            "multiple": 2,
+            "labels": [
+              "Thuyền trưởng",
+              "Thuyền phó"
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.1.90.3.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "124 giờ giảm 4 lần được bao nhiêu giờ?",
+          "answer": 31,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "124:4 = 31 giờ.",
+          "check": {
+            "op": "expression",
+            "expression": "124:4"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 124,
+            "op": ":",
+            "factor": 4,
+            "unit": "giờ"
+          }
+        },
+        {
+          "id": "VBT.37.1.90.3.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "702 dm giảm 9 lần được bao nhiêu dm?",
+          "answer": 78,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "702:9 = 78 dm.",
+          "check": {
+            "op": "expression",
+            "expression": "702:9"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 702,
+            "op": ":",
+            "factor": 9,
+            "unit": "dm"
+          }
+        },
+        {
+          "id": "VBT.37.1.90.3.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "384 kg giảm 6 lần được bao nhiêu kg?",
+          "answer": 64,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "384:6 = 64 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "384:6"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 384,
+            "op": ":",
+            "factor": 6,
+            "unit": "kg"
+          }
+        },
+        {
+          "id": "VBT.37.1.90.3.4",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "343 l giảm 7 lần được bao nhiêu l?",
+          "answer": 49,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "343:7 = 49 l.",
+          "check": {
+            "op": "expression",
+            "expression": "343:7"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 343,
+            "op": ":",
+            "factor": 7,
+            "unit": "l"
+          }
+        },
+        {
+          "id": "VBT.37.1.91.4.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 1,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Dùng 4 số khác nhau trong 2, 4, 5, 124, 155 để lập hai phép chia bằng nhau. Số chia cuối có thể là những số nào?",
+          "answer": "4 hoặc 5",
+          "hint": "124 : 4 = 155 : 5 = 31.",
+          "solution": "124 : 4 = 155 : 5 = 31. Đổi vị trí hai vế, số cuối là 4 hoặc 5.",
+          "visual": {
+            "type": "equal_quotients",
+            "options": [
+              "2 hoặc 4",
+              "4 hoặc 5",
+              "2 hoặc 5",
+              "124 hoặc 155"
+            ],
+            "numbers": [
+              2,
+              4,
+              5,
+              124,
+              155
+            ],
+            "template": "? : ? = ? : ?",
+            "useEachOnce": true
+          },
+          "check": {
+            "op": "equal_quotient_last",
+            "numbers": [
+              2,
+              4,
+              5,
+              124,
+              155
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.2.91.1.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "250 : 2",
+          "answer": {
+            "quotient": 125,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "2 : 2 được 1, dư 0; 5 : 2 được 2, dư 1; 10 : 2 được 5, dư 0. 250 = 2 × 125 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 250,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 2,
+                "quotientDigit": 1,
+                "product": 2,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 5,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 10,
+                "quotientDigit": 5,
+                "product": 10,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              250,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.2.91.1.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "407 : 4",
+          "answer": {
+            "quotient": 101,
+            "remainder": 3
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "4 : 4 được 1, dư 0; 0 : 4 được 0, dư 0; 7 : 4 được 1, dư 3. 407 = 4 × 101 + 3.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 407,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 0,
+                "quotientDigit": 0,
+                "product": 0,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 3
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              407,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.2.91.1.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "210 : 7",
+          "answer": {
+            "quotient": 30,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "21 : 7 được 3, dư 0; 0 : 7 được 0, dư 0. 210 = 7 × 30 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 210,
+            "divisor": 7,
+            "steps": [
+              {
+                "partialDividend": 21,
+                "quotientDigit": 3,
+                "product": 21,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 0,
+                "quotientDigit": 0,
+                "product": 0,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              210,
+              7
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.2.91.2.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Hôm qua bán 450 bánh, hôm nay giảm 5 lần. Hôm nay bán bao nhiêu bánh?",
+          "answer": 90,
+          "hint": "450 : 5",
+          "solution": "450:5 = 90 bánh.",
+          "check": {
+            "op": "expression",
+            "expression": "450:5"
+          }
+        },
+        {
+          "id": "VBT.37.2.91.3.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "240 : 4 = 6 (dư 0)",
+          "answer": "Sai",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "240 : 4 = 60.",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 240,
+            "divisor": 4,
+            "shown": {
+              "quotient": 6,
+              "remainder": 0
+            },
+            "writtenRows": [
+              "24",
+              "00",
+              "0",
+              "0"
+            ]
+          },
+          "check": {
+            "op": "division_truth",
+            "args": [
+              240,
+              4
+            ],
+            "shown": {
+              "quotient": 6,
+              "remainder": 0
+            }
+          }
+        },
+        {
+          "id": "VBT.37.2.91.3.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "425 : 6 = 70 (dư 5)",
+          "answer": "Đúng",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "425 : 6 = 70 dư 5.",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 425,
+            "divisor": 6,
+            "shown": {
+              "quotient": 70,
+              "remainder": 5
+            },
+            "writtenRows": [
+              "42",
+              "05",
+              "0",
+              "5"
+            ]
+          },
+          "check": {
+            "op": "division_truth",
+            "args": [
+              425,
+              6
+            ],
+            "shown": {
+              "quotient": 70,
+              "remainder": 5
+            }
+          }
+        },
+        {
+          "id": "VBT.37.2.92.3.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T2",
+          "exercise": 3,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "812 : 8 = 104",
+          "answer": "Sai",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "812 : 8 = 101 dư 4.",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 812,
+            "divisor": 8,
+            "shown": {
+              "quotient": 104,
+              "remainder": 0
+            },
+            "writtenRows": [
+              "8",
+              "01",
+              "0",
+              "12",
+              "12",
+              "0"
+            ]
+          },
+          "check": {
+            "op": "division_truth",
+            "args": [
+              812,
+              8
+            ],
+            "shown": {
+              "quotient": 104,
+              "remainder": 0
+            }
+          },
+          "legacyId": "VBT.37.2.91.3.3"
+        },
+        {
+          "id": "VBT.37.2.92.3.4",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T2",
+          "exercise": 3,
+          "part": "4",
+          "kind": "choice",
+          "prompt": "354 : 5 = 7 (dư 4)",
+          "answer": "Sai",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "354 : 5 = 70 dư 4.",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 354,
+            "divisor": 5,
+            "shown": {
+              "quotient": 7,
+              "remainder": 4
+            },
+            "writtenRows": [
+              "35",
+              "04"
+            ]
+          },
+          "check": {
+            "op": "division_truth",
+            "args": [
+              354,
+              5
+            ],
+            "shown": {
+              "quotient": 7,
+              "remainder": 4
+            }
+          },
+          "legacyId": "VBT.37.2.91.3.4"
+        },
+        {
+          "id": "VBT.37.2.92.4.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 2,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Dựa vào các hình mẫu, tìm số ở tâm hình cuối.",
+          "answer": 440,
+          "hint": "Một vuông = 10; một tròn = 100.",
+          "solution": "Một vuông: 40 : 4 = 10. Một tròn: 600 : 6 = 100. Bốn vuông và bốn tròn: 4 × 10 + 4 × 100 = 440.",
+          "visual": {
+            "type": "shape_values",
+            "examples": [
+              {
+                "squares": 4,
+                "circles": 0,
+                "total": 40
+              },
+              {
+                "squares": 0,
+                "circles": 6,
+                "total": 600
+              },
+              {
+                "squares": 4,
+                "circles": 2,
+                "total": 240
+              }
+            ],
+            "target": {
+              "squares": 4,
+              "circles": 4
+            },
+            "options": [
+              80,
+              800,
+              400,
+              440
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "40:4×4+600:6×4"
+          }
+        },
+        {
+          "id": "VBT.37.3.92.1.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "317 : 3",
+          "answer": {
+            "quotient": 105,
+            "remainder": 2
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "3 : 3 được 1, dư 0; 1 : 3 được 0, dư 1; 17 : 3 được 5, dư 2. 317 = 3 × 105 + 2.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 317,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 1,
+                "quotientDigit": 0,
+                "product": 0,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 17,
+                "quotientDigit": 5,
+                "product": 15,
+                "remainder": 2
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              317,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.3.92.1.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "625 : 5",
+          "answer": {
+            "quotient": 125,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 5 được 1, dư 1; 12 : 5 được 2, dư 2; 25 : 5 được 5, dư 0. 625 = 5 × 125 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 625,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 12,
+                "quotientDigit": 2,
+                "product": 10,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 25,
+                "quotientDigit": 5,
+                "product": 25,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              625,
+              5
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.3.92.1.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "125 : 6",
+          "answer": {
+            "quotient": 20,
+            "remainder": 5
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "12 : 6 được 2, dư 0; 5 : 6 được 0, dư 5. 125 = 6 × 20 + 5.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 125,
+            "divisor": 6,
+            "steps": [
+              {
+                "partialDividend": 12,
+                "quotientDigit": 2,
+                "product": 12,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 5,
+                "quotientDigit": 0,
+                "product": 0,
+                "remainder": 5
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              125,
+              6
+            ]
+          }
+        },
+        {
+          "id": "VBT.37.3.92.2.mau",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 2,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Nhẩm 240 : 4.",
+          "answer": null,
+          "hint": "Quan sát mẫu, rồi thực hiện tương tự.",
+          "solution": "24 chục : 4 = 6 chục; 240 : 4 = 60."
+        },
+        {
+          "id": "VBT.37.3.92.2.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "270 : 3 = ?",
+          "answer": 90,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "270:3 = 90.",
+          "check": {
+            "op": "expression",
+            "expression": "270:3"
+          }
+        },
+        {
+          "id": "VBT.37.3.92.2.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "450 : 9 = ?",
+          "answer": 50,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "450:9 = 50.",
+          "check": {
+            "op": "expression",
+            "expression": "450:9"
+          }
+        },
+        {
+          "id": "VBT.37.3.92.2.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "T3",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "360 : 6 = ?",
+          "answer": 60,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "360:6 = 60.",
+          "check": {
+            "op": "expression",
+            "expression": "360:6"
+          }
+        },
+        {
+          "id": "VBT.37.3.93.3.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "930 ml mật ong chia đều vào 3 hũ. Mỗi hũ có bao nhiêu ml?",
+          "answer": 310,
+          "hint": "930 : 3",
+          "solution": "930:3 = 310 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "930:3"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "total": 930,
+            "groups": 3,
+            "unit": "ml"
+          }
+        },
+        {
+          "id": "VBT.37.3.93.4.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Quan sát điểm của ba vận động viên A, B, C. C nhận được bao nhiêu điểm?",
+          "answer": 400,
+          "hint": "Vòng ngoài 100; vòng trong 150.",
+          "solution": "Vòng ngoài: 300 : 3 = 100 điểm. Vòng trong: 350 − 2 × 100 = 150 điểm. C: 100 + 2 × 150 = 400 điểm.",
+          "visual": {
+            "type": "target_score",
+            "players": [
+              {
+                "name": "A",
+                "zones": [
+                  "outer",
+                  "outer",
+                  "outer"
+                ],
+                "score": 300
+              },
+              {
+                "name": "B",
+                "zones": [
+                  "outer",
+                  "inner",
+                  "outer"
+                ],
+                "score": 350
+              },
+              {
+                "name": "C",
+                "zones": [
+                  "outer",
+                  "inner",
+                  "inner"
+                ],
+                "score": null
+              }
+            ],
+            "options": [
+              500,
+              450,
+              400
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "300:3+2×(350−2×(300:3))"
+          }
+        },
+        {
+          "id": "VBT.37.3.93.5.1",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 5,
+          "part": "1",
+          "kind": "number",
+          "prompt": "480 : 3 = ?",
+          "answer": 160,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "480:3 = 160.",
+          "check": {
+            "op": "expression",
+            "expression": "480:3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 480,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 5
+              },
+              {
+                "op": ":",
+                "value": 2
+              },
+              {
+                "op": "×",
+                "value": 8
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.37.3.93.5.2",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 5,
+          "part": "2",
+          "kind": "number",
+          "prompt": "160 : 4 = ?",
+          "answer": 40,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "160:4 = 40.",
+          "check": {
+            "op": "expression",
+            "expression": "160:4"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 480,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 5
+              },
+              {
+                "op": ":",
+                "value": 2
+              },
+              {
+                "op": "×",
+                "value": 8
+              }
+            ],
+            "activeStep": 1
+          },
+          "prerequisite": "VBT.37.3.93.5.1"
+        },
+        {
+          "id": "VBT.37.3.93.5.3",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 5,
+          "part": "3",
+          "kind": "number",
+          "prompt": "40 × 5 = ?",
+          "answer": 200,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "40×5 = 200.",
+          "check": {
+            "op": "expression",
+            "expression": "40×5"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 480,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 5
+              },
+              {
+                "op": ":",
+                "value": 2
+              },
+              {
+                "op": "×",
+                "value": 8
+              }
+            ],
+            "activeStep": 2
+          },
+          "prerequisite": "VBT.37.3.93.5.2"
+        },
+        {
+          "id": "VBT.37.3.93.5.4",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 5,
+          "part": "4",
+          "kind": "number",
+          "prompt": "200 : 2 = ?",
+          "answer": 100,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "200:2 = 100.",
+          "check": {
+            "op": "expression",
+            "expression": "200:2"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 480,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 5
+              },
+              {
+                "op": ":",
+                "value": 2
+              },
+              {
+                "op": "×",
+                "value": 8
+              }
+            ],
+            "activeStep": 3
+          },
+          "prerequisite": "VBT.37.3.93.5.3"
+        },
+        {
+          "id": "VBT.37.3.93.5.5",
+          "book": "VBT",
+          "lesson": 37,
+          "period": 3,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "T3",
+          "exercise": 5,
+          "part": "5",
+          "kind": "number",
+          "prompt": "100 × 8 = ?",
+          "answer": 800,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "100×8 = 800.",
+          "check": {
+            "op": "expression",
+            "expression": "100×8"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 480,
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 5
+              },
+              {
+                "op": ":",
+                "value": 2
+              },
+              {
+                "op": "×",
+                "value": 8
+              }
+            ],
+            "activeStep": 4
+          },
+          "prerequisite": "VBT.37.3.93.5.4"
+        }
+      ]
+    }
+  ]
+}
