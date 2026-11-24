@@ -1,0 +1,3459 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "SGK",
+    "title": "Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      118,
+      121
+    ],
+    "pdfPages": [
+      119,
+      122
+    ],
+    "sha256": "ca5720f69357ca5968fc8e96cc4961328a316ba680936548d2eeaae936a3fbcf"
+  },
+  "notes": "Chuyển thể theo SGK. Tọa độ hình học dựa trên ô lưới; góc vẽ hình tròn mang tính dựng lại. Chấm hình theo quan hệ hình học và dữ kiện, không theo pixel.",
+  "lessons": [
+    {
+      "lesson": 43,
+      "title": "Ôn tập hình học và đo lường",
+      "items": [
+        {
+          "id": "SGK.43.118.LT1.1.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Quan sát hình, đếm tất cả các góc vuông.",
+          "answer": 6,
+          "hint": "Quan sát các đường thẳng cắt nhau vuông góc ở K và I.",
+          "solution": "Có 4 góc vuông tại K và 2 góc vuông tại I. Tổng là 6.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 12,
+              "height": 10,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_right_angles",
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.1.b",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Có bao nhiêu góc không vuông có đỉnh A?",
+          "answer": 3,
+          "hint": "Tại A có ba tia AB, AK và AE; xét từng cặp tia.",
+          "solution": "Các góc BAK, KAE và BAE đều không vuông; có 3 góc.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 12,
+              "height": 10,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_nonright_at",
+            "vertex": "A",
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.1.c1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "c1",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn AC.",
+          "answer": "K",
+          "hint": "Trung điểm nằm trên đoạn thẳng và cách đều hai đầu.",
+          "solution": "Trung điểm AC là K.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 12,
+              "height": 10,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ],
+            "highlightSegment": [
+              "A",
+              "C"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "A",
+              "C"
+            ],
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.1.c2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "c2",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn ED.",
+          "answer": "I",
+          "hint": "Trung điểm nằm trên đoạn thẳng và cách đều hai đầu.",
+          "solution": "Trung điểm ED là I.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 12,
+              "height": 10,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "I"
+              ],
+              [
+                "I",
+                "E"
+              ],
+              [
+                "E",
+                "A"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ]
+            ],
+            "highlightSegment": [
+              "E",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "E",
+              "D"
+            ],
+            "points": {
+              "A": [
+                3,
+                6
+              ],
+              "B": [
+                6,
+                1
+              ],
+              "C": [
+                9,
+                6
+              ],
+              "D": [
+                8,
+                9
+              ],
+              "E": [
+                4,
+                9
+              ],
+              "I": [
+                6,
+                9
+              ],
+              "K": [
+                6,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.2.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "draw",
+          "prompt": "Vẽ lại tam giác theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Đếm ô lớn và nối lần lượt các đỉnh giống mẫu.",
+          "solution": "Đáy 4 ô lớn, chiều cao 3 ô lớn, đỉnh trên lệch 1 ô lớn so với đầu trái của đáy.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "minorDivisions": 4,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.2.b",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b",
+          "kind": "draw",
+          "prompt": "Vẽ lại hình chữ nhật theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Đếm ô lớn và nối lần lượt các đỉnh giống mẫu.",
+          "solution": "Rộng 4 ô lớn, cao 2 ô lớn.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "minorDivisions": 4,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.2.c",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "c",
+          "kind": "draw",
+          "prompt": "Vẽ lại hình vuông theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Đếm ô lớn và nối lần lượt các đỉnh giống mẫu.",
+          "solution": "Mỗi cạnh 3 ô lớn.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "minorDivisions": 4,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.3.a1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a1",
+          "kind": "segment_multi",
+          "prompt": "Chọn tất cả đường kính được vẽ trong hình tròn.",
+          "answer": [
+            "AB",
+            "CD"
+          ],
+          "hint": "Đường kính đi qua tâm, hai đầu nằm trên đường tròn.",
+          "solution": "AB và CD là hai đường kính.",
+          "visual": {
+            "type": "circle_diagram",
+            "center": "O",
+            "pointAnglesDeg": {
+              "A": -90,
+              "B": 90,
+              "C": -55,
+              "D": 125,
+              "M": 165,
+              "N": 50
+            },
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "N"
+              ],
+              [
+                "A",
+                "M"
+              ]
+            ],
+            "angleNote": "Góc vẽ xấp xỉ theo hình in, chấm theo các đoạn được vẽ, không theo tọa độ pixel.",
+            "options": [
+              "AB",
+              "CD",
+              "AM",
+              "ON",
+              "OA",
+              "OB",
+              "OC",
+              "OD"
+            ]
+          },
+          "check": {
+            "op": "circle_diameters",
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "N"
+              ],
+              [
+                "A",
+                "M"
+              ]
+            ],
+            "center": "O",
+            "angles": {
+              "A": -90,
+              "B": 90,
+              "C": -55,
+              "D": 125,
+              "M": 165,
+              "N": 50
+            }
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.3.a2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a2",
+          "kind": "segment_multi",
+          "prompt": "Chọn tất cả bán kính được vẽ.",
+          "answer": [
+            "OA",
+            "OB",
+            "OC",
+            "OD",
+            "ON"
+          ],
+          "hint": "Bán kính nối tâm O với một điểm trên đường tròn.",
+          "solution": "OA, OB, OC, OD, ON là bán kính. AM là dây cung; OM không được vẽ.",
+          "visual": {
+            "type": "circle_diagram",
+            "center": "O",
+            "pointAnglesDeg": {
+              "A": -90,
+              "B": 90,
+              "C": -55,
+              "D": 125,
+              "M": 165,
+              "N": 50
+            },
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "N"
+              ],
+              [
+                "A",
+                "M"
+              ]
+            ],
+            "angleNote": "Góc vẽ xấp xỉ theo hình in, chấm theo các đoạn được vẽ, không theo tọa độ pixel.",
+            "options": [
+              "OA",
+              "OB",
+              "OC",
+              "OD",
+              "ON",
+              "OM",
+              "AB",
+              "CD",
+              "AM"
+            ]
+          },
+          "check": {
+            "op": "circle_radii",
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "N"
+              ],
+              [
+                "A",
+                "M"
+              ]
+            ],
+            "center": "O"
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.3.b1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "Đế của hình ghép gồm bao nhiêu khối lập phương?",
+          "answer": 16,
+          "hint": "Đếm 4 khối mỗi hàng và 4 hàng.",
+          "solution": "4 × 4 = 16 khối lập phương.",
+          "visual": {
+            "type": "solid_stack",
+            "base": {
+              "shape": "cube",
+              "dimensions": [
+                4,
+                4,
+                1
+              ],
+              "checkerColors": [
+                "purple",
+                "yellow"
+              ]
+            },
+            "above": [
+              {
+                "shape": "cylinder",
+                "color": "blue",
+                "size": "wide"
+              },
+              {
+                "shape": "cylinder",
+                "color": "red",
+                "size": "medium"
+              },
+              {
+                "shape": "cylinder",
+                "color": "yellow",
+                "size": "thin"
+              }
+            ]
+          },
+          "check": {
+            "op": "solid_cubes",
+            "dimensions": [
+              4,
+              4,
+              1
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.3.b2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "Hình ghép gồm bao nhiêu khối trụ?",
+          "answer": 3,
+          "hint": "Đếm các khối trụ xanh, đỏ và vàng.",
+          "solution": "Có 3 khối trụ.",
+          "visual": {
+            "type": "solid_stack",
+            "base": {
+              "shape": "cube",
+              "dimensions": [
+                4,
+                4,
+                1
+              ],
+              "checkerColors": [
+                "purple",
+                "yellow"
+              ]
+            },
+            "above": [
+              {
+                "shape": "cylinder",
+                "color": "blue",
+                "size": "wide"
+              },
+              {
+                "shape": "cylinder",
+                "color": "red",
+                "size": "medium"
+              },
+              {
+                "shape": "cylinder",
+                "color": "yellow",
+                "size": "thin"
+              }
+            ]
+          },
+          "check": {
+            "op": "solid_count",
+            "shapes": [
+              "cylinder",
+              "cylinder",
+              "cylinder"
+            ],
+            "target": "cylinder"
+          }
+        },
+        {
+          "id": "SGK.43.118.LT1.4.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 118,
+          "pdfPage": 119,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Khối hộp 3 × 2 × 2 được ghép từ các khối lập phương. Sơn tất cả mặt ngoài. Bao nhiêu khối nhỏ được sơn đúng 3 mặt?",
+          "answer": 8,
+          "hint": "Chỉ các khối ở góc ngoài có ba mặt được sơn.",
+          "solution": "Khối hộp có 8 góc; có 8 khối nhỏ được sơn 3 mặt.",
+          "visual": {
+            "type": "painted_cuboid",
+            "dimensions": [
+              3,
+              2,
+              2
+            ],
+            "paintOuterFaces": true
+          },
+          "check": {
+            "op": "painted_cube_count",
+            "dimensions": [
+              3,
+              2,
+              2
+            ],
+            "paintedFaces": 3
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.1.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Đường gấp khúc ABCD gồm ba đoạn, mỗi đoạn dài 28 mm. Dài bao nhiêu mm?",
+          "answer": 84,
+          "hint": "Cộng độ dài ba đoạn.",
+          "solution": "28 + 28 + 28 = 84 mm.",
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 28
+              },
+              {
+                "name": "BC",
+                "length": 28
+              },
+              {
+                "name": "CD",
+                "length": 28
+              }
+            ],
+            "unit": "mm"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "28+28+28"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.1.b",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Cân thăng bằng. Hai quả cân 500 g ở một đĩa; quả bưởi và quả cân 100 g ở đĩa kia. Bưởi nặng bao nhiêu gam?",
+          "answer": 900,
+          "hint": "Tính tổng ở đĩa trái rồi trừ 100 g.",
+          "solution": "500 + 500 − 100 = 900 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              500,
+              500
+            ],
+            "rightWeightsG": [
+              100
+            ],
+            "rightObjects": [
+              "Bưởi"
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "500+500−100"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.2.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Chọn số đo thích hợp cho độ dày quyển Toán 3 tập một.",
+          "answer": "5 mm",
+          "hint": "Xét đơn vị và mức độ lớn nhỏ thực tế.",
+          "solution": "Trong các lựa chọn, 5 mm phù hợp nhất.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "5 mm",
+              "5 cm",
+              "5 dm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.2.b",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "Chọn số đo thích hợp cho khối lượng chiếc bút mực.",
+          "answer": "20 g",
+          "hint": "Xét đơn vị và mức độ lớn nhỏ thực tế.",
+          "solution": "Trong các lựa chọn, 20 g phù hợp nhất.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "2 g",
+              "2 kg",
+              "20 g"
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.2.c",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "c",
+          "kind": "choice",
+          "prompt": "Chọn số đo thích hợp cho dung tích lọ thuốc nhỏ mắt.",
+          "answer": "15 ml",
+          "hint": "Xét đơn vị và mức độ lớn nhỏ thực tế.",
+          "solution": "Trong các lựa chọn, 15 ml phù hợp nhất.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "15 ml",
+              "15 l",
+              "150 ml"
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.2.d",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "d",
+          "kind": "choice",
+          "prompt": "Chọn số đo thích hợp cho nhiệt độ cơ thể người bình thường (giá trị gần đúng theo bài học).",
+          "answer": "37 °C",
+          "hint": "Xét đơn vị và mức độ lớn nhỏ thực tế.",
+          "solution": "SGK dùng mức khoảng 37 °C. Đây là câu nhận biết đơn vị, không phải tiêu chuẩn chẩn đoán bệnh.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "35 °C",
+              "37 °C",
+              "38 °C"
+            ]
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.a1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "480 + 120 = ? (mm)",
+          "answer": 600,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "480 + 120 = 600 mm.",
+          "visual": {
+            "type": "expression",
+            "expression": "480 + 120"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "480 + 120"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.a2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "545 − 45 = ? (mm)",
+          "answer": 500,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "545 − 45 = 500 mm.",
+          "visual": {
+            "type": "expression",
+            "expression": "545 − 45"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "545 − 45"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.a3",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "840 : 3 = ? (mm)",
+          "answer": 280,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "840 : 3 = 280 mm.",
+          "visual": {
+            "type": "expression",
+            "expression": "840 : 3"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "840 : 3"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.b1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "465 + 340 = ? (g)",
+          "answer": 805,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "465 + 340 = 805 g.",
+          "visual": {
+            "type": "expression",
+            "expression": "465 + 340"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "465 + 340"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.b2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "200 × 5 = ? (g)",
+          "answer": 1000,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "200 × 5 = 1000 g.",
+          "visual": {
+            "type": "expression",
+            "expression": "200 × 5"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "200 × 5"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.b3",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b3",
+          "kind": "number",
+          "prompt": "900 : 6 = ? (g)",
+          "answer": 150,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "900 : 6 = 150 g.",
+          "visual": {
+            "type": "expression",
+            "expression": "900 : 6"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "900 : 6"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.c1",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "c1",
+          "kind": "number",
+          "prompt": "500 + 156 = ? (ml)",
+          "answer": 656,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "500 + 156 = 656 ml.",
+          "visual": {
+            "type": "expression",
+            "expression": "500 + 156"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "500 + 156"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.c2",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "c2",
+          "kind": "number",
+          "prompt": "1000 − 500 = ? (ml)",
+          "answer": 500,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "1000 − 500 = 500 ml.",
+          "visual": {
+            "type": "expression",
+            "expression": "1000 − 500"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "1000 − 500"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.3.c3",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "c3",
+          "kind": "number",
+          "prompt": "250 × 3 = ? (ml)",
+          "answer": 750,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "250 × 3 = 750 ml.",
+          "visual": {
+            "type": "expression",
+            "expression": "250 × 3"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "250 × 3"
+          }
+        },
+        {
+          "id": "SGK.43.119.LT2.4.a",
+          "book": "SGK",
+          "lesson": 43,
+          "page": 119,
+          "pdfPage": 120,
+          "section": "LT2",
+          "exercise": 4,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Mỗi gói mì tôm nặng 80 g, một hộp sữa nặng 455 g. Ba gói mì tôm và một hộp sữa nặng bao nhiêu gam?",
+          "answer": {
+            "intermediate": 240,
+            "final": 695,
+            "unit": "g"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "80 × 3 = 240 g; 240 + 455 = 695 g.",
+          "visual": {
+            "type": "equal_groups",
+            "groups": [
+              {
+                "name": "Gói mì",
+                "count": 3,
+                "each": 80
+              },
+              {
+                "name": "Hộp sữa",
+                "count": 1,
+                "each": 455
+              }
+            ],
+            "unit": "g"
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "80×3",
+              "240+455"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 44,
+      "title": "Ôn tập chung",
+      "items": [
+        {
+          "id": "SGK.44.120.LT1.1.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "multiplication",
+          "prompt": "213 × 3",
+          "answer": 639,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "3 × 3 = 9; viết 9. 1 × 3 = 3; viết 3. 2 × 3 = 6; viết 6. Kết quả: 639.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 213,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 3,
+                "resultDigit": 3,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              213,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.1.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "multiplication",
+          "prompt": "217 × 4",
+          "answer": 868,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "7 × 4 = 28; viết 8, nhớ 2. 1 × 4 + 2 = 6; viết 6. 2 × 4 = 8; viết 8. Kết quả: 868.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 217,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 28,
+                "resultDigit": 8,
+                "carryOut": 2
+              },
+              {
+                "digit": 1,
+                "carryIn": 2,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              217,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.1.c",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "c",
+          "kind": "multiplication",
+          "prompt": "161 × 5",
+          "answer": 805,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "1 × 5 = 5; viết 5. 6 × 5 = 30; viết 0, nhớ 3. 1 × 5 + 3 = 8; viết 8. Kết quả: 805.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 161,
+            "multiplier": 5,
+            "steps": [
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 5,
+                "resultDigit": 5,
+                "carryOut": 0
+              },
+              {
+                "digit": 6,
+                "carryIn": 0,
+                "product": 30,
+                "resultDigit": 0,
+                "carryOut": 3
+              },
+              {
+                "digit": 1,
+                "carryIn": 3,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              161,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.2.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "division",
+          "prompt": "69 : 3",
+          "answer": {
+            "quotient": 23,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "6 : 3 được 2, dư 0; 9 : 3 được 3, dư 0. Kiểm tra: 3 × 23 + 0 = 69.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 69,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 9,
+                "quotientDigit": 3,
+                "product": 9,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              69,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.2.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b",
+          "kind": "division",
+          "prompt": "68 : 4",
+          "answer": {
+            "quotient": 17,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "6 : 4 được 1, dư 2; 28 : 4 được 7, dư 0. Kiểm tra: 4 × 17 + 0 = 68.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 68,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 28,
+                "quotientDigit": 7,
+                "product": 28,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              68,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.2.c",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "c",
+          "kind": "division",
+          "prompt": "80 : 5",
+          "answer": {
+            "quotient": 16,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "8 : 5 được 1, dư 3; 30 : 5 được 6, dư 0. Kiểm tra: 5 × 16 + 0 = 80.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 80,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 3
+              },
+              {
+                "partialDividend": 30,
+                "quotientDigit": 6,
+                "product": 30,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              80,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.a1",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a1",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn BC.",
+          "answer": "M",
+          "hint": "Đếm ô để tìm điểm cách đều hai đầu đoạn thẳng.",
+          "solution": "Trung điểm BC là M.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ],
+            "highlightSegment": [
+              "B",
+              "C"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "B",
+              "C"
+            ],
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.a2",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a2",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn ED.",
+          "answer": "N",
+          "hint": "Đếm ô để tìm điểm cách đều hai đầu đoạn thẳng.",
+          "solution": "Trung điểm ED là N.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ],
+            "highlightSegment": [
+              "E",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "E",
+              "D"
+            ],
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.a3",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a3",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn BM.",
+          "answer": "Q",
+          "hint": "Đếm ô để tìm điểm cách đều hai đầu đoạn thẳng.",
+          "solution": "Trung điểm BM là Q.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ],
+            "highlightSegment": [
+              "B",
+              "M"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "B",
+              "M"
+            ],
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.a4",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a4",
+          "kind": "point_select",
+          "prompt": "Chọn trung điểm của đoạn ND.",
+          "answer": "P",
+          "hint": "Đếm ô để tìm điểm cách đều hai đầu đoạn thẳng.",
+          "solution": "Trung điểm ND là P.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ],
+            "highlightSegment": [
+              "N",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "N",
+              "D"
+            ],
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.b1",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "Có bao nhiêu góc vuông trong hình ngôi nhà?",
+          "answer": 4,
+          "hint": "Quan sát bốn góc của phần hình chữ nhật.",
+          "solution": "Có bốn góc vuông tại B, C, D, E.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_right_angles",
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.3.b2",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "b2",
+          "kind": "angle_multi",
+          "prompt": "Chọn đủ các góc vuông và nêu đỉnh, hai cạnh của từng góc.",
+          "answer": {
+            "angles": [
+              {
+                "vertex": "B",
+                "arms": [
+                  "E",
+                  "C"
+                ]
+              },
+              {
+                "vertex": "C",
+                "arms": [
+                  "B",
+                  "D"
+                ]
+              },
+              {
+                "vertex": "D",
+                "arms": [
+                  "C",
+                  "E"
+                ]
+              },
+              {
+                "vertex": "E",
+                "arms": [
+                  "B",
+                  "D"
+                ]
+              }
+            ],
+            "allowArmOrderSwap": true,
+            "allowCollinearRayLabels": true
+          },
+          "hint": "Đỉnh góc nằm ở nơi hai tia vuông góc gặp nhau.",
+          "solution": "Đỉnh B: BE, BC; C: CB, CD; D: DC, DE; E: EB, ED. Các điểm cùng tia như BQ, BM cũng có thể dùng để gọi cạnh.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 11,
+              "unit": "ô lớn"
+            },
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "right_angle_vertices",
+            "points": {
+              "A": [
+                5,
+                1
+              ],
+              "B": [
+                1,
+                4
+              ],
+              "C": [
+                9,
+                4
+              ],
+              "D": [
+                9,
+                10
+              ],
+              "E": [
+                1,
+                10
+              ],
+              "Q": [
+                3,
+                4
+              ],
+              "M": [
+                5,
+                4
+              ],
+              "N": [
+                5,
+                10
+              ],
+              "P": [
+                7,
+                10
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "Q"
+              ],
+              [
+                "Q",
+                "M"
+              ],
+              [
+                "M",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "E",
+                "N"
+              ],
+              [
+                "N",
+                "P"
+              ],
+              [
+                "P",
+                "D"
+              ],
+              [
+                "D",
+                "C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.4.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "175 + 42 − 75 = ?",
+          "answer": 142,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "175 − 75 + 42 = 100 + 42 = 142. Cũng có thể tính 217 − 75 = 142.",
+          "visual": {
+            "type": "expression",
+            "expression": "175 + 42 − 75"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "175 + 42 − 75"
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.4.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "b",
+          "kind": "number",
+          "prompt": "12 × (12 − 9) = ?",
+          "answer": 36,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "12 × 3 = 36.",
+          "visual": {
+            "type": "expression",
+            "expression": "12 × (12 − 9)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "12 × (12 − 9)"
+          }
+        },
+        {
+          "id": "SGK.44.120.LT1.5.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 120,
+          "pdfPage": 121,
+          "section": "LT1",
+          "exercise": 5,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Cửa hàng có một thùng 100 l nước mắm và 5 can, mỗi can 10 l. Có tất cả bao nhiêu lít?",
+          "answer": {
+            "intermediate": 50,
+            "final": 150,
+            "unit": "l"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "10 × 5 = 50 l; 100 + 50 = 150 l.",
+          "visual": {
+            "type": "equal_groups",
+            "groups": [
+              {
+                "name": "Thùng",
+                "count": 1,
+                "each": 100
+              },
+              {
+                "name": "Can",
+                "count": 5,
+                "each": 10
+              }
+            ],
+            "unit": "l"
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "10×5",
+              "100+50"
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.1.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "multiplication",
+          "prompt": "72 × 3",
+          "answer": 216,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "2 × 3 = 6; viết 6. 7 × 3 = 21; viết 1, nhớ 2. Kết quả: 216.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 72,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 21,
+                "resultDigit": 1,
+                "carryOut": 2
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              72,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.1.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b",
+          "kind": "multiplication",
+          "prompt": "116 × 6",
+          "answer": 696,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "6 × 6 = 36; viết 6, nhớ 3. 1 × 6 + 3 = 9; viết 9. 1 × 6 = 6; viết 6. Kết quả: 696.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 116,
+            "multiplier": 6,
+            "steps": [
+              {
+                "digit": 6,
+                "carryIn": 0,
+                "product": 36,
+                "resultDigit": 6,
+                "carryOut": 3
+              },
+              {
+                "digit": 1,
+                "carryIn": 3,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              116,
+              6
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.1.c",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "c",
+          "kind": "multiplication",
+          "prompt": "106 × 8",
+          "answer": 848,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "6 × 8 = 48; viết 8, nhớ 4. 0 × 8 + 4 = 4; viết 4. 1 × 8 = 8; viết 8. Kết quả: 848.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 106,
+            "multiplier": 8,
+            "steps": [
+              {
+                "digit": 6,
+                "carryIn": 0,
+                "product": 48,
+                "resultDigit": 8,
+                "carryOut": 4
+              },
+              {
+                "digit": 0,
+                "carryIn": 4,
+                "product": 4,
+                "resultDigit": 4,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              106,
+              8
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.2.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "division",
+          "prompt": "963 : 3",
+          "answer": {
+            "quotient": 321,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "9 : 3 được 3, dư 0; 6 : 3 được 2, dư 0; 3 : 3 được 1, dư 0. Kiểm tra: 3 × 321 + 0 = 963.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 963,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 9,
+                "quotientDigit": 3,
+                "product": 9,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              963,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.2.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "b",
+          "kind": "division",
+          "prompt": "265 : 5",
+          "answer": {
+            "quotient": 53,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "26 : 5 được 5, dư 1; 15 : 5 được 3, dư 0. Kiểm tra: 5 × 53 + 0 = 265.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 265,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 26,
+                "quotientDigit": 5,
+                "product": 25,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 15,
+                "quotientDigit": 3,
+                "product": 15,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              265,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.2.c",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "c",
+          "kind": "division",
+          "prompt": "720 : 4",
+          "answer": {
+            "quotient": 180,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "7 : 4 được 1, dư 3; 32 : 4 được 8, dư 0; 0 : 4 được 0, dư 0. Kiểm tra: 4 × 180 + 0 = 720.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 720,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 3
+              },
+              {
+                "partialDividend": 32,
+                "quotientDigit": 8,
+                "product": 32,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 0,
+                "quotientDigit": 0,
+                "product": 0,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              720,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.3.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Đường gấp khúc ABCD có AB = 30 mm, BC = 42 mm, CD = 28 mm. Dài bao nhiêu mm?",
+          "answer": 100,
+          "hint": "Cộng độ dài các đoạn.",
+          "solution": "30 + 42 + 28 = 100 mm.",
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 30
+              },
+              {
+                "name": "BC",
+                "length": 42
+              },
+              {
+                "name": "CD",
+                "length": 28
+              }
+            ],
+            "unit": "mm"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "30+42+28"
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.3.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Túi muối cân bằng với hai quả cân 200 g và một quả cân 100 g. Túi nặng bao nhiêu gam?",
+          "answer": 500,
+          "hint": "Cộng khối lượng các quả cân.",
+          "solution": "200 + 200 + 100 = 500 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              200,
+              200,
+              100
+            ],
+            "rightObjects": [
+              "Túi muối"
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "200+200+100"
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.4.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "96 : 3 × 5 = ?",
+          "answer": 160,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "32 × 5 = 160.",
+          "visual": {
+            "type": "expression",
+            "expression": "96 : 3 × 5"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "96 : 3 × 5"
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.4.b",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 4,
+          "part": "b",
+          "kind": "number",
+          "prompt": "60 : (2 × 3) = ?",
+          "answer": 10,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức tính từ trái sang phải.",
+          "solution": "60 : 6 = 10.",
+          "visual": {
+            "type": "expression",
+            "expression": "60 : (2 × 3)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "60 : (2 × 3)"
+          }
+        },
+        {
+          "id": "SGK.44.121.LT2.5.a",
+          "book": "SGK",
+          "lesson": 44,
+          "page": 121,
+          "pdfPage": 122,
+          "section": "LT2",
+          "exercise": 5,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Tuần đầu, trường góp 20 thùng sách vở và đồ dùng học tập giúp các bạn bị ảnh hưởng bởi lũ lụt. Tuần sau góp gấp 3 lần. Hai tuần góp bao nhiêu thùng?",
+          "answer": {
+            "intermediate": 60,
+            "final": 80,
+            "unit": "thùng"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "20 × 3 = 60 thùng; 20 + 60 = 80 thùng.",
+          "visual": {
+            "type": "bar_multiple",
+            "base": 20,
+            "multiple": 3,
+            "labels": [
+              "Tuần đầu",
+              "Tuần sau"
+            ]
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "20×3",
+              "20+60"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
