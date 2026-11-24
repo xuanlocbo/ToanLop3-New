@@ -6,3 +6,10 @@
 - Trạng thái game, cánh hoa, số lần rơi, cổng đang chờ, bản nháp game lưu trong cùng snapshot SharedPreferences. Lưu mỗi 700 ms khi di chuyển và ngay khi có sự kiện; dừng/lưu khi rời màn hoặc app mất foreground. Câu trả lời đúng, thưởng và mở khóa cổng được commit cùng một lần; bản nháp học thông thường được giữ riêng. Tương thích snapshot phần 7.
 - Kiểm thử JVM AdventureTest: kiểm tra 19 tuyến vượt chướng ngại bằng điều khiển mô phỏng; kiểm tra 76 cổng và đáp án; chạy qua 19 màn và chơi lại; khôi phục snapshot giữa bước nhảy/cổng, thất bại lưu, mã cổng cũ, đáp án sai, phần thưởng, va chạm, chống nhận trùng. Giữ bộ kiểm tra 959 mục hiện có; CI chạy thêm assembleDebug.
 - Chưa xác nhận UI, cảm giác điều khiển đa chạm, kích thước chữ, khôi phục trên thiết bị thật. Phần 9 thực hiện kiểm thử thiết bị/giả lập và đối chiếu trực quan, phần 10 đóng gói bản APK bàn giao.
+
+## Kết quả CI thực tế
+
+- Run 45502905379: mã Java chính biên dịch được, nhưng tải JUnit và org.json từ Maven Central gặp HTTP 429. Không bỏ qua bộ kiểm thử.
+- Điều chỉnh kịch bản thử lưu giữa bước nhảy: tiếp cận mép hồ trước khi nhảy để mô phỏng tuyến đi khả thi, thay vì nhảy quá sớm từ điểm xuất phát.
+- Run 45502988792, commit 23b7284b3ff23723d1dacc74e9e183943ef10554: **success**, CURRICULUM_PREPARED 959, testDebugUnitTest và assembleDebug đều đạt, BUILD SUCCESSFUL. Xem https://github.com/xuanlocbo/ToanLop3-New/actions/runs/45502988792.
+- Chưa kiểm thử giao diện, đa chạm, vòng đời Android trên thiết bị hoặc giả lập. Không phát hành APK cuối ở bước này.
