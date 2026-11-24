@@ -102,6 +102,28 @@ public final class ProgressStore {
         }
         return save(n);
     }
+    /** Station draft is local to the first gate. Legacy snapshots with an already
+     * answered or cleared gate are considered complete, preserving existing play. */
+    public synchronized boolean trailComplete(int lesson){
+        AdventureWorld.State s=adventureState(lesson);
+        return s.gate>0||s.answered||Json.obj(adventure(state,lesson),"trail").optBoolean("complete");
+    }
+    public synchronized String trailDraft(int lesson){
+        return Json.obj(adventure(state,lesson),"trail").optString("draft","");
+    }
+    public synchronized boolean saveTrailDraft(int lesson,String encoded){
+        AdventureWorld.State s=adventureState(lesson);TrailMission m=TrailMission.of(lesson);
+        if(!s.pending||s.gate!=0||trailComplete(lesson)||encoded==null||!encoded.equals(m.encode(m.read(encoded))))return false;
+        JSONObject n=Json.copy(state);JSONObject trail=Json.obj(mutableAdventure(n,lesson),"trail");
+        Json.put(trail,"draft",encoded);Json.put(mutableAdventure(n,lesson),"trail",trail);return save(n);
+    }
+    public synchronized boolean completeTrail(int lesson,String encoded){
+        AdventureWorld.State s=adventureState(lesson);TrailMission m=TrailMission.of(lesson);
+        if(!s.pending||s.gate!=0||trailComplete(lesson)||encoded==null||!encoded.equals(trailDraft(lesson))
+            ||!encoded.equals(m.encode(m.read(encoded)))||!m.solved(m.read(encoded)))return false;
+        JSONObject n=Json.copy(state);JSONObject trail=Json.obj(mutableAdventure(n,lesson),"trail");
+        Json.put(trail,"complete",true);Json.put(mutableAdventure(n,lesson),"trail",trail);return save(n);
+    }
     public synchronized boolean resetAdventure(int lesson){
         AdventurePlan.require(lesson);JSONObject n=Json.copy(state);
         Json.obj(n,"adventures").remove(String.valueOf(lesson));return save(n);
@@ -118,7 +140,7 @@ public final class ProgressStore {
     }
     public synchronized Result submitAdventure(int lesson,int gate,JSONObject draft){
         AdventureWorld.State s=adventureState(lesson);
-        if(!s.pending||s.gate!=gate||s.answered)return new Result(false,false,0);
+        if(!s.pending||s.gate!=gate||s.answered||gate==0&&!trailComplete(lesson))return new Result(false,false,0);
         JSONObject q=curriculum.questions.get(AdventurePlan.questionId(lesson,gate));
         if(q==null||!unlocked(q))return new Result(false,false,0);
         boolean correct=NativeGrader.grade(q,draft);JSONObject n=Json.copy(state);
