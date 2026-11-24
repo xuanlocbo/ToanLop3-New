@@ -1,0 +1,5104 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "VBT",
+    "title": "Vở bài tập Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      106,
+      115
+    ],
+    "pdfPages": [
+      107,
+      116
+    ],
+    "sha256": "cadef7165ad41318d6e93698b49d8f42a1ec909bfed4f22e22c3ad43cf3ce822"
+  },
+  "notes": "Chuyển thể theo PDF gốc, tọa độ lưới được dựng lại, không dùng ảnh nguyên trang. Chấm các phép tính, góc, trung điểm và thao tác.",
+  "lessons": [
+    {
+      "lesson": 42,
+      "title": "Ôn tập biểu thức số",
+      "items": [
+        {
+          "id": "VBT.42.1.106.1.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "527 − 346 + 74 = ?",
+          "answer": 255,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "527 − 346 + 74 = 255",
+          "check": {
+            "op": "expression",
+            "expression": "527 − 346 + 74"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.1.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "72 × 3 : 9 = ?",
+          "answer": 24,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 × 3 : 9 = 24",
+          "check": {
+            "op": "expression",
+            "expression": "72 × 3 : 9"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.1.3",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "28 + 45 − 60 = ?",
+          "answer": 13,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "28 + 45 − 60 = 13",
+          "check": {
+            "op": "expression",
+            "expression": "28 + 45 − 60"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.1.4",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "96 : 6 × 8 = ?",
+          "answer": 128,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "96 : 6 × 8 = 128",
+          "check": {
+            "op": "expression",
+            "expression": "96 : 6 × 8"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.2.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "24 × 3 − 52 = ?",
+          "answer": 20,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "24 × 3 − 52 = 20",
+          "check": {
+            "op": "expression",
+            "expression": "24 × 3 − 52"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.2.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "518 + 70 : 5 = ?",
+          "answer": 532,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "518 + 70 : 5 = 532",
+          "check": {
+            "op": "expression",
+            "expression": "518 + 70 : 5"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.2.3",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "91 : 7 + 69 = ?",
+          "answer": 82,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "91 : 7 + 69 = 82",
+          "check": {
+            "op": "expression",
+            "expression": "91 : 7 + 69"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.2.4",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 2,
+          "part": "4",
+          "kind": "number",
+          "prompt": "200 − 18 × 5 = ?",
+          "answer": 110,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "200 − 18 × 5 = 110",
+          "check": {
+            "op": "expression",
+            "expression": "200 − 18 × 5"
+          }
+        },
+        {
+          "id": "VBT.42.1.106.3.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "steps",
+          "prompt": "7 lớp, mỗi lớp 31 học sinh, thêm 1 lớp 34 học sinh. Khối Ba có bao nhiêu học sinh?",
+          "answer": {
+            "intermediate": 217,
+            "final": 251,
+            "unit": "học sinh"
+          },
+          "hint": "31 × 7 + 34",
+          "solution": "31 × 7 = 217 học sinh; 217 + 34 = 251 học sinh.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "31×7",
+              "217+34"
+            ]
+          },
+          "visual": {
+            "type": "equal_groups",
+            "groups": [
+              {
+                "count": 7,
+                "each": 31
+              },
+              {
+                "count": 1,
+                "each": 34
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.42.1.107.4.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "multi",
+          "prompt": "Chọn biểu thức lớn hơn 90.",
+          "answer": [
+            "70 + 80 : 2",
+            "100 : 5 + 80",
+            "30 + 40 × 2"
+          ],
+          "hint": "Tính nhân chia trước.",
+          "solution": "Các giá trị lần lượt 90, 110, 100, 80, 110. Chọn biểu thức có giá trị 110, 100, 110.",
+          "visual": {
+            "type": "expression_compare",
+            "theme": "cars",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "20 × 3 + 30"
+              },
+              {
+                "id": "B",
+                "expression": "70 + 80 : 2"
+              },
+              {
+                "id": "C",
+                "expression": "100 : 5 + 80"
+              },
+              {
+                "id": "D",
+                "expression": "20 × 5 − 20"
+              },
+              {
+                "id": "E",
+                "expression": "30 + 40 × 2"
+              }
+            ],
+            "options": [
+              "20 × 3 + 30",
+              "70 + 80 : 2",
+              "100 : 5 + 80",
+              "20 × 5 − 20",
+              "30 + 40 × 2"
+            ]
+          },
+          "check": {
+            "op": "filter_expressions",
+            "expressions": [
+              "20 × 3 + 30",
+              "70 + 80 : 2",
+              "100 : 5 + 80",
+              "20 × 5 − 20",
+              "30 + 40 × 2"
+            ],
+            "comparison": ">",
+            "target": 90
+          }
+        },
+        {
+          "id": "VBT.42.1.107.4.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Chọn biểu thức nhỏ nhất.",
+          "answer": "20 × 5 − 20",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "20 × 5 − 20 = 80, nhỏ nhất.",
+          "visual": {
+            "type": "expression_compare",
+            "theme": "cars",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "20 × 3 + 30"
+              },
+              {
+                "id": "B",
+                "expression": "70 + 80 : 2"
+              },
+              {
+                "id": "C",
+                "expression": "100 : 5 + 80"
+              },
+              {
+                "id": "D",
+                "expression": "20 × 5 − 20"
+              },
+              {
+                "id": "E",
+                "expression": "30 + 40 × 2"
+              }
+            ],
+            "options": [
+              "20 × 3 + 30",
+              "70 + 80 : 2",
+              "100 : 5 + 80",
+              "20 × 5 − 20",
+              "30 + 40 × 2"
+            ],
+            "colorDifferent": true
+          },
+          "check": {
+            "op": "expression_extreme",
+            "expressions": [
+              "20 × 3 + 30",
+              "70 + 80 : 2",
+              "100 : 5 + 80",
+              "20 × 5 − 20",
+              "30 + 40 × 2"
+            ],
+            "target": "min"
+          }
+        },
+        {
+          "id": "VBT.42.1.107.5.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 1,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T1",
+          "exercise": 5,
+          "part": "1",
+          "kind": "operator_fill",
+          "prompt": "Tìm cả hai cách điền dấu +, × để 4 □ 4 □ 4 = 20.",
+          "answer": {
+            "accepted": [
+              [
+                "+",
+                "×"
+              ],
+              [
+                "×",
+                "+"
+              ]
+            ],
+            "requireAll": true
+          },
+          "hint": "Nhân trước cộng sau.",
+          "solution": "4 + 4 × 4 = 20; 4 × 4 + 4 = 20.",
+          "visual": {
+            "type": "operator_fill",
+            "template": "4 ? 4 ? 4",
+            "operators": [
+              "+",
+              "×"
+            ],
+            "target": 20,
+            "requireAll": true
+          },
+          "check": {
+            "op": "operator_solutions",
+            "template": "4 ? 4 ? 4",
+            "operators": [
+              "+",
+              "×"
+            ],
+            "target": 20
+          }
+        },
+        {
+          "id": "VBT.42.2.107.1.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "75 − (68 − 23) = ?",
+          "answer": 30,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "75 − (68 − 23) = 30",
+          "check": {
+            "op": "expression",
+            "expression": "75 − (68 − 23)"
+          }
+        },
+        {
+          "id": "VBT.42.2.107.1.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "8 × (63 : 7) = ?",
+          "answer": 72,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "8 × (63 : 7) = 72",
+          "check": {
+            "op": "expression",
+            "expression": "8 × (63 : 7)"
+          }
+        },
+        {
+          "id": "VBT.42.2.107.1.3",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "67 + (56 + 44) = ?",
+          "answer": 167,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "67 + (56 + 44) = 167",
+          "check": {
+            "op": "expression",
+            "expression": "67 + (56 + 44)"
+          }
+        },
+        {
+          "id": "VBT.42.2.107.1.4",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "42 : (2 × 3) = ?",
+          "answer": 7,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "42 : (2 × 3) = 7",
+          "check": {
+            "op": "expression",
+            "expression": "42 : (2 × 3)"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.2.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "79 + 57 + 43 = ?",
+          "answer": 179,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "79 + (57 + 43) = 79 + 100 = 179.",
+          "check": {
+            "op": "expression",
+            "expression": "79 + 57 + 43"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.2.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "50 × 4 × 2 = ?",
+          "answer": 400,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "(50 × 2) × 4 = 100 × 4 = 400.",
+          "check": {
+            "op": "expression",
+            "expression": "50 × 4 × 2"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.3.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "match_value",
+          "prompt": "5 × (35 − 25) = ?",
+          "answer": 50,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "5 × (35 − 25) = 50",
+          "check": {
+            "op": "expression",
+            "expression": "5 × (35 − 25)"
+          },
+          "visual": {
+            "type": "expression_match",
+            "theme": "cats_fish",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (35 − 25)"
+              },
+              {
+                "id": "B",
+                "expression": "(54 + 36) : 3"
+              },
+              {
+                "id": "C",
+                "expression": "(12 + 18) × 4"
+              },
+              {
+                "id": "D",
+                "expression": "132 − 84 : 2"
+              }
+            ],
+            "options": [
+              120,
+              90,
+              50,
+              30
+            ],
+            "active": "A"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.3.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "match_value",
+          "prompt": "(54 + 36) : 3 = ?",
+          "answer": 30,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "(54 + 36) : 3 = 30",
+          "check": {
+            "op": "expression",
+            "expression": "(54 + 36) : 3"
+          },
+          "visual": {
+            "type": "expression_match",
+            "theme": "cats_fish",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (35 − 25)"
+              },
+              {
+                "id": "B",
+                "expression": "(54 + 36) : 3"
+              },
+              {
+                "id": "C",
+                "expression": "(12 + 18) × 4"
+              },
+              {
+                "id": "D",
+                "expression": "132 − 84 : 2"
+              }
+            ],
+            "options": [
+              120,
+              90,
+              50,
+              30
+            ],
+            "active": "B"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.3.3",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 3,
+          "part": "3",
+          "kind": "match_value",
+          "prompt": "(12 + 18) × 4 = ?",
+          "answer": 120,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "(12 + 18) × 4 = 120",
+          "check": {
+            "op": "expression",
+            "expression": "(12 + 18) × 4"
+          },
+          "visual": {
+            "type": "expression_match",
+            "theme": "cats_fish",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (35 − 25)"
+              },
+              {
+                "id": "B",
+                "expression": "(54 + 36) : 3"
+              },
+              {
+                "id": "C",
+                "expression": "(12 + 18) × 4"
+              },
+              {
+                "id": "D",
+                "expression": "132 − 84 : 2"
+              }
+            ],
+            "options": [
+              120,
+              90,
+              50,
+              30
+            ],
+            "active": "C"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.3.4",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 3,
+          "part": "4",
+          "kind": "match_value",
+          "prompt": "132 − 84 : 2 = ?",
+          "answer": 90,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "132 − 84 : 2 = 90",
+          "check": {
+            "op": "expression",
+            "expression": "132 − 84 : 2"
+          },
+          "visual": {
+            "type": "expression_match",
+            "theme": "cats_fish",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (35 − 25)"
+              },
+              {
+                "id": "B",
+                "expression": "(54 + 36) : 3"
+              },
+              {
+                "id": "C",
+                "expression": "(12 + 18) × 4"
+              },
+              {
+                "id": "D",
+                "expression": "132 − 84 : 2"
+              }
+            ],
+            "options": [
+              120,
+              90,
+              50,
+              30
+            ],
+            "active": "D"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.4.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "280 bánh, mỗi hộp 8 bánh. Có bao nhiêu hộp?",
+          "answer": 35,
+          "hint": "280 : 8",
+          "solution": "Đáp án: 35",
+          "check": {
+            "op": "expression",
+            "expression": "280:8"
+          },
+          "visual": {
+            "type": "nested_groups",
+            "total": 280,
+            "itemsPerBox": 8,
+            "boxesPerCrate": 5,
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.42.2.108.4.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "35 hộp, mỗi thùng 5 hộp. Có bao nhiêu thùng?",
+          "answer": 7,
+          "hint": "35 : 5",
+          "solution": "Đáp án: 7",
+          "check": {
+            "op": "expression",
+            "expression": "35:5"
+          },
+          "visual": {
+            "type": "nested_groups",
+            "total": 280,
+            "itemsPerBox": 8,
+            "boxesPerCrate": 5,
+            "activeStep": 1
+          },
+          "prerequisite": "VBT.42.2.108.4.1"
+        },
+        {
+          "id": "VBT.42.2.108.5.1",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 5,
+          "part": "1",
+          "kind": "operator_fill",
+          "prompt": "Chọn dấu để 3 × (3 □ 3) lớn nhất.",
+          "answer": {
+            "accepted": [
+              [
+                "×"
+              ]
+            ]
+          },
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ba giá trị: 18, 27, 3; chọn ×, được 27.",
+          "visual": {
+            "type": "operator_fill",
+            "template": "3 × (3 ? 3)",
+            "operators": [
+              "+",
+              "×",
+              ":"
+            ],
+            "goal": "max"
+          },
+          "check": {
+            "op": "operator_solutions",
+            "template": "3 × (3 ? 3)",
+            "operators": [
+              "+",
+              "×",
+              ":"
+            ],
+            "goal": "max"
+          }
+        },
+        {
+          "id": "VBT.42.2.108.5.2",
+          "book": "VBT",
+          "lesson": 42,
+          "period": 2,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "T2",
+          "exercise": 5,
+          "part": "2",
+          "kind": "operator_fill",
+          "prompt": "Chọn dấu để 3 × (3 □ 3) bé nhất.",
+          "answer": {
+            "accepted": [
+              [
+                ":"
+              ]
+            ]
+          },
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ba giá trị: 18, 27, 3; chọn :, được 3.",
+          "visual": {
+            "type": "operator_fill",
+            "template": "3 × (3 ? 3)",
+            "operators": [
+              "+",
+              "×",
+              ":"
+            ],
+            "goal": "min"
+          },
+          "check": {
+            "op": "operator_solutions",
+            "template": "3 × (3 ? 3)",
+            "operators": [
+              "+",
+              "×",
+              ":"
+            ],
+            "goal": "min"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 43,
+      "title": "Ôn tập hình học và đo lường",
+      "items": [
+        {
+          "id": "VBT.43.1.109.1.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Trong hình có bao nhiêu góc không vuông đỉnh B?",
+          "answer": 2,
+          "hint": "Đếm hai góc nhỏ tạo bởi BK và hai cạnh BA, BC.",
+          "solution": "AB và BC tạo góc vuông; tia BK chia góc này thành hai góc không vuông.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_nonright_at",
+            "vertex": "B",
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.7",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "7",
+          "kind": "number",
+          "prompt": "Trong hình có bao nhiêu góc không vuông đỉnh A?",
+          "answer": 3,
+          "hint": "Xem từng cặp tia AB, AK, AE.",
+          "solution": "Ba tia AB, AK, AE tạo ba góc không vuông.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_nonright_at",
+            "vertex": "A",
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.8",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "8",
+          "kind": "number",
+          "prompt": "Trong cả hình có bao nhiêu góc vuông?",
+          "answer": 11,
+          "hint": "Đếm tại B, K, I, H.",
+          "solution": "B có 1; K có 4; I có 4; H có 2 góc vuông. Tổng 11.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          },
+          "check": {
+            "op": "count_right_angles",
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "point_select",
+          "prompt": "Trung điểm đoạn AC trong hình là điểm nào?",
+          "answer": "K",
+          "hint": "Trung điểm nằm giữa và cách đều hai đầu mút.",
+          "solution": "K nằm giữa và cách đều hai đầu đoạn AC.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ],
+            "highlightSegment": [
+              "A",
+              "C"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "A",
+              "C"
+            ],
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "point_select",
+          "prompt": "Trung điểm đoạn ED trong hình là điểm nào?",
+          "answer": "I",
+          "hint": "Trung điểm nằm giữa và cách đều hai đầu mút.",
+          "solution": "I nằm giữa và cách đều hai đầu đoạn ED.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ],
+            "highlightSegment": [
+              "E",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "E",
+              "D"
+            ],
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.4",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "point_select",
+          "prompt": "Trung điểm đoạn KH trong hình là điểm nào?",
+          "answer": "I",
+          "hint": "Trung điểm nằm giữa và cách đều hai đầu mút.",
+          "solution": "I nằm giữa và cách đều hai đầu đoạn KH.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ],
+            "highlightSegment": [
+              "K",
+              "H"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "K",
+              "H"
+            ],
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.5",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "5",
+          "kind": "point_select",
+          "prompt": "Trung điểm đoạn BH trong hình là điểm nào?",
+          "answer": "K",
+          "hint": "Trung điểm nằm giữa và cách đều hai đầu mút.",
+          "solution": "K nằm giữa và cách đều hai đầu đoạn BH.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ],
+            "highlightSegment": [
+              "B",
+              "H"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "B",
+              "H"
+            ],
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.109.1.6",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 1,
+          "part": "6",
+          "kind": "point_select",
+          "prompt": "Trung điểm đoạn MN trong hình là điểm nào?",
+          "answer": "H",
+          "hint": "Trung điểm nằm giữa và cách đều hai đầu mút.",
+          "solution": "H nằm giữa và cách đều hai đầu đoạn MN.",
+          "visual": {
+            "type": "geometry_grid",
+            "grid": {
+              "width": 10,
+              "height": 10,
+              "unit": "ô"
+            },
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "K"
+              ],
+              [
+                "K",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ],
+              [
+                "E",
+                "M"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "N"
+              ],
+              [
+                "E",
+                "I"
+              ],
+              [
+                "I",
+                "D"
+              ],
+              [
+                "M",
+                "H"
+              ],
+              [
+                "H",
+                "N"
+              ],
+              [
+                "B",
+                "K"
+              ],
+              [
+                "K",
+                "I"
+              ],
+              [
+                "I",
+                "H"
+              ]
+            ],
+            "highlightSegment": [
+              "M",
+              "N"
+            ]
+          },
+          "check": {
+            "op": "midpoint",
+            "ends": [
+              "M",
+              "N"
+            ],
+            "points": {
+              "B": [
+                5,
+                1
+              ],
+              "A": [
+                1,
+                5
+              ],
+              "K": [
+                5,
+                5
+              ],
+              "C": [
+                9,
+                5
+              ],
+              "E": [
+                2,
+                7
+              ],
+              "I": [
+                5,
+                7
+              ],
+              "D": [
+                8,
+                7
+              ],
+              "M": [
+                1,
+                9
+              ],
+              "H": [
+                5,
+                9
+              ],
+              "N": [
+                9,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.109.2.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "draw",
+          "prompt": "Vẽ lại hình tam giác theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Chạm lần lượt ba đỉnh, rồi chạm lại đỉnh đầu để khép kín.",
+          "solution": "Đáy 6 ô, cao 4 ô, đỉnh trên cách mép trái 2 ô.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                6,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.109.2.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "draw",
+          "prompt": "Vẽ lại hình vuông theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Đếm bốn ô cho mỗi cạnh, vẽ bốn đỉnh và khép kín.",
+          "solution": "Hình vuông cạnh 4 ô.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.109.2.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "draw",
+          "prompt": "Vẽ lại hình chữ nhật theo mẫu trên lưới.",
+          "answer": {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "closed": true,
+            "allowTranslation": true,
+            "allowReverseOrder": true,
+            "allowCyclicStart": true
+          },
+          "hint": "Đếm 3 ô ngang và 4 ô dọc.",
+          "solution": "Hình chữ nhật rộng 3 ô, cao 4 ô.",
+          "visual": {
+            "type": "grid_draw",
+            "templateVertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "gridMajorUnit": 1,
+            "closed": true
+          },
+          "check": {
+            "op": "polygon_template",
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.110.3.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "segment_multi",
+          "prompt": "Quan sát hình tròn tâm O. Chọn các đường kính.",
+          "answer": [
+            "AB",
+            "CD"
+          ],
+          "hint": "Đường kính đi qua tâm, hai đầu nằm trên đường tròn.",
+          "solution": "AB và CD đi qua tâm O, hai đầu nằm trên đường tròn.",
+          "visual": {
+            "type": "circle_diagram",
+            "center": "O",
+            "pointAnglesDeg": {
+              "A": 180,
+              "B": 0,
+              "C": -55,
+              "D": 125,
+              "E": 60
+            },
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "E"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ],
+            "options": [
+              "AB",
+              "CD",
+              "AC",
+              "OE"
+            ]
+          },
+          "check": {
+            "op": "circle_diameters",
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "E"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ],
+            "center": "O",
+            "angles": {
+              "A": 180,
+              "B": 0,
+              "C": -55,
+              "D": 125,
+              "E": 60
+            }
+          }
+        },
+        {
+          "id": "VBT.43.1.110.3.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "segment_multi",
+          "prompt": "Quan sát hình tròn tâm O. Chọn các bán kính.",
+          "answer": [
+            "OA",
+            "OB",
+            "OC",
+            "OD",
+            "OE"
+          ],
+          "hint": "Bán kính nối tâm với một điểm trên đường tròn.",
+          "solution": "OA, OB, OC, OD và OE là bán kính.",
+          "visual": {
+            "type": "circle_diagram",
+            "center": "O",
+            "pointAnglesDeg": {
+              "A": 180,
+              "B": 0,
+              "C": -55,
+              "D": 125,
+              "E": 60
+            },
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "E"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ],
+            "options": [
+              "OA",
+              "OB",
+              "OC",
+              "OD",
+              "OE",
+              "AB"
+            ]
+          },
+          "check": {
+            "op": "circle_radii",
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "E"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ],
+            "center": "O"
+          }
+        },
+        {
+          "id": "VBT.43.1.110.3.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Đường kính AB gấp bán kính OB mấy lần?",
+          "answer": 2,
+          "hint": "Đường kính bằng hai bán kính.",
+          "solution": "Đáp án: 2",
+          "check": {
+            "op": "expression",
+            "expression": "2"
+          },
+          "visual": {
+            "type": "circle_diagram",
+            "center": "O",
+            "pointAnglesDeg": {
+              "A": 180,
+              "B": 0,
+              "C": -55,
+              "D": 125,
+              "E": 60
+            },
+            "segments": [
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "B"
+              ],
+              [
+                "C",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ],
+              [
+                "O",
+                "E"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.1.110.4.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Quan sát công trình. Có bao nhiêu khối lập phương nhỏ?",
+          "answer": 20,
+          "hint": "Đếm lớp đế 4 × 4 và bốn khối ở góc.",
+          "solution": "Đế 4 × 4 = 16 khối, thêm 4 khối ở góc: 20.",
+          "visual": {
+            "type": "solid_stack",
+            "base": {
+              "shape": "cube",
+              "dimensions": [
+                4,
+                4,
+                1
+              ]
+            },
+            "extraCubes": {
+              "count": 4,
+              "positions": [
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "above": [
+              {
+                "shape": "cylinder",
+                "size": "wide"
+              },
+              {
+                "shape": "cylinder",
+                "size": "thin"
+              },
+              {
+                "shape": "sphere"
+              }
+            ]
+          },
+          "check": {
+            "op": "stack_cubes",
+            "dimensions": [
+              4,
+              4,
+              1
+            ],
+            "extra": 4
+          }
+        },
+        {
+          "id": "VBT.43.1.110.4.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Quan sát công trình. Có bao nhiêu khối trụ?",
+          "answer": 2,
+          "hint": "Đếm khối trụ to và khối trụ nhỏ phía trên.",
+          "solution": "Có 2 khối trụ.",
+          "visual": {
+            "type": "solid_stack",
+            "base": {
+              "shape": "cube",
+              "dimensions": [
+                4,
+                4,
+                1
+              ]
+            },
+            "extraCubes": {
+              "count": 4,
+              "positions": [
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "above": [
+              {
+                "shape": "cylinder",
+                "size": "wide"
+              },
+              {
+                "shape": "cylinder",
+                "size": "thin"
+              },
+              {
+                "shape": "sphere"
+              }
+            ]
+          },
+          "check": {
+            "op": "solid_count",
+            "shapes": [
+              "cylinder",
+              "cylinder",
+              "sphere"
+            ],
+            "target": "cylinder"
+          }
+        },
+        {
+          "id": "VBT.43.1.110.4.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 4,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Quan sát công trình. Có bao nhiêu khối cầu?",
+          "answer": 1,
+          "hint": "Nhìn ở đỉnh công trình.",
+          "solution": "Có 1 khối cầu.",
+          "visual": {
+            "type": "solid_stack",
+            "base": {
+              "shape": "cube",
+              "dimensions": [
+                4,
+                4,
+                1
+              ]
+            },
+            "extraCubes": {
+              "count": 4,
+              "positions": [
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3,
+                  1
+                ],
+                [
+                  3,
+                  3,
+                  1
+                ]
+              ]
+            },
+            "above": [
+              {
+                "shape": "cylinder",
+                "size": "wide"
+              },
+              {
+                "shape": "cylinder",
+                "size": "thin"
+              },
+              {
+                "shape": "sphere"
+              }
+            ]
+          },
+          "check": {
+            "op": "solid_count",
+            "shapes": [
+              "cylinder",
+              "cylinder",
+              "sphere"
+            ],
+            "target": "sphere"
+          }
+        },
+        {
+          "id": "VBT.43.1.110.5.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 5,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Khối hộp ghép 4 × 2 × 2 khối lập phương, sơn mọi mặt ngoài. Có bao nhiêu khối được sơn 3 mặt?",
+          "answer": 8,
+          "hint": "Các khối góc được sơn 3 mặt.",
+          "solution": "Tám khối góc được sơn 3 mặt.",
+          "visual": {
+            "type": "painted_cuboid",
+            "dimensions": [
+              4,
+              2,
+              2
+            ],
+            "paintOuterFaces": true
+          },
+          "check": {
+            "op": "painted_cube_count",
+            "dimensions": [
+              4,
+              2,
+              2
+            ],
+            "paintedFaces": 3
+          }
+        },
+        {
+          "id": "VBT.43.1.110.5.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 1,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "T1",
+          "exercise": 5,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Có bao nhiêu khối được sơn đúng 2 mặt?",
+          "answer": 8,
+          "hint": "16 − 8 = 8",
+          "solution": "Có 4 cạnh dài, mỗi cạnh có 2 khối giữa được sơn đúng 2 mặt: 8.",
+          "visual": {
+            "type": "painted_cuboid",
+            "dimensions": [
+              4,
+              2,
+              2
+            ],
+            "paintOuterFaces": true
+          },
+          "check": {
+            "op": "painted_cube_count",
+            "dimensions": [
+              4,
+              2,
+              2
+            ],
+            "paintedFaces": 2
+          }
+        },
+        {
+          "id": "VBT.43.2.111.1.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Đường gấp khúc gồm 3 đoạn, mỗi đoạn 35 mm. Tổng chiều dài?",
+          "answer": 105,
+          "hint": "35 × 3",
+          "solution": "Đáp án: 105",
+          "check": {
+            "op": "expression",
+            "expression": "35+35+35"
+          },
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 35
+              },
+              {
+                "name": "BC",
+                "length": 35
+              },
+              {
+                "name": "CD",
+                "length": 35
+              }
+            ],
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.43.2.111.1.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Hai quả cân 500 g cân bằng 3 quả xoài và quả cân 200 g. Ba quả xoài nặng bao nhiêu gam?",
+          "answer": 800,
+          "hint": "500 + 500 − 200",
+          "solution": "Đáp án: 800",
+          "check": {
+            "op": "expression",
+            "expression": "500+500−200"
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              500,
+              500
+            ],
+            "rightWeightsG": [
+              200
+            ],
+            "rightObjects": [
+              "Xoài",
+              "Xoài",
+              "Xoài"
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.2.111.2.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Hộp bút dày khoảng bao nhiêu?",
+          "answer": "15 mm",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Đáp án: 15 mm",
+          "visual": {
+            "type": "object",
+            "options": [
+              "15 cm",
+              "15 mm",
+              "15 dm"
+            ],
+            "object": "Hộp bút"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.43.2.111.2.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Bút bi nặng khoảng bao nhiêu?",
+          "answer": "8 g",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Đáp án: 8 g",
+          "visual": {
+            "type": "object",
+            "options": [
+              "8 g",
+              "80 g",
+              "8 kg"
+            ],
+            "object": "Bút bi"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.43.2.111.2.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "Một bát nước đầy khoảng bao nhiêu?",
+          "answer": "200 ml",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Đáp án: 200 ml",
+          "visual": {
+            "type": "object",
+            "options": [
+              "2 l",
+              "20 ml",
+              "200 ml"
+            ],
+            "object": "Bát nước"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.43.2.111.2.4",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "T2",
+          "exercise": 2,
+          "part": "4",
+          "kind": "choice",
+          "prompt": "Trong các mức nhiệt sau, mức nào thích hợp để uống nước?",
+          "answer": "25 °C",
+          "hint": "Không uống nước quá nóng.",
+          "solution": "Đáp án: 25 °C",
+          "visual": {
+            "type": "object",
+            "options": [
+              "25 °C",
+              "70 °C",
+              "100 °C"
+            ],
+            "object": "Nước uống"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.43.2.112.3.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "540 + 260 = ? mm",
+          "answer": 800,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "540 + 260 = 800 mm",
+          "check": {
+            "op": "expression",
+            "expression": "540 + 260"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.2",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "732 − 32 = ? mm",
+          "answer": 700,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "732 − 32 = 700 mm",
+          "check": {
+            "op": "expression",
+            "expression": "732 − 32"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.3",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "180 × 4 = ? mm",
+          "answer": 720,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "180 × 4 = 720 mm",
+          "check": {
+            "op": "expression",
+            "expression": "180 × 4"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.4",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "720 : 8 = ? mm",
+          "answer": 90,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "720 : 8 = 90 mm",
+          "check": {
+            "op": "expression",
+            "expression": "720 : 8"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.5",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "5",
+          "kind": "number",
+          "prompt": "327 + 400 = ? ml",
+          "answer": 727,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "327 + 400 = 727 ml",
+          "check": {
+            "op": "expression",
+            "expression": "327 + 400"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.6",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "6",
+          "kind": "number",
+          "prompt": "1000 − 300 = ? ml",
+          "answer": 700,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "1000 − 300 = 700 ml",
+          "check": {
+            "op": "expression",
+            "expression": "1000 − 300"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.7",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "7",
+          "kind": "number",
+          "prompt": "150 × 6 = ? ml",
+          "answer": 900,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "150 × 6 = 900 ml",
+          "check": {
+            "op": "expression",
+            "expression": "150 × 6"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.8",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "8",
+          "kind": "number",
+          "prompt": "700 : 7 = ? ml",
+          "answer": 100,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "700 : 7 = 100 ml",
+          "check": {
+            "op": "expression",
+            "expression": "700 : 7"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.9",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "9",
+          "kind": "number",
+          "prompt": "270 + 538 = ? g",
+          "answer": 808,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "270 + 538 = 808 g",
+          "check": {
+            "op": "expression",
+            "expression": "270 + 538"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.10",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "10",
+          "kind": "number",
+          "prompt": "730 − 430 = ? g",
+          "answer": 300,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "730 − 430 = 300 g",
+          "check": {
+            "op": "expression",
+            "expression": "730 − 430"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.11",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "11",
+          "kind": "number",
+          "prompt": "240 × 3 = ? g",
+          "answer": 720,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "240 × 3 = 720 g",
+          "check": {
+            "op": "expression",
+            "expression": "240 × 3"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.3.12",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 3,
+          "part": "12",
+          "kind": "number",
+          "prompt": "960 : 6 = ? g",
+          "answer": 160,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "960 : 6 = 160 g",
+          "check": {
+            "op": "expression",
+            "expression": "960 : 6"
+          }
+        },
+        {
+          "id": "VBT.43.2.112.4.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "steps",
+          "prompt": "5 gói mì 75 g mỗi gói, 1 hộp ngũ cốc 500 g. Tổng nặng bao nhiêu gam?",
+          "answer": {
+            "intermediate": 375,
+            "final": 875,
+            "unit": "g"
+          },
+          "hint": "75 × 5 + 500",
+          "solution": "75 × 5 = 375 g mì; 375 + 500 = 875 g.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "75×5",
+              "375+500"
+            ]
+          },
+          "visual": {
+            "type": "equal_groups",
+            "groups": [
+              {
+                "name": "Mì",
+                "count": 5,
+                "each": 75
+              },
+              {
+                "name": "Ngũ cốc",
+                "count": 1,
+                "each": 500
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.43.2.112.5.1",
+          "book": "VBT",
+          "lesson": 43,
+          "period": 2,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "T2",
+          "exercise": 5,
+          "part": "1",
+          "kind": "balance_select",
+          "prompt": "Cân hai đĩa, có quả cân 5 kg và 2 kg. Lấy 3 kg gạo thế nào?",
+          "answer": {
+            "leftWeightsKg": [
+              5
+            ],
+            "rightWeightsKg": [
+              2
+            ],
+            "riceKg": 3,
+            "allowSwap": true
+          },
+          "hint": "5 − 2 = 3 kg.",
+          "solution": "Đặt quả cân 5 kg ở một đĩa; quả cân 2 kg và gạo ở đĩa kia. Khi cân bằng, gạo nặng 5 − 2 = 3 kg.",
+          "visual": {
+            "type": "balance_select",
+            "availableWeightsKg": [
+              5,
+              2
+            ],
+            "targetRiceKg": 3,
+            "allowSwap": true
+          },
+          "check": {
+            "op": "balance_difference",
+            "weights": [
+              5,
+              2
+            ],
+            "target": 3
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 44,
+      "title": "Ôn tập chung",
+      "items": [
+        {
+          "id": "VBT.44.1.113.1.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "multiplication",
+          "prompt": "132 × 4",
+          "answer": 528,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "132 × 4 = 528",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 132,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 12,
+                "resultDigit": 2,
+                "carryOut": 1
+              },
+              {
+                "digit": 1,
+                "carryIn": 1,
+                "product": 5,
+                "resultDigit": 5,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "132×4"
+          }
+        },
+        {
+          "id": "VBT.44.1.113.1.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "multiplication",
+          "prompt": "209 × 4",
+          "answer": 836,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "209 × 4 = 836",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 209,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 9,
+                "carryIn": 0,
+                "product": 36,
+                "resultDigit": 6,
+                "carryOut": 3
+              },
+              {
+                "digit": 0,
+                "carryIn": 3,
+                "product": 3,
+                "resultDigit": 3,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "209×4"
+          }
+        },
+        {
+          "id": "VBT.44.1.113.1.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "multiplication",
+          "prompt": "113 × 6",
+          "answer": 678,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "113 × 6 = 678",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 113,
+            "multiplier": 6,
+            "steps": [
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 18,
+                "resultDigit": 8,
+                "carryOut": 1
+              },
+              {
+                "digit": 1,
+                "carryIn": 1,
+                "product": 7,
+                "resultDigit": 7,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "113×6"
+          }
+        },
+        {
+          "id": "VBT.44.1.113.2.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "division",
+          "prompt": "75 : 5",
+          "answer": {
+            "quotient": 15,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "7 : 5 được 1, dư 2; 25 : 5 được 5, dư 0. 75 = 5 × 15 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 75,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 25,
+                "quotientDigit": 5,
+                "product": 25,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              75,
+              5
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.1.113.2.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "division",
+          "prompt": "68 : 4",
+          "answer": {
+            "quotient": 17,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 4 được 1, dư 2; 28 : 4 được 7, dư 0. 68 = 4 × 17 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 68,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 28,
+                "quotientDigit": 7,
+                "product": 28,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              68,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.1.113.2.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "division",
+          "prompt": "96 : 6",
+          "answer": {
+            "quotient": 16,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "9 : 6 được 1, dư 3; 36 : 6 được 6, dư 0. 96 = 6 × 16 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 96,
+            "divisor": 6,
+            "steps": [
+              {
+                "partialDividend": 9,
+                "quotientDigit": 1,
+                "product": 6,
+                "remainder": 3
+              },
+              {
+                "partialDividend": 36,
+                "quotientDigit": 6,
+                "product": 36,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              96,
+              6
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.1.113.3.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "multi",
+          "prompt": "Quan sát hình chữ nhật ABCD và hình tròn tâm O. Chọn đoạn có trung điểm O.",
+          "answer": [
+            "AC",
+            "BD"
+          ],
+          "hint": "Hai đường chéo cắt nhau tại trung điểm.",
+          "solution": "O là trung điểm AC và BD.",
+          "visual": {
+            "type": "geometry_circle_grid",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "C"
+              ],
+              [
+                "B",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ]
+            ],
+            "circleCenter": "O",
+            "circleThrough": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "options": [
+              "AB",
+              "AC",
+              "BD",
+              "CD"
+            ]
+          },
+          "check": {
+            "op": "segments_midpoint",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "center": "O",
+            "options": [
+              "AB",
+              "AC",
+              "BD",
+              "CD"
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.1.113.3.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "angle_multi",
+          "prompt": "Quan sát hình. Chọn các góc vuông.",
+          "answer": {
+            "angles": [
+              {
+                "vertex": "A",
+                "arms": [
+                  "D",
+                  "B"
+                ]
+              },
+              {
+                "vertex": "B",
+                "arms": [
+                  "A",
+                  "C"
+                ]
+              },
+              {
+                "vertex": "C",
+                "arms": [
+                  "B",
+                  "D"
+                ]
+              },
+              {
+                "vertex": "D",
+                "arms": [
+                  "C",
+                  "A"
+                ]
+              }
+            ],
+            "allowArmOrderSwap": true
+          },
+          "hint": "Bốn góc ở bốn đỉnh hình chữ nhật.",
+          "solution": "Bốn góc vuông: DAB, ABC, BCD, CDA.",
+          "visual": {
+            "type": "geometry_circle_grid",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "C"
+              ],
+              [
+                "B",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ]
+            ],
+            "circleCenter": "O",
+            "circleThrough": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "angle_set",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "C"
+              ],
+              [
+                "B",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ]
+            ],
+            "vertex": null,
+            "right": true
+          }
+        },
+        {
+          "id": "VBT.44.1.113.3.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "angle_multi",
+          "prompt": "Quan sát hình. Chọn các góc không vuông chung đỉnh O.",
+          "answer": {
+            "angles": [
+              {
+                "vertex": "O",
+                "arms": [
+                  "A",
+                  "B"
+                ]
+              },
+              {
+                "vertex": "O",
+                "arms": [
+                  "B",
+                  "C"
+                ]
+              },
+              {
+                "vertex": "O",
+                "arms": [
+                  "C",
+                  "D"
+                ]
+              },
+              {
+                "vertex": "O",
+                "arms": [
+                  "D",
+                  "A"
+                ]
+              }
+            ],
+            "allowArmOrderSwap": true
+          },
+          "hint": "Hai đường chéo không vuông góc; xét bốn góc tạo thành quanh O.",
+          "solution": "Bốn góc không vuông tại O: AOB, BOC, COD, DOA.",
+          "visual": {
+            "type": "geometry_circle_grid",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "C"
+              ],
+              [
+                "B",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ]
+            ],
+            "circleCenter": "O",
+            "circleThrough": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "angle_set",
+            "points": {
+              "A": [
+                0,
+                0
+              ],
+              "B": [
+                6,
+                0
+              ],
+              "C": [
+                6,
+                3
+              ],
+              "D": [
+                0,
+                3
+              ],
+              "O": [
+                3,
+                1.5
+              ]
+            },
+            "segments": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "D",
+                "A"
+              ],
+              [
+                "A",
+                "O"
+              ],
+              [
+                "O",
+                "C"
+              ],
+              [
+                "B",
+                "O"
+              ],
+              [
+                "O",
+                "D"
+              ]
+            ],
+            "vertex": "O",
+            "right": false
+          }
+        },
+        {
+          "id": "VBT.44.1.114.4.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "216 + 148 − 144 = ?",
+          "answer": 220,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "216 + 148 − 144 = 220",
+          "check": {
+            "op": "expression",
+            "expression": "216 + 148 − 144"
+          }
+        },
+        {
+          "id": "VBT.44.1.114.4.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "216 × (148 − 144) = ?",
+          "answer": 864,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "216 × (148 − 144) = 864",
+          "check": {
+            "op": "expression",
+            "expression": "216 × (148 − 144)"
+          }
+        },
+        {
+          "id": "VBT.44.1.114.5.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 1,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T1",
+          "exercise": 5,
+          "part": "1",
+          "kind": "steps",
+          "prompt": "Thùng 120 l nước mắm, lấy 7 can, mỗi can 10 l. Còn bao nhiêu lít?",
+          "answer": {
+            "intermediate": 70,
+            "final": 50,
+            "unit": "l"
+          },
+          "hint": "120 − 7 × 10",
+          "solution": "7 × 10 = 70 l; 120 − 70 = 50 l.",
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "7×10",
+              "120−70"
+            ]
+          },
+          "visual": {
+            "type": "equal_groups",
+            "initial": 120,
+            "groups": 7,
+            "each": 10,
+            "unit": "l"
+          }
+        },
+        {
+          "id": "VBT.44.2.114.1.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "multiplication",
+          "prompt": "217 × 4",
+          "answer": 868,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "217 × 4 = 868",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 217,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 28,
+                "resultDigit": 8,
+                "carryOut": 2
+              },
+              {
+                "digit": 1,
+                "carryIn": 2,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "217×4"
+          }
+        },
+        {
+          "id": "VBT.44.2.114.1.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "multiplication",
+          "prompt": "309 × 3",
+          "answer": 927,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "309 × 3 = 927",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 309,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 9,
+                "carryIn": 0,
+                "product": 27,
+                "resultDigit": 7,
+                "carryOut": 2
+              },
+              {
+                "digit": 0,
+                "carryIn": 2,
+                "product": 2,
+                "resultDigit": 2,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "309×3"
+          }
+        },
+        {
+          "id": "VBT.44.2.114.1.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "multiplication",
+          "prompt": "160 × 5",
+          "answer": 800,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "160 × 5 = 800",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 160,
+            "multiplier": 5,
+            "steps": [
+              {
+                "digit": 0,
+                "carryIn": 0,
+                "product": 0,
+                "resultDigit": 0,
+                "carryOut": 0
+              },
+              {
+                "digit": 6,
+                "carryIn": 0,
+                "product": 30,
+                "resultDigit": 0,
+                "carryOut": 3
+              },
+              {
+                "digit": 1,
+                "carryIn": 3,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "160×5"
+          }
+        },
+        {
+          "id": "VBT.44.2.114.2.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "division",
+          "prompt": "576 : 3",
+          "answer": {
+            "quotient": 192,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 3 được 1, dư 2; 27 : 3 được 9, dư 0; 6 : 3 được 2, dư 0. 576 = 3 × 192 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 576,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 27,
+                "quotientDigit": 9,
+                "product": 27,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              576,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.2.114.2.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "division",
+          "prompt": "645 : 5",
+          "answer": {
+            "quotient": 129,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 5 được 1, dư 1; 14 : 5 được 2, dư 4; 45 : 5 được 9, dư 0. 645 = 5 × 129 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 645,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 14,
+                "quotientDigit": 2,
+                "product": 10,
+                "remainder": 4
+              },
+              {
+                "partialDividend": 45,
+                "quotientDigit": 9,
+                "product": 45,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              645,
+              5
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.2.114.2.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "division",
+          "prompt": "847 : 7",
+          "answer": {
+            "quotient": 121,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 7 được 1, dư 1; 14 : 7 được 2, dư 0; 7 : 7 được 1, dư 0. 847 = 7 × 121 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 847,
+            "divisor": 7,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 7,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 14,
+                "quotientDigit": 2,
+                "product": 14,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 7,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              847,
+              7
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.2.115.3.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Đường gấp khúc gồm 34 mm, 18 mm và 45 mm. Tổng độ dài?",
+          "answer": 97,
+          "hint": "34 + 18 + 45",
+          "solution": "Đáp án: 97",
+          "check": {
+            "op": "expression",
+            "expression": "34+18+45"
+          },
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 34
+              },
+              {
+                "name": "BC",
+                "length": 18
+              },
+              {
+                "name": "CD",
+                "length": 45
+              }
+            ],
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.44.2.115.3.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Túi đường cân bằng 100 g, 200 g và 500 g. Túi nặng bao nhiêu gam?",
+          "answer": 800,
+          "hint": "100 + 200 + 500",
+          "solution": "Đáp án: 800",
+          "check": {
+            "op": "expression",
+            "expression": "100+200+500"
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100,
+              200,
+              500
+            ],
+            "rightObjects": [
+              "Túi đường"
+            ]
+          }
+        },
+        {
+          "id": "VBT.44.2.115.3.3",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Rót hết nước trong bình được ba ca như hình. Ban đầu bình có bao nhiêu ml?",
+          "answer": 600,
+          "hint": "Đọc mỗi ca rồi cộng ba lượng nước.",
+          "solution": "Mỗi ca có 200 ml; 200 × 3 = 600 ml.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 20,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 200,
+                "valueMl": 200
+              },
+              {
+                "id": "B",
+                "capacityMl": 200,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 200,
+                "valueMl": 200
+              }
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "200+200+200"
+          }
+        },
+        {
+          "id": "VBT.44.2.115.4.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "32 × 6 : 3 = ?",
+          "answer": 64,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "32 × 6 : 3 = 64",
+          "check": {
+            "op": "expression",
+            "expression": "32 × 6 : 3"
+          }
+        },
+        {
+          "id": "VBT.44.2.115.4.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "32 × (6 − 3) = ?",
+          "answer": 96,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "32 × (6 − 3) = 96",
+          "check": {
+            "op": "expression",
+            "expression": "32 × (6 − 3)"
+          }
+        },
+        {
+          "id": "VBT.44.2.115.5.1",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 5,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Ngày đầu trồng 235 cây; ngày sau nhiều hơn 80 cây. Ngày sau trồng bao nhiêu cây?",
+          "answer": 315,
+          "hint": "235 + 80",
+          "solution": "Đáp án: 315",
+          "check": {
+            "op": "expression",
+            "expression": "235+80"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 235,
+            "extra": 80,
+            "labels": [
+              "Ngày đầu",
+              "Ngày sau"
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.44.2.115.5.2",
+          "book": "VBT",
+          "lesson": 44,
+          "period": 2,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "T2",
+          "exercise": 5,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Ngày đầu 235 cây, ngày sau 315 cây. Cả hai ngày trồng bao nhiêu cây?",
+          "answer": 550,
+          "hint": "235 + 315",
+          "solution": "Đáp án: 550",
+          "check": {
+            "op": "expression",
+            "expression": "235+315"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 235,
+            "extra": 80,
+            "labels": [
+              "Ngày đầu",
+              "Ngày sau"
+            ],
+            "activeStep": 1
+          },
+          "prerequisite": "VBT.44.2.115.5.1"
+        }
+      ]
+    }
+  ]
+}
