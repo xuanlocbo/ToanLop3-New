@@ -16,7 +16,7 @@ final class AdventurePanel extends LinearLayout {
     final AdventureScene scene;
     final TextView status;
     final Button left,right,jump,action;
-    boolean leftHeld,rightHeld,jumpQueued,running,dirty,blocked,disposed;
+    boolean leftHeld,rightHeld,jumpQueued,running,dirty,blocked,disposed,foregroundRequested;
     int tapDirection,tapFrames,face=1;
     long lastFrame,lastSave;
     double accumulator;
@@ -94,14 +94,22 @@ final class AdventurePanel extends LinearLayout {
         blocked=true;running=false;removeCallbacks(frame);releaseControls();update();return false;
     }
     void start(){
+        if(disposed)return;
+        foregroundRequested=true;
         if(running||!playable()||!isAttachedToWindow())return;
         running=true;lastFrame=0;accumulator=0;postOnAnimation(frame);
     }
     boolean pauseAndSave(){
+        foregroundRequested=false;
         running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();
         return flush();
     }
-    void dispose(){disposed=true;running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();}
+    void dispose(){disposed=true;foregroundRequested=false;running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();}
+    @Override protected void onAttachedToWindow(){
+        super.onAttachedToWindow();
+        // A restored game may request start from Activity.onResume before attachment.
+        if(foregroundRequested)start();
+    }
     @Override protected void onDetachedFromWindow(){running=false;removeCallbacks(frame);releaseControls();super.onDetachedFromWindow();}
     void tick(){
         if(!running||!playable()||!isAttachedToWindow()){running=false;return;}
