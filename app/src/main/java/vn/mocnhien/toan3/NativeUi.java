@@ -67,6 +67,7 @@ final class NativeUi {
     EditText input(String label,String value,boolean numeric){
         EditText e=new EditText(c);e.setTextSize(22);e.setTextColor(INK);e.setHintTextColor(MUTED);e.setHint(label);
         e.setSingleLine(numeric);e.setInputType(numeric?InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_SIGNED:InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE|InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+        e.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_EXTRACT_UI|(numeric?android.view.inputmethod.EditorInfo.IME_ACTION_DONE:android.view.inputmethod.EditorInfo.IME_ACTION_NONE));
         e.setText(value);e.setContentDescription(label);e.setPadding(dp(12),dp(9),dp(12),dp(9));e.setMinHeight(dp(52));
         e.setBackground(outlined(0xfffff7fa,14,0xffdeb0c8));return e;
     }
