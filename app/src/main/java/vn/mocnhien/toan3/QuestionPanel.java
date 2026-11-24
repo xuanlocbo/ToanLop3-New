@@ -14,7 +14,7 @@ final class QuestionPanel extends LinearLayout {
     final NativeUi ui;final JSONObject q,v;final String id,kind;final ProgressStore store;final Host host;
     final int adventureLesson,adventureGate;
     JSONObject draft;
-    boolean rebuilding;
+    boolean rebuilding,celebrateNext;
     QuestionPanel(Context c,JSONObject question,ProgressStore store,Host host){
         this(c,question,store,host,0,-1);
     }
@@ -42,7 +42,7 @@ final class QuestionPanel extends LinearLayout {
     void submit(){
         ProgressStore.Result r=inAdventure()?store.submitAdventure(adventureLesson,adventureGate,draft):store.submit(id,draft);
         if(!r.saved){draft=readDraft();warn();return;}
-        draft=readDraft();host.changed();host.feedback(r.correct);render();
+        draft=readDraft();host.changed();host.feedback(r.correct);celebrateNext=r.correct;render();
     }
     void field(LinearLayout p,String label,String value,boolean number,java.util.function.Consumer<String> action){
         ui.label(p,label,17,true);EditText e=ui.input(label,value,number);ui.add(p,e);
@@ -73,14 +73,18 @@ final class QuestionPanel extends LinearLayout {
     void drawing(LinearLayout p,View diagram,int height){LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,ui.dp(height));lp.setMargins(0,ui.dp(5),0,ui.dp(5));p.addView(diagram,lp);}
     String source(){String book=q.optString("book");return book.equals("BONUS")?"Thử thách kho báu • Câu "+q.optInt("exercise"):book+" • Trang "+q.optInt("page")+" • "+(book.equals("VBT")?"Tiết "+q.optInt("period")+" • ":"")+"Bài tập "+q.optInt("exercise")+" • "+q.optString("part");}
     void render(){
-        rebuilding=true;removeAllViews();ui.label(this,source(),15,false);ui.label(this,q.optString("prompt"),25,true);
+        rebuilding=true;removeAllViews();ui.caption(this,source());ui.label(this,q.optString("prompt"),25,true);
         boolean correct="correct".equals(draft.optString("status"));
         if(correct){
             LinearLayout win=ui.card(NativeUi.MINT);ui.add(this,win);
+            if(!kind.equals("study")&&!kind.startsWith("practice"))ui.banner(win,AdventurePlan.theme(q.optInt("lesson",26)),true,82);
             ui.label(win,kind.equals("study")?"Đã học xong!":kind.startsWith("practice")?"Đã ghi nhận thực hành!":"Giỏi lắm! Em làm đúng rồi!",26,true);
-            int earned=draft.optInt("earned");ui.label(win,earned>0?"+"+earned+" sao hồng":"Đã lưu kết quả",21,true);
+            int earned=draft.optInt("earned");
+            TextView award=ui.badge(earned>0?"★ +"+earned+" sao hồng":"✓ Đã lưu kết quả",earned>0?NativeUi.GOLD:NativeUi.WHITE);ui.add(win,award);
             ui.label(win,q.optString("solution"),20,false);LinearLayout row=ui.row();ui.add(win,row);
-            if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng":"Tiếp tục",NativeUi.GREEN,host::next);rebuilding=false;return;
+            if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng →":"Tiếp tục →",NativeUi.GREEN,host::next);
+            if(celebrateNext){win.setAlpha(.65f);win.setTranslationY(ui.dp(6));win.animate().alpha(1f).translationY(0).setDuration(230).start();}
+            celebrateNext=false;rebuilding=false;return;
         }
         if(kind.equals("board_game")){
             BoardState b=BoardState.replay(q,draft);
@@ -123,7 +127,7 @@ final class QuestionPanel extends LinearLayout {
             case "board_game":board(content);break;
             default:throw new IllegalStateException("Unimplemented "+kind);
         }
-        if("retry".equals(draft.optString("status")))ui.label(this,"Chưa đúng. Em thử lại nhé!",22,true);
+        if("retry".equals(draft.optString("status"))){LinearLayout tryAgain=ui.card(0xffffedda);ui.add(this,tryAgain);ui.label(tryAgain,"Chưa đúng, mình thử thêm một lần nhé!",21,true);}
         if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+q.optString("hint"),19,false);
         if(draft.optBoolean("showSolution"))ui.label(this,"Cách giải: "+q.optString("solution"),19,false);
         LinearLayout controls=ui.row();ui.add(this,controls);
