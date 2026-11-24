@@ -1,6 +1,8 @@
 name: Verify native Android curriculum
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [native-curriculum-1.1]
   push:
     branches: [native-curriculum-1.1]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
