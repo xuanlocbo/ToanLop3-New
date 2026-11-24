@@ -73,7 +73,9 @@ public final class AdventureTest {
             for(int gate=0;gate<4;gate++){
                 AdventureWorld.State s=store.adventureState(lesson);
                 assertEquals(gate,s.gate);
-                // Resume at a midair frame before the gate.
+                // Resume midair during a feasible jump over the first pit.
+                AdventureWorld.Hazard pit=w.hazards[gate*2];
+                while(pit.left-s.x>25)w.step(s,1,false);
                 w.step(s,1,true);
                 assertTrue(s.y>0);
                 assertTrue(store.saveAdventureMotion(lesson,s));
