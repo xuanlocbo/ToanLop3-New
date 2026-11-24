@@ -3,57 +3,10 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/workflows/build-apk.yml', 'app/**', 'tests/**', '*.gradle', 'gradle.properties']
+    paths: ['.github/workflows/**', '.github/scripts/part4_smoke.py', 'app/**', 'tests/**', 'tools/**', '*.gradle', 'gradle.properties']
 permissions:
   contents: read
   actions: read
-concurrency:
-  group: mocnhien-apk
-  cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 35
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.9'
-      - name: Verify learning material
-        run: |
-          mkdir -p /tmp/mathbank
-          javac -encoding UTF-8 -d /tmp/mathbank app/src/main/java/vn/mocnhien/toan3/Bank.java
-          java -cp /tmp/mathbank vn.mocnhien.toan3.Bank
-      - name: Restore test signing identity
-        uses: actions/cache@v4
-        with:
-          path: ~/.android/debug.keystore
-          key: mocnhien-new-debug-keystore-v1
-      - name: Assemble and verify APK
-        run: |
-          set -euo pipefail
-          gradle --no-daemon :app:assembleDebug
-          mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.0.0.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.0.0.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.0.0.apk | grep -F "package: name='vn.mocnhien.toan3' versionCode='1' versionName='1.0.0'"
-          python3 -c "import zipfile; z=zipfile.ZipFile('output/MocNhien-Toan3-1.0.0.apk'); assert z.testzip() is None and 'classes.dex' in z.namelist() and 'AndroidManifest.xml' in z.namelist()"
-      - name: Upload installation package
-        uses: actions/upload-artifact@v4
-        with:
-          name: MocNhien-Toan3-1.0.0
-          path: output/MocNhien-Toan3-1.0.0.apk
-          if-no-files-found: error
-          retention-days: 30
-          compression-level: 0
+    uses: ./.github/workflows/verify-native.yml

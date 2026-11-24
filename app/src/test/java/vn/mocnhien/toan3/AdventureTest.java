@@ -83,6 +83,7 @@ public final class AdventureTest {
                 assertEquals(s.json().toString(),store.adventureState(lesson).json().toString());
                 walk(w,s);
                 assertTrue(store.saveAdventureMotion(lesson,s));
+                if(gate==0)TrailMissionTest.complete(store,lesson);
                 String id=AdventurePlan.questionId(lesson,gate);
                 JSONObject q=c.questions.get(id);
                 JSONObject original=Json.put(new JSONObject(),"originalLearningDraft",lesson*10+gate);
@@ -130,6 +131,7 @@ public final class AdventureTest {
             for(int gate=0;gate<4;gate++){
                 AdventureWorld.State replay=store.adventureState(lesson);walk(w,replay);
                 assertTrue(store.saveAdventureMotion(lesson,replay));assertFalse(store.adventureState(lesson).answered);
+                if(gate==0)TrailMissionTest.complete(store,lesson);
                 JSONObject q=c.questions.get(AdventurePlan.questionId(lesson,gate));
                 ProgressStore.Result right=store.submitAdventure(lesson,gate,fixtures.draft(q));
                 assertTrue(right.saved&&right.correct);assertEquals(0,right.earned);
@@ -169,6 +171,7 @@ public final class AdventureTest {
         store=new ProgressStore(c,disk);assertEquals(10,store.balance());assertEquals(40,store.adventureState(26).x);
         AdventureWorld w=new AdventureWorld(26);AdventureWorld.State s=store.adventureState(26);walk(w,s);
         assertTrue(store.saveAdventureMotion(26,s));
+        TrailMissionTest.complete(store,26);
         ProgressStore.Result replay=store.submitAdventure(26,0,fixtures.draft(q));
         assertTrue(replay.saved&&replay.correct);assertEquals(0,replay.earned);assertEquals(10,store.balance());
         assertEquals("correct",store.draft(id).optString("status"));

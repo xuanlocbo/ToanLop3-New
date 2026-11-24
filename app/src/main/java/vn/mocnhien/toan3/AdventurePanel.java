@@ -7,7 +7,7 @@ import android.widget.*;
 
 /** Foreground-only game loop. Motion is persisted at important events and periodic checkpoints. */
 final class AdventurePanel extends LinearLayout {
-    interface Host { void openGate(); void returnMap(); void sound(boolean positive); }
+    interface Host { void openGate(); void returnMap(); void nextStage(); void sound(SoundPalette.Cue cue); }
     final NativeUi ui;
     final ProgressStore store;
     final AdventureWorld world;
@@ -16,7 +16,7 @@ final class AdventurePanel extends LinearLayout {
     final AdventureScene scene;
     final TextView status;
     final Button left,right,jump,action;
-    boolean leftHeld,rightHeld,jumpQueued,running,dirty,blocked,disposed;
+    boolean leftHeld,rightHeld,jumpQueued,running,dirty,blocked,disposed,foregroundRequested;
     int tapDirection,tapFrames,face=1;
     long lastFrame,lastSave;
     double accumulator;
@@ -28,14 +28,15 @@ final class AdventurePanel extends LinearLayout {
         this.store=store;this.host=host;ui=new NativeUi(c);
         world=new AdventureWorld(lesson);state=store.adventureState(lesson);
         setBackground(ui.bg(NativeUi.BG,16));
-        status=ui.text("",17,true);status.setGravity(Gravity.CENTER);addView(status,new LinearLayout.LayoutParams(-1,-2));
+        status=ui.text("",17,true);status.setGravity(Gravity.CENTER);status.setBackground(ui.bg(NativeUi.WHITE,16));addView(status,new LinearLayout.LayoutParams(-1,-2));
         scene=new AdventureScene(c,world,state);
         addView(scene,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout controls=ui.row();controls.setMotionEventSplittingEnabled(true);ui.pad(controls,3);
         addView(controls,new LinearLayout.LayoutParams(-1,-2));
-        left=ui.button("◀ Trái",NativeUi.LAV,()->tap(-1));
-        right=ui.button("Phải ▶",NativeUi.LAV,()->tap(1));
-        jump=ui.button("↑ Nhảy",NativeUi.PINK,()->{if(playable())jumpQueued=true;});
+        left=ui.button("◀  Trái",NativeUi.LAV,()->tap(-1));
+        right=ui.button("Phải  ▶",NativeUi.LAV,()->tap(1));
+        jump=ui.button("↑  Nhảy",NativeUi.PINK,()->{if(playable())jumpQueued=true;});
+        for(Button control:new Button[]{left,right,jump})control.setMinHeight(ui.dp(56));
         left.setContentDescription("Giữ để đi sang trái");
         right.setContentDescription("Giữ để đi sang phải");
         jump.setContentDescription("Nhảy qua chướng ngại vật");
@@ -45,7 +46,7 @@ final class AdventurePanel extends LinearLayout {
             if(disposed)return;
             if(blocked){if(flush()){blocked=false;update();start();}return;}
             if(!flush())return;
-            if(state.pending)host.openGate();else if(state.finished)host.returnMap();
+            if(state.pending)host.openGate();else if(state.finished){if(world.lesson<AdventurePlan.LAST)host.nextStage();else host.returnMap();}
         });
         ui.weight(controls,action,1.7f);
         lastSave=SystemClock.uptimeMillis();update();
@@ -78,7 +79,7 @@ final class AdventurePanel extends LinearLayout {
             status.setText("Chưa lưu được. Hãy lưu lại trước khi tiếp tục.");action.setText("Lưu lại");
         }else if(state.finished){
             status.setText("Hoàn thành!  ✿ "+state.flowerCount()+"/12 cánh hoa • huy hiệu đã lưu");
-            action.setText("Về bản đồ");
+            action.setText(world.lesson<AdventurePlan.LAST?"Màn tiếp theo →":"Về bản đồ");
         }else if(state.pending){
             status.setText("Cổng "+(state.gate+1)+"/4 • "+(state.answered?"Đã giải đúng!":"Giải toán để qua cổng")+"   ✿ "+state.flowerCount()+"/12");
             action.setText(state.answered?"Tiếp tục qua cổng":"Mở nhiệm vụ toán");
@@ -93,21 +94,29 @@ final class AdventurePanel extends LinearLayout {
         blocked=true;running=false;removeCallbacks(frame);releaseControls();update();return false;
     }
     void start(){
+        if(disposed)return;
+        foregroundRequested=true;
         if(running||!playable()||!isAttachedToWindow())return;
         running=true;lastFrame=0;accumulator=0;postOnAnimation(frame);
     }
     boolean pauseAndSave(){
-        running=false;removeCallbacks(frame);releaseControls();
+        foregroundRequested=false;
+        running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();
         return flush();
     }
-    void dispose(){disposed=true;running=false;removeCallbacks(frame);releaseControls();}
+    void dispose(){disposed=true;foregroundRequested=false;running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();}
+    @Override protected void onAttachedToWindow(){
+        super.onAttachedToWindow();
+        // A restored game may request start from Activity.onResume before attachment.
+        if(foregroundRequested)start();
+    }
     @Override protected void onDetachedFromWindow(){running=false;removeCallbacks(frame);releaseControls();super.onDetachedFromWindow();}
     void tick(){
         if(!running||!playable()||!isAttachedToWindow()){running=false;return;}
         long now=SystemClock.uptimeMillis();
         if(lastFrame==0)lastFrame=now;
         accumulator+=Math.min(85,Math.max(0,now-lastFrame));lastFrame=now;
-        int oldPetals=state.petals,oldFalls=state.falls;
+        int oldPetals=state.petals,oldFalls=state.falls;boolean jumped=false;
         boolean event=false;
         for(int i=0;i<5&&accumulator>=FRAME&&playable();i++){
             accumulator-=FRAME;
@@ -115,6 +124,7 @@ final class AdventurePanel extends LinearLayout {
             if(direction==0&&tapFrames>0){direction=tapDirection;tapFrames--;}
             if(direction!=0)face=direction;
             int x=state.x,y=state.y,vy=state.vy;
+            if(jumpQueued&&world.grounded(state))jumped=true;
             event|=world.step(state,direction,jumpQueued);
             jumpQueued=false;
             dirty|=x!=state.x||y!=state.y||vy!=state.vy||event||oldPetals!=state.petals;
@@ -123,10 +133,14 @@ final class AdventurePanel extends LinearLayout {
         boolean flower=oldPetals!=state.petals,fall=oldFalls!=state.falls;
         if(event||flower||fall||dirty&&now-lastSave>=700){
             if(!flush())return;
-            if(flower||event&&!fall)host.sound(true);
-            if(fall)host.sound(false);
+            if(flower||state.finished)scene.celebrate(state.petals&~oldPetals,state.finished);
+            if(state.finished)host.sound(SoundPalette.Cue.FINISH);
+            else if(fall)host.sound(SoundPalette.Cue.TRY_AGAIN);
+            else if(state.pending)host.sound(SoundPalette.Cue.GATE);
+            else if(flower)host.sound(SoundPalette.Cue.PETAL);
             update();
         }
+        if(jumped&&!fall&&!state.pending&&!state.finished&&!flower)host.sound(SoundPalette.Cue.JUMP);
         if(playable()&&running)postOnAnimation(frame);else{running=false;releaseControls();update();}
     }
 }

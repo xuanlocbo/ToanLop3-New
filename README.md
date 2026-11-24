@@ -1,7 +1,15 @@
-# Mộc Nhiên – Toán lớp 3
+# Mộc Nhiên · Toán 3 (1.1.1)
 
-Dự án Android Native độc lập, giao diện 2D màu hồng, màn hình ngang, hoạt động ngoại tuyến. 20 chủ đề bài 25–44 Kết nối tri thức, 24 vị trí nhiệm vụ và 2 thử thách mỗi bài, bài tập tự soạn, trò chơi chia giỏ táo, thu hoạch, đong nước, dụng cụ đo, ôn tập câu sai, thành tích, lưu từng trạng thái và tiến độ trên máy. Chưa xác nhận đối chiếu từng câu với hai bản PDF SGK/VBT của người dùng; chưa phải bản cuối về nội dung hoặc chất lượng giao diện.
+Ứng dụng Android native ngoại tuyến, màn hình ngang, chủ đề 2D hồng pastel. Phạm vi Bài 26–44, 19 bài, 921 mục từ SGK/VBT được chuyển thể và 38 câu nâng cao tự biên soạn (959 mục tổng cộng). Các nội dung đã được kiểm tra bằng chương trình; không tuyên bố mọi hình và câu chữ khớp nguyên văn hai PDF nếu chưa đối chiếu từng mục.
 
-## APK thử nghiệm
+- 19 màn phiêu lưu, 19 trạm thực hành, 76 cổng toán; hai câu kho báu mỗi bài có thể làm sau.
+- Bài học, ôn câu sai, tiến độ, bản nháp và phần thưởng một lần được lưu cục bộ.
+- Đồ họa Canvas/vector, 7 hiệu ứng âm thanh ngắn, không cần internet, không đăng nhập hay quảng cáo.
 
-GitHub Actions dùng Java 17, Gradle 8.9, Android SDK 35 và assembleDebug như LittleEnglish. Kiểm tra ngân hàng, đóng gói, chữ ký và mã ứng dụng, sau đó tải APK trong Actions > Build Android APK > Artifacts. Không cần tạo secret để build thử nghiệm. Khóa debug được cache để hỗ trợ cập nhật khi cache còn tồn tại; không bảo đảm tương thích chữ ký nếu cache mất. Không coi APK debug là bản phát hành production. Cần kiểm tra giao diện, thao tác và lưu tiến độ trên thiết bị thực.
+## Kiểm thử và cài đặt
+
+Bản 1.1.1 sửa bố cục màn hình ngang nhỏ, cập nhật số mục đã hoàn thành ngay sau khi học, hiển thị dụng cụ cạnh nút thao tác, khôi phục vòng lặp game khi cửa sổ gắn trở lại. Bộ kiểm thử UI nhận diện nút hội thoại không phân biệt chữ hoa/thường.
+
+GitHub Actions dùng Java 17, Gradle 8.9, Android SDK 35. Workflow xác minh ngân hàng, kiểm thử JVM, biên dịch và xác minh chữ ký/định danh APK. Sau đó chạy bộ kiểm thử giao diện trên máy ảo Android và lưu ảnh chụp thật trong artifact MocNhien-1.1.1-QA. Artifact MocNhien-Toan3-1.1.1 chứa APK cài thử đã xác minh cấu trúc và chữ ký; xem trạng thái bước máy ảo để biết kết quả kiểm tra tương tác.
+
+APK debug có cùng applicationId vn.mocnhien.toan3, versionCode 3. Khóa debug cũ được khôi phục từ cache nếu có; nếu chữ ký khác với bản đang cài, Android không cho cập nhật đè. Không gỡ bản đang học khi chưa bảo đảm giữ được dữ liệu. Kiểm thử trên điện thoại thật và kiểm nghe âm thanh cần thực hiện riêng; máy ảo CI không phát âm thanh. Đây không phải APK production ký bằng khóa phát hành.
