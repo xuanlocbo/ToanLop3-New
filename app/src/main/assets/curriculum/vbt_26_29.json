@@ -1,0 +1,3488 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "VBT",
+    "title": "Vở bài tập Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      66,
+      75
+    ],
+    "pdfPages": [
+      67,
+      76
+    ],
+    "sha256": "cadef7165ad41318d6e93698b49d8f42a1ec909bfed4f22e22c3ad43cf3ce822"
+  },
+  "notes": "Đối chiếu bản PDF gốc. Giữ ID nền BookBank; các mục mới có hậu tố riêng. Mục practice tự nêu bài toán cần xác nhận của người lớn, không chấm văn bản theo một đáp án duy nhất. Không hiển thị lời giải hoặc dữ kiện kết quả của bước trước khi chưa hoàn thành bước đó.",
+  "lessons": [
+    {
+      "lesson": 26,
+      "title": "Chia số có hai chữ số cho số có một chữ số",
+      "items": [
+        {
+          "id": "VBT.26.1.66.1.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "46 : 2",
+          "answer": {
+            "quotient": 23,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "4 : 2 được 2, dư 0; 6 : 2 được 3, dư 0. 46 = 2 × 23 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 46,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 4,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 6,
+                "quotientDigit": 3,
+                "product": 6,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              46,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.1.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "55 : 5",
+          "answer": {
+            "quotient": 11,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 5 được 1, dư 0; 5 : 5 được 1, dư 0. 55 = 5 × 11 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 55,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              55,
+              5
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.1.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "96 : 3",
+          "answer": {
+            "quotient": 32,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "9 : 3 được 3, dư 0; 6 : 3 được 2, dư 0. 96 = 3 × 32 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 96,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 9,
+                "quotientDigit": 3,
+                "product": 9,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              96,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.1.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "division",
+          "prompt": "84 : 4",
+          "answer": {
+            "quotient": 21,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 4 được 2, dư 0; 4 : 4 được 1, dư 0. 84 = 4 × 21 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 84,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 2,
+                "product": 8,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              84,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.2.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "division",
+          "prompt": "39 : 3",
+          "answer": {
+            "quotient": 13,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "3 : 3 được 1, dư 0; 9 : 3 được 3, dư 0. 39 = 3 × 13 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 39,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 9,
+                "quotientDigit": 3,
+                "product": 9,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              39,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.2.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "division",
+          "prompt": "64 : 2",
+          "answer": {
+            "quotient": 32,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 2 được 3, dư 0; 4 : 2 được 2, dư 0. 64 = 2 × 32 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 64,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 3,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              64,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.2.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "division",
+          "prompt": "63 : 3",
+          "answer": {
+            "quotient": 21,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 3 được 2, dư 0; 3 : 3 được 1, dư 0. 63 = 3 × 21 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 63,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              63,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.2.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 2,
+          "part": "4",
+          "kind": "division",
+          "prompt": "88 : 2",
+          "answer": {
+            "quotient": 44,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 2 được 4, dư 0; 8 : 2 được 4, dư 0. 88 = 2 × 44 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 88,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 4,
+                "product": 8,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 8,
+                "quotientDigit": 4,
+                "product": 8,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              88,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.1.66.3.mau",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 3,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Nhẩm 60 : 2.",
+          "answer": null,
+          "hint": "Chia số chục cho 2.",
+          "solution": "6 chục : 2 = 3 chục; 60 : 2 = 30.",
+          "visual": {
+            "type": "mental_division",
+            "dividend": 60,
+            "divisor": 2
+          }
+        },
+        {
+          "id": "VBT.26.1.66.3.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "80 : 2 = ?",
+          "answer": 40,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "80 : 2 = 40.",
+          "check": {
+            "op": "expression",
+            "expression": "80 : 2"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.3.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "30 : 3 = ?",
+          "answer": 10,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "30 : 3 = 10.",
+          "check": {
+            "op": "expression",
+            "expression": "30 : 3"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.3.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "90 : 3 = ?",
+          "answer": 30,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "90 : 3 = 30.",
+          "check": {
+            "op": "expression",
+            "expression": "90 : 3"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.3.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "40 : 2 = ?",
+          "answer": 20,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "40 : 2 = 20.",
+          "check": {
+            "op": "expression",
+            "expression": "40 : 2"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.4.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "? × 4 = 48",
+          "answer": 12,
+          "hint": "Lấy tích chia thừa số đã biết.",
+          "solution": "48 : 4 = 12.",
+          "check": {
+            "op": "expression",
+            "expression": "48 : 4"
+          },
+          "visual": {
+            "type": "missing_factor",
+            "known": 4,
+            "product": 48,
+            "missingSide": "left"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.4.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "5 × ? = 55",
+          "answer": 11,
+          "hint": "Lấy tích chia thừa số đã biết.",
+          "solution": "55 : 5 = 11.",
+          "check": {
+            "op": "expression",
+            "expression": "55 : 5"
+          },
+          "visual": {
+            "type": "missing_factor",
+            "known": 5,
+            "product": 55,
+            "missingSide": "right"
+          }
+        },
+        {
+          "id": "VBT.26.1.66.4.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 1,
+          "page": 66,
+          "pdfPage": 67,
+          "section": "T1",
+          "exercise": 4,
+          "part": "3",
+          "kind": "number",
+          "prompt": "? × 3 = 93",
+          "answer": 31,
+          "hint": "Lấy tích chia thừa số đã biết.",
+          "solution": "93 : 3 = 31.",
+          "check": {
+            "op": "expression",
+            "expression": "93 : 3"
+          },
+          "visual": {
+            "type": "missing_factor",
+            "known": 3,
+            "product": 93,
+            "missingSide": "left"
+          }
+        },
+        {
+          "id": "VBT.26.2.67.1.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "57 : 3",
+          "answer": {
+            "quotient": 19,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 3 được 1, dư 2; 27 : 3 được 9, dư 0. 57 = 3 × 19 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 57,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 27,
+                "quotientDigit": 9,
+                "product": 27,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              57,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.2.67.1.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "58 : 2",
+          "answer": {
+            "quotient": 29,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 2 được 2, dư 1; 18 : 2 được 9, dư 0. 58 = 2 × 29 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 58,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 18,
+                "quotientDigit": 9,
+                "product": 18,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              58,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.2.67.1.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "86 : 7",
+          "answer": {
+            "quotient": 12,
+            "remainder": 2
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 7 được 1, dư 1; 16 : 7 được 2, dư 2. 86 = 7 × 12 + 2.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 86,
+            "divisor": 7,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 7,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 16,
+                "quotientDigit": 2,
+                "product": 14,
+                "remainder": 2
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              86,
+              7
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.2.67.1.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "division",
+          "prompt": "65 : 4",
+          "answer": {
+            "quotient": 16,
+            "remainder": 1
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 4 được 1, dư 2; 25 : 4 được 6, dư 1. 65 = 4 × 16 + 1.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 65,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 25,
+                "quotientDigit": 6,
+                "product": 24,
+                "remainder": 1
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              65,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.2.67.2.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "39 : 3 = 13",
+          "answer": "Đúng",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "39 = 3 × 13",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 39,
+            "divisor": 3,
+            "shown": {
+              "quotient": 13,
+              "remainder": 0
+            },
+            "writtenRows": [
+              "39",
+              "3",
+              "09",
+              "9",
+              "0"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              39,
+              ":",
+              3
+            ],
+            "shown": {
+              "quotient": 13,
+              "remainder": 0
+            }
+          }
+        },
+        {
+          "id": "VBT.26.2.67.2.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "35 : 2 = 12 (dư 1)",
+          "answer": "Sai",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "35 : 2 = 17 (dư 1).",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 35,
+            "divisor": 2,
+            "shown": {
+              "quotient": 12,
+              "remainder": 1
+            },
+            "writtenRows": [
+              "35",
+              "2",
+              "5",
+              "4",
+              "1"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              35,
+              ":",
+              2
+            ],
+            "shown": {
+              "quotient": 12,
+              "remainder": 1
+            }
+          }
+        },
+        {
+          "id": "VBT.26.2.67.2.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "89 : 5 = 17 (dư 4)",
+          "answer": "Đúng",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "89 = 5 × 17 + 4",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 89,
+            "divisor": 5,
+            "shown": {
+              "quotient": 17,
+              "remainder": 4
+            },
+            "writtenRows": [
+              "89",
+              "5",
+              "39",
+              "35",
+              "4"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              89,
+              ":",
+              5
+            ],
+            "shown": {
+              "quotient": 17,
+              "remainder": 4
+            }
+          }
+        },
+        {
+          "id": "VBT.26.2.67.2.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 2,
+          "part": "4",
+          "kind": "choice",
+          "prompt": "53 : 4 = 13 (dư 1)",
+          "answer": "Đúng",
+          "hint": "Tính lại để kiểm tra.",
+          "solution": "53 = 4 × 13 + 1",
+          "visual": {
+            "type": "worked_division",
+            "options": [
+              "Đúng",
+              "Sai"
+            ],
+            "dividend": 53,
+            "divisor": 4,
+            "shown": {
+              "quotient": 13,
+              "remainder": 1
+            },
+            "writtenRows": [
+              "53",
+              "4",
+              "13",
+              "12",
+              "1"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              53,
+              ":",
+              4
+            ],
+            "shown": {
+              "quotient": 13,
+              "remainder": 1
+            }
+          }
+        },
+        {
+          "id": "VBT.26.2.67.3.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "60 quyển truyện chia đều vào 4 ngăn. Mỗi ngăn có bao nhiêu quyển?",
+          "answer": 15,
+          "hint": "60 : 4",
+          "solution": "60 : 4 = 15 quyển.",
+          "check": {
+            "op": "expression",
+            "expression": "60 : 4"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "total": 60,
+            "groups": 4,
+            "object": "Truyện"
+          }
+        },
+        {
+          "id": "VBT.26.2.67.4.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 2,
+          "page": 67,
+          "pdfPage": 68,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "40 cái kẹo chia đều cho 3 bạn. Còn dư bao nhiêu cái?",
+          "answer": 1,
+          "hint": "Tìm số dư.",
+          "solution": "40 : 3 = 13 dư 1. Còn dư 1 cái kẹo.",
+          "check": {
+            "op": "remainder",
+            "args": [
+              40,
+              3
+            ]
+          },
+          "visual": {
+            "type": "division_context",
+            "total": 40,
+            "groups": 3,
+            "object": "Kẹo"
+          }
+        },
+        {
+          "id": "VBT.26.3.68.1.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "53 : 3",
+          "answer": {
+            "quotient": 17,
+            "remainder": 2
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 3 được 1, dư 2; 23 : 3 được 7, dư 2. 53 = 3 × 17 + 2.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 53,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 23,
+                "quotientDigit": 7,
+                "product": 21,
+                "remainder": 2
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              53,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.3.68.1.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "67 : 4",
+          "answer": {
+            "quotient": 16,
+            "remainder": 3
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 4 được 1, dư 2; 27 : 4 được 6, dư 3. 67 = 4 × 16 + 3.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 67,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 27,
+                "quotientDigit": 6,
+                "product": 24,
+                "remainder": 3
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              67,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.3.68.1.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "35 : 3",
+          "answer": {
+            "quotient": 11,
+            "remainder": 2
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "3 : 3 được 1, dư 0; 5 : 3 được 1, dư 2. 35 = 3 × 11 + 2.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 35,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 2
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              35,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.3.68.1.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 1,
+          "part": "4",
+          "kind": "division",
+          "prompt": "99 : 8",
+          "answer": {
+            "quotient": 12,
+            "remainder": 3
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "9 : 8 được 1, dư 1; 19 : 8 được 2, dư 3. 99 = 8 × 12 + 3.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 99,
+            "divisor": 8,
+            "steps": [
+              {
+                "partialDividend": 9,
+                "quotientDigit": 1,
+                "product": 8,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 19,
+                "quotientDigit": 2,
+                "product": 16,
+                "remainder": 3
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              99,
+              8
+            ]
+          }
+        },
+        {
+          "id": "VBT.26.3.68.2.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "87 quả cam, mỗi suất quà 3 quả. Có bao nhiêu suất?",
+          "answer": 29,
+          "hint": "87 : 3",
+          "solution": "87 : 3 = 29 suất.",
+          "check": {
+            "op": "expression",
+            "expression": "87 : 3"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "total": 87,
+            "each": 3,
+            "object": "Cam"
+          }
+        },
+        {
+          "id": "VBT.26.3.68.3.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "32 khách, mỗi thuyền chở tối đa 5 khách. Cần ít nhất bao nhiêu thuyền?",
+          "answer": 7,
+          "hint": "Nếu còn khách thừa cần thêm một thuyền.",
+          "solution": "32 : 5 = 6 dư 2; cần thêm một thuyền, vậy cần 7 thuyền.",
+          "check": {
+            "op": "ceil_div",
+            "args": [
+              32,
+              5
+            ]
+          },
+          "visual": {
+            "type": "capacity_grouping",
+            "total": 32,
+            "capacity": 5,
+            "object": "Thuyền"
+          }
+        },
+        {
+          "id": "VBT.26.3.68.4.1",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "? : 8 = 12",
+          "answer": 96,
+          "hint": "Lấy thương nhân số chia.",
+          "solution": "8 × 12 = 96.",
+          "check": {
+            "op": "expression",
+            "expression": "8 × 12"
+          },
+          "visual": {
+            "type": "missing_dividend",
+            "divisor": 8,
+            "quotient": 12
+          }
+        },
+        {
+          "id": "VBT.26.3.68.4.2",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "? : 4 = 23",
+          "answer": 92,
+          "hint": "Lấy thương nhân số chia.",
+          "solution": "4 × 23 = 92.",
+          "check": {
+            "op": "expression",
+            "expression": "4 × 23"
+          },
+          "visual": {
+            "type": "missing_dividend",
+            "divisor": 4,
+            "quotient": 23
+          }
+        },
+        {
+          "id": "VBT.26.3.68.4.3",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 4,
+          "part": "3",
+          "kind": "number",
+          "prompt": "? : 3 = 26",
+          "answer": 78,
+          "hint": "Lấy thương nhân số chia.",
+          "solution": "3 × 26 = 78.",
+          "check": {
+            "op": "expression",
+            "expression": "3 × 26"
+          },
+          "visual": {
+            "type": "missing_dividend",
+            "divisor": 3,
+            "quotient": 26
+          }
+        },
+        {
+          "id": "VBT.26.3.68.4.4",
+          "book": "VBT",
+          "lesson": 26,
+          "period": 3,
+          "page": 68,
+          "pdfPage": 69,
+          "section": "T3",
+          "exercise": 4,
+          "part": "4",
+          "kind": "number",
+          "prompt": "? : 2 = 47",
+          "answer": 94,
+          "hint": "Lấy thương nhân số chia.",
+          "solution": "2 × 47 = 94.",
+          "check": {
+            "op": "expression",
+            "expression": "2 × 47"
+          },
+          "visual": {
+            "type": "missing_dividend",
+            "divisor": 2,
+            "quotient": 47
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 27,
+      "title": "Giảm một số đi một số lần",
+      "items": [
+        {
+          "id": "VBT.27.1.69.1.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "36 giảm 2 lần",
+          "answer": 18,
+          "hint": "Chia cho số lần.",
+          "solution": "36 : 2 = 18.",
+          "check": {
+            "op": "expression",
+            "expression": "36 : 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 36,
+            "op": ":",
+            "factor": 2
+          }
+        },
+        {
+          "id": "VBT.27.1.69.1.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "48 giảm 6 lần",
+          "answer": 8,
+          "hint": "Chia cho số lần.",
+          "solution": "48 : 6 = 8.",
+          "check": {
+            "op": "expression",
+            "expression": "48 : 6"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 48,
+            "op": ":",
+            "factor": 6
+          }
+        },
+        {
+          "id": "VBT.27.1.69.1.3",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "45 giảm 3 lần",
+          "answer": 15,
+          "hint": "Chia cho số lần.",
+          "solution": "45 : 3 = 15.",
+          "check": {
+            "op": "expression",
+            "expression": "45 : 3"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 45,
+            "op": ":",
+            "factor": 3
+          }
+        },
+        {
+          "id": "VBT.27.1.69.2.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "24 → ? 4 lần → 6",
+          "answer": "Giảm",
+          "hint": "So sánh số đầu với số cuối.",
+          "solution": "Đáp án: Giảm",
+          "visual": {
+            "type": "number_machine",
+            "options": [
+              "Gấp",
+              "Giảm"
+            ],
+            "start": 24,
+            "factor": 4,
+            "end": 6,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_word",
+            "start": 24,
+            "factor": 4,
+            "end": 6
+          }
+        },
+        {
+          "id": "VBT.27.1.69.2.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "72 → ? 6 lần → 12",
+          "answer": "Giảm",
+          "hint": "So sánh số đầu với số cuối.",
+          "solution": "Đáp án: Giảm",
+          "visual": {
+            "type": "number_machine",
+            "options": [
+              "Gấp",
+              "Giảm"
+            ],
+            "start": 72,
+            "factor": 6,
+            "end": 12,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_word",
+            "start": 72,
+            "factor": 6,
+            "end": 12
+          }
+        },
+        {
+          "id": "VBT.27.1.69.2.3",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "48 → ? 2 lần → 96",
+          "answer": "Gấp",
+          "hint": "So sánh số đầu với số cuối.",
+          "solution": "Đáp án: Gấp",
+          "visual": {
+            "type": "number_machine",
+            "options": [
+              "Gấp",
+              "Giảm"
+            ],
+            "start": 48,
+            "factor": 2,
+            "end": 96,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_word",
+            "start": 48,
+            "factor": 2,
+            "end": 96
+          }
+        },
+        {
+          "id": "VBT.27.1.69.2.4",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 2,
+          "part": "4",
+          "kind": "choice",
+          "prompt": "56 → ? 4 lần → 14",
+          "answer": "Giảm",
+          "hint": "So sánh số đầu với số cuối.",
+          "solution": "Đáp án: Giảm",
+          "visual": {
+            "type": "number_machine",
+            "options": [
+              "Gấp",
+              "Giảm"
+            ],
+            "start": 56,
+            "factor": 4,
+            "end": 14,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_word",
+            "start": 56,
+            "factor": 4,
+            "end": 14
+          }
+        },
+        {
+          "id": "VBT.27.1.69.3.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "78 kg cam, sau khi hỏng một phần, lượng còn lại giảm 3 lần. Còn bao nhiêu kg?",
+          "answer": 26,
+          "hint": "78 : 3",
+          "solution": "78 : 3 = 26 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "78 : 3"
+          }
+        },
+        {
+          "id": "VBT.27.1.69.4.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "18 → 6: chọn thao tác.",
+          "answer": "Giảm 3 lần",
+          "hint": "Thử nhân hoặc chia.",
+          "solution": "Đáp án: Giảm 3 lần",
+          "visual": {
+            "type": "operation_chain",
+            "options": [
+              "Gấp 2 lần",
+              "Giảm 3 lần"
+            ],
+            "chain": [
+              18,
+              6,
+              12
+            ],
+            "activeStep": 0,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_label",
+            "start": 18,
+            "end": 6,
+            "candidates": [
+              {
+                "label": "Gấp 2 lần",
+                "op": "×",
+                "factor": 2
+              },
+              {
+                "label": "Giảm 3 lần",
+                "op": ":",
+                "factor": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.27.1.69.4.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "6 → 12: chọn thao tác.",
+          "answer": "Gấp 2 lần",
+          "hint": "Thử nhân hoặc chia.",
+          "solution": "Đáp án: Gấp 2 lần",
+          "visual": {
+            "type": "operation_chain",
+            "options": [
+              "Gấp 2 lần",
+              "Giảm 3 lần"
+            ],
+            "chain": [
+              18,
+              6,
+              12
+            ],
+            "activeStep": 1,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_label",
+            "start": 6,
+            "end": 12,
+            "candidates": [
+              {
+                "label": "Gấp 2 lần",
+                "op": "×",
+                "factor": 2
+              },
+              {
+                "label": "Giảm 3 lần",
+                "op": ":",
+                "factor": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.27.1.69.4.3",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 4,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "18 → 36: chọn thao tác.",
+          "answer": "Gấp 2 lần",
+          "hint": "Thử nhân hoặc chia.",
+          "solution": "Đáp án: Gấp 2 lần",
+          "visual": {
+            "type": "operation_chain",
+            "options": [
+              "Gấp 2 lần",
+              "Giảm 3 lần"
+            ],
+            "chain": [
+              18,
+              36,
+              12
+            ],
+            "activeStep": 0,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_label",
+            "start": 18,
+            "end": 36,
+            "candidates": [
+              {
+                "label": "Gấp 2 lần",
+                "op": "×",
+                "factor": 2
+              },
+              {
+                "label": "Giảm 3 lần",
+                "op": ":",
+                "factor": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.27.1.69.4.4",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 1,
+          "page": 69,
+          "pdfPage": 70,
+          "section": "T1",
+          "exercise": 4,
+          "part": "4",
+          "kind": "choice",
+          "prompt": "36 → 12: chọn thao tác.",
+          "answer": "Giảm 3 lần",
+          "hint": "Thử nhân hoặc chia.",
+          "solution": "Đáp án: Giảm 3 lần",
+          "visual": {
+            "type": "operation_chain",
+            "options": [
+              "Gấp 2 lần",
+              "Giảm 3 lần"
+            ],
+            "chain": [
+              18,
+              36,
+              12
+            ],
+            "activeStep": 1,
+            "missing": "operation"
+          },
+          "check": {
+            "op": "operation_label",
+            "start": 36,
+            "end": 12,
+            "candidates": [
+              {
+                "label": "Gấp 2 lần",
+                "op": "×",
+                "factor": 2
+              },
+              {
+                "label": "Giảm 3 lần",
+                "op": ":",
+                "factor": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.27.2.70.1.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "52 giảm 4 lần",
+          "answer": 13,
+          "hint": "Gấp dùng nhân; giảm dùng chia.",
+          "solution": "52 : 4 = 13.",
+          "check": {
+            "op": "expression",
+            "expression": "52 : 4"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 52,
+            "operations": [
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 6
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.27.2.70.1.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "13 gấp 6 lần",
+          "answer": 78,
+          "hint": "Gấp dùng nhân; giảm dùng chia.",
+          "solution": "13 × 6 = 78.",
+          "check": {
+            "op": "expression",
+            "expression": "13 × 6"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 52,
+            "operations": [
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 6
+              }
+            ],
+            "activeStep": 1
+          }
+        },
+        {
+          "id": "VBT.27.2.70.1.3",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "26 gấp 3 lần",
+          "answer": 78,
+          "hint": "Gấp dùng nhân; giảm dùng chia.",
+          "solution": "26 × 3 = 78.",
+          "check": {
+            "op": "expression",
+            "expression": "26 × 3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 26,
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 2
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.27.2.70.1.4",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "78 giảm 2 lần",
+          "answer": 39,
+          "hint": "Gấp dùng nhân; giảm dùng chia.",
+          "solution": "78 : 2 = 39.",
+          "check": {
+            "op": "expression",
+            "expression": "78 : 2"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 26,
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 2
+              }
+            ],
+            "activeStep": 1
+          }
+        },
+        {
+          "id": "VBT.27.2.70.2.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Mũi chú người gỗ dài 52 cm. Nói thật một lần, mũi giảm 2 lần. Còn bao nhiêu cm?",
+          "answer": 26,
+          "hint": "52 : 2",
+          "solution": "52 : 2 = 26 cm.",
+          "check": {
+            "op": "expression",
+            "expression": "52 : 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "object": "Mũi người gỗ",
+            "start": 52,
+            "op": ":",
+            "factor": 2
+          }
+        },
+        {
+          "id": "VBT.27.2.70.2.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Mũi dài 9 cm. Mỗi lần nói dối dài gấp 3 lần. Sau hai lần, dài bao nhiêu cm?",
+          "answer": 81,
+          "hint": "Nhân 3 hai lần.",
+          "solution": "9 × 3 × 3 = 81 cm.",
+          "check": {
+            "op": "expression",
+            "expression": "9 × 3 × 3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "object": "Mũi người gỗ",
+            "start": 9,
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.27.2.70.3.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "42 tờ giấy màu, số còn lại giảm 6 lần. Còn bao nhiêu tờ?",
+          "answer": 7,
+          "hint": "42 : 6",
+          "solution": "42 : 6 = 7 tờ.",
+          "check": {
+            "op": "expression",
+            "expression": "42 : 6"
+          }
+        },
+        {
+          "id": "VBT.27.2.70.4.1",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "72 : ? = 8",
+          "answer": 9,
+          "hint": "Lấy số bị chia chia cho thương.",
+          "solution": "72 : 8 = 9.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 8"
+          },
+          "visual": {
+            "type": "missing_divisor",
+            "dividend": 72,
+            "quotient": 8
+          }
+        },
+        {
+          "id": "VBT.27.2.70.4.2",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "48 : ? = 6",
+          "answer": 8,
+          "hint": "Lấy số bị chia chia cho thương.",
+          "solution": "48 : 6 = 8.",
+          "check": {
+            "op": "expression",
+            "expression": "48 : 6"
+          },
+          "visual": {
+            "type": "missing_divisor",
+            "dividend": 48,
+            "quotient": 6
+          }
+        },
+        {
+          "id": "VBT.27.2.70.4.3",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 4,
+          "part": "3",
+          "kind": "number",
+          "prompt": "81 : ? = 9",
+          "answer": 9,
+          "hint": "Lấy số bị chia chia cho thương.",
+          "solution": "81 : 9 = 9.",
+          "check": {
+            "op": "expression",
+            "expression": "81 : 9"
+          },
+          "visual": {
+            "type": "missing_divisor",
+            "dividend": 81,
+            "quotient": 9
+          }
+        },
+        {
+          "id": "VBT.27.2.70.4.4",
+          "book": "VBT",
+          "lesson": 27,
+          "period": 2,
+          "page": 70,
+          "pdfPage": 71,
+          "section": "T2",
+          "exercise": 4,
+          "part": "4",
+          "kind": "number",
+          "prompt": "45 : ? = 5",
+          "answer": 9,
+          "hint": "Lấy số bị chia chia cho thương.",
+          "solution": "45 : 5 = 9.",
+          "check": {
+            "op": "expression",
+            "expression": "45 : 5"
+          },
+          "visual": {
+            "type": "missing_divisor",
+            "dividend": 45,
+            "quotient": 5
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 28,
+      "title": "Bài toán giải bằng hai bước tính",
+      "items": [
+        {
+          "id": "VBT.28.1.71.1.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 71,
+          "pdfPage": 72,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Trong chuồng 3 con thỏ, ngoài sân gấp 4 lần. Ngoài sân có bao nhiêu con?",
+          "answer": 12,
+          "hint": "3 × 4",
+          "solution": "Tìm số thỏ ngoài sân (bước chung). 3 × 4 = 12 con.",
+          "check": {
+            "op": "expression",
+            "expression": "3 × 4"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 3,
+            "multiple": 4,
+            "labels": [
+              "Trong chuồng",
+              "Ngoài sân"
+            ],
+            "groupId": "VBT.28.1.71.1",
+            "activeStep": 0,
+            "stepCount": 3,
+            "stepLabel": "Tìm số thỏ ngoài sân (bước chung).",
+            "requiresOwnStory": false
+          }
+        },
+        {
+          "id": "VBT.28.1.71.1.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 71,
+          "pdfPage": 72,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Trong chuồng 3 con, ngoài sân 12 con. Có tất cả bao nhiêu con?",
+          "answer": 15,
+          "hint": "3 + 12",
+          "solution": "Cả trong chuồng và ngoài sân có bao nhiêu con? 3 + 12 = 15 con.",
+          "check": {
+            "op": "expression",
+            "expression": "3 + 12"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 3,
+            "multiple": 4,
+            "labels": [
+              "Trong chuồng",
+              "Ngoài sân"
+            ],
+            "groupId": "VBT.28.1.71.1",
+            "activeStep": 1,
+            "stepCount": 3,
+            "stepLabel": "Cả trong chuồng và ngoài sân có bao nhiêu con?",
+            "requiresOwnStory": false
+          },
+          "prerequisite": "VBT.28.1.71.1.1"
+        },
+        {
+          "id": "VBT.28.1.71.1.3",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 71,
+          "pdfPage": 72,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Ngoài sân 12 con, trong chuồng 3 con. Ngoài sân nhiều hơn bao nhiêu con?",
+          "answer": 9,
+          "hint": "12 − 3",
+          "solution": "Ngoài sân nhiều hơn trong chuồng bao nhiêu con? 12 − 3 = 9 con.",
+          "check": {
+            "op": "expression",
+            "expression": "12 − 3"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 3,
+            "multiple": 4,
+            "labels": [
+              "Trong chuồng",
+              "Ngoài sân"
+            ],
+            "groupId": "VBT.28.1.71.1",
+            "activeStep": 2,
+            "stepCount": 3,
+            "stepLabel": "Ngoài sân nhiều hơn trong chuồng bao nhiêu con?",
+            "requiresOwnStory": false
+          },
+          "prerequisite": "VBT.28.1.71.1.2"
+        },
+        {
+          "id": "VBT.28.1.71.2.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 71,
+          "pdfPage": 72,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "AB dài 15 cm; BC ngắn hơn AB 5 cm. BC dài bao nhiêu cm?",
+          "answer": 10,
+          "hint": "15 − 5",
+          "solution": "Tìm độ dài BC (bước 1). 15 − 5 = 10 cm.",
+          "check": {
+            "op": "expression",
+            "expression": "15 − 5"
+          },
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 15
+              },
+              {
+                "name": "BC",
+                "shorterBy": 5,
+                "relativeTo": "AB"
+              }
+            ],
+            "unit": "cm",
+            "groupId": "VBT.28.1.71.2",
+            "activeStep": 0,
+            "stepCount": 2,
+            "stepLabel": "Tìm độ dài BC (bước 1).",
+            "requiresOwnStory": false
+          },
+          "sourcePages": [
+            71,
+            72
+          ]
+        },
+        {
+          "id": "VBT.28.1.71.2.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 71,
+          "pdfPage": 72,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "AB dài 15 cm, BC dài 10 cm. Đường gấp khúc ABC dài bao nhiêu cm?",
+          "answer": 25,
+          "hint": "15 + 10",
+          "solution": "Tìm độ dài đường gấp khúc ABC (bước 2). 15 + 10 = 25 cm.",
+          "check": {
+            "op": "expression",
+            "expression": "15 + 10"
+          },
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 15
+              },
+              {
+                "name": "BC",
+                "shorterBy": 5,
+                "relativeTo": "AB"
+              }
+            ],
+            "unit": "cm",
+            "groupId": "VBT.28.1.71.2",
+            "activeStep": 1,
+            "stepCount": 2,
+            "stepLabel": "Tìm độ dài đường gấp khúc ABC (bước 2).",
+            "requiresOwnStory": false
+          },
+          "sourcePages": [
+            71,
+            72
+          ],
+          "prerequisite": "VBT.28.1.71.2.1"
+        },
+        {
+          "id": "VBT.28.1.72.3.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 72,
+          "pdfPage": 73,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Lớp có 15 bạn nam, nữ nhiều hơn 2 bạn. Có bao nhiêu bạn nữ?",
+          "answer": 17,
+          "hint": "15 + 2",
+          "solution": "Tìm số bạn nữ. 15 + 2 = 17 bạn.",
+          "check": {
+            "op": "expression",
+            "expression": "15 + 2"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 15,
+            "extra": 2,
+            "labels": [
+              "Nam",
+              "Nữ"
+            ],
+            "groupId": "VBT.28.1.72.3",
+            "activeStep": 0,
+            "stepCount": 2,
+            "stepLabel": "Tìm số bạn nữ.",
+            "requiresOwnStory": false
+          }
+        },
+        {
+          "id": "VBT.28.1.72.3.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 1,
+          "page": 72,
+          "pdfPage": 73,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "15 nam và 17 nữ. Có tất cả bao nhiêu bạn?",
+          "answer": 32,
+          "hint": "15 + 17",
+          "solution": "Tìm tổng số bạn trong lớp. 15 + 17 = 32 bạn.",
+          "check": {
+            "op": "expression",
+            "expression": "15 + 17"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 15,
+            "extra": 2,
+            "labels": [
+              "Nam",
+              "Nữ"
+            ],
+            "groupId": "VBT.28.1.72.3",
+            "activeStep": 1,
+            "stepCount": 2,
+            "stepLabel": "Tìm tổng số bạn trong lớp.",
+            "requiresOwnStory": false
+          },
+          "prerequisite": "VBT.28.1.72.3.1"
+        },
+        {
+          "id": "VBT.28.2.72.1.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 72,
+          "pdfPage": 73,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Lợn đen 65 kg, lợn trắng nặng hơn 8 kg. Lợn trắng nặng bao nhiêu kg?",
+          "answer": 73,
+          "hint": "65 + 8",
+          "solution": "Tìm khối lượng lợn trắng. 65 + 8 = 73 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "65 + 8"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 65,
+            "extra": 8,
+            "labels": [
+              "Lợn đen",
+              "Lợn trắng"
+            ],
+            "groupId": "VBT.28.2.72.1",
+            "activeStep": 0,
+            "stepCount": 2,
+            "stepLabel": "Tìm khối lượng lợn trắng.",
+            "requiresOwnStory": false
+          }
+        },
+        {
+          "id": "VBT.28.2.72.1.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 72,
+          "pdfPage": 73,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Hai con lợn nặng 65 kg và 73 kg. Cả hai nặng bao nhiêu kg?",
+          "answer": 138,
+          "hint": "65 + 73",
+          "solution": "Tìm tổng khối lượng hai con lợn. 65 + 73 = 138 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "65 + 73"
+          },
+          "visual": {
+            "type": "bar_compare",
+            "base": 65,
+            "extra": 8,
+            "labels": [
+              "Lợn đen",
+              "Lợn trắng"
+            ],
+            "groupId": "VBT.28.2.72.1",
+            "activeStep": 1,
+            "stepCount": 2,
+            "stepLabel": "Tìm tổng khối lượng hai con lợn.",
+            "requiresOwnStory": false
+          },
+          "prerequisite": "VBT.28.2.72.1.1"
+        },
+        {
+          "id": "VBT.28.2.73.2.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Thùng có 15 l nước mắm. Đổ thêm 6 can, mỗi can 3 l. Đổ thêm bao nhiêu lít?",
+          "answer": 18,
+          "hint": "6 × 3",
+          "solution": "Tính lượng nước mắm đổ thêm. 6 × 3 = 18 l.",
+          "check": {
+            "op": "expression",
+            "expression": "6 × 3"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "groups": 6,
+            "each": 3,
+            "initial": 15,
+            "unit": "l",
+            "groupId": "VBT.28.2.73.2",
+            "activeStep": 0,
+            "stepCount": 2,
+            "stepLabel": "Tính lượng nước mắm đổ thêm.",
+            "requiresOwnStory": false
+          }
+        },
+        {
+          "id": "VBT.28.2.73.2.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Thùng có 15 l, thêm 18 l. Tổng cộng bao nhiêu lít?",
+          "answer": 33,
+          "hint": "15 + 18",
+          "solution": "Tính lượng nước mắm sau khi đổ thêm. 15 + 18 = 33 l.",
+          "check": {
+            "op": "expression",
+            "expression": "15 + 18"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "groups": 6,
+            "each": 3,
+            "initial": 15,
+            "unit": "l",
+            "groupId": "VBT.28.2.73.2",
+            "activeStep": 1,
+            "stepCount": 2,
+            "stepLabel": "Tính lượng nước mắm sau khi đổ thêm.",
+            "requiresOwnStory": false
+          },
+          "prerequisite": "VBT.28.2.73.2.1"
+        },
+        {
+          "id": "VBT.28.2.73.3.compose",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 3,
+          "part": "compose",
+          "kind": "practice_compose_story",
+          "prompt": "Quan sát sơ đồ gà 2 kg, ngỗng gấp 4 lần. Tự nêu bài toán hỏi tổng khối lượng rồi giải.",
+          "answer": null,
+          "hint": "Nêu đủ số liệu, quan hệ gấp 4 lần và câu hỏi tổng.",
+          "solution": "Một bài nêu hợp lệ có gà 2 kg, ngỗng gấp 4 lần gà và hỏi tổng. Lời giải ở hai bước tiếp theo.",
+          "visual": {
+            "type": "bar_multiple",
+            "base": 2,
+            "multiple": 4,
+            "labels": [
+              "Gà",
+              "Ngỗng"
+            ],
+            "unit": "kg",
+            "fields": [
+              "Bài toán do em nêu"
+            ],
+            "requiresAdultReview": true
+          }
+        },
+        {
+          "id": "VBT.28.2.73.3.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Theo sơ đồ, gà nặng 2 kg; ngỗng nặng gấp 4 lần gà. Ngỗng nặng bao nhiêu kg?",
+          "answer": 8,
+          "hint": "2 × 4",
+          "solution": "Từ sơ đồ, tìm khối lượng con ngỗng. 2 × 4 = 8 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "2 × 4"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 2,
+            "multiple": 4,
+            "labels": [
+              "Gà",
+              "Ngỗng"
+            ],
+            "unit": "kg",
+            "groupId": "VBT.28.2.73.3",
+            "activeStep": 0,
+            "stepCount": 2,
+            "stepLabel": "Từ sơ đồ, tìm khối lượng con ngỗng.",
+            "requiresOwnStory": true
+          },
+          "prerequisite": "VBT.28.2.73.3.compose"
+        },
+        {
+          "id": "VBT.28.2.73.3.2",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Gà 2 kg, ngỗng 8 kg. Cả hai nặng bao nhiêu kg?",
+          "answer": 10,
+          "hint": "2 + 8",
+          "solution": "Tìm tổng khối lượng hai con vật. 2 + 8 = 10 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "2 + 8"
+          },
+          "visual": {
+            "type": "bar_multiple",
+            "base": 2,
+            "multiple": 4,
+            "labels": [
+              "Gà",
+              "Ngỗng"
+            ],
+            "unit": "kg",
+            "groupId": "VBT.28.2.73.3",
+            "activeStep": 1,
+            "stepCount": 2,
+            "stepLabel": "Tìm tổng khối lượng hai con vật.",
+            "requiresOwnStory": true
+          },
+          "prerequisite": "VBT.28.2.73.3.1"
+        },
+        {
+          "id": "VBT.28.2.73.4.1",
+          "book": "VBT",
+          "lesson": 28,
+          "period": 2,
+          "page": 73,
+          "pdfPage": 74,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Mi 5 tuổi, chị Mai hơn Mi 3 tuổi. Sau 2 năm nữa Mai bao nhiêu tuổi?",
+          "answer": 10,
+          "hint": "5 + 3 + 2",
+          "solution": "5 + 3 + 2 = 10 tuổi.",
+          "check": {
+            "op": "expression",
+            "expression": "5 + 3 + 2"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 5,
+            "operations": [
+              {
+                "op": "+",
+                "value": 3
+              },
+              {
+                "op": "+",
+                "value": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 29,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "VBT.29.1.74.1.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "50 × 2 = ?",
+          "answer": 100,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "50 × 2 = 100.",
+          "check": {
+            "op": "expression",
+            "expression": "50 × 2"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.1.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "30 × 2 = ?",
+          "answer": 60,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "30 × 2 = 60.",
+          "check": {
+            "op": "expression",
+            "expression": "30 × 2"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.1.3",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "10 × 5 = ?",
+          "answer": 50,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "10 × 5 = 50.",
+          "check": {
+            "op": "expression",
+            "expression": "10 × 5"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.1.4",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "60 : 3 = ?",
+          "answer": 20,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "60 : 3 = 20.",
+          "check": {
+            "op": "expression",
+            "expression": "60 : 3"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.1.5",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "5",
+          "kind": "number",
+          "prompt": "80 : 2 = ?",
+          "answer": 40,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "80 : 2 = 40.",
+          "check": {
+            "op": "expression",
+            "expression": "80 : 2"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.1.6",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 1,
+          "part": "6",
+          "kind": "number",
+          "prompt": "90 : 9 = ?",
+          "answer": 10,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "90 : 9 = 10.",
+          "check": {
+            "op": "expression",
+            "expression": "90 : 9"
+          }
+        },
+        {
+          "id": "VBT.29.1.74.2.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "division",
+          "prompt": "32 : 2",
+          "answer": {
+            "quotient": 16,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "3 : 2 được 1, dư 1; 12 : 2 được 6, dư 0. 32 = 2 × 16 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 32,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 2,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 12,
+                "quotientDigit": 6,
+                "product": 12,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              32,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.1.74.2.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "division",
+          "prompt": "54 : 3",
+          "answer": {
+            "quotient": 18,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "5 : 3 được 1, dư 2; 24 : 3 được 8, dư 0. 54 = 3 × 18 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 54,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 5,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 24,
+                "quotientDigit": 8,
+                "product": 24,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              54,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.1.74.2.3",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "division",
+          "prompt": "84 : 7",
+          "answer": {
+            "quotient": 12,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 7 được 1, dư 1; 14 : 7 được 2, dư 0. 84 = 7 × 12 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 84,
+            "divisor": 7,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 7,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 14,
+                "quotientDigit": 2,
+                "product": 14,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              84,
+              7
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.1.74.2.4",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 2,
+          "part": "4",
+          "kind": "division",
+          "prompt": "44 : 4",
+          "answer": {
+            "quotient": 11,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "4 : 4 được 1, dư 0; 4 : 4 được 1, dư 0. 44 = 4 × 11 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 44,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 0
+              }
+            ],
+            "layout": "compute_prearranged"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              44,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.1.74.3.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "72 giảm 6 lần",
+          "answer": 12,
+          "hint": "Gấp thì nhân, giảm thì chia.",
+          "solution": "72 : 6 = 12.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 6"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 72,
+            "op": ":",
+            "factor": 6
+          }
+        },
+        {
+          "id": "VBT.29.1.74.3.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "14 gấp 7 lần",
+          "answer": 98,
+          "hint": "Gấp thì nhân, giảm thì chia.",
+          "solution": "14 × 7 = 98.",
+          "check": {
+            "op": "expression",
+            "expression": "14 × 7"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 14,
+            "op": "×",
+            "factor": 7
+          }
+        },
+        {
+          "id": "VBT.29.1.74.3.3",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "81 giảm 3 lần",
+          "answer": 27,
+          "hint": "Gấp thì nhân, giảm thì chia.",
+          "solution": "81 : 3 = 27.",
+          "check": {
+            "op": "expression",
+            "expression": "81 : 3"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 81,
+            "op": ":",
+            "factor": 3
+          }
+        },
+        {
+          "id": "VBT.29.1.74.3.4",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "29 gấp 3 lần",
+          "answer": 87,
+          "hint": "Gấp thì nhân, giảm thì chia.",
+          "solution": "29 × 3 = 87.",
+          "check": {
+            "op": "expression",
+            "expression": "29 × 3"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 29,
+            "op": "×",
+            "factor": 3
+          }
+        },
+        {
+          "id": "VBT.29.1.74.4.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Năm ngoái cây sầu riêng có 27 quả, năm nay gấp 3 lần. Năm nay có bao nhiêu quả?",
+          "answer": 81,
+          "hint": "27 × 3",
+          "solution": "27 × 3 = 81 quả.",
+          "check": {
+            "op": "expression",
+            "expression": "27 × 3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 27,
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 3
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.29.1.74.4.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 1,
+          "page": 74,
+          "pdfPage": 75,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "81 quả, sau khi bán số còn lại giảm 3 lần. Còn bao nhiêu quả?",
+          "answer": 27,
+          "hint": "81 : 3",
+          "solution": "81 : 3 = 27 quả.",
+          "check": {
+            "op": "expression",
+            "expression": "81 : 3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 27,
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 3
+              }
+            ],
+            "activeStep": 1
+          },
+          "prerequisite": "VBT.29.1.74.4.1"
+        },
+        {
+          "id": "VBT.29.2.75.1.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "division",
+          "prompt": "43 : 2",
+          "answer": {
+            "quotient": 21,
+            "remainder": 1
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "4 : 2 được 2, dư 0; 3 : 2 được 1, dư 1. 43 = 2 × 21 + 1.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 43,
+            "divisor": 2,
+            "steps": [
+              {
+                "partialDividend": 4,
+                "quotientDigit": 2,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 3,
+                "quotientDigit": 1,
+                "product": 2,
+                "remainder": 1
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              43,
+              2
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.2.75.1.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "division",
+          "prompt": "73 : 3",
+          "answer": {
+            "quotient": 24,
+            "remainder": 1
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "7 : 3 được 2, dư 1; 13 : 3 được 4, dư 1. 73 = 3 × 24 + 1.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 73,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 7,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 13,
+                "quotientDigit": 4,
+                "product": 12,
+                "remainder": 1
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              73,
+              3
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.2.75.1.3",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "division",
+          "prompt": "64 : 4",
+          "answer": {
+            "quotient": 16,
+            "remainder": 0
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "6 : 4 được 1, dư 2; 24 : 4 được 6, dư 0. 64 = 4 × 16 + 0.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 64,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 24,
+                "quotientDigit": 6,
+                "product": 24,
+                "remainder": 0
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              64,
+              4
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.2.75.1.4",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "division",
+          "prompt": "84 : 5",
+          "answer": {
+            "quotient": 16,
+            "remainder": 4
+          },
+          "hint": "Chia từ trái sang phải; số dư nhỏ hơn số chia.",
+          "solution": "8 : 5 được 1, dư 3; 34 : 5 được 6, dư 4. 84 = 5 × 16 + 4.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 84,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 3
+              },
+              {
+                "partialDividend": 34,
+                "quotientDigit": 6,
+                "product": 30,
+                "remainder": 4
+              }
+            ],
+            "layout": "place_then_compute"
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              84,
+              5
+            ]
+          }
+        },
+        {
+          "id": "VBT.29.2.75.2.3",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "30 giảm 6 lần được bao nhiêu?",
+          "answer": 5,
+          "hint": "30 : 6",
+          "solution": "30 : 6 = 5.",
+          "check": {
+            "op": "expression",
+            "expression": "30 : 6"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 30,
+            "operations": [
+              {
+                "op": ":",
+                "value": 6
+              },
+              {
+                "op": "+",
+                "value": 7
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.29.2.75.2.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "30 giảm 6 lần rồi thêm 7 đơn vị. Kết quả?",
+          "answer": 12,
+          "hint": "30 : 6 + 7",
+          "solution": "5 + 7 = 12.",
+          "check": {
+            "op": "expression",
+            "expression": "5 + 7"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 30,
+            "operations": [
+              {
+                "op": ":",
+                "value": 6
+              },
+              {
+                "op": "+",
+                "value": 7
+              }
+            ],
+            "activeStep": 1
+          },
+          "prerequisite": "VBT.29.2.75.2.3"
+        },
+        {
+          "id": "VBT.29.2.75.2.4",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 2,
+          "part": "4",
+          "kind": "number",
+          "prompt": "21 gấp 2 lần được bao nhiêu?",
+          "answer": 42,
+          "hint": "21 × 2",
+          "solution": "21 × 2 = 42.",
+          "check": {
+            "op": "expression",
+            "expression": "21 × 2"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 21,
+            "operations": [
+              {
+                "op": "×",
+                "value": 2
+              },
+              {
+                "op": ":",
+                "value": null
+              }
+            ],
+            "activeStep": 0
+          }
+        },
+        {
+          "id": "VBT.29.2.75.2.2",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "21 gấp 2 lần rồi giảm mấy lần để còn 7?",
+          "answer": 6,
+          "hint": "21 × 2 = 42; lấy 42 chia 7.",
+          "solution": "42 : 7 = 6.",
+          "check": {
+            "op": "expression",
+            "expression": "42 : 7"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 21,
+            "operations": [
+              {
+                "op": "×",
+                "value": 2
+              },
+              {
+                "op": ":",
+                "value": null
+              }
+            ],
+            "activeStep": 1,
+            "end": 7,
+            "missing": "factor"
+          },
+          "prerequisite": "VBT.29.2.75.2.4"
+        },
+        {
+          "id": "VBT.29.2.75.3.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Cây tre 19 m. Cắt đoạn 3 m. Cắt được nhiều nhất bao nhiêu đoạn?",
+          "answer": 6,
+          "hint": "19 : 3 = 6 dư 1",
+          "solution": "19 : 3 = 6 dư 1; nhiều nhất 6 đoạn tre, thừa 1 m.",
+          "check": {
+            "op": "floor_div",
+            "args": [
+              19,
+              3
+            ]
+          },
+          "visual": {
+            "type": "cut_segments",
+            "total": 19,
+            "each": 3,
+            "unit": "m"
+          }
+        },
+        {
+          "id": "VBT.29.2.75.4.1",
+          "book": "VBT",
+          "lesson": 29,
+          "period": 2,
+          "page": 75,
+          "pdfPage": 76,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Hôm qua bán 47 kg chà bông, hôm nay gấp 2 lần. Hôm nay bán bao nhiêu kg?",
+          "answer": 94,
+          "hint": "47 × 2",
+          "solution": "47 × 2 = 94 kg.",
+          "check": {
+            "op": "expression",
+            "expression": "47 × 2"
+          }
+        }
+      ]
+    }
+  ]
+}
