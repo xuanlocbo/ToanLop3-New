@@ -87,7 +87,14 @@ public class NativeCurriculumTest {
             assertTrue("valid input rejected: "+id+" "+d,NativeGrader.grade(q,d));
             assertTrue("restored draft rejected: "+id,NativeGrader.grade(q,new JSONObject(d.toString())));
         }
-        assertEquals(29,kinds.size());
+        assertEquals("Expected exact 31 curriculum kinds",new HashSet<>(Arrays.asList(
+            "study","division","number","multi","choice","steps","compose_story",
+            "practice_compose_story","route_match","division_story","ruler","balance","scale",
+            "match","cup","pour","thermometer","practice","order","practice_measure","balance_select",
+            "board_game","multiplication","match_value","number_fill","digit_fill","operator_fill",
+            "point_select","draw","segment_multi","angle_multi")),kinds);
+        assertEquals("Grader must support exactly the curriculum kinds",kinds,NativeGrader.KINDS);
+        System.out.println("Verified 959 records across "+kinds.size()+" kinds: valid, empty, and restored drafts.");
     }
     @Test public void partialWorkAndInvalidActionsAreRejected() throws Exception {
         Curriculum c=load();int checked=0;

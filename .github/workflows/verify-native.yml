@@ -26,6 +26,18 @@ jobs:
         run: |
           node tests/verify_curriculum_v2.mjs
           gradle --no-daemon :app:testDebugUnitTest
+      - name: Print test details on failure
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import pathlib, xml.etree.ElementTree as ET
+          for report in pathlib.Path("app/build/test-results/testDebugUnitTest").glob("TEST-*.xml"):
+              for case in ET.parse(report).iter("testcase"):
+                  for tag in ("failure", "error"):
+                      node = case.find(tag)
+                      if node is not None:
+                          print(case.attrib.get("name"), node.attrib.get("message"), node.text or "")
+          PY
       - name: Upload verification reports
         if: always()
         uses: actions/upload-artifact@v4
