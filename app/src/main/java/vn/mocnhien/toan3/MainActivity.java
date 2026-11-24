@@ -3,7 +3,6 @@ package vn.mocnhien.toan3;
 import android.app.Activity;
 import android.os.Bundle;
 import android.media.AudioManager;
-import android.media.ToneGenerator;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.content.Context;
@@ -19,14 +18,14 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     private LinearLayout root,body;
     private ScrollView scroll;
     private TextView stars;
-    private ToneGenerator tone;
+    private GameAudio audio;
     private AdventurePanel gamePanel;
     private String screen="home",book="sgk",question="",lastId="";
     private int lesson=26,restoreScroll=0;
     private boolean reviewMode=false;
     private final String[] regions={"Vườn kẹo ngọt","Hồ cầu vồng","Thung lũng sao","Đồi mây hồng"};
-    private final String[] regionArt={"🌸","🌈","⭐","☁"};
-    private final int[] regionColors={0xffffd8e8,0xffdff4f4,0xffeee4fc,0xffffe5d9};
+    private final String[] regionArt={"✿","≈","★","☁"};
+    private final int[] regionColors={0xffffe3ee,0xffe1f4f3,0xffeee5fb,0xffffe9de};
     private final int[] regionStart={26,30,36,41},regionEnd={29,35,40,44};
 
     @Override public void onCreate(Bundle saved){
@@ -46,7 +45,8 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
             if(screen.equals("question")&&!bank.questions.containsKey(question))screen="home";
             if(screen.equals("gate")&&!store.adventureState(lesson).pending)screen="game";
             if(!bank.questions.containsKey(lastId))lastId="";
-            try{tone=new ToneGenerator(AudioManager.STREAM_MUSIC,45);}catch(Exception ignored){}
+            setVolumeControlStream(AudioManager.STREAM_MUSIC);
+            try{audio=new GameAudio(this);audio.enabled(store.sound());}catch(Exception e){android.util.Log.w("MocNhien","Sound unavailable",e);}
             render();
         }catch(Exception e){
             android.util.Log.e("MocNhien","Cannot load curriculum or progress",e);
@@ -85,13 +85,14 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     boolean chest(int l){return store.done("BONUS."+l+".1")&&store.done("BONUS."+l+".2");}
     void render(){
         if(screen.equals("game")){renderGame();return;}
-        root=ui.column();root.setBackgroundColor(NativeUi.BG);ui.pad(root,9);
-        LinearLayout header=ui.row();header.setBackground(ui.bg(NativeUi.WHITE,18));ui.pad(header,6);ui.add(root,header);
+        root=ui.column();root.setBackground(ui.wash(NativeUi.BG,0xffffeaf1,0));ui.pad(root,9);
+        LinearLayout header=ui.row();header.setBackground(ui.outlined(NativeUi.WHITE,20,NativeUi.OUTLINE));ui.pad(header,6);ui.add(root,header);
         if(!screen.equals("home")){Button back=ui.button("‹",NativeUi.PALE,this::back);back.setContentDescription("Quay lại");header.addView(back,new LinearLayout.LayoutParams(ui.dp(55),-2));}
         LinearLayout name=ui.column();header.addView(name,new LinearLayout.LayoutParams(0,-2,1));
-        ui.label(name,"MỘC NHIÊN • TOÁN 3",23,true);
-        ui.label(name,screen.equals("question")?"Bài "+lesson+" • "+title(lesson):"Hành trình học toán vui",15,false);
-        stars=ui.text("★ "+store.balance(),21,true);stars.setTextColor(NativeUi.PINK);header.addView(stars,new LinearLayout.LayoutParams(-2,-2));
+        ui.label(name,"Mộc Nhiên · Toán 3",23,true);
+        if(screen.equals("question")||screen.equals("gate"))ui.caption(name,"Bài "+lesson+" • "+title(lesson));
+        else ui.caption(name,"Vương quốc toán học");
+        stars=ui.badge("★ "+store.balance(),NativeUi.GOLD);stars.setTextColor(NativeUi.INK);header.addView(stars,new LinearLayout.LayoutParams(-2,-2));
         scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setClipToPadding(false);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         body=ui.column();ui.pad(body,5);scroll.addView(body,new ScrollView.LayoutParams(-1,-2));
         switch(screen){
@@ -106,8 +107,8 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
             default:homePage();break;
         }
         if(!screen.equals("question")&&!screen.equals("gate")){
-            LinearLayout nav=ui.row();nav.setBackground(ui.bg(NativeUi.WHITE,18));ui.add(root,nav);
-            ui.smallAction(nav,"Hành trình",screen.equals("home")?NativeUi.PALE:NativeUi.WHITE,this::home);
+            LinearLayout nav=ui.row();nav.setBackground(ui.outlined(NativeUi.WHITE,20,NativeUi.OUTLINE));ui.add(root,nav);
+            ui.smallAction(nav,"Hành trình",Arrays.asList("home","lesson","list","adventure").contains(screen)?NativeUi.PALE:NativeUi.WHITE,this::home);
             ui.smallAction(nav,"Ôn tập",screen.equals("review")?NativeUi.PALE:NativeUi.WHITE,()->go("review"));
             ui.smallAction(nav,"Thành tích",screen.equals("awards")?NativeUi.PALE:NativeUi.WHITE,()->go("awards"));
             ui.smallAction(nav,"Cài đặt",screen.equals("settings")?NativeUi.PALE:NativeUi.WHITE,()->go("settings"));
@@ -117,11 +118,14 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     }
     void openAdventure(int l){lesson=l;reviewMode=false;go("game");}
     void adventureMap(){
-        LinearLayout info=ui.card(NativeUi.LAV);ui.add(body,info);
-        ui.label(info,"🐇  Phiêu lưu cùng Thỏ Hồng",26,true);
-        ui.label(info,"Vượt hồ và đá, thu cánh hoa, hoàn thành trạm thực hành và 4 cổng toán. Không giới hạn lượt thử. Sao học tập chỉ thưởng một lần.",19,false);
+        LinearLayout info=ui.card(NativeUi.WHITE);ui.add(body,info);
+        ui.banner(info,AdventurePlan.theme(lesson),true,108);
+        ui.label(info,"Phiêu lưu cùng Thỏ Hồng",26,true);
+        ui.label(info,"Vượt chướng ngại vật, giải toán và tìm kho báu!",20,false);
+        ui.caption(info,"Mỗi màn có một trạm thực hành và 4 cổng toán. Hai cổng kho báu có thể làm sau.");
         for(int i=0;i<regions.length;i++){
             LinearLayout group=ui.card(regionColors[i]);ui.add(body,group);
+            ui.banner(group,i,false,82);
             ui.label(group,regionArt[i]+" "+regions[i],22,true);
             for(int l=regionStart[i];l<=regionEnd[i];l++){
                 final int stage=l;AdventureWorld.State a=store.adventureState(l);int best=store.adventureBest(l);
@@ -149,13 +153,13 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         top.addView(back,new LinearLayout.LayoutParams(ui.dp(110),-2));
         TextView title=ui.text("Bài "+lesson+" • "+AdventurePlan.name(lesson),21,true);
         top.addView(title,new LinearLayout.LayoutParams(0,-2,1));
-        stars=ui.text("★ "+store.balance(),20,true);top.addView(stars,new LinearLayout.LayoutParams(-2,-2));
+        stars=ui.badge("★ "+store.balance(),NativeUi.GOLD);top.addView(stars,new LinearLayout.LayoutParams(-2,-2));
         scroll=null;body=null;
         gamePanel=new AdventurePanel(this,store,lesson,new AdventurePanel.Host(){
             public void openGate(){go("gate");}
             public void returnMap(){go("adventure");}
             public void nextStage(){if(lesson<AdventurePlan.LAST)openAdventure(lesson+1);else go("adventure");}
-            public void sound(boolean positive){feedback(positive);}
+            public void sound(SoundPalette.Cue cue){play(cue);}
         });
         root.addView(gamePanel,new LinearLayout.LayoutParams(-1,0,1));setContentView(root);gamePanel.start();
     }
@@ -164,7 +168,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         if(!a.pending){ui.label(body,"Hãy tới cổng trong màn chơi.",22,true);ui.action(body,"Trở lại màn chơi",NativeUi.PINK,()->go("game"));return;}
         if(a.gate==0&&!store.trailComplete(lesson)){
             LinearLayout station=ui.card(NativeUi.WHITE);ui.add(body,station);
-            station.addView(new TrailMissionPanel(this,store,lesson,()->{feedback(true);render();}),new LinearLayout.LayoutParams(-1,-2));
+            station.addView(new TrailMissionPanel(this,store,lesson,()->{play(SoundPalette.Cue.STATION);render();}),new LinearLayout.LayoutParams(-1,-2));
             ui.action(body,"Về màn chơi (giữ nhiệm vụ đang làm)",NativeUi.PALE,()->go("game"));return;
         }
         JSONObject q=bank.questions.get(AdventurePlan.questionId(lesson,a.gate));
@@ -185,30 +189,58 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     void progress(LinearLayout p,int current,int total){
         ProgressBar bar=new ProgressBar(this,null,android.R.attr.progressBarStyleHorizontal);
         bar.setMax(Math.max(1,total));bar.setProgress(current);bar.setProgressTintList(android.content.res.ColorStateList.valueOf(NativeUi.PINK));
-        p.addView(bar,new LinearLayout.LayoutParams(-1,ui.dp(14)));
+        bar.setProgressBackgroundTintList(android.content.res.ColorStateList.valueOf(0xffeedce6));
+        LinearLayout.LayoutParams progressLp=new LinearLayout.LayoutParams(-1,ui.dp(12));progressLp.setMargins(ui.dp(5),ui.dp(4),ui.dp(5),ui.dp(3));p.addView(bar,progressLp);
         ui.label(p,current+" / "+total+" mục đã hoàn thành",16,true);
     }
     void homePage(){
         LinearLayout intro=ui.card(NativeUi.WHITE);ui.add(body,intro);
-        ui.label(intro,"🌸  Chào mừng đến vương quốc toán học!",25,true);
-        progress(intro,completed(),bank.questions.size());
-        ui.action(intro,"🐇  Phiêu lưu cùng Thỏ Hồng",NativeUi.PINK,()->go("adventure"));
-        if(!lastId.isEmpty()){JSONObject last=bank.questions.get(lastId);ui.action(intro,"▶  Tiếp tục Bài "+last.optInt("lesson")+" • "+bookName(last.optString("book").toLowerCase(Locale.ROOT)),NativeUi.PINK,()->openQuestion(last,false));}
-        LinearLayout row=ui.row();ui.add(body,row);
-        for(int i=0;i<regions.length;i++){
-            final int z=i;LinearLayout region=ui.card(regionColors[i]);ui.weight(row,region,1);
-            ui.label(region,regionArt[i]+" "+regions[i],20,true);
-            ui.label(region,"Bài "+regionStart[i]+" – "+regionEnd[i],15,false);
-            for(int l=regionStart[i];l<=regionEnd[i];l++){final int ll=l;ui.action(region,"Bài "+l+"  •  "+done(l)+"/"+count(l),done(l)==count(l)?NativeUi.MINT:NativeUi.WHITE,()->openLesson(ll));}
+        boolean wide=ui.widthDp()>=700;
+        LinearLayout hero=wide?ui.row():ui.column();hero.setGravity(Gravity.CENTER_VERTICAL);ui.add(intro,hero);
+        if(wide){
+            LinearLayout artBox=ui.column();ui.weight(hero,artBox,1.15f);ui.banner(artBox,0,true,152);
+        }else ui.banner(hero,0,true,116);
+        LinearLayout welcome=ui.column();
+        if(wide)ui.weight(hero,welcome,1);else ui.add(hero,welcome);
+        ui.label(welcome,"Hôm nay mình học gì?",27,true);
+        ui.label(welcome,"Cùng Thỏ Hồng khám phá vương quốc toán học.",19,false);
+        progress(welcome,completed(),bank.questions.size());
+        int resume=-1;
+        for(int l=26;l<=44;l++){
+            AdventureWorld.State a=store.adventureState(l);
+            if(!a.finished&&(a.x!=40||a.gate>0||a.petals>0||a.pending)){resume=l;break;}
         }
-        ui.label(body,bank.questions.size()+" mục học và thử thách • 19 trạm tương tác • học ngoại tuyến",15,false);
+        if(resume>=0){final int next=resume;ui.action(welcome,"Tiếp tục phiêu lưu · Bài "+next,NativeUi.PINK,()->openAdventure(next));
+            ui.action(welcome,"Bản đồ phiêu lưu",NativeUi.PALE,()->go("adventure"));
+        }else ui.action(welcome,"Bắt đầu phiêu lưu",NativeUi.PINK,()->go("adventure"));
+        if(!lastId.isEmpty()){
+            JSONObject last=bank.questions.get(lastId);
+            ui.action(welcome,"Tiếp tục học · Bài "+last.optInt("lesson"),NativeUi.PALE,()->openQuestion(last,false));
+        }
+        ui.label(body,"Chọn vùng khám phá",24,true);
+        int columns=ui.widthDp()>=1000?4:ui.widthDp()>=510?2:1;
+        for(int start=0;start<regions.length;start+=columns){
+            LinearLayout row=ui.row();row.setGravity(Gravity.TOP);ui.add(body,row);
+            for(int i=start;i<Math.min(regions.length,start+columns);i++){
+                LinearLayout region=ui.card(regionColors[i]);ui.weight(row,region,1);
+                ui.banner(region,i,false,85);
+                ui.label(region,regions[i],21,true);
+                ui.caption(region,"Bài "+regionStart[i]+" – "+regionEnd[i]);
+                for(int l=regionStart[i];l<=regionEnd[i];l++){
+                    final int ll=l;boolean finished=done(l)==count(l);
+                    ui.action(region,"Bài "+l+"   "+done(l)+"/"+count(l)+(finished?"  ✓":""),finished?NativeUi.MINT:NativeUi.WHITE,()->openLesson(ll));
+                }
+            }
+        }
+        ui.caption(body,bank.questions.size()+" mục học và thử thách • 19 trạm thực hành • học ngoại tuyến");
     }
     void lessonPage(){
-        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Bài "+lesson+" — "+title(lesson),26,true);progress(c,done(lesson),count(lesson));
+        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.banner(c,AdventurePlan.theme(lesson),false,88);ui.label(c,"Bài "+lesson+" — "+title(lesson),26,true);progress(c,done(lesson),count(lesson));
         if(!lastId.isEmpty()&&bank.questions.get(lastId).optInt("lesson")==lesson){JSONObject last=bank.questions.get(lastId);ui.action(c,"Tiếp tục câu đang học",NativeUi.PINK,()->openQuestion(last,false));}
-        LinearLayout row=ui.row();ui.add(body,row);
+        LinearLayout row=ui.widthDp()>=640?ui.row():ui.column();row.setGravity(Gravity.TOP);ui.add(body,row);
         for(String b:new String[]{"sgk","vbt","bonus"}){
-            List<JSONObject> qs=bank.section(lesson,b);LinearLayout box=ui.card(b.equals("bonus")?NativeUi.GOLD:NativeUi.PALE);ui.weight(row,box,1);
+            List<JSONObject> qs=bank.section(lesson,b);LinearLayout box=ui.card(b.equals("bonus")?NativeUi.GOLD:b.equals("sgk")?NativeUi.PALE:NativeUi.LAV);
+            if(ui.widthDp()>=640)ui.weight(row,box,1);else ui.add(row,box);
             ui.label(box,(b.equals("sgk")?"📖 ":b.equals("vbt")?"✏ ":"🎁 ")+bookName(b),23,true);progress(box,store.completed(qs),qs.size());
             ui.label(box,b.equals("bonus")?(chest(lesson)?"Kho báu đã mở!":"Hai thử thách • tối đa 300 sao"):"Khám phá và luyện tập",17,false);
             ui.action(box,"Mở "+bookName(b),NativeUi.WHITE,()->openBook(b));
@@ -253,11 +285,11 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     }
     void settingsPage(){
         LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Cài đặt",25,true);
-        ui.action(c,store.sound()?"Âm thanh: đang bật":"Âm thanh: đang tắt",NativeUi.PALE,()->{if(store.setSound(!store.sound()))render();else Toast.makeText(this,"Chưa lưu được cài đặt.",Toast.LENGTH_LONG).show();});
+        ui.action(c,store.sound()?"Âm thanh: đang bật":"Âm thanh: đang tắt",NativeUi.PALE,()->{if(store.setSound(!store.sound())){if(audio!=null)audio.enabled(store.sound());if(store.sound())play(SoundPalette.Cue.PETAL);render();}else Toast.makeText(this,"Chưa lưu được cài đặt.",Toast.LENGTH_LONG).show();});
         ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
         ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
         ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
-        ui.label(c,"Bản phát triển 1.1 • Android native",16,false);
+        ui.caption(c,"Bản phát triển 1.1 • Android native • Phong cảnh 2D và hiệu ứng âm thanh ngoại tuyến");
     }
     @Override public void changed(){if(stars!=null)stars.setText("★ "+store.balance());}
     @Override public void next(){
@@ -269,10 +301,11 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         for(JSONObject q:qs)if(!store.done(q.optString("id"))&&store.unlocked(q)){openQuestion(q,false);return;}
         go("lesson");
     }
-    @Override public void feedback(boolean correct){if(store.sound()&&tone!=null)tone.startTone(correct?ToneGenerator.TONE_PROP_ACK:ToneGenerator.TONE_PROP_NACK,160);}
+    void play(SoundPalette.Cue cue){if(store!=null&&store.sound()&&audio!=null)audio.play(cue);}
+    @Override public void feedback(boolean correct){play(correct?SoundPalette.Cue.CORRECT:SoundPalette.Cue.TRY_AGAIN); }
     void back(){switch(screen){case "game":go("adventure");break;case "gate":go("game");break;case "adventure":home();break;case "question":go(reviewMode?"review":"list");break;case "list":go("lesson");break;default:home();break;}}
     @Override public void onBackPressed(){if(store!=null&&!screen.equals("home"))back();else super.onBackPressed();}
-    @Override protected void onPause(){if(gamePanel!=null)gamePanel.pauseAndSave();if(store!=null)saveNav(scroll==null?0:scroll.getScrollY());super.onPause();}
-    @Override protected void onResume(){super.onResume();if(gamePanel!=null)gamePanel.start();}
-    @Override protected void onDestroy(){if(gamePanel!=null){gamePanel.dispose();gamePanel=null;}if(tone!=null)tone.release();super.onDestroy();}
+    @Override protected void onPause(){if(audio!=null)audio.foreground(false);if(gamePanel!=null)gamePanel.pauseAndSave();if(store!=null)saveNav(scroll==null?0:scroll.getScrollY());super.onPause();}
+    @Override protected void onResume(){super.onResume();if(audio!=null)audio.foreground(true);if(gamePanel!=null)gamePanel.start();}
+    @Override protected void onDestroy(){if(gamePanel!=null){gamePanel.dispose();gamePanel=null;}if(audio!=null){audio.release();audio=null;}super.onDestroy();}
 }
