@@ -1,0 +1,2465 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "SGK",
+    "title": "Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      104,
+      112
+    ],
+    "pdfPages": [
+      105,
+      113
+    ],
+    "sha256": "ca5720f69357ca5968fc8e96cc4961328a316ba680936548d2eeaae936a3fbcf"
+  },
+  "notes": "Chuyển thể từ SGK; study là ví dụ. Không hiển thị trường đáp án trong visual trước khi giải.",
+  "lessons": [
+    {
+      "lesson": 38,
+      "title": "Biểu thức số. Tính giá trị của biểu thức số",
+      "items": [
+        {
+          "id": "SGK.38.104.KP1.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "KP1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Đường ABC có hai đoạn 5 cm; ABCD thêm đoạn 8 cm. Viết biểu thức tính độ dài.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "ABC: 5 + 5 = 10 hoặc 5 × 2 = 10 cm. ABCD: 5 + 5 + 8 = 18 hoặc 5 × 2 + 8 = 18 cm. Các cách viết phép tính như 24 − 7, 8 : 2, 18 : 3 − 2 là biểu thức.",
+          "visual": {
+            "type": "polyline",
+            "segments": [
+              {
+                "name": "AB",
+                "length": 5
+              },
+              {
+                "name": "BC",
+                "length": 5
+              },
+              {
+                "name": "CD",
+                "length": 8
+              }
+            ],
+            "unit": "cm"
+          }
+        },
+        {
+          "id": "SGK.38.104.KP1.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "KP1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "Giá trị của biểu thức 35 + 8 − 10.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "35 + 8 − 10 = 43 − 10 = 33. Giá trị của biểu thức là 33."
+        },
+        {
+          "id": "SGK.38.104.HD1.1.mau",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Tính 45 − 15 + 10.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "45 − 15 + 10 = 30 + 10 = 40."
+        },
+        {
+          "id": "SGK.38.104.HD1.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "27 − 7 + 30 = ?",
+          "answer": 50,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "27 − 7 + 30 = 20 + 30 = 50",
+          "visual": {
+            "type": "expression",
+            "expression": "27 − 7 + 30"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "27 − 7 + 30"
+          }
+        },
+        {
+          "id": "SGK.38.104.HD1.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "60 + 50 − 20 = ?",
+          "answer": 90,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "60 + 50 − 20 = 110 − 20 = 90",
+          "visual": {
+            "type": "expression",
+            "expression": "60 + 50 − 20"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "60 + 50 − 20"
+          }
+        },
+        {
+          "id": "SGK.38.104.HD1.1.c",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 104,
+          "pdfPage": 105,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "c",
+          "kind": "number",
+          "prompt": "9 × 4 = ?",
+          "answer": 36,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "9 × 4 = 36",
+          "visual": {
+            "type": "expression",
+            "expression": "9 × 4"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "9 × 4"
+          }
+        },
+        {
+          "id": "SGK.38.105.HD1.2.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 105,
+          "pdfPage": 106,
+          "section": "HD1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép từng biểu thức với giá trị đúng.",
+          "answer": {
+            "A": 22,
+            "B": 48,
+            "C": 50,
+            "D": 15
+          },
+          "hint": "Tính từng biểu thức theo thứ tự.",
+          "solution": "A: 32 + 8 − 18 = 22; B: 6 × 8 = 48; C: 80 − 40 + 10 = 50; D: 45 : 9 + 10 = 15",
+          "visual": {
+            "type": "expression_match",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "32 + 8 − 18"
+              },
+              {
+                "id": "B",
+                "expression": "6 × 8"
+              },
+              {
+                "id": "C",
+                "expression": "80 − 40 + 10"
+              },
+              {
+                "id": "D",
+                "expression": "45 : 9 + 10"
+              }
+            ],
+            "options": [
+              48,
+              50,
+              15,
+              22
+            ],
+            "theme": "bear_honey"
+          },
+          "check": {
+            "op": "match_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "32 + 8 − 18"
+              },
+              {
+                "id": "B",
+                "expression": "6 × 8"
+              },
+              {
+                "id": "C",
+                "expression": "80 − 40 + 10"
+              },
+              {
+                "id": "D",
+                "expression": "45 : 9 + 10"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.38.105.KP2.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 105,
+          "pdfPage": 106,
+          "section": "KP2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Can có 10 l, rót vào 3 ca mỗi ca 2 l. Tìm lượng nước còn lại.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "10 − 2 × 3 = 10 − 6 = 4 l.",
+          "visual": {
+            "type": "cups",
+            "initialMl": 10000,
+            "cups": [
+              {
+                "valueMl": 2000
+              },
+              {
+                "valueMl": 2000
+              },
+              {
+                "valueMl": 2000
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.38.105.KP2.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 105,
+          "pdfPage": 106,
+          "section": "KP2",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "Quy tắc tính biểu thức không có ngoặc.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "Nhân, chia trước cộng, trừ. Nếu chỉ có cộng trừ hoặc chỉ có nhân chia thì tính từ trái sang phải."
+        },
+        {
+          "id": "SGK.38.106.HD2.1.mau",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "HD2",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Tính 24 + 8 : 2.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "24 + 8 : 2 = 24 + 4 = 28."
+        },
+        {
+          "id": "SGK.38.106.HD2.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "HD2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "30 : 5 × 2 = ?",
+          "answer": 12,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "30 : 5 × 2 = 6 × 2 = 12",
+          "visual": {
+            "type": "expression",
+            "expression": "30 : 5 × 2"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "30 : 5 × 2"
+          }
+        },
+        {
+          "id": "SGK.38.106.HD2.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "HD2",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "24 + 5 × 6 = ?",
+          "answer": 54,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "24 + 5 × 6 = 24 + 30 = 54",
+          "visual": {
+            "type": "expression",
+            "expression": "24 + 5 × 6"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "24 + 5 × 6"
+          }
+        },
+        {
+          "id": "SGK.38.106.HD2.1.c",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "HD2",
+          "exercise": 1,
+          "part": "c",
+          "kind": "number",
+          "prompt": "30 − 18 : 3 = ?",
+          "answer": 24,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "30 − 18 : 3 = 30 − 6 = 24",
+          "visual": {
+            "type": "expression",
+            "expression": "30 − 18 : 3"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "30 − 18 : 3"
+          }
+        },
+        {
+          "id": "SGK.38.106.HD2.2.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 106,
+          "pdfPage": 107,
+          "section": "HD2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép từng biểu thức với giá trị đúng.",
+          "answer": {
+            "A": 45,
+            "B": 46,
+            "C": 48,
+            "D": 47
+          },
+          "hint": "Tính từng biểu thức theo thứ tự.",
+          "solution": "A: 40 + 20 − 15 = 45; B: 56 − 2 × 5 = 46; C: 40 + 32 : 4 = 48; D: 67 − 15 − 5 = 47",
+          "visual": {
+            "type": "expression_match",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "40 + 20 − 15"
+              },
+              {
+                "id": "B",
+                "expression": "56 − 2 × 5"
+              },
+              {
+                "id": "C",
+                "expression": "40 + 32 : 4"
+              },
+              {
+                "id": "D",
+                "expression": "67 − 15 − 5"
+              }
+            ],
+            "options": [
+              48,
+              46,
+              47,
+              45
+            ],
+            "theme": "cat_fishing"
+          },
+          "check": {
+            "op": "match_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "40 + 20 − 15"
+              },
+              {
+                "id": "B",
+                "expression": "56 − 2 × 5"
+              },
+              {
+                "id": "C",
+                "expression": "40 + 32 : 4"
+              },
+              {
+                "id": "D",
+                "expression": "67 − 15 − 5"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.38.107.KP3.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "KP3",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Mỗi thỏ có 2 tai. Ba thỏ trắng và bốn thỏ nâu có bao nhiêu tai?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "2 × 3 + 2 × 4 = 14 hoặc 2 × (3 + 4) = 14 tai.",
+          "visual": {
+            "type": "equal_groups",
+            "objects": [
+              {
+                "name": "Thỏ trắng",
+                "count": 3
+              },
+              {
+                "name": "Thỏ nâu",
+                "count": 4
+              }
+            ],
+            "earsEach": 2
+          }
+        },
+        {
+          "id": "SGK.38.107.KP3.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "KP3",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "Quy tắc biểu thức có ngoặc.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "2 × (3 + 4) = 2 × 7 = 14. Tính trong ngoặc trước."
+        },
+        {
+          "id": "SGK.38.107.HD3.1.mau",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "HD3",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Tính 30 : (20 − 14).",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "30 : 6 = 5."
+        },
+        {
+          "id": "SGK.38.107.HD3.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "HD3",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "45 : (5 + 4) = ?",
+          "answer": 5,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "45 : (5 + 4) = 45 : 9 = 5",
+          "visual": {
+            "type": "expression",
+            "expression": "45 : (5 + 4)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "45 : (5 + 4)"
+          }
+        },
+        {
+          "id": "SGK.38.107.HD3.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "HD3",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "8 × (11 − 6) = ?",
+          "answer": 40,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "8 × (11 − 6) = 8 × 5 = 40",
+          "visual": {
+            "type": "expression",
+            "expression": "8 × (11 − 6)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "8 × (11 − 6)"
+          }
+        },
+        {
+          "id": "SGK.38.107.HD3.1.c",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 107,
+          "pdfPage": 108,
+          "section": "HD3",
+          "exercise": 1,
+          "part": "c",
+          "kind": "number",
+          "prompt": "42 − (42 − 5) = ?",
+          "answer": 5,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "42 − (42 − 5) = 42 − 37 = 5",
+          "visual": {
+            "type": "expression",
+            "expression": "42 − (42 − 5)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "42 − (42 − 5)"
+          }
+        },
+        {
+          "id": "SGK.38.108.HD3.2.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "HD3",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép từng biểu thức với giá trị đúng.",
+          "answer": {
+            "A": 4,
+            "B": 3,
+            "C": 40,
+            "D": 5
+          },
+          "hint": "Tính từng biểu thức theo thứ tự.",
+          "solution": "A: (15 + 5) : 5 = 4; B: 32 − (25 + 4) = 3; C: 16 + (40 − 16) = 40; D: 40 : (11 − 3) = 5",
+          "visual": {
+            "type": "expression_match",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "(15 + 5) : 5"
+              },
+              {
+                "id": "B",
+                "expression": "32 − (25 + 4)"
+              },
+              {
+                "id": "C",
+                "expression": "16 + (40 − 16)"
+              },
+              {
+                "id": "D",
+                "expression": "40 : (11 − 3)"
+              }
+            ],
+            "options": [
+              3,
+              40,
+              4,
+              5
+            ],
+            "theme": "boat_docks"
+          },
+          "check": {
+            "op": "match_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "(15 + 5) : 5"
+              },
+              {
+                "id": "B",
+                "expression": "32 − (25 + 4)"
+              },
+              {
+                "id": "C",
+                "expression": "16 + (40 − 16)"
+              },
+              {
+                "id": "D",
+                "expression": "40 : (11 − 3)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.1.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Chọn biểu thức có giá trị lớn nhất.",
+          "answer": "B",
+          "hint": "Tính cả bốn giá trị rồi so sánh.",
+          "solution": "A = 20; B = 28; C = 10; D = 22.",
+          "visual": {
+            "type": "expression_compare",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (6 − 2)"
+              },
+              {
+                "id": "B",
+                "expression": "5 × 6 − 2"
+              },
+              {
+                "id": "C",
+                "expression": "(16 + 24) : 4"
+              },
+              {
+                "id": "D",
+                "expression": "16 + 24 : 4"
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "expression_extreme",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (6 − 2)"
+              },
+              {
+                "id": "B",
+                "expression": "5 × 6 − 2"
+              },
+              {
+                "id": "C",
+                "expression": "(16 + 24) : 4"
+              },
+              {
+                "id": "D",
+                "expression": "16 + 24 : 4"
+              }
+            ],
+            "target": "max"
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.1.b",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "Chọn biểu thức có giá trị bé nhất.",
+          "answer": "C",
+          "hint": "Tính cả bốn giá trị rồi so sánh.",
+          "solution": "A = 20; B = 28; C = 10; D = 22.",
+          "visual": {
+            "type": "expression_compare",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (6 − 2)"
+              },
+              {
+                "id": "B",
+                "expression": "5 × 6 − 2"
+              },
+              {
+                "id": "C",
+                "expression": "(16 + 24) : 4"
+              },
+              {
+                "id": "D",
+                "expression": "16 + 24 : 4"
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "expression_extreme",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "5 × (6 − 2)"
+              },
+              {
+                "id": "B",
+                "expression": "5 × 6 − 2"
+              },
+              {
+                "id": "C",
+                "expression": "(16 + 24) : 4"
+              },
+              {
+                "id": "D",
+                "expression": "16 + 24 : 4"
+              }
+            ],
+            "target": "min"
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.2.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Mai có 4 hộp bút màu, cho Mi 2 hộp. Mỗi hộp có 10 bút. Mai còn bao nhiêu bút?",
+          "answer": {
+            "intermediate": 2,
+            "final": 20,
+            "unit": "chiếc"
+          },
+          "hint": "Tìm đại lượng chưa biết ở bước đầu, rồi trả lời câu hỏi.",
+          "solution": "4 − 2 = 2 hộp; 2 × 10 = 20 bút. Có thể tính (4 − 2) × 10.",
+          "visual": {
+            "type": "equal_groups",
+            "groups": 4,
+            "removedGroups": 2,
+            "each": 10
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "4−2",
+              "2×10"
+            ]
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.3.a",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 3,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Tổng ba thùng nước mắm: 64 l, 55 l, 45 l.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "(64 + 55) + 45 = 119 + 45 = 164; 64 + (55 + 45) = 64 + 100 = 164. Nhóm 55 và 45 thuận tiện hơn.",
+          "visual": {
+            "type": "grouping_example",
+            "expression": "64 + 55 + 45",
+            "unit": "l"
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.3.b1",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 3,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "123 + 80 + 20 = ?",
+          "answer": 223,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "123 + (80 + 20) = 123 + 100 = 223.",
+          "visual": {
+            "type": "expression",
+            "expression": "123 + 80 + 20"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "123 + 80 + 20"
+          }
+        },
+        {
+          "id": "SGK.38.108.LT.3.b2",
+          "book": "SGK",
+          "lesson": 38,
+          "page": 108,
+          "pdfPage": 109,
+          "section": "LT",
+          "exercise": 3,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "207 + 64 + 36 = ?",
+          "answer": 307,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "207 + (64 + 36) = 207 + 100 = 307.",
+          "visual": {
+            "type": "expression",
+            "expression": "207 + 64 + 36"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "207 + 64 + 36"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 39,
+      "title": "So sánh số lớn gấp mấy lần số bé",
+      "items": [
+        {
+          "id": "SGK.39.109.KP.1.a",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "KP",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Hàng trên 6 ô tô, hàng dưới 2 ô tô. Hàng trên gấp hàng dưới mấy lần?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "6 : 2 = 3 lần. Muốn tìm số lớn gấp mấy lần số bé, lấy số lớn chia số bé.",
+          "visual": {
+            "type": "bar_multiple",
+            "base": 2,
+            "multiple": 3,
+            "object": "Ô tô"
+          }
+        },
+        {
+          "id": "SGK.39.109.KP.1.b",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "KP",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "AB dài 8 cm, CD dài 2 cm. AB gấp CD mấy lần?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "8 : 2 = 4 lần.",
+          "visual": {
+            "type": "bar_compare",
+            "labels": [
+              "AB",
+              "CD"
+            ],
+            "lengths": [
+              8,
+              2
+            ],
+            "unit": "cm"
+          }
+        },
+        {
+          "id": "SGK.39.109.HD.1.mau",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "HD",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "6 gấp 2 mấy lần?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "6 : 2 = 3 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                6,
+                2
+              ],
+              [
+                10,
+                5
+              ],
+              [
+                20,
+                4
+              ]
+            ],
+            "example": {
+              "pair": [
+                6,
+                2
+              ],
+              "ratio": 3
+            }
+          }
+        },
+        {
+          "id": "SGK.39.109.HD.1.a",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "10 gấp 5 mấy lần?",
+          "answer": 2,
+          "hint": "Lấy số lớn chia số bé.",
+          "solution": "10 : 5 = 2 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                6,
+                2
+              ],
+              [
+                10,
+                5
+              ],
+              [
+                20,
+                4
+              ]
+            ],
+            "example": {
+              "pair": [
+                6,
+                2
+              ],
+              "ratio": 3
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "10:5"
+          }
+        },
+        {
+          "id": "SGK.39.109.HD.1.b",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 109,
+          "pdfPage": 110,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "20 gấp 4 mấy lần?",
+          "answer": 5,
+          "hint": "Lấy số lớn chia số bé.",
+          "solution": "20 : 4 = 5 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                6,
+                2
+              ],
+              [
+                10,
+                5
+              ],
+              [
+                20,
+                4
+              ]
+            ],
+            "example": {
+              "pair": [
+                6,
+                2
+              ],
+              "ratio": 3
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "20:4"
+          }
+        },
+        {
+          "id": "SGK.39.110.HD.2.a",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Bút chì dài gấp mấy lần bút sáp?",
+          "answer": 2,
+          "hint": "So sánh độ dài bằng phép chia.",
+          "solution": "10 : 5 = 2 lần.",
+          "visual": {
+            "type": "object_lengths",
+            "objects": [
+              {
+                "name": "Bút chì",
+                "length": 10
+              },
+              {
+                "name": "Bút sáp",
+                "length": 5
+              },
+              {
+                "name": "Ghim",
+                "length": 2
+              }
+            ],
+            "unit": "cm"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "10:5"
+          }
+        },
+        {
+          "id": "SGK.39.110.HD.2.b",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Bút chì dài gấp mấy lần cái ghim?",
+          "answer": 5,
+          "hint": "So sánh độ dài bằng phép chia.",
+          "solution": "10 : 2 = 5 lần.",
+          "visual": {
+            "type": "object_lengths",
+            "objects": [
+              {
+                "name": "Bút chì",
+                "length": 10
+              },
+              {
+                "name": "Bút sáp",
+                "length": 5
+              },
+              {
+                "name": "Ghim",
+                "length": 2
+              }
+            ],
+            "unit": "cm"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "10:2"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.mau",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "8 hơn 2 bao nhiêu, gấp 2 mấy lần?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "8 − 2 = 6; 8 : 2 = 4 lần.",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.a1",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "12 hơn 4 bao nhiêu đơn vị?",
+          "answer": 8,
+          "hint": "Hơn bao nhiêu dùng trừ.",
+          "solution": "12 − 4 = 8",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "12−4"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.a2",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "12 gấp 4 mấy lần?",
+          "answer": 3,
+          "hint": "Gấp mấy lần dùng chia.",
+          "solution": "12 : 4 = 3",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "12:4"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.b1",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "15 hơn 5 bao nhiêu đơn vị?",
+          "answer": 10,
+          "hint": "Hơn bao nhiêu dùng trừ.",
+          "solution": "15 − 5 = 10",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15−5"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.b2",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "15 gấp 5 mấy lần?",
+          "answer": 3,
+          "hint": "Gấp mấy lần dùng chia.",
+          "solution": "15 : 5 = 3",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15:5"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.c1",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "c1",
+          "kind": "number",
+          "prompt": "24 hơn 6 bao nhiêu đơn vị?",
+          "answer": 18,
+          "hint": "Hơn bao nhiêu dùng trừ.",
+          "solution": "24 − 6 = 18",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "24−6"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.c2",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "c2",
+          "kind": "number",
+          "prompt": "24 gấp 6 mấy lần?",
+          "answer": 4,
+          "hint": "Gấp mấy lần dùng chia.",
+          "solution": "24 : 6 = 4",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "24:6"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.d1",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "d1",
+          "kind": "number",
+          "prompt": "30 hơn 3 bao nhiêu đơn vị?",
+          "answer": 27,
+          "hint": "Hơn bao nhiêu dùng trừ.",
+          "solution": "30 − 3 = 27",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "30−3"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.1.d2",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 1,
+          "part": "d2",
+          "kind": "number",
+          "prompt": "30 gấp 3 mấy lần?",
+          "answer": 10,
+          "hint": "Gấp mấy lần dùng chia.",
+          "solution": "30 : 3 = 10",
+          "visual": {
+            "type": "ratio_difference_table",
+            "pairs": [
+              [
+                8,
+                2
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "example": {
+              "pair": [
+                8,
+                2
+              ],
+              "difference": 6,
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "30:3"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.2.a1",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "Mỗi hàng có bao nhiêu quả bóng?",
+          "answer": 8,
+          "hint": "Đếm ngang.",
+          "solution": "8 quả.",
+          "visual": {
+            "type": "array_grid",
+            "rows": 4,
+            "columns": 8,
+            "object": "Bóng",
+            "total": 32
+          },
+          "check": {
+            "op": "expression",
+            "expression": "32:4"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.2.a2",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "Mỗi cột có bao nhiêu quả bóng?",
+          "answer": 4,
+          "hint": "Đếm dọc.",
+          "solution": "4 quả.",
+          "visual": {
+            "type": "array_grid",
+            "rows": 4,
+            "columns": 8,
+            "object": "Bóng",
+            "total": 32
+          },
+          "check": {
+            "op": "expression",
+            "expression": "32:8"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.2.b",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Một hàng có số bóng gấp mấy lần một cột?",
+          "answer": 2,
+          "hint": "Lấy 8 chia 4.",
+          "solution": "8 : 4 = 2 lần.",
+          "visual": {
+            "type": "array_grid",
+            "rows": 4,
+            "columns": 8,
+            "object": "Bóng",
+            "total": 32
+          },
+          "check": {
+            "op": "expression",
+            "expression": "8:4"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.3.a",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 3,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Thuyền lớn chở 24 khách, thuyền nhỏ 6 khách. Thuyền lớn nhiều hơn bao nhiêu khách?",
+          "answer": 18,
+          "hint": "Hỏi nhiều hơn, dùng trừ.",
+          "solution": "24 − 6 = 18 khách.",
+          "visual": {
+            "type": "bar_compare",
+            "labels": [
+              "Thuyền lớn",
+              "Thuyền nhỏ"
+            ],
+            "lengths": [
+              24,
+              6
+            ],
+            "unit": "khách"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "24−6"
+          }
+        },
+        {
+          "id": "SGK.39.110.LT.3.b",
+          "book": "SGK",
+          "lesson": 39,
+          "page": 110,
+          "pdfPage": 111,
+          "section": "LT",
+          "exercise": 3,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Số khách thuyền lớn gấp mấy lần thuyền nhỏ?",
+          "answer": 4,
+          "hint": "Hỏi gấp mấy lần, dùng chia.",
+          "solution": "24 : 6 = 4 lần.",
+          "visual": {
+            "type": "bar_compare",
+            "labels": [
+              "Thuyền lớn",
+              "Thuyền nhỏ"
+            ],
+            "lengths": [
+              24,
+              6
+            ],
+            "unit": "khách"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "24:6"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 40,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "SGK.40.111.LT1.1.a",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "multiplication",
+          "prompt": "122 × 4",
+          "answer": 488,
+          "hint": "Nhân từng hàng từ phải sang trái.",
+          "solution": "2 × 4 = 8; viết 8. 2 × 4 = 8; viết 8. 1 × 4 = 4; viết 4. Kết quả 488.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 122,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 4,
+                "resultDigit": 4,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              122,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.1.b",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "multiplication",
+          "prompt": "327 × 3",
+          "answer": 981,
+          "hint": "Nhân từng hàng từ phải sang trái.",
+          "solution": "7 × 3 = 21; viết 1, nhớ 2. 2 × 3 + 2 = 8; viết 8. 3 × 3 = 9; viết 9. Kết quả 981.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 327,
+            "multiplier": 3,
+            "steps": [
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 21,
+                "resultDigit": 1,
+                "carryOut": 2
+              },
+              {
+                "digit": 2,
+                "carryIn": 2,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              327,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.1.c",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "c",
+          "kind": "division",
+          "prompt": "715 : 5",
+          "answer": {
+            "quotient": 143,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "7 : 5 được 1, dư 2; 21 : 5 được 4, dư 1; 15 : 5 được 3, dư 0. Kiểm tra: 5 × 143 + 0 = 715.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 715,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 21,
+                "quotientDigit": 4,
+                "product": 20,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 15,
+                "quotientDigit": 3,
+                "product": 15,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              715,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.1.d",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "d",
+          "kind": "division",
+          "prompt": "645 : 3",
+          "answer": {
+            "quotient": 215,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "6 : 3 được 2, dư 0; 4 : 3 được 1, dư 1; 15 : 3 được 5, dư 0. Kiểm tra: 3 × 215 + 0 = 645.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 645,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 3,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 15,
+                "quotientDigit": 5,
+                "product": 15,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              645,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.mau1",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "mau1",
+          "kind": "study",
+          "prompt": "12 giảm 3 lần, gấp 4 lần.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "12 : 3 = 4; 12 × 4 = 48.",
+          "visual": {
+            "type": "number_machine_table",
+            "inputs": [
+              12,
+              15,
+              18
+            ],
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 4
+              }
+            ],
+            "example": {
+              "input": 12,
+              "outputs": [
+                4,
+                48
+              ]
+            }
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.a1",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "15 giảm 3 lần được bao nhiêu?",
+          "answer": 5,
+          "hint": "Giảm dùng chia, gấp dùng nhân.",
+          "solution": "15 : 3 = 5",
+          "visual": {
+            "type": "number_machine_table",
+            "inputs": [
+              12,
+              15,
+              18
+            ],
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 4
+              }
+            ],
+            "example": {
+              "input": 12,
+              "outputs": [
+                4,
+                48
+              ]
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15:3"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.a2",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "18 giảm 3 lần được bao nhiêu?",
+          "answer": 6,
+          "hint": "Giảm dùng chia, gấp dùng nhân.",
+          "solution": "18 : 3 = 6",
+          "visual": {
+            "type": "number_machine_table",
+            "inputs": [
+              12,
+              15,
+              18
+            ],
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 4
+              }
+            ],
+            "example": {
+              "input": 12,
+              "outputs": [
+                4,
+                48
+              ]
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "18:3"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.a3",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "15 gấp 4 lần được bao nhiêu?",
+          "answer": 60,
+          "hint": "Giảm dùng chia, gấp dùng nhân.",
+          "solution": "15 × 4 = 60",
+          "visual": {
+            "type": "number_machine_table",
+            "inputs": [
+              12,
+              15,
+              18
+            ],
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 4
+              }
+            ],
+            "example": {
+              "input": 12,
+              "outputs": [
+                4,
+                48
+              ]
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15×4"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.a4",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a4",
+          "kind": "number",
+          "prompt": "18 gấp 4 lần được bao nhiêu?",
+          "answer": 72,
+          "hint": "Giảm dùng chia, gấp dùng nhân.",
+          "solution": "18 × 4 = 72",
+          "visual": {
+            "type": "number_machine_table",
+            "inputs": [
+              12,
+              15,
+              18
+            ],
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 4
+              }
+            ],
+            "example": {
+              "input": 12,
+              "outputs": [
+                4,
+                48
+              ]
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "18×4"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.mau2",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "mau2",
+          "kind": "study",
+          "prompt": "36 gấp 9 mấy lần?",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "36 : 9 = 4 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                36,
+                9
+              ],
+              [
+                40,
+                8
+              ],
+              [
+                45,
+                5
+              ]
+            ],
+            "example": {
+              "pair": [
+                36,
+                9
+              ],
+              "ratio": 4
+            }
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.b1",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "40 gấp 8 mấy lần?",
+          "answer": 5,
+          "hint": "Số lớn chia số bé.",
+          "solution": "40 : 8 = 5 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                36,
+                9
+              ],
+              [
+                40,
+                8
+              ],
+              [
+                45,
+                5
+              ]
+            ],
+            "example": {
+              "pair": [
+                36,
+                9
+              ],
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "40:8"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.2.b2",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "45 gấp 5 mấy lần?",
+          "answer": 9,
+          "hint": "Số lớn chia số bé.",
+          "solution": "45 : 5 = 9 lần.",
+          "visual": {
+            "type": "ratio_table",
+            "pairs": [
+              [
+                36,
+                9
+              ],
+              [
+                40,
+                8
+              ],
+              [
+                45,
+                5
+              ]
+            ],
+            "example": {
+              "pair": [
+                36,
+                9
+              ],
+              "ratio": 4
+            }
+          },
+          "check": {
+            "op": "expression",
+            "expression": "45:5"
+          }
+        },
+        {
+          "id": "SGK.40.111.LT1.3.a",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Bê nặng 120 kg, bò nặng gấp 3 lần. Cả hai nặng bao nhiêu kg?",
+          "answer": {
+            "intermediate": 360,
+            "final": 480,
+            "unit": "kg"
+          },
+          "hint": "Tìm đại lượng chưa biết ở bước đầu, rồi trả lời câu hỏi.",
+          "solution": "120 × 3 = 360 kg; 120 + 360 = 480 kg.",
+          "visual": {
+            "type": "bar_multiple",
+            "base": 120,
+            "multiple": 3,
+            "labels": [
+              "Bê",
+              "Bò"
+            ],
+            "unit": "kg"
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "120×3",
+              "120+360"
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.111.LT2.1.a",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 111,
+          "pdfPage": 112,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép từng biểu thức với giá trị đúng.",
+          "answer": {
+            "A": 305,
+            "B": 55,
+            "C": 396,
+            "D": 200,
+            "E": 30
+          },
+          "hint": "Tính từng biểu thức theo thứ tự.",
+          "solution": "A: 360 + 47 − 102 = 305; B: 360 − (335 − 30) = 55; C: 132 × (12 − 9) = 396; D: 80 + 60 × 2 = 200; E: (150 + 30) : 6 = 30",
+          "visual": {
+            "type": "expression_match",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "360 + 47 − 102"
+              },
+              {
+                "id": "B",
+                "expression": "360 − (335 − 30)"
+              },
+              {
+                "id": "C",
+                "expression": "132 × (12 − 9)"
+              },
+              {
+                "id": "D",
+                "expression": "80 + 60 × 2"
+              },
+              {
+                "id": "E",
+                "expression": "(150 + 30) : 6"
+              }
+            ],
+            "options": [
+              55,
+              305,
+              30,
+              396,
+              200
+            ],
+            "theme": "flower_butterflies"
+          },
+          "check": {
+            "op": "match_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "360 + 47 − 102"
+              },
+              {
+                "id": "B",
+                "expression": "360 − (335 − 30)"
+              },
+              {
+                "id": "C",
+                "expression": "132 × (12 − 9)"
+              },
+              {
+                "id": "D",
+                "expression": "80 + 60 × 2"
+              },
+              {
+                "id": "E",
+                "expression": "(150 + 30) : 6"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.40.112.LT2.2.a",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Cây cau lúc mới trồng cao 2 m, nay cao 6 m. Cao gấp mấy lần?",
+          "answer": 3,
+          "hint": "Chiều cao hiện nay chia chiều cao ban đầu.",
+          "solution": "6 : 2 = 3 lần.",
+          "check": {
+            "op": "expression",
+            "expression": "6:2"
+          }
+        },
+        {
+          "id": "SGK.40.112.LT2.3.a",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Ngỗng nặng 6 kg; chó gấp 2 lần ngỗng, lợn gấp 5 lần chó. Tính khối lượng lợn theo hai cách.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và giải thích lại.",
+          "solution": "(6 × 2) × 5 = 12 × 5 = 60 kg; 6 × (2 × 5) = 6 × 10 = 60 kg. Nhóm 2 × 5 thuận tiện hơn.",
+          "visual": {
+            "type": "grouping_example",
+            "expression": "6 × 2 × 5",
+            "objects": [
+              {
+                "name": "Ngỗng",
+                "value": 6
+              },
+              {
+                "name": "Chó",
+                "factor": 2
+              },
+              {
+                "name": "Lợn",
+                "factor": 5
+              }
+            ],
+            "unit": "kg"
+          }
+        },
+        {
+          "id": "SGK.40.112.LT2.3.b1",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "8 × 5 × 2 = ?",
+          "answer": 80,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "8 × (5 × 2) = 8 × 10 = 80.",
+          "visual": {
+            "type": "expression",
+            "expression": "8 × 5 × 2"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "8 × 5 × 2"
+          }
+        },
+        {
+          "id": "SGK.40.112.LT2.3.b2",
+          "book": "SGK",
+          "lesson": 40,
+          "page": 112,
+          "pdfPage": 113,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "9 × 2 × 5 = ?",
+          "answer": 90,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "9 × (2 × 5) = 9 × 10 = 90.",
+          "visual": {
+            "type": "expression",
+            "expression": "9 × 2 × 5"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "9 × 2 × 5"
+          }
+        }
+      ]
+    }
+  ]
+}
