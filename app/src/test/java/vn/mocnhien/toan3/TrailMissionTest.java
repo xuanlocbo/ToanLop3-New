@@ -76,6 +76,7 @@ public final class TrailMissionTest {
         TrailMission steps=TrailMission.of(38);
         assertFalse(steps.solved(play(steps,1,0)));assertTrue(steps.solved(play(steps,0,1)));
         assertFalse(steps.valid(new int[]{-1,0}));assertFalse(steps.solved(play(steps,0,1,4)));
+        assertEquals("6 × 4 = 24\n24 + 8 = 32",steps.trace(play(steps,0,1)));
         TrailMission grid=TrailMission.of(43);
         assertTrue(grid.solved(play(grid,0,3,13,10)));
         assertTrue(grid.solved(play(grid,6,16,19,9)));
@@ -116,6 +117,7 @@ public final class TrailMissionTest {
             disk.fail=true;assertFalse(store.skipAdventureBonus(lesson,gate));assertEquals(gate,store.adventureState(lesson).gate);
             disk.fail=false;assertTrue(store.skipAdventureBonus(lesson,gate));store=new ProgressStore(c,disk);
             assertFalse(store.done(AdventurePlan.questionId(lesson,gate)));assertEquals(balance,store.balance());
+            assertEquals("1",store.draft(AdventurePlan.questionId(lesson,gate)).optString("value"));
         }
         s=store.adventureState(lesson);helper.walk(w,s);assertTrue(store.saveAdventureMotion(lesson,s));assertTrue(store.adventureState(lesson).finished);
         assertTrue(store.resetAdventure(lesson));assertFalse(store.trailComplete(lesson));assertEquals("",store.trailDraft(lesson));assertEquals(balance,store.balance());
