@@ -1,81 +1,198 @@
 package vn.mocnhien.toan3;
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.content.SharedPreferences;
-import android.graphics.*;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.view.*;
-import android.media.*;
+import android.view.inputmethod.InputMethodManager;
+import android.content.Context;
+import android.widget.*;
+import org.json.*;
 import java.util.*;
-public final class MainActivity extends Activity {
- Game game;
- @Override public void onCreate(Bundle b){super.onCreate(b);game=new Game();setContentView(game);immersive();}
- void immersive(){getWindow().getDecorView().setSystemUiVisibility(5894|1024|512);}
- @Override public void onWindowFocusChanged(boolean f){super.onWindowFocusChanged(f);if(f)immersive();}
- @Override public void onBackPressed(){game.home();}
- @Override protected void onPause(){if(game!=null)game.save();super.onPause();}
- @Override protected void onDestroy(){if(game!=null&&game.tone!=null)game.tone.release();super.onDestroy();}
- final class Game extends View {
-  final int INK=0xff633650,PINK=0xffc94a83,WHITE=0xffffffff,GREEN=0xff63ab84,GOLD=0xffffc74f;
-  final int[] skies={0xffffd9e9,0xffdceafc,0xffeadbfa,0xffffe7d4}, hills={0xffaed7ab,0xffa3d8d4,0xffc1afe8,0xffb4debc};
-  final String[] zones={"Vườn kẹo ngọt","Hồ cầu vồng","Thung lũng sao","Đồi mây hồng"};
-  final SharedPreferences prefs=getSharedPreferences("progress",MODE_PRIVATE);
-  final Paint p=new Paint(3);Canvas c;float sc=1,ox,oy;int screen=prefs.getInt("screen",0),l=prefs.getInt("lesson",25),i=prefs.getInt("index",0),phase,mask,ca,cb,selected=-1,fruit=-1,drag=-1,page=0;float dragX,dragY;int[] slots=new int[20];String msg="";
-  final ArrayList<Hit> hits=new ArrayList<>();ToneGenerator tone;boolean sound=prefs.getBoolean("sound",true);
-  Game(){super(MainActivity.this);setFocusable(true);l=Math.max(25,Math.min(44,l));i=Math.max(0,Math.min(25,i));load();try{tone=new ToneGenerator(AudioManager.STREAM_MUSIC,40);}catch(Exception ignored){}}
-  String key(){return l+"_"+i+"_";}
-  void load(){String k=key();phase=prefs.getInt(k+"phase",0);mask=prefs.getInt(k+"mask",0);ca=prefs.getInt(k+"ca",0);cb=prefs.getInt(k+"cb",0);selected=prefs.getInt(k+"selected",-1);fruit=prefs.getInt(k+"fruit",-1);msg=prefs.getString(k+"msg","");for(int j=0;j<20;j++)slots[j]=prefs.getInt(k+"slot"+j,-1);}
-  void save(){String k=key();SharedPreferences.Editor e=prefs.edit().putInt("screen",screen).putInt("lesson",l).putInt("index",i).putBoolean("sound",sound).putInt(k+"phase",phase).putInt(k+"mask",mask).putInt(k+"ca",ca).putInt(k+"cb",cb).putInt(k+"selected",selected).putInt(k+"fruit",fruit).putString(k+"msg",msg);for(int j=0;j<20;j++)e.putInt(k+"slot"+j,slots[j]);e.commit();}
-  int done(int ll){int n=0;for(int j=0;j<24;j++)if(prefs.getBoolean(ll+"_"+j+"_done",false))n++;return n;}
-  int next(int ll,int from,int to){for(int j=from;j<to;j++)if(!prefs.getBoolean(ll+"_"+j+"_done",false))return j;return from;}
-  int total(){int n=0;for(int ll=25;ll<=44;ll++)for(int j=0;j<26;j++)if(prefs.getBoolean(ll+"_"+j+"_done",false))n++;return n;}
-  void home(){screen=0;save();invalidate();}
-  void open(int ll,int ii){save();l=ll;i=ii;screen=1;load();if(phase==2){phase=0;mask=ca=cb=0;selected=fruit=-1;Arrays.fill(slots,-1);msg="";}save();invalidate();}
-  void win(){phase=1;msg="";prefs.edit().putBoolean(key()+"done",true).remove(key()+"review").commit();save();beep(true);invalidate();}
-  void bad(){msg="Chưa đúng, thử lại nhé!";prefs.edit().putBoolean(key()+"review",true).commit();save();beep(false);invalidate();}
-  void beep(boolean b){if(sound&&tone!=null)tone.startTone(b?ToneGenerator.TONE_PROP_ACK:ToneGenerator.TONE_PROP_NACK,140);}
-  class Hit{RectF r;Runnable f;Hit(float x,float y,float w,float h,Runnable f){r=new RectF(x,y,x+w,y+h);this.f=f;}}
-  void color(int x){p.setShader(null);p.setColor(x);p.setStyle(Paint.Style.FILL);}
-  void box(float x,float y,float w,float h,float r,int col){color(col);c.drawRoundRect(x,y,x+w,y+h,r,r,p);}
-  void oval(float x,float y,float w,float h,int col){color(col);c.drawOval(x,y,x+w,y+h,p);}
-  void line(float x,float y,float xx,float yy,float w,int col){color(col);p.setStrokeWidth(w);p.setStrokeCap(Paint.Cap.ROUND);c.drawLine(x,y,xx,yy,p);}
-  void text(String s,float x,float y,float size,int col,boolean bold){color(col);p.setTypeface(Typeface.create("sans-serif",bold?1:0));p.setTextSize(size);p.setTextAlign(Paint.Align.CENTER);c.drawText(s,x,y,p);}
-  void wrap(String s,float x,float y,float w,float h,float size,int col,boolean bold){p.setTypeface(Typeface.create("sans-serif",bold?1:0));ArrayList<String> rows;while(true){p.setTextSize(size);rows=new ArrayList<>();String row="";for(String word:s.split(" ")){String t=row.isEmpty()?word:row+" "+word;if(!row.isEmpty()&&p.measureText(t)>w-18){rows.add(row);row=word;}else row=t;}rows.add(row);if(rows.size()*size*1.25<=h||size<=16)break;size-=1;}float yy=y+(h-rows.size()*size*1.25f)/2+size;for(String row:rows){text(row,x+w/2,yy,size,col,bold);yy+=size*1.25f;}}
-  void button(String s,float x,float y,float w,float h,int col,int fg,Runnable f){box(x,y+5,w,h,22,0x22633650);box(x,y,w,h,22,col);wrap(s,x,y,w,h,29,fg,true);hits.add(new Hit(x,y,w,h,f));}
-  void star(float x,float y,float r,int col){Path a=new Path();for(int j=0;j<10;j++){double t=-Math.PI/2+j*Math.PI/5;float z=j%2==0?r:r*.42f;float xx=x+(float)Math.cos(t)*z,yy=y+(float)Math.sin(t)*z;if(j==0)a.moveTo(xx,yy);else a.lineTo(xx,yy);}a.close();color(col);c.drawPath(a,p);}
-  void pig(float x,float y,float z){c.save();c.translate(x,y);c.scale(z,z);oval(-54,60,108,18,0x225b3555);box(-39,6,78,70,25,0xffdb77a6);oval(-57,-80,40,50,0xffec8fb6);oval(17,-80,40,50,0xffec8fb6);oval(-57,-65,114,96,0xffffc2d7);oval(-34,-35,11,17,INK);oval(23,-35,11,17,INK);oval(-31,-34,4,5,WHITE);oval(25,-34,4,5,WHITE);oval(-22,-14,44,27,0xffee91b4);oval(-11,-7,6,9,INK);oval(5,-7,6,9,INK);oval(-46,-15,20,12,0xffff91b7);oval(26,-15,20,12,0xffff91b7);star(0,49,16,GOLD);box(-31,65,25,18,7,INK);box(6,65,25,18,7,INK);oval(22,-73,24,15,PINK);oval(43,-80,24,21,PINK);c.restore();}
-  void apple(float x,float y,float z,boolean picked){oval(x-17*z,y-12*z,34*z,30*z,picked?GREEN:0xffef759e);oval(x-12*z,y-8*z,8*z,8*z,0x88ffffff);line(x,y-10*z,x+3*z,y-22*z,3*z,0xff89665d);oval(x+3*z,y-23*z,14*z,8*z,GREEN);}
-  void cloud(float x,float y,float z){oval(x,y+15*z,155*z,45*z,0xccffffff);oval(x+25*z,y,62*z,56*z,0xccffffff);oval(x+72*z,y-10*z,66*z,65*z,0xccffffff);}
-  void tree(float x,float y,float z,int col){box(x-6*z,y-5*z,12*z,67*z,5*z,0xffa98978);oval(x-43*z,y-50*z,86*z,65*z,col);oval(x-28*z,y-72*z,60*z,62*z,col);oval(x+6*z,y-40*z,47*z,45*z,col);oval(x-17*z,y-48*z,16*z,13*z,0x66ffffff);}
-  void gift(float x,float y,float z){box(x-25*z,y-20*z,50*z,49*z,7*z,GOLD);box(x-29*z,y-23*z,58*z,15*z,5*z,0xffffdf85);box(x-5*z,y-23*z,10*z,52*z,2*z,PINK);oval(x-22*z,y-39*z,24*z,18*z,PINK);oval(x,y-39*z,24*z,18*z,PINK);}
-  void bg(int z){color(skies[z]);p.setShader(new LinearGradient(0,0,0,810,skies[z],0xfffff2ed,Shader.TileMode.CLAMP));c.drawRect(0,0,1440,810,p);p.setShader(null);oval(1120,70,140,140,0x66fff7ae);cloud(40,140,1.0f);cloud(610,52,.9f);cloud(1120,135,1.2f);oval(-200,420,1050,540,hills[z]);oval(520,395,1130,550,hills[z]);oval(-100,620,1500,360,0xff83bd99);for(int j=0;j<8;j++)tree(50+j*190,590+(j%3)*38,.8f,j%2==0?0xffe996be:0xffa7dbb8);for(int j=0;j<18;j++){float x=35+j*80,y=744+j%3*20;line(x,y,x,y+15,3,GREEN);oval(x-6,y-5,12,12,j%2==0?GOLD:0xfff7b0d0);}}
-  int zone(){return l<=29?0:l<=35?1:l<=40?2:3;}
-  void header(String sub){box(28,24,1384,89,29,0xfaffffff);pig(76,70,.33f);text("MỘC NHIÊN",226,64,32,INK,true);text(sub,236,94,21,INK,false);star(1233,68,23,GOLD);text(""+total()*3,1310,79,30,INK,true);}
-  void nav(){box(170,714,1100,76,28,WHITE);String[] n={"Hành trình","Ôn tập","Thành tích","Cài đặt"};for(int j=0;j<4;j++){final int k=j==0?0:j+1;button(n[j],183+j*271,725,258,54,screen==k?0xffffd4e8:WHITE,INK,()->{screen=k;page=0;save();invalidate();});}}
-  void map(){bg(0);header("Hành trình Toán lớp 3");box(30,130,1380,570,30,0xf2ffffff);text("Chọn vùng để khám phá",720,174,31,INK,true);int[] starts={25,30,36,41},ends={29,35,40,44};for(int z=0;z<4;z++){float x=49+z*338;box(x,196,323,480,25,skies[z]);cloud(x+131,207,.65f);tree(x+282,262,.55f,hills[z]);star(x+35,239,18,GOLD);wrap(zones[z],x+40,203,240,60,27,INK,true);text("Bài "+starts[z]+" – "+ends[z],x+161,285,22,INK,false);for(int a=0;a<=ends[z]-starts[z];a++){final int ll=starts[z]+a;float xx=x+16+a%2*148,yy=314+a/2*97;button("Bài "+ll,xx,yy,139,64,WHITE,INK,()->open(ll,l==ll&&phase==1?i:next(ll,0,24)));text(done(ll)+"/24",xx+69,yy+86,20,INK,true);}if(z==3){pig(x+245,589,.65f);gift(x+85,620,.8f);}}nav();}
-  void review(){bg(1);header("Ôn tập");box(34,135,1372,563,30,0xf9ffffff);text("Luyện lại những câu chưa đúng",720,183,33,INK,true);ArrayList<Integer> list=new ArrayList<>();for(int ll=25;ll<=44;ll++)for(int ii=0;ii<26;ii++)if(prefs.getBoolean(ll+"_"+ii+"_review",false))list.add((ll-25)*26+ii);int pages=Math.max(1,(list.size()+5)/6);page=Math.min(page,pages-1);if(list.isEmpty()){pig(720,363,1.5f);text("Chưa có câu nào cần ôn lại.",720,543,30,INK,true);}else for(int a=0;a<6&&page*6+a<list.size();a++){int k=list.get(page*6+a),ll=25+k/26,ii=k%26;button("Bài "+ll+" • Câu "+(ii+1)+"\n"+Bank.get(ll,ii).text,65+a%2*655,210+a/2*125,642,110,0xffffe4ef,INK,()->open(ll,ii));}if(pages>1){button("‹",480,607,100,65,WHITE,INK,()->{page=Math.max(0,page-1);invalidate();});text((page+1)+"/"+pages,720,650,25,INK,true);button("›",860,607,100,65,WHITE,INK,()->{page=Math.min(pages-1,page+1);invalidate();});}nav();}
-  void achievements(){bg(2);header("Thành tích");box(35,135,1370,563,30,0xf8ffffff);pig(190,339,1.3f);gift(190,485,1.2f);text(total()+"/520",190,586,35,INK,true);for(int j=0;j<20;j++){int ll=25+j,n=done(ll);float x=355+j%5*204,y=166+j/5*128;box(x,y,192,116,20,0xffffdfec);text("Bài "+ll,x+96,y+35,27,INK,true);for(int k=0;k<3;k++)star(x+49+k*47,y+66,18,n>=(k==0?1:k==1?12:24)?GOLD:0xffe6c5d4);text(n+"/24",x+96,y+105,21,INK,false);}nav();}
-  void settings(){bg(3);header("Cài đặt");box(34,135,1372,563,30,0xf8ffffff);pig(230,367,1.7f);text("Âm thanh",670,239,38,INK,true);button(sound?"Đang bật":"Đang tắt",1040,202,280,76,sound?GREEN:0xffeadde3,WHITE,()->{sound=!sound;save();invalidate();});text("Lưu tiến độ tự động",845,365,35,INK,true);wrap("Học ngoại tuyến. Không đăng nhập, không quảng cáo.",435,415,870,100,29,INK,false);text("Phiên bản thử nghiệm 1.0.0",840,625,25,INK,false);nav();}
-  @Override protected void onDraw(Canvas canvas){super.onDraw(canvas);c=canvas;hits.clear();c.drawColor(0xffffe0ed);sc=Math.min(getWidth()/1440f,getHeight()/810f);if(sc<=0)return;ox=(getWidth()-1440*sc)/2;oy=(getHeight()-810*sc)/2;c.save();c.translate(ox,oy);c.scale(sc,sc);c.clipRect(0,0,1440,810);switch(screen){case 1:lesson();break;case 2:review();break;case 3:achievements();break;case 4:settings();break;default:map();}if(drag>=0)apple(dragX,dragY,1.4f,false);c.restore();}
-  void lesson(){bg(zone());Bank.Q q=Bank.get(l,i);box(25,23,1390,92,29,WHITE);button("‹ Bản đồ",40,37,185,64,0xffffe2ee,INK,()->home());wrap("Bài "+l+" · "+Bank.TITLES[l-25],235,29,905,51,31,INK,true);text((i<24?"Nhiệm vụ "+(i+1)+"/24":"Thử thách "+(i-23))+"  •  "+done(l)+"/24 hoàn thành",686,99,22,INK,false);star(1248,68,22,GOLD);text(""+total()*3,1325,79,29,INK,true);box(30,135,435,648,30,0xdfffffff);text(zones[zone()],247,183,28,INK,true);
-   Path path=new Path();path.moveTo(125,650);path.cubicTo(395,600,70,460,325,398);path.cubicTo(440,345,150,310,294,242);color(0xffd8a4b7);p.setStyle(Paint.Style.STROKE);p.setStrokeWidth(48);p.setStrokeCap(Paint.Cap.ROUND);c.drawPath(path,p);p.setColor(0xffffe4b8);p.setStrokeWidth(35);c.drawPath(path,p);p.setStyle(Paint.Style.FILL);
-   float[][] pos={{125,650},{245,555},{196,470},{325,398},{294,242}};int step=Math.min(4,done(l)*5/24);for(int k=0;k<5;k++){oval(pos[k][0]-28,pos[k][1]-19,56,38,WHITE);star(pos[k][0],pos[k][1],16,k<step?GOLD:0xffd8c7d2);}tree(94,394,.8f,hills[zone()]);tree(378,530,.9f,hills[zone()]);pig(pos[step][0],pos[step][1]-60,.88f);gift(294,229,.7f);wrap(phase==0?"Giải toán để mở đường!":"Đã mở đường! Nhận sao nhé.",47,680,400,76,27,INK,true);
-   box(485,135,925,648,32,0xfaffffff);
-   if(phase==1||phase==2){star(600,219,41,GOLD);star(1297,219,40,GOLD);text(phase==1?"Giỏi lắm!":"Tuyệt vời!",947,227,43,PINK,true);box(513,282,869,204,27,0xffffe2ef);wrap(q.help,540,297,815,174,32,INK,true);gift(950,551,1.2f);if(phase==1)button("Nhận 3 sao",650,624,600,90,PINK,WHITE,()->{phase=2;save();beep(true);invalidate();});else button("Tiếp tục",650,624,600,90,GREEN,WHITE,()->{if(i==23||i==25)home();else open(l,i+1);});return;}
-   wrap(q.text,512,149,869,124,35,INK,true);
-   if(q.kind==1)group(q);else if(q.kind==2)water(q);else if(q.kind==3)collect(q);else choices(q);
-   if(!msg.isEmpty())wrap(msg,516,652,861,55,21,PINK,true);
-   button("Gợi ý",512,718,170,48,0xffffe0ee,INK,()->{msg=q.help;save();invalidate();});
-   button(i<24?"Thử thách ★":"Bài thường",1134,718,250,48,0xffffe0ee,INK,()->open(l,i<24?next(l,24,26):next(l,0,24)));
-  }
-  void choices(Bank.Q q){float y=323;if(q.kind>=4){box(517,272,859,204,22,0xffffe6f0);if(q.kind==4){float x=550;box(x,382,789,77,10,GOLD);for(int mm=0;mm<=30;mm++){float xx=x+14+25*mm;line(xx,384,xx,mm%10==0?421:mm%5==0?412:400,2,INK);if(mm%10==0)text(""+mm,xx,446,18,INK,true);}line(x+14,350,x+14+25*q.a,350,9,PINK);}else if(q.kind==5){box(911,284,36,155,16,WHITE);oval(901,414,56,56,WHITE);float yy=432-q.a*3.5f;box(921,yy,16,442-yy,7,PINK);oval(909,421,40,40,PINK);for(int k=0;k<=40;k+=5){float yy2=432-k*3.5f;line(950,yy2,972,yy2,2,INK);text(k+"°",1003,yy2+7,17,INK,false);}}else{box(768,327,350,128,23,GREEN);apple(894,313,1.4f,false);apple(969,313,1.4f,false);box(817,363,253,61,12,INK);text(q.a+" g",943,406,39,WHITE,true);}y=487;}
-   for(int j=0;j<4;j++){final int k=j;button(q.options[j],517+j%2*438,y+j/2*80,423,69,selected==j?0xffffc2dc:0xffffe8f2,INK,()->{selected=k;if(k==q.answer)win();else bad();});}
-  }
-  void collect(Bank.Q q){box(517,278,860,278,23,0xffffe6f0);for(int j=0;j<q.b;j++){final int k=j;float x=575+j%6*140,y=320+j/6*85;boolean b=(mask&(1<<j))!=0;box(x-41,y-31,86,74,15,b?0xffc9e9d5:WHITE);apple(x,y+5,1.5f,b);hits.add(new Hit(x-43,y-32,90,78,()->{mask^=1<<k;save();invalidate();}));}text("Đã nhặt "+Integer.bitCount(mask)+" quả",756,610,28,INK,true);button("Kiểm tra",1101,577,270,63,PINK,WHITE,()->{if(Integer.bitCount(mask)==q.a)win();else bad();});}
-  RectF bin(Bank.Q q,int k){float w=840f/(q.b+1);return new RectF(528+k*w,444,528+(k+1)*w-8,568);}
-  void group(Bank.Q q){box(518,278,860,151,22,0xffffe2ed);text("Kéo quả vào giỏ, hoặc chạm quả rồi chạm giỏ",948,308,22,INK,true);for(int j=0;j<q.a;j++){float x=558+j%10*82,y=350+j/10*51;if(slots[j]==-1&&j!=drag){if(fruit==j)box(x-23,y-23,46,46,12,GOLD);apple(x,y,1.12f,false);}else oval(x-8,y-8,16,16,0xffdfccd6);}for(int k=0;k<=q.b;k++){final int kk=k;RectF b=bin(q,k);box(b.left,b.top,b.width(),b.height(),16,k==q.b?0xfff0def7:0xffcce9d6);text(k==q.b?"Số dư":"Giỏ "+(k+1),b.centerX(),b.top+24,19,INK,true);int n=0;for(int j=0;j<q.a;j++)if(slots[j]==k){if(n<8)apple(b.left+13+n%4*(b.width()-24)/4,b.top+48+n/4*23,.55f,true);n++;}text(""+n,b.centerX(),b.bottom-7,23,INK,true);hits.add(new Hit(b.left,b.top,b.width(),b.height(),()->{if(fruit>=0){slots[fruit]=kk;fruit=-1;save();invalidate();}}));}button("Làm lại",520,583,180,65,0xffffe2ee,INK,()->{Arrays.fill(slots,-1);fruit=-1;save();invalidate();});button("Kiểm tra",1099,583,275,65,PINK,WHITE,()->{int[] n=new int[q.b+1];boolean ok=true;for(int j=0;j<q.a;j++)if(slots[j]<0)ok=false;else n[slots[j]]++;for(int k=0;k<q.b;k++)ok&=n[k]==q.c;ok&=n[q.b]==q.a%q.b;if(ok)win();else bad();});}
-  void vessel(float x,int cap,int v){box(x,281,230,207,19,0xffc2e7ed);box(x+7,288,216,193,13,WHITE);float h=193*v/(float)cap;if(h>0)box(x+7,481-h,216,h,8,0xff89d4e2);for(int k=100;k<cap;k+=100)line(x+185,481-193*k/(float)cap,x+218,481-193*k/(float)cap,2,INK);text(v+"/"+cap+" ml",x+115,394,28,INK,true);}
-  void water(Bank.Q q){vessel(590,q.a,ca);vessel(1060,q.b,cb);button("Đầy A",520,500,181,54,0xffffe0ed,INK,()->{ca=q.a;save();invalidate();});button("Đổ hết A",711,500,181,54,0xffffe0ed,INK,()->{ca=0;save();invalidate();});button("Đầy B",995,500,181,54,0xffffe0ed,INK,()->{cb=q.b;save();invalidate();});button("Đổ hết B",1185,500,181,54,0xffffe0ed,INK,()->{cb=0;save();invalidate();});button("A → B",520,576,205,62,0xffffe0ed,INK,()->{int m=Math.min(ca,q.b-cb);ca-=m;cb+=m;save();invalidate();});button("B → A",736,576,205,62,0xffffe0ed,INK,()->{int m=Math.min(cb,q.a-ca);cb-=m;ca+=m;save();invalidate();});button("Kiểm tra",1055,576,311,62,PINK,WHITE,()->{if(ca==q.c||cb==q.c)win();else bad();});}
-  @Override public boolean onTouchEvent(MotionEvent e){float x=(e.getX()-ox)/sc,y=(e.getY()-oy)/sc;int a=e.getActionMasked();if(a==MotionEvent.ACTION_DOWN){if(screen==1&&phase==0){Bank.Q q=Bank.get(l,i);if(q.kind==1)for(int j=0;j<q.a;j++){float xx=558+j%10*82,yy=350+j/10*51;if(Math.abs(x-xx)<28&&Math.abs(y-yy)<23&&slots[j]<0){drag=j;dragX=x;dragY=y;invalidate();break;}}}return true;}if(a==MotionEvent.ACTION_MOVE){if(drag>=0){dragX=x;dragY=y;invalidate();}return true;}if(a==MotionEvent.ACTION_CANCEL){drag=-1;invalidate();return true;}if(a==MotionEvent.ACTION_UP){if(drag>=0){Bank.Q q=Bank.get(l,i);fruit=drag;drag=-1;for(int j=0;j<=q.b;j++)if(bin(q,j).contains(x,y)){slots[fruit]=j;fruit=-1;break;}save();invalidate();return true;}for(int j=hits.size()-1;j>=0;j--)if(hits.get(j).r.contains(x,y)){hits.get(j).f.run();performClick();return true;}return true;}return true;}
-  @Override public boolean performClick(){super.performClick();return true;}
- }
+
+/** Offline native learning shell. All questions are selected by curriculum ID, not fixed counts. */
+public final class MainActivity extends Activity implements QuestionPanel.Host {
+    private Curriculum bank;
+    private ProgressStore store;
+    private NativeUi ui;
+    private LinearLayout root,body;
+    private ScrollView scroll;
+    private TextView stars;
+    private ToneGenerator tone;
+    private String screen="home",book="sgk",question="",lastId="";
+    private int lesson=26,restoreScroll=0;
+    private boolean reviewMode=false;
+    private final String[] regions={"Vườn kẹo ngọt","Hồ cầu vồng","Thung lũng sao","Đồi mây hồng"};
+    private final String[] regionArt={"🌸","🌈","⭐","☁"};
+    private final int[] regionColors={0xffffd8e8,0xffdff4f4,0xffeee4fc,0xffffe5d9};
+    private final int[] regionStart={26,30,36,41},regionEnd={29,35,40,44};
+
+    @Override public void onCreate(Bundle saved){
+        super.onCreate(saved);ui=new NativeUi(this);
+        getWindow().setStatusBarColor(NativeUi.BG);
+        getWindow().setNavigationBarColor(NativeUi.BG);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        try{
+            bank=new Curriculum(this);store=new ProgressStore(this,bank);
+            JSONObject nav=store.nav();
+            screen=nav.optString("screen","home");lesson=Math.max(26,Math.min(44,nav.optInt("lesson",26)));
+            book=nav.optString("book","sgk");question=nav.optString("question");lastId=nav.optString("lastId");
+            reviewMode=nav.optBoolean("reviewMode");restoreScroll=Math.max(0,nav.optInt("scroll"));
+            if(!Arrays.asList("home","lesson","list","question","review","awards","settings").contains(screen))screen="home";
+            if(!Arrays.asList("sgk","vbt","bonus").contains(book))book="sgk";
+            if(screen.equals("question")&&!bank.questions.containsKey(question))screen="home";
+            if(!bank.questions.containsKey(lastId))lastId="";
+            try{tone=new ToneGenerator(AudioManager.STREAM_MUSIC,45);}catch(Exception ignored){}
+            render();
+        }catch(Exception e){
+            android.util.Log.e("MocNhien","Cannot load curriculum or progress",e);
+            LinearLayout failure=ui.card(NativeUi.BG);ui.pad(failure,24);
+            ui.label(failure,"Chưa mở được bài học",26,true);
+            ui.label(failure,"Dữ liệu chưa được xóa. Hãy mở lại ứng dụng hoặc kiểm tra bản cài đặt.",20,false);
+            ui.action(failure,"Thử mở lại",NativeUi.PINK,this::recreate);setContentView(failure);
+        }
+    }
+    void hideKeyboard(){View v=getCurrentFocus();if(v!=null){InputMethodManager m=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);if(m!=null)m.hideSoftInputFromWindow(v.getWindowToken(),0);v.clearFocus();}}
+    JSONObject nav(int y){
+        JSONObject n=new JSONObject();Json.put(n,"screen",screen);Json.put(n,"lesson",lesson);Json.put(n,"book",book);Json.put(n,"question",question);
+        Json.put(n,"lastId",lastId);Json.put(n,"reviewMode",reviewMode);Json.put(n,"scroll",Math.max(0,y));return n;
+    }
+    boolean saveNav(int y){if(store==null)return false;if(store.setNav(nav(y)))return true;Toast.makeText(this,"Chưa lưu được vị trí học. Hãy thử lại.",Toast.LENGTH_LONG).show();return false;}
+    void go(String destination){
+        hideKeyboard();screen=destination;restoreScroll=0;saveNav(0);render();
+    }
+    void home(){reviewMode=false;go("home");}
+    void openLesson(int l){lesson=l;reviewMode=false;go("lesson");}
+    void openBook(String b){book=b;reviewMode=false;go("list");}
+    void openQuestion(JSONObject q,boolean fromReview){
+        if(q==null)return;
+        if(!store.unlocked(q)){Toast.makeText(this,"Hãy hoàn thành nhiệm vụ trước.",Toast.LENGTH_LONG).show();return;}
+        lesson=q.optInt("lesson");book=q.optString("book").toLowerCase(Locale.ROOT);question=q.optString("id");lastId=question;
+        reviewMode=fromReview;go("question");
+    }
+    String title(int l){return bank.lessons.get(l).optString("title","Bài "+l);}
+    String bookName(String b){return b.equals("sgk")?"Sách giáo khoa":b.equals("vbt")?"Vở bài tập":"Kho báu";}
+    int completed(){return store.completed(bank.questions.values());}
+    int count(int l){return bank.lesson(l).size();}
+    int done(int l){return store.completed(bank.lesson(l));}
+    int reviewCount(){int n=0;for(String id:bank.questions.keySet())if(store.review(id))n++;return n;}
+    boolean chest(int l){return store.done("BONUS."+l+".1")&&store.done("BONUS."+l+".2");}
+    void render(){
+        root=ui.column();root.setBackgroundColor(NativeUi.BG);ui.pad(root,9);
+        LinearLayout header=ui.row();header.setBackground(ui.bg(NativeUi.WHITE,18));ui.pad(header,6);ui.add(root,header);
+        if(!screen.equals("home")){Button back=ui.button("‹",NativeUi.PALE,this::back);back.setContentDescription("Quay lại");header.addView(back,new LinearLayout.LayoutParams(ui.dp(55),-2));}
+        LinearLayout name=ui.column();header.addView(name,new LinearLayout.LayoutParams(0,-2,1));
+        ui.label(name,"MỘC NHIÊN • TOÁN 3",23,true);
+        ui.label(name,screen.equals("question")?"Bài "+lesson+" • "+title(lesson):"Hành trình học toán vui",15,false);
+        stars=ui.text("★ "+store.balance(),21,true);stars.setTextColor(NativeUi.PINK);header.addView(stars,new LinearLayout.LayoutParams(-2,-2));
+        scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setClipToPadding(false);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
+        body=ui.column();ui.pad(body,5);scroll.addView(body,new ScrollView.LayoutParams(-1,-2));
+        switch(screen){
+            case "lesson":lessonPage();break;
+            case "list":questionList();break;
+            case "question":questionPage();break;
+            case "review":reviewPage();break;
+            case "awards":awardsPage();break;
+            case "settings":settingsPage();break;
+            default:homePage();break;
+        }
+        if(!screen.equals("question")){
+            LinearLayout nav=ui.row();nav.setBackground(ui.bg(NativeUi.WHITE,18));ui.add(root,nav);
+            ui.smallAction(nav,"Hành trình",screen.equals("home")?NativeUi.PALE:NativeUi.WHITE,this::home);
+            ui.smallAction(nav,"Ôn tập",screen.equals("review")?NativeUi.PALE:NativeUi.WHITE,()->go("review"));
+            ui.smallAction(nav,"Thành tích",screen.equals("awards")?NativeUi.PALE:NativeUi.WHITE,()->go("awards"));
+            ui.smallAction(nav,"Cài đặt",screen.equals("settings")?NativeUi.PALE:NativeUi.WHITE,()->go("settings"));
+        }
+        setContentView(root);
+        int y=restoreScroll;restoreScroll=0;if(y>0)scroll.post(()->scroll.scrollTo(0,y));
+    }
+    void progress(LinearLayout p,int current,int total){
+        ProgressBar bar=new ProgressBar(this,null,android.R.attr.progressBarStyleHorizontal);
+        bar.setMax(Math.max(1,total));bar.setProgress(current);bar.setProgressTintList(android.content.res.ColorStateList.valueOf(NativeUi.PINK));
+        p.addView(bar,new LinearLayout.LayoutParams(-1,ui.dp(14)));
+        ui.label(p,current+" / "+total+" mục đã hoàn thành",16,true);
+    }
+    void homePage(){
+        LinearLayout intro=ui.card(NativeUi.WHITE);ui.add(body,intro);
+        ui.label(intro,"🌸  Chào mừng đến vương quốc toán học!",25,true);
+        progress(intro,completed(),bank.questions.size());
+        if(!lastId.isEmpty()){JSONObject last=bank.questions.get(lastId);ui.action(intro,"▶  Tiếp tục Bài "+last.optInt("lesson")+" • "+bookName(last.optString("book").toLowerCase(Locale.ROOT)),NativeUi.PINK,()->openQuestion(last,false));}
+        LinearLayout row=ui.row();ui.add(body,row);
+        for(int i=0;i<regions.length;i++){
+            final int z=i;LinearLayout region=ui.card(regionColors[i]);ui.weight(row,region,1);
+            ui.label(region,regionArt[i]+" "+regions[i],20,true);
+            ui.label(region,"Bài "+regionStart[i]+" – "+regionEnd[i],15,false);
+            for(int l=regionStart[i];l<=regionEnd[i];l++){final int ll=l;ui.action(region,"Bài "+l+"  •  "+done(l)+"/"+count(l),done(l)==count(l)?NativeUi.MINT:NativeUi.WHITE,()->openLesson(ll));}
+        }
+        ui.label(body,"959 mục học và thử thách • 19 bài • học ngoại tuyến",15,false);
+    }
+    void lessonPage(){
+        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Bài "+lesson+" — "+title(lesson),26,true);progress(c,done(lesson),count(lesson));
+        if(!lastId.isEmpty()&&bank.questions.get(lastId).optInt("lesson")==lesson){JSONObject last=bank.questions.get(lastId);ui.action(c,"Tiếp tục câu đang học",NativeUi.PINK,()->openQuestion(last,false));}
+        LinearLayout row=ui.row();ui.add(body,row);
+        for(String b:new String[]{"sgk","vbt","bonus"}){
+            List<JSONObject> qs=bank.section(lesson,b);LinearLayout box=ui.card(b.equals("bonus")?NativeUi.GOLD:NativeUi.PALE);ui.weight(row,box,1);
+            ui.label(box,(b.equals("sgk")?"📖 ":b.equals("vbt")?"✏ ":"🎁 ")+bookName(b),23,true);progress(box,store.completed(qs),qs.size());
+            ui.label(box,b.equals("bonus")?(chest(lesson)?"Kho báu đã mở!":"Hai thử thách • tối đa 300 sao"):"Khám phá và luyện tập",17,false);
+            ui.action(box,"Mở "+bookName(b),NativeUi.WHITE,()->openBook(b));
+        }
+        ui.action(body,"Về hành trình",NativeUi.PALE,this::home);
+    }
+    void questionList(){
+        List<JSONObject> list=bank.section(lesson,book);
+        ui.label(body,"Bài "+lesson+" • "+bookName(book),24,true);progress(body,store.completed(list),list.size());
+        JSONObject start=null;for(JSONObject q:list)if(!store.done(q.optString("id"))&&store.unlocked(q)){start=q;break;}
+        if(start!=null){final JSONObject next=start;ui.action(body,"▶  Bắt đầu / tiếp tục mục chưa hoàn thành",NativeUi.PINK,()->openQuestion(next,false));}
+        for(int i=0;i<list.size();i++)questionItem(list.get(i),i+1,false);
+    }
+    void questionItem(JSONObject q,int index,boolean fromReview){
+        String id=q.optString("id");boolean unlocked=store.unlocked(q),done=store.done(id);
+        LinearLayout box=ui.card(done?NativeUi.MINT:NativeUi.WHITE);ui.add(body,box);
+        String prefix=fromReview?"Bài "+q.optInt("lesson")+" • "+q.optString("book"):"Mục "+index;
+        if(!"BONUS".equals(q.optString("book")))prefix+=" • Trang "+q.optInt("page")+" • Câu "+q.optInt("exercise");
+        ui.label(box,prefix+(done?"  ✓":unlocked?"":"  🔒"),15,true);
+        String prompt=q.optString("prompt");ui.label(box,prompt,20,true);
+        ui.action(box,unlocked?(done?"Xem lại":store.draft(id).length()>0?"Tiếp tục":"Làm bài"):"Hoàn thành bước trước",unlocked?NativeUi.PALE:0xffe5e0e3,()->openQuestion(q,fromReview));
+    }
+    void questionPage(){
+        JSONObject q=bank.questions.get(question);
+        if(q==null){ui.label(body,"Không tìm thấy câu này.",23,true);ui.action(body,"Về hành trình",NativeUi.PALE,this::home);return;}
+        List<JSONObject> section=bank.section(lesson,book);int idx=section.indexOf(q);
+        ui.label(body,bookName(book)+" • Mục "+(idx+1)+"/"+section.size()+" • "+store.completed(section)+" đã hoàn thành",16,true);
+        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);c.addView(new QuestionPanel(this,q,store,this),new LinearLayout.LayoutParams(-1,-2));
+        ui.action(body,reviewMode?"Về ôn tập":"Danh sách mục học",NativeUi.PALE,()->go(reviewMode?"review":"list"));
+    }
+    void reviewPage(){
+        ui.label(body,"Ôn lại câu chưa đúng • "+reviewCount()+" mục",26,true);int i=0;
+        for(JSONObject q:bank.questions.values())if(store.review(q.optString("id")))questionItem(q,++i,true);
+        if(i==0){LinearLayout c=ui.card(NativeUi.MINT);ui.add(body,c);ui.label(c,"🌸 Chưa có câu nào cần ôn lại.",24,true);ui.label(c,"Khi làm sai, câu hỏi sẽ tự xuất hiện ở đây.",19,false);}
+    }
+    void awardsPage(){
+        LinearLayout summary=ui.card(NativeUi.GOLD);ui.add(body,summary);ui.label(summary,"★  "+store.balance()+" sao hồng",30,true);int n=0;for(int l=26;l<=44;l++)if(chest(l))n++;ui.label(summary,"🎁  "+n+" / 19 kho báu đã mở",23,true);progress(summary,completed(),bank.questions.size());
+        for(int l=26;l<=44;l++){final int ll=l;LinearLayout c=ui.card(chest(l)?NativeUi.GOLD:NativeUi.WHITE);ui.add(body,c);ui.label(c,"Bài "+l+" • "+(chest(l)?"Kho báu đã mở 🎁":"Kho báu đang chờ"),20,true);progress(c,done(l),count(l));ui.action(c,"Mở bài "+l,NativeUi.PALE,()->openLesson(ll));}
+    }
+    void settingsPage(){
+        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Cài đặt",25,true);
+        ui.action(c,store.sound()?"Âm thanh: đang bật":"Âm thanh: đang tắt",NativeUi.PALE,()->{if(store.setSound(!store.sound()))render();else Toast.makeText(this,"Chưa lưu được cài đặt.",Toast.LENGTH_LONG).show();});
+        ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
+        ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
+        ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
+        ui.label(c,"Bản phát triển 1.1 • Android native",16,false);
+    }
+    @Override public void changed(){if(stars!=null)stars.setText("★ "+store.balance());}
+    @Override public void next(){
+        if(reviewMode){go("review");return;}
+        List<JSONObject> qs=bank.section(lesson,book);int current=-1;
+        for(int i=0;i<qs.size();i++)if(qs.get(i).optString("id").equals(question)){current=i;break;}
+        for(int i=current+1;i<qs.size();i++){JSONObject q=qs.get(i);if(!store.done(q.optString("id"))&&store.unlocked(q)){openQuestion(q,false);return;}}
+        for(JSONObject q:qs)if(!store.done(q.optString("id"))&&store.unlocked(q)){openQuestion(q,false);return;}
+        go("lesson");
+    }
+    @Override public void feedback(boolean correct){if(store.sound()&&tone!=null)tone.startTone(correct?ToneGenerator.TONE_PROP_ACK:ToneGenerator.TONE_PROP_NACK,160);}
+    void back(){switch(screen){case "question":go(reviewMode?"review":"list");break;case "list":go("lesson");break;default:home();break;}}
+    @Override public void onBackPressed(){if(store!=null&&!screen.equals("home"))back();else super.onBackPressed();}
+    @Override protected void onPause(){if(store!=null)saveNav(scroll==null?0:scroll.getScrollY());super.onPause();}
+    @Override protected void onDestroy(){if(tone!=null)tone.release();super.onDestroy();}
 }
