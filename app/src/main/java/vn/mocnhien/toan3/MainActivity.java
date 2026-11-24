@@ -119,7 +119,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     void adventureMap(){
         LinearLayout info=ui.card(NativeUi.LAV);ui.add(body,info);
         ui.label(info,"🐇  Phiêu lưu cùng Thỏ Hồng",26,true);
-        ui.label(info,"Vượt hồ và đá, thu cánh hoa, giải toán ở 4 cổng để về đích. Không giới hạn lượt thử. Sao học tập chỉ thưởng một lần.",19,false);
+        ui.label(info,"Vượt hồ và đá, thu cánh hoa, hoàn thành trạm thực hành và 4 cổng toán. Không giới hạn lượt thử. Sao học tập chỉ thưởng một lần.",19,false);
         for(int i=0;i<regions.length;i++){
             LinearLayout group=ui.card(regionColors[i]);ui.add(body,group);
             ui.label(group,regionArt[i]+" "+regions[i],22,true);
@@ -128,6 +128,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
                 LinearLayout item=ui.card(NativeUi.WHITE);ui.add(group,item);
                 ui.label(item,"Bài "+l+" • "+AdventurePlan.name(l)+(best>=0?"  ✓":""),22,true);
                 ui.label(item,title(l),17,false);
+                ui.label(item,"Trạm: "+TrailMission.of(l).title+(store.trailComplete(l)?" ✓":""),16,true);
                 ui.label(item,(a.finished?"Đã về đích":("Đã qua "+a.gate+"/4 cổng"))+" • ✿ "+a.flowerCount()+"/12"+(best>=0?" • Kỷ lục "+best+"/12":""),16,true);
                 LinearLayout row=ui.row();ui.add(item,row);
                 ui.smallAction(row,a.finished?"Xem lại màn":a.x==40&&!a.pending?"Bắt đầu":"Tiếp tục",NativeUi.PINK,()->openAdventure(stage));
@@ -160,6 +161,11 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
     void gatePage(){
         AdventureWorld.State a=store.adventureState(lesson);
         if(!a.pending){ui.label(body,"Hãy tới cổng trong màn chơi.",22,true);ui.action(body,"Trở lại màn chơi",NativeUi.PINK,()->go("game"));return;}
+        if(a.gate==0&&!store.trailComplete(lesson)){
+            LinearLayout station=ui.card(NativeUi.WHITE);ui.add(body,station);
+            station.addView(new TrailMissionPanel(this,store,lesson,()->{feedback(true);render();}),new LinearLayout.LayoutParams(-1,-2));
+            ui.action(body,"Về màn chơi (giữ nhiệm vụ đang làm)",NativeUi.PALE,()->go("game"));return;
+        }
         JSONObject q=bank.questions.get(AdventurePlan.questionId(lesson,a.gate));
         ui.label(body,"🐇 Bài "+lesson+" • Cổng "+(a.gate+1)+"/4 • "+AdventurePlan.name(lesson),23,true);
         ui.label(body,a.gate<2?"Giải đúng để mở cổng.":"Thử thách kho báu! Giải đúng để đi tiếp.",18,false);
@@ -186,7 +192,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
             ui.label(region,"Bài "+regionStart[i]+" – "+regionEnd[i],15,false);
             for(int l=regionStart[i];l<=regionEnd[i];l++){final int ll=l;ui.action(region,"Bài "+l+"  •  "+done(l)+"/"+count(l),done(l)==count(l)?NativeUi.MINT:NativeUi.WHITE,()->openLesson(ll));}
         }
-        ui.label(body,"959 mục học và thử thách • 19 bài • học ngoại tuyến",15,false);
+        ui.label(body,bank.questions.size()+" mục học và thử thách • 19 trạm tương tác • học ngoại tuyến",15,false);
     }
     void lessonPage(){
         LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Bài "+lesson+" — "+title(lesson),26,true);progress(c,done(lesson),count(lesson));
