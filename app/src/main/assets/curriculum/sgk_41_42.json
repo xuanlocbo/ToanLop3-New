@@ -1,0 +1,1990 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "SGK",
+    "title": "Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      113,
+      117
+    ],
+    "pdfPages": [
+      114,
+      118
+    ],
+    "sha256": "ca5720f69357ca5968fc8e96cc4961328a316ba680936548d2eeaae936a3fbcf"
+  },
+  "notes": "Chuyển thể theo SGK, chấm các cách điền dấu hợp lệ; visual dùng dựng tương tác native.",
+  "lessons": [
+    {
+      "lesson": 41,
+      "title": "Ôn tập phép nhân, phép chia trong phạm vi 100, 1 000",
+      "items": [
+        {
+          "id": "SGK.41.113.LT1.1.a1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "20 × 3 = ?",
+          "answer": 60,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "20 × 3 = 60.",
+          "check": {
+            "op": "expression",
+            "expression": "20 × 3"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.a2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "40 × 2 = ?",
+          "answer": 80,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "40 × 2 = 80.",
+          "check": {
+            "op": "expression",
+            "expression": "40 × 2"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.a3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "50 × 2 = ?",
+          "answer": 100,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "50 × 2 = 100.",
+          "check": {
+            "op": "expression",
+            "expression": "50 × 2"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.a4",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a4",
+          "kind": "number",
+          "prompt": "30 × 3 = ?",
+          "answer": 90,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "30 × 3 = 90.",
+          "check": {
+            "op": "expression",
+            "expression": "30 × 3"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.b1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "60 : 2 = ?",
+          "answer": 30,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "60 : 2 = 30.",
+          "check": {
+            "op": "expression",
+            "expression": "60 : 2"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.b2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "80 : 4 = ?",
+          "answer": 20,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "80 : 4 = 20.",
+          "check": {
+            "op": "expression",
+            "expression": "80 : 4"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.b3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b3",
+          "kind": "number",
+          "prompt": "90 : 3 = ?",
+          "answer": 30,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "90 : 3 = 30.",
+          "check": {
+            "op": "expression",
+            "expression": "90 : 3"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.1.b4",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b4",
+          "kind": "number",
+          "prompt": "100 : 5 = ?",
+          "answer": 20,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "100 : 5 = 20.",
+          "check": {
+            "op": "expression",
+            "expression": "100 : 5"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.a1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a1",
+          "kind": "multiplication",
+          "prompt": "34 × 2",
+          "answer": 68,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "4 × 2 = 8; viết 8. 3 × 2 = 6; viết 6. Kết quả: 68.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 34,
+            "multiplier": 2,
+            "steps": [
+              {
+                "digit": 4,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              34,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.a2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a2",
+          "kind": "multiplication",
+          "prompt": "15 × 6",
+          "answer": 90,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "5 × 6 = 30; viết 0, nhớ 3. 1 × 6 + 3 = 9; viết 9. Kết quả: 90.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 15,
+            "multiplier": 6,
+            "steps": [
+              {
+                "digit": 5,
+                "carryIn": 0,
+                "product": 30,
+                "resultDigit": 0,
+                "carryOut": 3
+              },
+              {
+                "digit": 1,
+                "carryIn": 3,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              15,
+              6
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.a3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a3",
+          "kind": "multiplication",
+          "prompt": "23 × 4",
+          "answer": 92,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "3 × 4 = 12; viết 2, nhớ 1. 2 × 4 + 1 = 9; viết 9. Kết quả: 92.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 23,
+            "multiplier": 4,
+            "steps": [
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 12,
+                "resultDigit": 2,
+                "carryOut": 1
+              },
+              {
+                "digit": 2,
+                "carryIn": 1,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              23,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.b1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b1",
+          "kind": "division",
+          "prompt": "69 : 3",
+          "answer": {
+            "quotient": 23,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "6 : 3 được 2, dư 0; 9 : 3 được 3, dư 0. Kiểm tra: 3 × 23 + 0 = 69.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 69,
+            "divisor": 3,
+            "steps": [
+              {
+                "partialDividend": 6,
+                "quotientDigit": 2,
+                "product": 6,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 9,
+                "quotientDigit": 3,
+                "product": 9,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              69,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.b2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b2",
+          "kind": "division",
+          "prompt": "84 : 7",
+          "answer": {
+            "quotient": 12,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "8 : 7 được 1, dư 1; 14 : 7 được 2, dư 0. Kiểm tra: 7 × 12 + 0 = 84.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 84,
+            "divisor": 7,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 1,
+                "product": 7,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 14,
+                "quotientDigit": 2,
+                "product": 14,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              84,
+              7
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.2.b3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b3",
+          "kind": "division",
+          "prompt": "95 : 8",
+          "answer": {
+            "quotient": 11,
+            "remainder": 7
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "9 : 8 được 1, dư 1; 15 : 8 được 1, dư 7. Kiểm tra: 8 × 11 + 7 = 95.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 95,
+            "divisor": 8,
+            "steps": [
+              {
+                "partialDividend": 9,
+                "quotientDigit": 1,
+                "product": 8,
+                "remainder": 1
+              },
+              {
+                "partialDividend": 15,
+                "quotientDigit": 1,
+                "product": 8,
+                "remainder": 7
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              95,
+              8
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.3.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "17 × 5 = 55. Đúng hay sai?",
+          "answer": "Sai",
+          "hint": "Tính lại phép tính và đối chiếu kết quả.",
+          "solution": "Kết quả đúng: 17 × 5 = 85.",
+          "visual": {
+            "type": "worked_multiplication",
+            "a": 17,
+            "b": 5,
+            "shown": 55,
+            "options": [
+              "Đúng",
+              "Sai"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              17,
+              "×",
+              5
+            ],
+            "shown": 55
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.3.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "86 : 6 = 14 (dư 2). Đúng hay sai?",
+          "answer": "Đúng",
+          "hint": "Tính lại phép tính và đối chiếu kết quả.",
+          "solution": "Kết quả đúng: 86 : 6 = 14 dư 2.",
+          "visual": {
+            "type": "worked_division",
+            "a": 86,
+            "b": 6,
+            "shown": {
+              "quotient": 14,
+              "remainder": 2
+            },
+            "options": [
+              "Đúng",
+              "Sai"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              86,
+              ":",
+              6
+            ],
+            "shown": {
+              "quotient": 14,
+              "remainder": 2
+            }
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.4.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Hai xe chở học sinh đi tham quan, mỗi xe chở 45 học sinh. Có tất cả bao nhiêu học sinh?",
+          "answer": 90,
+          "hint": "Nhân số học sinh mỗi xe với số xe.",
+          "solution": "45 × 2 = 90 học sinh.",
+          "visual": {
+            "type": "equal_groups",
+            "groups": 2,
+            "each": 45,
+            "object": "Xe"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "45×2"
+          }
+        },
+        {
+          "id": "SGK.41.113.LT1.5.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 113,
+          "pdfPage": 114,
+          "section": "LT1",
+          "exercise": 5,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Có 28 l nước mắm. Cần ít nhất bao nhiêu can loại 5 l để chứa hết?",
+          "answer": 6,
+          "hint": "Nếu phép chia còn dư thì cần thêm một can.",
+          "solution": "28 : 5 = 5 dư 3. Cần 5 + 1 = 6 can.",
+          "visual": {
+            "type": "capacity_grouping",
+            "total": 28,
+            "capacity": 5,
+            "unit": "l"
+          },
+          "check": {
+            "op": "ceil_div",
+            "args": [
+              28,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.a1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "300 × 3 = ?",
+          "answer": 900,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "300 × 3 = 900.",
+          "check": {
+            "op": "expression",
+            "expression": "300 × 3"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.a2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "400 × 2 = ?",
+          "answer": 800,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "400 × 2 = 800.",
+          "check": {
+            "op": "expression",
+            "expression": "400 × 2"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.a3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "200 × 4 = ?",
+          "answer": 800,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "200 × 4 = 800.",
+          "check": {
+            "op": "expression",
+            "expression": "200 × 4"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.a4",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a4",
+          "kind": "number",
+          "prompt": "500 × 2 = ?",
+          "answer": 1000,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "500 × 2 = 1000.",
+          "check": {
+            "op": "expression",
+            "expression": "500 × 2"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.b1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "800 : 4 = ?",
+          "answer": 200,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "800 : 4 = 200.",
+          "check": {
+            "op": "expression",
+            "expression": "800 : 4"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.b2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "700 : 7 = ?",
+          "answer": 100,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "700 : 7 = 100.",
+          "check": {
+            "op": "expression",
+            "expression": "700 : 7"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.b3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b3",
+          "kind": "number",
+          "prompt": "600 : 3 = ?",
+          "answer": 200,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "600 : 3 = 200.",
+          "check": {
+            "op": "expression",
+            "expression": "600 : 3"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.1.b4",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b4",
+          "kind": "number",
+          "prompt": "400 : 2 = ?",
+          "answer": 200,
+          "hint": "Nhẩm theo hàng hoặc bảng nhân chia.",
+          "solution": "400 : 2 = 200.",
+          "check": {
+            "op": "expression",
+            "expression": "400 : 2"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.a1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a1",
+          "kind": "multiplication",
+          "prompt": "423 × 2",
+          "answer": 846,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "3 × 2 = 6; viết 6. 2 × 2 = 4; viết 4. 4 × 2 = 8; viết 8. Kết quả: 846.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 423,
+            "multiplier": 2,
+            "steps": [
+              {
+                "digit": 3,
+                "carryIn": 0,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 2,
+                "carryIn": 0,
+                "product": 4,
+                "resultDigit": 4,
+                "carryOut": 0
+              },
+              {
+                "digit": 4,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              423,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.a2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a2",
+          "kind": "multiplication",
+          "prompt": "107 × 9",
+          "answer": 963,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "7 × 9 = 63; viết 3, nhớ 6. 0 × 9 + 6 = 6; viết 6. 1 × 9 = 9; viết 9. Kết quả: 963.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 107,
+            "multiplier": 9,
+            "steps": [
+              {
+                "digit": 7,
+                "carryIn": 0,
+                "product": 63,
+                "resultDigit": 3,
+                "carryOut": 6
+              },
+              {
+                "digit": 0,
+                "carryIn": 6,
+                "product": 6,
+                "resultDigit": 6,
+                "carryOut": 0
+              },
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 9,
+                "resultDigit": 9,
+                "carryOut": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              107,
+              9
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.a3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a3",
+          "kind": "multiplication",
+          "prompt": "91 × 8",
+          "answer": 728,
+          "hint": "Nhân từ hàng đơn vị, nhớ sang hàng tiếp theo.",
+          "solution": "1 × 8 = 8; viết 8. 9 × 8 = 72; viết 2, nhớ 7. Kết quả: 728.",
+          "visual": {
+            "type": "long_multiplication",
+            "multiplicand": 91,
+            "multiplier": 8,
+            "steps": [
+              {
+                "digit": 1,
+                "carryIn": 0,
+                "product": 8,
+                "resultDigit": 8,
+                "carryOut": 0
+              },
+              {
+                "digit": 9,
+                "carryIn": 0,
+                "product": 72,
+                "resultDigit": 2,
+                "carryOut": 7
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              91,
+              8
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.b1",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "b1",
+          "kind": "division",
+          "prompt": "848 : 4",
+          "answer": {
+            "quotient": 212,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "8 : 4 được 2, dư 0; 4 : 4 được 1, dư 0; 8 : 4 được 2, dư 0. Kiểm tra: 4 × 212 + 0 = 848.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 848,
+            "divisor": 4,
+            "steps": [
+              {
+                "partialDividend": 8,
+                "quotientDigit": 2,
+                "product": 8,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 4,
+                "quotientDigit": 1,
+                "product": 4,
+                "remainder": 0
+              },
+              {
+                "partialDividend": 8,
+                "quotientDigit": 2,
+                "product": 8,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              848,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.b2",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "b2",
+          "kind": "division",
+          "prompt": "740 : 5",
+          "answer": {
+            "quotient": 148,
+            "remainder": 0
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "7 : 5 được 1, dư 2; 24 : 5 được 4, dư 4; 40 : 5 được 8, dư 0. Kiểm tra: 5 × 148 + 0 = 740.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 740,
+            "divisor": 5,
+            "steps": [
+              {
+                "partialDividend": 7,
+                "quotientDigit": 1,
+                "product": 5,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 24,
+                "quotientDigit": 4,
+                "product": 20,
+                "remainder": 4
+              },
+              {
+                "partialDividend": 40,
+                "quotientDigit": 8,
+                "product": 40,
+                "remainder": 0
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              740,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.2.b3",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "b3",
+          "kind": "division",
+          "prompt": "569 : 9",
+          "answer": {
+            "quotient": 63,
+            "remainder": 2
+          },
+          "hint": "Chia từng hàng, không bỏ số 0 ở thương.",
+          "solution": "56 : 9 được 6, dư 2; 29 : 9 được 3, dư 2. Kiểm tra: 9 × 63 + 2 = 569.",
+          "visual": {
+            "type": "long_division",
+            "dividend": 569,
+            "divisor": 9,
+            "steps": [
+              {
+                "partialDividend": 56,
+                "quotientDigit": 6,
+                "product": 54,
+                "remainder": 2
+              },
+              {
+                "partialDividend": 29,
+                "quotientDigit": 3,
+                "product": 27,
+                "remainder": 2
+              }
+            ]
+          },
+          "check": {
+            "op": "divmod",
+            "args": [
+              569,
+              9
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.3.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "114 × 6 = 684. Đúng hay sai?",
+          "answer": "Đúng",
+          "hint": "Tính lại phép tính và đối chiếu kết quả.",
+          "solution": "Kết quả đúng: 114 × 6 = 684.",
+          "visual": {
+            "type": "worked_multiplication",
+            "a": 114,
+            "b": 6,
+            "shown": 684,
+            "options": [
+              "Đúng",
+              "Sai"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              114,
+              "×",
+              6
+            ],
+            "shown": 684
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.3.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "510 : 5 = 12. Đúng hay sai?",
+          "answer": "Sai",
+          "hint": "Tính lại phép tính và đối chiếu kết quả.",
+          "solution": "Kết quả đúng: 510 : 5 = 102.",
+          "visual": {
+            "type": "worked_division",
+            "a": 510,
+            "b": 5,
+            "shown": {
+              "quotient": 12,
+              "remainder": 0
+            },
+            "options": [
+              "Đúng",
+              "Sai"
+            ]
+          },
+          "check": {
+            "op": "truth",
+            "args": [
+              510,
+              ":",
+              5
+            ],
+            "shown": {
+              "quotient": 12,
+              "remainder": 0
+            }
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.4.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Xếp 256 bánh vào hộp, mỗi hộp 8 bánh. Xếp được bao nhiêu hộp?",
+          "answer": 32,
+          "hint": "Chia số bánh cho số bánh mỗi hộp.",
+          "solution": "256 : 8 = 32 hộp.",
+          "visual": {
+            "type": "equal_groups",
+            "total": 256,
+            "each": 8
+          },
+          "check": {
+            "op": "expression",
+            "expression": "256:8"
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.5.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 5,
+          "part": "a",
+          "kind": "digit_fill",
+          "prompt": "Điền chữ số vào 1□2 × 4 = 60□.",
+          "answer": {
+            "digits": [
+              5,
+              8
+            ]
+          },
+          "hint": "Thử chữ số hàng chục, nhớ từ hàng đơn vị.",
+          "solution": "152 × 4 = 608; điền 5 và 8.",
+          "visual": {
+            "type": "vertical_digit_fill",
+            "multiplicand": "1?2",
+            "multiplier": "4",
+            "product": "60?",
+            "digitOptions": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "check": {
+            "op": "digit_product",
+            "patterns": [
+              "1?2",
+              "4",
+              "60?"
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.114.LT2.5.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 114,
+          "pdfPage": 115,
+          "section": "LT2",
+          "exercise": 5,
+          "part": "b",
+          "kind": "digit_fill",
+          "prompt": "Điền chữ số vào 3□ × 7 = □□6.",
+          "answer": {
+            "digits": [
+              8,
+              2,
+              6
+            ]
+          },
+          "hint": "Tìm chữ số hàng đơn vị nhân 7 có tận cùng 6.",
+          "solution": "38 × 7 = 266; điền 8, 2, 6.",
+          "visual": {
+            "type": "vertical_digit_fill",
+            "multiplicand": "3?",
+            "multiplier": "7",
+            "product": "??6",
+            "digitOptions": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "check": {
+            "op": "digit_product",
+            "patterns": [
+              "3?",
+              "7",
+              "??6"
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.1.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 1,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Kết quả 192 × 4 là bao nhiêu?",
+          "answer": 768,
+          "hint": "Tính lại từng hàng, rồi chọn.",
+          "solution": "192 × 4 = 768.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              468,
+              768,
+              786,
+              867
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "192×4"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.1.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 1,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "Kết quả 906 : 3 là bao nhiêu?",
+          "answer": 302,
+          "hint": "Tính lại từng hàng, rồi chọn.",
+          "solution": "906 : 3 = 302.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              320,
+              32,
+              203,
+              302
+            ]
+          },
+          "check": {
+            "op": "expression",
+            "expression": "906:3"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.1.c",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 1,
+          "part": "c",
+          "kind": "choice",
+          "prompt": "Số dư của 628 : 8 là bao nhiêu?",
+          "answer": 4,
+          "hint": "Tính lại từng hàng, rồi chọn.",
+          "solution": "628 = 78 × 8 + 4.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          "check": {
+            "op": "remainder",
+            "args": [
+              628,
+              8
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.2.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "□ × 6 = 186. Tìm số còn thiếu.",
+          "answer": 31,
+          "hint": "Tích chia thừa số đã biết.",
+          "solution": "186 : 6 = 31.",
+          "visual": {
+            "type": "missing_factor",
+            "known": 6,
+            "product": 186,
+            "missingSide": "left"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "186:6"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.2.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "□ : 7 = 105. Tìm số còn thiếu.",
+          "answer": 735,
+          "hint": "Thương nhân số chia.",
+          "solution": "105 × 7 = 735.",
+          "visual": {
+            "type": "missing_dividend",
+            "divisor": 7,
+            "quotient": 105
+          },
+          "check": {
+            "op": "expression",
+            "expression": "105×7"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.2.c",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 2,
+          "part": "c",
+          "kind": "number",
+          "prompt": "72 : □ = 8. Tìm số còn thiếu.",
+          "answer": 9,
+          "hint": "Số bị chia chia thương.",
+          "solution": "72 : 8 = 9.",
+          "visual": {
+            "type": "missing_divisor",
+            "dividend": 72,
+            "quotient": 8
+          },
+          "check": {
+            "op": "expression",
+            "expression": "72:8"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.3.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 3,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Mi hái 25 hoa, Mai hái gấp 3 lần Mi. Cả hai chị em hái bao nhiêu hoa?",
+          "answer": {
+            "intermediate": 75,
+            "final": 100,
+            "unit": "bông"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "25 × 3 = 75 bông; 25 + 75 = 100 bông.",
+          "visual": {
+            "type": "bar_multiple",
+            "base": 25,
+            "multiple": 3,
+            "labels": [
+              "Mi",
+              "Mai"
+            ]
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "25×3",
+              "25+75"
+            ]
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.4.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Một phần ba số ngôi sao trong hình là bao nhiêu ngôi sao?",
+          "answer": 5,
+          "hint": "Chia 15 thành 3 phần bằng nhau.",
+          "solution": "15 : 3 = 5 ngôi sao.",
+          "visual": {
+            "type": "array_grid",
+            "rows": 3,
+            "columns": 5,
+            "total": 15,
+            "object": "Ngôi sao",
+            "denominator": 3
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15:3"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.4.b",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 4,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Một phần năm số ngôi sao trong hình là bao nhiêu ngôi sao?",
+          "answer": 3,
+          "hint": "Chia 15 thành 5 phần bằng nhau.",
+          "solution": "15 : 5 = 3 ngôi sao.",
+          "visual": {
+            "type": "array_grid",
+            "rows": 3,
+            "columns": 5,
+            "total": 15,
+            "object": "Ngôi sao",
+            "denominator": 5
+          },
+          "check": {
+            "op": "expression",
+            "expression": "15:5"
+          }
+        },
+        {
+          "id": "SGK.41.115.LT3.5.a",
+          "book": "SGK",
+          "lesson": 41,
+          "page": 115,
+          "pdfPage": 116,
+          "section": "LT3",
+          "exercise": 5,
+          "part": "a",
+          "kind": "digit_fill",
+          "prompt": "Dùng các chữ số 1, 2, 3, điền vào □□ × □ = 63.",
+          "answer": {
+            "digits": [
+              2,
+              1,
+              3
+            ]
+          },
+          "hint": "Thử sắp xếp ba chữ số sao cho tích bằng 63.",
+          "solution": "21 × 3 = 63.",
+          "visual": {
+            "type": "vertical_digit_fill",
+            "multiplicand": "??",
+            "multiplier": "?",
+            "product": "63",
+            "digitOptions": [
+              1,
+              2,
+              3
+            ],
+            "useEachOnce": true
+          },
+          "check": {
+            "op": "digit_product",
+            "patterns": [
+              "??",
+              "?",
+              "63"
+            ],
+            "digitOptions": [
+              1,
+              2,
+              3
+            ],
+            "useEachOnce": true
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 42,
+      "title": "Ôn tập biểu thức số",
+      "items": [
+        {
+          "id": "SGK.42.116.LT1.1.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "731 − 680 + 19 = ?",
+          "answer": 70,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "731 − 680 + 19 = 51 + 19 = 70.",
+          "visual": {
+            "type": "expression",
+            "expression": "731 − 680 + 19"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "731 − 680 + 19"
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.1.b",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "63 × 2 : 7 = ?",
+          "answer": 18,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "63 × 2 : 7 = 126 : 7 = 18.",
+          "visual": {
+            "type": "expression",
+            "expression": "63 × 2 : 7"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "63 × 2 : 7"
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.1.c",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "c",
+          "kind": "number",
+          "prompt": "14 × 6 − 29 = ?",
+          "answer": 55,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "14 × 6 − 29 = 84 − 29 = 55.",
+          "visual": {
+            "type": "expression",
+            "expression": "14 × 6 − 29"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "14 × 6 − 29"
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.1.d",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "d",
+          "kind": "number",
+          "prompt": "348 + 84 : 6 = ?",
+          "answer": 362,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "348 + 84 : 6 = 348 + 14 = 362.",
+          "visual": {
+            "type": "expression",
+            "expression": "348 + 84 : 6"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "348 + 84 : 6"
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.2.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Một bao gạo 30 kg, một bao ngô 45 kg. Ba bao gạo và một bao ngô nặng bao nhiêu kg?",
+          "answer": {
+            "intermediate": 90,
+            "final": 135,
+            "unit": "kg"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "30 × 3 = 90 kg; 90 + 45 = 135 kg.",
+          "visual": {
+            "type": "equal_groups",
+            "groups": [
+              {
+                "name": "Bao gạo",
+                "count": 3,
+                "each": 30
+              },
+              {
+                "name": "Bao ngô",
+                "count": 1,
+                "each": 45
+              }
+            ],
+            "unit": "kg"
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "30×3",
+              "90+45"
+            ]
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.3.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a",
+          "kind": "multi",
+          "prompt": "Chọn tất cả biểu thức có giá trị lớn hơn 80.",
+          "answer": [
+            "B",
+            "C",
+            "D"
+          ],
+          "hint": "Tính từng biểu thức; lớn hơn 80 không gồm bằng 80.",
+          "solution": "A = 80, B = 100, C = 90, D = 110, E = 70.",
+          "visual": {
+            "type": "expression_compare",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "30 × 2 + 20"
+              },
+              {
+                "id": "B",
+                "expression": "50 + 100 : 2"
+              },
+              {
+                "id": "C",
+                "expression": "60 : 3 + 70"
+              },
+              {
+                "id": "D",
+                "expression": "30 + 40 × 2"
+              },
+              {
+                "id": "E",
+                "expression": "20 × 5 − 30"
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "theme": "candy"
+          },
+          "check": {
+            "op": "filter_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "30 × 2 + 20"
+              },
+              {
+                "id": "B",
+                "expression": "50 + 100 : 2"
+              },
+              {
+                "id": "C",
+                "expression": "60 : 3 + 70"
+              },
+              {
+                "id": "D",
+                "expression": "30 + 40 × 2"
+              },
+              {
+                "id": "E",
+                "expression": "20 × 5 − 30"
+              }
+            ],
+            "comparison": ">",
+            "target": 80
+          }
+        },
+        {
+          "id": "SGK.42.116.LT1.4.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 116,
+          "pdfPage": 117,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "operator_fill",
+          "prompt": "Điền dấu + hoặc − để 5 □ 5 □ 5 = 5.",
+          "answer": {
+            "accepted": [
+              [
+                "+",
+                "−"
+              ],
+              [
+                "−",
+                "+"
+              ]
+            ]
+          },
+          "hint": "Thử cộng rồi trừ, hoặc trừ rồi cộng.",
+          "solution": "5 + 5 − 5 = 5; 5 − 5 + 5 = 5. Cả hai đều đúng.",
+          "visual": {
+            "type": "operator_fill",
+            "template": "5 ? 5 ? 5",
+            "operators": [
+              "+",
+              "−"
+            ],
+            "target": 5
+          },
+          "check": {
+            "op": "operator_solutions",
+            "template": "5 ? 5 ? 5",
+            "operators": [
+              "+",
+              "−"
+            ],
+            "target": 5
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.1.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "182 − (96 − 54) = ?",
+          "answer": 140,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "182 − 42 = 140.",
+          "visual": {
+            "type": "expression",
+            "expression": "182 − (96 − 54)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "182 − (96 − 54)"
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.1.b",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "7 × (48 : 6) = ?",
+          "answer": 56,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "7 × 8 = 56.",
+          "visual": {
+            "type": "expression",
+            "expression": "7 × (48 : 6)"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "7 × (48 : 6)"
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.2.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép biểu thức trên mỗi cá heo với quả bóng mang giá trị đúng.",
+          "answer": {
+            "A": 40,
+            "B": 50,
+            "C": 210,
+            "D": 100
+          },
+          "hint": "Tính từng biểu thức trước khi ghép.",
+          "solution": "A = 40; B = 50; C = 210; D = 100.",
+          "visual": {
+            "type": "expression_match",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "4 × (54 − 44)"
+              },
+              {
+                "id": "B",
+                "expression": "(33 + 67) : 2"
+              },
+              {
+                "id": "C",
+                "expression": "(25 + 45) × 3"
+              },
+              {
+                "id": "D",
+                "expression": "52 + 24 × 2"
+              }
+            ],
+            "options": [
+              100,
+              50,
+              210,
+              40
+            ],
+            "theme": "dolphin_ball"
+          },
+          "check": {
+            "op": "match_expressions",
+            "expressions": [
+              {
+                "id": "A",
+                "expression": "4 × (54 − 44)"
+              },
+              {
+                "id": "B",
+                "expression": "(33 + 67) : 2"
+              },
+              {
+                "id": "C",
+                "expression": "(25 + 45) × 3"
+              },
+              {
+                "id": "D",
+                "expression": "52 + 24 × 2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.3.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "a",
+          "kind": "number",
+          "prompt": "27 + 34 + 66 = ?",
+          "answer": 127,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "27 + (34 + 66) = 27 + 100 = 127.",
+          "visual": {
+            "type": "expression",
+            "expression": "27 + 34 + 66"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "27 + 34 + 66"
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.3.b",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 3,
+          "part": "b",
+          "kind": "number",
+          "prompt": "7 × 5 × 2 = ?",
+          "answer": 70,
+          "hint": "Trong ngoặc trước; nhân chia trước cộng trừ; cùng mức từ trái sang phải.",
+          "solution": "7 × (5 × 2) = 7 × 10 = 70.",
+          "visual": {
+            "type": "expression",
+            "expression": "7 × 5 × 2"
+          },
+          "check": {
+            "op": "expression",
+            "expression": "7 × 5 × 2"
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.4.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 4,
+          "part": "a",
+          "kind": "steps",
+          "prompt": "Có 288 bánh xe ô tô. Mỗi hộp đựng 4 bánh xe; mỗi thùng đựng 8 hộp. Đóng được bao nhiêu thùng?",
+          "answer": {
+            "intermediate": 72,
+            "final": 9,
+            "unit": "thùng"
+          },
+          "hint": "Tính bước đầu rồi dùng kết quả để trả lời câu hỏi.",
+          "solution": "288 : 4 = 72 hộp; 72 : 8 = 9 thùng.",
+          "visual": {
+            "type": "nested_groups",
+            "total": 288,
+            "itemsPerBox": 4,
+            "boxesPerCrate": 8
+          },
+          "check": {
+            "op": "two_expressions",
+            "expressions": [
+              "288:4",
+              "72:8"
+            ]
+          }
+        },
+        {
+          "id": "SGK.42.117.LT2.5.a",
+          "book": "SGK",
+          "lesson": 42,
+          "page": 117,
+          "pdfPage": 118,
+          "section": "LT2",
+          "exercise": 5,
+          "part": "a",
+          "kind": "operator_fill",
+          "prompt": "Chọn một trong bốn dấu +, −, ×, : cho 6 × (6 □ 6) để giá trị nhỏ nhất.",
+          "answer": {
+            "accepted": [
+              [
+                "−"
+              ]
+            ]
+          },
+          "hint": "Thử bốn dấu, tính trong ngoặc trước.",
+          "solution": "Cộng: 72; trừ: 0; nhân: 216; chia: 6. Nhỏ nhất là 0 khi chọn −.",
+          "visual": {
+            "type": "operator_fill",
+            "template": "6 × (6 ? 6)",
+            "operators": [
+              "+",
+              "−",
+              "×",
+              ":"
+            ],
+            "goal": "min"
+          },
+          "check": {
+            "op": "operator_solutions",
+            "template": "6 × (6 ? 6)",
+            "operators": [
+              "+",
+              "−",
+              "×",
+              ":"
+            ],
+            "goal": "min"
+          }
+        }
+      ]
+    }
+  ]
+}
