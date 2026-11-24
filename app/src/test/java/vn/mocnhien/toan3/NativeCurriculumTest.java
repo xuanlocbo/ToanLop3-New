@@ -9,7 +9,7 @@ import java.util.*;
 /** Regression fixtures exercise each runtime record using the same draft format as native widgets. */
 public class NativeCurriculumTest {
     Curriculum load() throws Exception {
-        return new Curriculum(new JSONObject(Files.readString(Path.of(System.getProperty("curriculum.path")))));
+        return new Curriculum(new JSONObject(new String(Files.readAllBytes(java.nio.file.Paths.get(System.getProperty("curriculum.path"))), java.nio.charset.StandardCharsets.UTF_8)));
     }
     void put(JSONObject d,String k,Object x){Json.put(d,k,x);}
     JSONArray indices(JSONArray available,JSONArray desired){
