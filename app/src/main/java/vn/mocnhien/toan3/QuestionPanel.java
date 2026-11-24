@@ -77,13 +77,13 @@ final class QuestionPanel extends LinearLayout {
         boolean correct="correct".equals(draft.optString("status"));
         if(correct){
             LinearLayout win=ui.card(NativeUi.MINT);ui.add(this,win);
-            if(!kind.equals("study")&&!kind.startsWith("practice"))ui.banner(win,AdventurePlan.theme(q.optInt("lesson",26)),true,82);
+            if(!ui.compact()&&!kind.equals("study")&&!kind.startsWith("practice"))ui.banner(win,AdventurePlan.theme(q.optInt("lesson",26)),true,82);
             ui.label(win,kind.equals("study")?"Đã học xong!":kind.startsWith("practice")?"Đã ghi nhận thực hành!":"Giỏi lắm! Em làm đúng rồi!",26,true);
             int earned=draft.optInt("earned");
             TextView award=ui.badge(earned>0?"★ +"+earned+" sao hồng":"✓ Đã lưu kết quả",earned>0?NativeUi.GOLD:NativeUi.WHITE);ui.add(win,award);
             ui.label(win,q.optString("solution"),20,false);LinearLayout row=ui.row();ui.add(win,row);
             if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng →":"Tiếp tục →",NativeUi.GREEN,host::next);
-            if(celebrateNext){win.setAlpha(.65f);win.setTranslationY(ui.dp(6));win.animate().alpha(1f).translationY(0).setDuration(230).start();}
+            if(celebrateNext){win.setAlpha(.65f);win.setTranslationY(ui.dp(6));win.animate().alpha(1f).translationY(0).setDuration(230).start();win.post(()->row.requestRectangleOnScreen(new android.graphics.Rect(0,0,row.getWidth(),row.getHeight()),false));}
             celebrateNext=false;rebuilding=false;return;
         }
         if(kind.equals("board_game")){
@@ -127,7 +127,7 @@ final class QuestionPanel extends LinearLayout {
             case "board_game":board(content);break;
             default:throw new IllegalStateException("Unimplemented "+kind);
         }
-        if("retry".equals(draft.optString("status"))){LinearLayout tryAgain=ui.card(0xffffedda);ui.add(this,tryAgain);ui.label(tryAgain,"Chưa đúng, mình thử thêm một lần nhé!",21,true);}
+        if("retry".equals(draft.optString("status"))){LinearLayout tryAgain=ui.card(0xffffedda);ui.add(this,tryAgain);ui.label(tryAgain,"Chưa đúng, mình thử thêm một lần nhé!",21,true);tryAgain.post(()->tryAgain.requestRectangleOnScreen(new android.graphics.Rect(0,0,tryAgain.getWidth(),tryAgain.getHeight()),false));}
         if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+q.optString("hint"),19,false);
         if(draft.optBoolean("showSolution"))ui.label(this,"Cách giải: "+q.optString("solution"),19,false);
         LinearLayout controls=ui.row();ui.add(this,controls);
