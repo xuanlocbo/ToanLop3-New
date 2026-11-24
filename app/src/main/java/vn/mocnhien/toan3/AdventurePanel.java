@@ -7,7 +7,7 @@ import android.widget.*;
 
 /** Foreground-only game loop. Motion is persisted at important events and periodic checkpoints. */
 final class AdventurePanel extends LinearLayout {
-    interface Host { void openGate(); void returnMap(); void nextStage(); void sound(boolean positive); }
+    interface Host { void openGate(); void returnMap(); void nextStage(); void sound(SoundPalette.Cue cue); }
     final NativeUi ui;
     final ProgressStore store;
     final AdventureWorld world;
@@ -28,14 +28,15 @@ final class AdventurePanel extends LinearLayout {
         this.store=store;this.host=host;ui=new NativeUi(c);
         world=new AdventureWorld(lesson);state=store.adventureState(lesson);
         setBackground(ui.bg(NativeUi.BG,16));
-        status=ui.text("",17,true);status.setGravity(Gravity.CENTER);addView(status,new LinearLayout.LayoutParams(-1,-2));
+        status=ui.text("",17,true);status.setGravity(Gravity.CENTER);status.setBackground(ui.bg(NativeUi.WHITE,16));addView(status,new LinearLayout.LayoutParams(-1,-2));
         scene=new AdventureScene(c,world,state);
         addView(scene,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout controls=ui.row();controls.setMotionEventSplittingEnabled(true);ui.pad(controls,3);
         addView(controls,new LinearLayout.LayoutParams(-1,-2));
-        left=ui.button("◀ Trái",NativeUi.LAV,()->tap(-1));
-        right=ui.button("Phải ▶",NativeUi.LAV,()->tap(1));
-        jump=ui.button("↑ Nhảy",NativeUi.PINK,()->{if(playable())jumpQueued=true;});
+        left=ui.button("◀  Trái",NativeUi.LAV,()->tap(-1));
+        right=ui.button("Phải  ▶",NativeUi.LAV,()->tap(1));
+        jump=ui.button("↑  Nhảy",NativeUi.PINK,()->{if(playable())jumpQueued=true;});
+        for(Button control:new Button[]{left,right,jump})control.setMinHeight(ui.dp(56));
         left.setContentDescription("Giữ để đi sang trái");
         right.setContentDescription("Giữ để đi sang phải");
         jump.setContentDescription("Nhảy qua chướng ngại vật");
@@ -97,17 +98,17 @@ final class AdventurePanel extends LinearLayout {
         running=true;lastFrame=0;accumulator=0;postOnAnimation(frame);
     }
     boolean pauseAndSave(){
-        running=false;removeCallbacks(frame);releaseControls();
+        running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();
         return flush();
     }
-    void dispose(){disposed=true;running=false;removeCallbacks(frame);releaseControls();}
+    void dispose(){disposed=true;running=false;removeCallbacks(frame);releaseControls();scene.stopEffects();}
     @Override protected void onDetachedFromWindow(){running=false;removeCallbacks(frame);releaseControls();super.onDetachedFromWindow();}
     void tick(){
         if(!running||!playable()||!isAttachedToWindow()){running=false;return;}
         long now=SystemClock.uptimeMillis();
         if(lastFrame==0)lastFrame=now;
         accumulator+=Math.min(85,Math.max(0,now-lastFrame));lastFrame=now;
-        int oldPetals=state.petals,oldFalls=state.falls;
+        int oldPetals=state.petals,oldFalls=state.falls;boolean jumped=false;
         boolean event=false;
         for(int i=0;i<5&&accumulator>=FRAME&&playable();i++){
             accumulator-=FRAME;
@@ -115,6 +116,7 @@ final class AdventurePanel extends LinearLayout {
             if(direction==0&&tapFrames>0){direction=tapDirection;tapFrames--;}
             if(direction!=0)face=direction;
             int x=state.x,y=state.y,vy=state.vy;
+            if(jumpQueued&&world.grounded(state))jumped=true;
             event|=world.step(state,direction,jumpQueued);
             jumpQueued=false;
             dirty|=x!=state.x||y!=state.y||vy!=state.vy||event||oldPetals!=state.petals;
@@ -123,10 +125,14 @@ final class AdventurePanel extends LinearLayout {
         boolean flower=oldPetals!=state.petals,fall=oldFalls!=state.falls;
         if(event||flower||fall||dirty&&now-lastSave>=700){
             if(!flush())return;
-            if(flower||event&&!fall)host.sound(true);
-            if(fall)host.sound(false);
+            if(flower||state.finished)scene.celebrate(state.petals&~oldPetals,state.finished);
+            if(state.finished)host.sound(SoundPalette.Cue.FINISH);
+            else if(fall)host.sound(SoundPalette.Cue.TRY_AGAIN);
+            else if(state.pending)host.sound(SoundPalette.Cue.GATE);
+            else if(flower)host.sound(SoundPalette.Cue.PETAL);
             update();
         }
+        if(jumped&&!fall&&!state.pending&&!state.finished&&!flower)host.sound(SoundPalette.Cue.JUMP);
         if(playable()&&running)postOnAnimation(frame);else{running=false;releaseControls();update();}
     }
 }
