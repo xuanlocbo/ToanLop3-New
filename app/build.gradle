@@ -1,2 +1,37 @@
 plugins { id 'com.android.application' }
-android { namespace 'vn.mocnhien.toan3'; compileSdk 35; defaultConfig { applicationId 'vn.mocnhien.toan3'; minSdk 24; targetSdk 34; versionCode 1; versionName '1.0.0' }; compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 } }
+
+def curriculumOutput = layout.buildDirectory.dir('generated/curriculum')
+def generatedBank = curriculumOutput.map { it.file('runtime_v2.json') }
+tasks.register('prepareNativeCurriculum', Exec) {
+    workingDir rootProject.projectDir
+    inputs.file(rootProject.file('tools/prepare_curriculum.mjs'))
+    inputs.files(fileTree('src/main/assets/curriculum') { include '*.json' })
+    outputs.file(generatedBank)
+    commandLine 'node', rootProject.file('tools/prepare_curriculum.mjs').absolutePath, generatedBank.get().asFile.absolutePath
+}
+android {
+    namespace 'vn.mocnhien.toan3'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'vn.mocnhien.toan3'
+        minSdk 24
+        targetSdk 34
+        versionCode 2
+        versionName '1.1.0-dev'
+    }
+    sourceSets { main { assets.srcDir(curriculumOutput) } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    testOptions { unitTests.returnDefaultValues = false }
+}
+tasks.named('preBuild').configure { dependsOn tasks.named('prepareNativeCurriculum') }
+tasks.withType(Test).configureEach {
+    dependsOn tasks.named('prepareNativeCurriculum')
+    systemProperty 'curriculum.path', generatedBank.get().asFile.absolutePath
+}
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+}
