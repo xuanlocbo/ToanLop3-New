@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [native-curriculum-1.1]
-    paths: ['.github/workflows/verify-native.yml']
+    paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
 permissions:
   contents: read
 jobs:
