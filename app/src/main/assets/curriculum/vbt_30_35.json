@@ -1,0 +1,3459 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "VBT",
+    "title": "Vở bài tập Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      76,
+      87
+    ],
+    "pdfPages": [
+      77,
+      88
+    ],
+    "sha256": "cadef7165ad41318d6e93698b49d8f42a1ec909bfed4f22e22c3ad43cf3ce822"
+  },
+  "notes": "Đã đối chiếu PDF. Giữ ID nền BookBank và bổ sung mục mới. Thực hành đo vật thật cần bản in hoặc mô hình đã hiệu chuẩn; không tự suy ra số đo từ pixel. Visual có dữ kiện để dựng native; không hiển thị trường kết quả trước khi làm. Các câu ước lượng dựa trên lựa chọn sách.",
+  "lessons": [
+    {
+      "lesson": 30,
+      "title": "Mi-li-mét",
+      "items": [
+        {
+          "id": "VBT.30.1.76.1.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "3 cm = ? mm",
+          "answer": 30,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "3 cm = 30 mm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              3,
+              "cm",
+              "mm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 3,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.1.2",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "20 mm = ? cm",
+          "answer": 2,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "20 mm = 2 cm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              20,
+              "mm",
+              "cm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 20,
+              "unit": "mm"
+            },
+            "toUnit": "cm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.1.3",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "5 cm = ? mm",
+          "answer": 50,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "5 cm = 50 mm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              5,
+              "cm",
+              "mm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 5,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.1.4",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "10 cm = ? mm",
+          "answer": 100,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "10 cm = 100 mm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              10,
+              "cm",
+              "mm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 10,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.1.5",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "5",
+          "kind": "number",
+          "prompt": "1 m = ? cm",
+          "answer": 100,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "1 m = 100 cm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "m",
+              "cm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "m"
+            },
+            "toUnit": "cm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.1.6",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 1,
+          "part": "6",
+          "kind": "number",
+          "prompt": "1 m = ? mm",
+          "answer": 1000,
+          "hint": "1 cm = 10 mm; 1 m = 100 cm = 1000 mm.",
+          "solution": "1 m = 1000 mm.",
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "m",
+              "mm"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "m"
+            },
+            "toUnit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.2.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "ruler",
+          "prompt": "Đo đoạn AB. Đoạn dài bao nhiêu mm?",
+          "answer": 10,
+          "hint": "Đầu đoạn đặt tại vạch 0; đọc vạch trùng đầu kia, mỗi vạch nhỏ là 1 mm.",
+          "solution": "AB dài 10 mm.",
+          "visual": {
+            "type": "ruler",
+            "unit": "mm",
+            "tickStepMm": 1,
+            "maxMm": 55,
+            "segment": {
+              "startMm": 0,
+              "endMm": 10
+            },
+            "labels": [
+              "A",
+              "B"
+            ]
+          },
+          "check": {
+            "op": "length_difference",
+            "args": [
+              0,
+              10
+            ]
+          }
+        },
+        {
+          "id": "VBT.30.1.76.2.2",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "ruler",
+          "prompt": "Đo đoạn CD. Đoạn dài bao nhiêu mm?",
+          "answer": 40,
+          "hint": "Đầu đoạn đặt tại vạch 0; đọc vạch trùng đầu kia, mỗi vạch nhỏ là 1 mm.",
+          "solution": "CD dài 40 mm.",
+          "visual": {
+            "type": "ruler",
+            "unit": "mm",
+            "tickStepMm": 1,
+            "maxMm": 55,
+            "segment": {
+              "startMm": 0,
+              "endMm": 40
+            },
+            "labels": [
+              "C",
+              "D"
+            ]
+          },
+          "check": {
+            "op": "length_difference",
+            "args": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "id": "VBT.30.1.76.3.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Cào cào nhảy 3 cm, bọ ngựa 15 mm, châu chấu 20 mm. Ai xa nhất?",
+          "answer": "Cào cào",
+          "hint": "3 cm = 30 mm.",
+          "solution": "Đáp án: Cào cào",
+          "visual": {
+            "type": "compare_length",
+            "options": [
+              "Cào cào",
+              "Bọ ngựa",
+              "Châu chấu"
+            ],
+            "objects": [
+              {
+                "name": "Cào cào",
+                "value": 3,
+                "unit": "cm"
+              },
+              {
+                "name": "Bọ ngựa",
+                "value": 15,
+                "unit": "mm"
+              },
+              {
+                "name": "Châu chấu",
+                "value": 20,
+                "unit": "mm"
+              }
+            ]
+          },
+          "check": {
+            "op": "extreme_length",
+            "objects": [
+              {
+                "name": "Cào cào",
+                "value": 3,
+                "unit": "cm"
+              },
+              {
+                "name": "Bọ ngựa",
+                "value": 15,
+                "unit": "mm"
+              },
+              {
+                "name": "Châu chấu",
+                "value": 20,
+                "unit": "mm"
+              }
+            ],
+            "target": "max"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.3.2",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Cào cào nhảy 3 cm, bọ ngựa 15 mm, châu chấu 20 mm. Ai nhảy ngắn nhất?",
+          "answer": "Bọ ngựa",
+          "hint": "15 mm nhỏ nhất.",
+          "solution": "3 cm = 30 mm. 15 mm nhỏ nhất nên bọ ngựa nhảy ngắn nhất.",
+          "visual": {
+            "type": "compare_length",
+            "options": [
+              "Cào cào",
+              "Bọ ngựa",
+              "Châu chấu"
+            ],
+            "objects": [
+              {
+                "name": "Cào cào",
+                "value": 3,
+                "unit": "cm"
+              },
+              {
+                "name": "Bọ ngựa",
+                "value": 15,
+                "unit": "mm"
+              },
+              {
+                "name": "Châu chấu",
+                "value": 20,
+                "unit": "mm"
+              }
+            ]
+          },
+          "check": {
+            "op": "extreme_length",
+            "objects": [
+              {
+                "name": "Cào cào",
+                "value": 3,
+                "unit": "cm"
+              },
+              {
+                "name": "Bọ ngựa",
+                "value": 15,
+                "unit": "mm"
+              },
+              {
+                "name": "Châu chấu",
+                "value": 20,
+                "unit": "mm"
+              }
+            ],
+            "target": "min"
+          }
+        },
+        {
+          "id": "VBT.30.1.76.4.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 1,
+          "page": 76,
+          "pdfPage": 77,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Chồng 7 tấm gỗ dày 2 mm mỗi tấm. Tổng độ dày là bao nhiêu mm?",
+          "answer": 14,
+          "hint": "2 × 7",
+          "solution": "2 × 7 = 14 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "2 × 7"
+          },
+          "visual": {
+            "type": "equal_groups",
+            "groups": 7,
+            "each": 2,
+            "object": "Tấm gỗ",
+            "unit": "mm",
+            "ignoreGlue": true
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "150 + 400 = ? mm",
+          "answer": 550,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "150 + 400 = 550 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "150 + 400"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.2",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "45 + 2 = ? mm",
+          "answer": 47,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "45 + 2 = 47 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "45 + 2"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.3",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "450 − 180 = ? mm",
+          "answer": 270,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "450 − 180 = 270 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "450 − 180"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.4",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "72 − 34 = ? mm",
+          "answer": 38,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 − 34 = 38 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "72 − 34"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.5",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "5",
+          "kind": "number",
+          "prompt": "37 × 2 = ? mm",
+          "answer": 74,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "37 × 2 = 74 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "37 × 2"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.1.6",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 1,
+          "part": "6",
+          "kind": "number",
+          "prompt": "72 : 3 = ? mm",
+          "answer": 24,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 : 3 = 24 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 3"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.2.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "24 mm giảm 8 lần được bao nhiêu mm?",
+          "answer": 3,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "24 : 8 = 3 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "24 : 8"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 24,
+            "op": ":",
+            "factor": 8,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.2.2",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "49 mm gấp 2 lần được bao nhiêu mm?",
+          "answer": 98,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "49 × 2 = 98 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "49 × 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 49,
+            "op": "×",
+            "factor": 2,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.2.3",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "96 mm giảm 4 lần được bao nhiêu mm?",
+          "answer": 24,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "96 : 4 = 24 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "96 : 4"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 96,
+            "op": ":",
+            "factor": 4,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.2.4",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 2,
+          "part": "4",
+          "kind": "number",
+          "prompt": "18 mm gấp 5 lần được bao nhiêu mm?",
+          "answer": 90,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "18 × 5 = 90 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "18 × 5"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 18,
+            "op": "×",
+            "factor": 5,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.30.2.77.3.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Măng hôm qua cao 173 mm, hôm nay 292 mm. Cao thêm bao nhiêu mm?",
+          "answer": 119,
+          "hint": "292 − 173",
+          "solution": "292 − 173 = 119 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "292 − 173"
+          },
+          "visual": {
+            "type": "compare_length",
+            "objects": [
+              {
+                "name": "Hôm qua",
+                "value": 173,
+                "unit": "mm"
+              },
+              {
+                "name": "Hôm nay",
+                "value": 292,
+                "unit": "mm"
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.30.2.77.4.1",
+          "book": "VBT",
+          "lesson": 30,
+          "period": 2,
+          "page": 77,
+          "pdfPage": 78,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Thứ Ba mưa 17 mm, thứ Tư gấp 4 lần. Thứ Tư mưa bao nhiêu mm?",
+          "answer": 68,
+          "hint": "17 × 4",
+          "solution": "17 × 4 = 68 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "17 × 4"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 31,
+      "title": "Gam",
+      "items": [
+        {
+          "id": "VBT.31.1.78.1.1",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 78,
+          "pdfPage": 79,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "balance",
+          "prompt": "Ba quả cam nặng bao nhiêu gam?",
+          "answer": 550,
+          "hint": "Cộng hai quả cân.",
+          "solution": "50 + 500 = 550 g.",
+          "check": {
+            "op": "sum_weights",
+            "weights": [
+              50,
+              500
+            ]
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              50,
+              500
+            ],
+            "rightObjects": [
+              "Quả cam",
+              "Quả cam",
+              "Quả cam"
+            ]
+          }
+        },
+        {
+          "id": "VBT.31.1.78.1.2",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 78,
+          "pdfPage": 79,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "balance",
+          "prompt": "Hộp sữa nặng bao nhiêu gam?",
+          "answer": 600,
+          "hint": "Cộng hai quả cân.",
+          "solution": "100 + 500 = 600 g.",
+          "check": {
+            "op": "sum_weights",
+            "weights": [
+              100,
+              500
+            ]
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100,
+              500
+            ],
+            "rightObjects": [
+              "Hộp sữa"
+            ]
+          }
+        },
+        {
+          "id": "VBT.31.1.78.1.3",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 78,
+          "pdfPage": 79,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "balance",
+          "prompt": "Gói mì chính nặng bao nhiêu gam?",
+          "answer": 120,
+          "hint": "Cộng hai quả cân.",
+          "solution": "100 + 20 = 120 g.",
+          "check": {
+            "op": "sum_weights",
+            "weights": [
+              100,
+              20
+            ]
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100,
+              20
+            ],
+            "rightObjects": [
+              "Gói mì chính"
+            ]
+          }
+        },
+        {
+          "id": "VBT.31.1.78.1.4",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 78,
+          "pdfPage": 79,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "balance",
+          "prompt": "Gói bột canh nặng bao nhiêu gam?",
+          "answer": 300,
+          "hint": "Cộng hai quả cân.",
+          "solution": "100 + 200 = 300 g.",
+          "check": {
+            "op": "sum_weights",
+            "weights": [
+              100,
+              200
+            ]
+          },
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100,
+              200
+            ],
+            "rightObjects": [
+              "Gói bột canh"
+            ]
+          }
+        },
+        {
+          "id": "VBT.31.1.79.2.1",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "scale",
+          "prompt": "Đọc cân túi táo (g).",
+          "answer": 750,
+          "hint": "Đọc số ở đầu kim trên mặt cân.",
+          "solution": "750 g",
+          "visual": {
+            "type": "dial_scale",
+            "object": "Túi táo",
+            "valueG": 750,
+            "maxG": 1000,
+            "majorTickG": 250,
+            "minorTickG": 50,
+            "labelsG": [
+              0,
+              250,
+              500,
+              750
+            ]
+          },
+          "check": {
+            "op": "read_scale",
+            "valueG": 750
+          }
+        },
+        {
+          "id": "VBT.31.1.79.2.2",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "scale",
+          "prompt": "Đọc cân gói bột mì (g).",
+          "answer": 500,
+          "hint": "Đọc số ở đầu kim trên mặt cân.",
+          "solution": "500 g",
+          "visual": {
+            "type": "dial_scale",
+            "object": "Gói bột mì",
+            "valueG": 500,
+            "maxG": 1000,
+            "majorTickG": 250,
+            "minorTickG": 50,
+            "labelsG": [
+              0,
+              250,
+              500,
+              750
+            ]
+          },
+          "check": {
+            "op": "read_scale",
+            "valueG": 500
+          }
+        },
+        {
+          "id": "VBT.31.1.79.2.3",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Quan sát hai cân. Gói bột mì nhẹ hơn túi táo bao nhiêu gam?",
+          "answer": 250,
+          "hint": "750 − 500",
+          "solution": "750 − 500 = 250 g.",
+          "check": {
+            "op": "expression",
+            "expression": "750 − 500"
+          },
+          "visual": {
+            "type": "scales",
+            "scales": [
+              {
+                "type": "dial_scale",
+                "object": "Túi táo",
+                "valueG": 750,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "minorTickG": 50,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              },
+              {
+                "type": "dial_scale",
+                "object": "Gói bột mì",
+                "valueG": 500,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "minorTickG": 50,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.1",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "250 + 180 = ? g",
+          "answer": 430,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "250 + 180 = 430 g.",
+          "check": {
+            "op": "expression",
+            "expression": "250 + 180"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.2",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "430 − 250 = ? g",
+          "answer": 180,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "430 − 250 = 180 g.",
+          "check": {
+            "op": "expression",
+            "expression": "430 − 250"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.3",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "430 − 180 = ? g",
+          "answer": 250,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "430 − 180 = 250 g.",
+          "check": {
+            "op": "expression",
+            "expression": "430 − 180"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.4",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "8 × 9 = ? g",
+          "answer": 72,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "8 × 9 = 72 g.",
+          "check": {
+            "op": "expression",
+            "expression": "8 × 9"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.5",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "5",
+          "kind": "number",
+          "prompt": "72 : 9 = ? g",
+          "answer": 8,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 : 9 = 8 g.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 9"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.3.6",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 3,
+          "part": "6",
+          "kind": "number",
+          "prompt": "72 : 8 = ? g",
+          "answer": 9,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 : 8 = 9 g.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 8"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.4.1",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "1 kg = ? g",
+          "answer": 1000,
+          "hint": "1 kg = 1000 g.",
+          "solution": "1 kg = 1000 g.",
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "kg",
+              "g"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "kg"
+            },
+            "toUnit": "g"
+          }
+        },
+        {
+          "id": "VBT.31.1.79.4.2",
+          "book": "VBT",
+          "lesson": 31,
+          "period": 1,
+          "page": 79,
+          "pdfPage": 80,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Có 1 kg đường, lấy 150 g rồi 200 g. Còn bao nhiêu gam?",
+          "answer": 650,
+          "hint": "1 000 − 150 − 200",
+          "solution": "1 kg = 1000 g; lấy ra 150 + 200 = 350 g; còn 1000 − 350 = 650 g.",
+          "check": {
+            "op": "expression",
+            "expression": "1000 − 150 − 200"
+          },
+          "visual": {
+            "type": "quantity_removed",
+            "initial": {
+              "value": 1,
+              "unit": "kg"
+            },
+            "removals": [
+              {
+                "value": 150,
+                "unit": "g"
+              },
+              {
+                "value": 200,
+                "unit": "g"
+              }
+            ]
+          },
+          "prerequisite": "VBT.31.1.79.4.1"
+        }
+      ]
+    },
+    {
+      "lesson": 32,
+      "title": "Mi-li-lít",
+      "items": [
+        {
+          "id": "VBT.32.1.80.1.1",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "cup",
+          "prompt": "Quan sát hình. Ca B chứa bao nhiêu ml nước?",
+          "answer": 400,
+          "hint": "Mỗi vạch 100 ml.",
+          "solution": "Ca B có 400 ml nước.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ],
+            "highlight": "B"
+          },
+          "check": {
+            "op": "read_cup",
+            "cupId": "B",
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.32.1.80.1.2",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "cup",
+          "prompt": "Quan sát hình. Ca C chứa bao nhiêu ml nước?",
+          "answer": 100,
+          "hint": "Mỗi vạch 100 ml.",
+          "solution": "Ca C có 100 ml nước.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ],
+            "highlight": "C"
+          },
+          "check": {
+            "op": "read_cup",
+            "cupId": "C",
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.32.1.80.1.3",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Rót hết nước từ bình sang ba ca A, B, C như hình. Lúc đầu bình có bao nhiêu ml nước?",
+          "answer": 1000,
+          "hint": "Cộng ba lượng nước.",
+          "solution": "500 + 400 + 100 = 1000 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "500 + 400 + 100"
+          },
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.32.1.80.2.1",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "1 l = ? ml",
+          "answer": 1000,
+          "hint": "1 l = 1000 ml.",
+          "solution": "1 l = 1000 ml.",
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "l",
+              "ml"
+            ]
+          },
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "l"
+            },
+            "toUnit": "ml"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.2.2",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Phích 1 l, rót 400 ml, 300 ml, 100 ml. Còn bao nhiêu ml?",
+          "answer": 200,
+          "hint": "1 000 − 400 − 300 − 100",
+          "solution": "Đã rót 400 + 300 + 100 = 800 ml; còn 1000 − 800 = 200 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "1000 − 400 − 300 − 100"
+          },
+          "visual": {
+            "type": "cups",
+            "initialMl": 1000,
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 400
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 100
+              }
+            ]
+          },
+          "prerequisite": "VBT.32.1.80.2.1"
+        },
+        {
+          "id": "VBT.32.1.80.3.1",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "250 + 100 = ? ml",
+          "answer": 350,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "250 + 100 = 350 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "250 + 100"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.3.2",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "350 − 250 = ? ml",
+          "answer": 100,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "350 − 250 = 100 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "350 − 250"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.3.3",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "350 − 100 = ? ml",
+          "answer": 250,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "350 − 100 = 250 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "350 − 100"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.3.4",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "9 × 3 = ? ml",
+          "answer": 27,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "9 × 3 = 27 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "9 × 3"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.3.5",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "5",
+          "kind": "number",
+          "prompt": "27 : 3 = ? ml",
+          "answer": 9,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "27 : 3 = 9 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "27 : 3"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.3.6",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 3,
+          "part": "6",
+          "kind": "number",
+          "prompt": "27 : 9 = ? ml",
+          "answer": 3,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "27 : 9 = 3 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "27 : 9"
+          }
+        },
+        {
+          "id": "VBT.32.1.80.4.doi",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 4,
+          "part": "doi",
+          "kind": "number",
+          "prompt": "Đổi 1 l nước trong bình thành bao nhiêu ml?",
+          "answer": 1000,
+          "hint": "1 l bằng một nghìn mi-li-lít.",
+          "solution": "1 l = 1000 ml.",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "l"
+            },
+            "toUnit": "ml"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "l",
+              "ml"
+            ]
+          }
+        },
+        {
+          "id": "VBT.32.1.80.4.1",
+          "book": "VBT",
+          "lesson": 32,
+          "period": 1,
+          "page": 80,
+          "pdfPage": 81,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Bình 1 l nước, rót đầy ca 500 ml và 300 ml. Còn bao nhiêu ml?",
+          "answer": 200,
+          "hint": "1 000 − 500 − 300",
+          "solution": "1 l = 1000 ml; rót 500 + 300 = 800 ml; còn 1000 − 800 = 200 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "1000 − 500 − 300"
+          },
+          "visual": {
+            "type": "cups",
+            "initialMl": 1000,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 300,
+                "valueMl": 300
+              }
+            ]
+          },
+          "prerequisite": "VBT.32.1.80.4.doi"
+        }
+      ]
+    },
+    {
+      "lesson": 33,
+      "title": "Nhiệt độ. Đơn vị đo nhiệt độ",
+      "items": [
+        {
+          "id": "VBT.33.1.81.1.1",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Nha Trang 32 °C, Sa Pa 15 °C, Hạ Long 26 °C. Hạ Long nóng hơn nơi nào?",
+          "answer": "Sa Pa",
+          "hint": "So sánh các số đo.",
+          "solution": "Đáp án: Sa Pa",
+          "visual": {
+            "type": "table",
+            "options": [
+              "Sa Pa",
+              "Nha Trang"
+            ],
+            "headers": [
+              "Nha Trang",
+              "Sa Pa",
+              "Hạ Long"
+            ],
+            "rows": [
+              [
+                "32 °C",
+                "15 °C",
+                "26 °C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "lower_than_location",
+            "items": [
+              {
+                "name": "Nha Trang",
+                "value": 32
+              },
+              {
+                "name": "Sa Pa",
+                "value": 15
+              },
+              {
+                "name": "Hạ Long",
+                "value": 26
+              }
+            ],
+            "location": "Hạ Long"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.1.2",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Nơi nóng nhất? Nha Trang 32 °C, Sa Pa 15 °C, Hạ Long 26 °C.",
+          "answer": "Nha Trang",
+          "hint": "Tìm số lớn nhất.",
+          "solution": "Đáp án: Nha Trang",
+          "visual": {
+            "type": "table",
+            "options": [
+              "Sa Pa",
+              "Nha Trang",
+              "Hạ Long"
+            ],
+            "headers": [
+              "Nha Trang",
+              "Sa Pa",
+              "Hạ Long"
+            ],
+            "rows": [
+              [
+                "32 °C",
+                "15 °C",
+                "26 °C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "extreme_named",
+            "items": [
+              {
+                "name": "Nha Trang",
+                "value": 32
+              },
+              {
+                "name": "Sa Pa",
+                "value": 15
+              },
+              {
+                "name": "Hạ Long",
+                "value": 26
+              }
+            ],
+            "target": "max"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.1.3",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "Quan sát bảng nhiệt độ Nha Trang, Sa Pa, Hạ Long. Nơi nào có nhiệt độ thấp nhất?",
+          "answer": "Sa Pa",
+          "hint": "15 °C là thấp nhất.",
+          "solution": "Đáp án: Sa Pa",
+          "visual": {
+            "type": "table",
+            "options": [
+              "Nha Trang",
+              "Hạ Long",
+              "Sa Pa"
+            ],
+            "headers": [
+              "Nha Trang",
+              "Sa Pa",
+              "Hạ Long"
+            ],
+            "rows": [
+              [
+                "32 °C",
+                "15 °C",
+                "26 °C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "extreme_named",
+            "items": [
+              {
+                "name": "Nha Trang",
+                "value": 32
+              },
+              {
+                "name": "Sa Pa",
+                "value": 15
+              },
+              {
+                "name": "Hạ Long",
+                "value": 26
+              }
+            ],
+            "target": "min"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.2.mau",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 2,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Đọc và viết nhiệt độ 20 °C.",
+          "answer": null,
+          "hint": "Quan sát ký hiệu °C.",
+          "solution": "20 °C đọc là hai mươi độ xê.",
+          "visual": {
+            "type": "temperature_reading",
+            "valueC": 20,
+            "reading": "Hai mươi độ xê"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.2.1",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Ba mươi lăm độ xê viết là ? °C",
+          "answer": 35,
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ba mươi lăm độ xê viết là 35 °C.",
+          "visual": {
+            "type": "temperature_reading_table",
+            "example": {
+              "valueC": 20,
+              "reading": "Hai mươi độ xê"
+            },
+            "rows": [
+              {
+                "valueC": null,
+                "reading": "Ba mươi lăm độ xê"
+              },
+              {
+                "valueC": null,
+                "reading": "Ba mươi mốt độ xê"
+              },
+              {
+                "valueC": 15,
+                "reading": null
+              }
+            ],
+            "activeRow": 0
+          },
+          "check": {
+            "op": "temperature_words_to_number",
+            "words": "Ba mươi lăm độ xê"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.2.2",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Ba mươi mốt độ xê viết là ? °C",
+          "answer": 31,
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ba mươi mốt độ xê viết là 31 °C.",
+          "visual": {
+            "type": "temperature_reading_table",
+            "example": {
+              "valueC": 20,
+              "reading": "Hai mươi độ xê"
+            },
+            "rows": [
+              {
+                "valueC": null,
+                "reading": "Ba mươi lăm độ xê"
+              },
+              {
+                "valueC": null,
+                "reading": "Ba mươi mốt độ xê"
+              },
+              {
+                "valueC": 15,
+                "reading": null
+              }
+            ],
+            "activeRow": 1
+          },
+          "check": {
+            "op": "temperature_words_to_number",
+            "words": "Ba mươi mốt độ xê"
+          }
+        },
+        {
+          "id": "VBT.33.1.81.2.3",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "15 °C đọc thế nào?",
+          "answer": "Mười lăm độ xê",
+          "hint": "Đọc số 15, sau đó đọc đơn vị độ xê.",
+          "solution": "Đáp án: Mười lăm độ xê",
+          "visual": {
+            "type": "temperature_reading_table",
+            "options": [
+              "Mười lăm độ xê",
+              "Năm mươi độ xê",
+              "Mười lăm gam"
+            ],
+            "example": {
+              "valueC": 20,
+              "reading": "Hai mươi độ xê"
+            },
+            "rows": [
+              {
+                "valueC": null,
+                "reading": "Ba mươi lăm độ xê"
+              },
+              {
+                "valueC": null,
+                "reading": "Ba mươi mốt độ xê"
+              },
+              {
+                "valueC": 15,
+                "reading": null
+              }
+            ],
+            "activeRow": 2
+          },
+          "check": {
+            "op": "temperature_number_to_words",
+            "valueC": 15
+          }
+        },
+        {
+          "id": "VBT.33.1.81.3.1",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Ba người có nhiệt độ 38 °C, 36 °C, 37 °C. Người thứ nhất cao nhất, thứ hai thấp nhất. Người thứ ba bao nhiêu °C?",
+          "answer": 37,
+          "hint": "Loại số lớn nhất và nhỏ nhất.",
+          "solution": "38 cao nhất, 36 thấp nhất, còn 37 °C là nhiệt độ người thứ ba.",
+          "visual": {
+            "type": "temperature_compare",
+            "valuesC": [
+              38,
+              36,
+              37
+            ],
+            "rankHints": [
+              "cao nhất",
+              "thấp nhất",
+              "còn lại"
+            ]
+          },
+          "check": {
+            "op": "middle",
+            "args": [
+              38,
+              36,
+              37
+            ]
+          }
+        },
+        {
+          "id": "VBT.33.1.81.4.1",
+          "book": "VBT",
+          "lesson": 33,
+          "period": 1,
+          "page": 81,
+          "pdfPage": 82,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "order",
+          "prompt": "Sắp xếp các nhiệt độ trong bảng từ cao nhất đến thấp nhất.",
+          "answer": [
+            30,
+            24,
+            18,
+            12
+          ],
+          "hint": "So sánh các số, xếp từ lớn đến bé.",
+          "solution": "30 °C, 24 °C, 18 °C, 12 °C.",
+          "visual": {
+            "type": "ordered_values",
+            "items": [
+              {
+                "name": "Sáng sớm",
+                "value": 18
+              },
+              {
+                "name": "Trưa",
+                "value": 30
+              },
+              {
+                "name": "Chiều",
+                "value": 24
+              },
+              {
+                "name": "Đêm",
+                "value": 12
+              }
+            ],
+            "unit": "°C",
+            "order": "descending"
+          },
+          "check": {
+            "op": "sort_values",
+            "args": [
+              18,
+              30,
+              24,
+              12
+            ],
+            "direction": "descending"
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 34,
+      "title": "Thực hành và trải nghiệm với các đơn vị mi-li-mét, gam, mi-li-lít, độ C",
+      "items": [
+        {
+          "id": "VBT.34.1.82.1.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 82,
+          "pdfPage": 83,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "practice_measure",
+          "prompt": "Dùng thước đo chiều cao của ba quân cờ trong hình VBT, tính theo mm.",
+          "answer": null,
+          "hint": "Đặt vạch 0 ở đầu mũi tên dưới rồi đọc đầu mũi tên trên.",
+          "solution": "Ghi đủ ba số đo theo bản in thật. Không dùng chiều cao hiển thị trên màn hình như số đo thực; người lớn có thể kiểm tra cách đo.",
+          "visual": {
+            "type": "real_world_measure",
+            "objects": [
+              "Quân mã",
+              "Quân tốt",
+              "Quân vua"
+            ],
+            "fields": [
+              "Chiều cao quân mã (mm)",
+              "Chiều cao quân tốt (mm)",
+              "Chiều cao quân vua (mm)"
+            ],
+            "requiresActualPrintOrCalibratedModel": true,
+            "requiresAdultReview": true
+          }
+        },
+        {
+          "id": "VBT.34.1.82.2.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 82,
+          "pdfPage": 83,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Quân xe cờ vua nặng khoảng bao nhiêu?",
+          "answer": "10 g",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Trong các lựa chọn của VBT, 10 g là mức khối lượng thích hợp của quân xe cờ vua.",
+          "visual": {
+            "type": "object",
+            "options": [
+              "10 g",
+              "1 kg"
+            ],
+            "object": "Quân xe cờ vua"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.1.82.2.2",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 82,
+          "pdfPage": 83,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Gói đường nặng khoảng bao nhiêu?",
+          "answer": "1 kg",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Trong các lựa chọn của VBT, 1 kg là mức khối lượng thích hợp của gói đường.",
+          "visual": {
+            "type": "object",
+            "options": [
+              "10 g",
+              "1 kg"
+            ],
+            "object": "Gói đường"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.1.82.2.3",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 82,
+          "pdfPage": 83,
+          "section": "T1",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "Quả tạ tay nặng khoảng bao nhiêu?",
+          "answer": "5 kg",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Trong các lựa chọn của VBT, 5 kg là mức khối lượng thích hợp của quả tạ tay.",
+          "visual": {
+            "type": "object",
+            "options": [
+              "500 g",
+              "5 kg"
+            ],
+            "object": "Quả tạ tay"
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.1.82.3.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 82,
+          "pdfPage": 83,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "practice",
+          "prompt": "Đo nhiệt độ không khí vào thứ Năm, thứ Sáu, thứ Bảy, Chủ nhật và ghi bảng.",
+          "answer": null,
+          "hint": "Thực hành với vở bài tập hoặc đồ dùng thật; nhờ người lớn kiểm tra.",
+          "solution": "Ghi số đo nhiệt độ không khí thực tế của từng ngày. Không có đáp án cố định.",
+          "visual": {
+            "type": "real_world_table",
+            "adultHelp": true,
+            "columns": [
+              "Thứ Năm",
+              "Thứ Sáu",
+              "Thứ Bảy",
+              "Chủ nhật"
+            ],
+            "unit": "°C",
+            "fields": [
+              "Thứ Năm",
+              "Thứ Sáu",
+              "Thứ Bảy",
+              "Chủ nhật"
+            ]
+          }
+        },
+        {
+          "id": "VBT.34.1.83.4.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 83,
+          "pdfPage": 84,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Cân hai đĩa, quả cân 100 g và 200 g. Một lần cân để lấy 300 g gạo: làm sao?",
+          "answer": "Cân gạo bằng cả hai quả cân",
+          "hint": "100 + 200 = 300 g.",
+          "solution": "Đặt 100 g và 200 g cùng một đĩa, cho gạo vào đĩa kia đến khi cân bằng; lấy 300 g đã cân.",
+          "visual": {
+            "type": "balance_select",
+            "options": [
+              "Cân gạo bằng cả hai quả cân",
+              "Chỉ dùng quả 100 g",
+              "Chỉ dùng quả 200 g"
+            ],
+            "availableWeightsG": [
+              100,
+              200
+            ],
+            "initialRiceG": 1000,
+            "targetG": 300,
+            "weighingsAllowed": 1,
+            "expectedAction": {
+              "weightsG": [
+                100,
+                200
+              ],
+              "weighedG": 300,
+              "keep": "weighed"
+            }
+          },
+          "check": {
+            "op": "single_weighing",
+            "initialG": 1000,
+            "weightsG": [
+              100,
+              200
+            ],
+            "targetG": 300,
+            "keep": "weighed"
+          }
+        },
+        {
+          "id": "VBT.34.1.83.4.2",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 1,
+          "page": 83,
+          "pdfPage": 84,
+          "section": "T1",
+          "exercise": 4,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Từ túi 1 kg, lấy 700 g gạo chỉ cân một lần: làm sao?",
+          "answer": "Cân 300 g, giữ phần còn lại",
+          "hint": "1 000 − 300 = 700 g.",
+          "solution": "Cân đúng 300 g bằng hai quả cân. Phần gạo còn lại trong túi là 1000 − 300 = 700 g.",
+          "visual": {
+            "type": "balance_select",
+            "options": [
+              "Cân 300 g, giữ phần còn lại",
+              "Cân 200 g, giữ phần còn lại",
+              "Cân 100 g, giữ phần còn lại"
+            ],
+            "availableWeightsG": [
+              100,
+              200
+            ],
+            "initialRiceG": 1000,
+            "targetG": 700,
+            "weighingsAllowed": 1,
+            "expectedAction": {
+              "weightsG": [
+                100,
+                200
+              ],
+              "weighedG": 300,
+              "keep": "remaining"
+            }
+          },
+          "check": {
+            "op": "single_weighing",
+            "initialG": 1000,
+            "weightsG": [
+              100,
+              200
+            ],
+            "targetG": 700,
+            "keep": "remaining"
+          }
+        },
+        {
+          "id": "VBT.34.2.83.1.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 83,
+          "pdfPage": 84,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "thermometer",
+          "prompt": "Đọc nhiệt kế thứ nhất (°C).",
+          "answer": 40,
+          "hint": "Đọc vạch ngang đầu cột màu. Mỗi vạch nhỏ là 1 °C.",
+          "solution": "Nhiệt kế chỉ 40 °C.",
+          "visual": {
+            "type": "thermometer",
+            "rangeC": [
+              -30,
+              50
+            ],
+            "stepC": 1,
+            "majorTickC": 5,
+            "valueC": 40,
+            "orientation": "vertical"
+          },
+          "check": {
+            "op": "read_temperature",
+            "valueC": 40
+          }
+        },
+        {
+          "id": "VBT.34.2.83.1.2",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 83,
+          "pdfPage": 84,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "thermometer",
+          "prompt": "Đọc nhiệt kế thứ hai (°C).",
+          "answer": 0,
+          "hint": "Đọc vạch ngang đầu cột màu. Mỗi vạch nhỏ là 1 °C.",
+          "solution": "Nhiệt kế chỉ 0 °C.",
+          "visual": {
+            "type": "thermometer",
+            "rangeC": [
+              -30,
+              50
+            ],
+            "stepC": 1,
+            "majorTickC": 5,
+            "valueC": 0,
+            "orientation": "vertical"
+          },
+          "check": {
+            "op": "read_temperature",
+            "valueC": 0
+          }
+        },
+        {
+          "id": "VBT.34.2.83.1.3",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 83,
+          "pdfPage": 84,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "thermometer",
+          "prompt": "Đọc nhiệt kế thứ ba (°C).",
+          "answer": 38,
+          "hint": "Đọc vạch ngang đầu cột màu. Mỗi vạch nhỏ là 1 °C.",
+          "solution": "Nhiệt kế chỉ 38 °C.",
+          "visual": {
+            "type": "thermometer",
+            "rangeC": [
+              -30,
+              50
+            ],
+            "stepC": 1,
+            "majorTickC": 5,
+            "valueC": 38,
+            "orientation": "vertical"
+          },
+          "check": {
+            "op": "read_temperature",
+            "valueC": 38
+          }
+        },
+        {
+          "id": "VBT.34.2.84.2.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "Xe đạp trẻ em nặng khoảng bao nhiêu?",
+          "answer": "20 kg",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ghép xe đạp trẻ em với 20 kg, là mức phù hợp trong các lựa chọn.",
+          "visual": {
+            "type": "match_objects",
+            "options": [
+              "20 g",
+              "20 kg",
+              "2 kg"
+            ],
+            "objects": [
+              "Xe đạp trẻ em",
+              "Máy tính xách tay",
+              "Bút máy"
+            ],
+            "activeObject": "Xe đạp trẻ em",
+            "groupId": "VBT.34.2.84.2",
+            "oneToOne": true
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.2.84.2.2",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Máy tính xách tay nặng khoảng bao nhiêu?",
+          "answer": "2 kg",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ghép máy tính xách tay với 2 kg, là mức phù hợp trong các lựa chọn.",
+          "visual": {
+            "type": "match_objects",
+            "options": [
+              "20 g",
+              "20 kg",
+              "2 kg"
+            ],
+            "objects": [
+              "Xe đạp trẻ em",
+              "Máy tính xách tay",
+              "Bút máy"
+            ],
+            "activeObject": "Máy tính xách tay",
+            "groupId": "VBT.34.2.84.2",
+            "oneToOne": true
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.2.84.2.3",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 2,
+          "part": "3",
+          "kind": "choice",
+          "prompt": "Bút máy nặng khoảng bao nhiêu?",
+          "answer": "20 g",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Ghép bút máy với 20 g, là mức phù hợp trong các lựa chọn.",
+          "visual": {
+            "type": "match_objects",
+            "options": [
+              "20 g",
+              "20 kg",
+              "2 kg"
+            ],
+            "objects": [
+              "Xe đạp trẻ em",
+              "Máy tính xách tay",
+              "Bút máy"
+            ],
+            "activeObject": "Bút máy",
+            "groupId": "VBT.34.2.84.2",
+            "oneToOne": true
+          },
+          "reviewMethod": "source_options_manual"
+        },
+        {
+          "id": "VBT.34.2.84.3.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "choice",
+          "prompt": "A 500 ml, B 200 ml, C 300 ml, D 150 ml. Ca nào nhiều nước nhất?",
+          "answer": "A",
+          "hint": "Đọc kỹ đề, tìm phép tính hoặc quan hệ phù hợp.",
+          "solution": "Đáp án: A",
+          "visual": {
+            "type": "cups",
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "D",
+                "capacityMl": 500,
+                "valueMl": 150
+              }
+            ],
+            "showLabels": true,
+            "tickMl": 50
+          },
+          "check": {
+            "op": "extreme_cup",
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "D",
+                "capacityMl": 500,
+                "valueMl": 150
+              }
+            ],
+            "target": "max"
+          }
+        },
+        {
+          "id": "VBT.34.2.84.3.2",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 3,
+          "part": "2",
+          "kind": "multi",
+          "prompt": "A 500 ml, B 200 ml, C 300 ml, D 150 ml. Chọn hai ca tổng 500 ml.",
+          "answer": [
+            "B",
+            "C"
+          ],
+          "hint": "Tìm hai số cộng bằng 500.",
+          "solution": "Chọn: B, C",
+          "visual": {
+            "type": "cups",
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "D",
+                "capacityMl": 500,
+                "valueMl": 150
+              }
+            ],
+            "showLabels": true,
+            "tickMl": 50,
+            "selectCount": 2
+          },
+          "check": {
+            "op": "cup_pair_sum",
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "D",
+                "capacityMl": 500,
+                "valueMl": 150
+              }
+            ],
+            "targetMl": 500
+          }
+        },
+        {
+          "id": "VBT.34.2.84.3.3",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "Quan sát các ca. Ca A đựng nhiều hơn ca D bao nhiêu ml?",
+          "answer": 350,
+          "hint": "500 − 150",
+          "solution": "500 − 150 = 350 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "500 − 150"
+          },
+          "visual": {
+            "type": "cups",
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              },
+              {
+                "id": "D",
+                "capacityMl": 500,
+                "valueMl": 150
+              }
+            ],
+            "showLabels": true,
+            "tickMl": 50
+          }
+        },
+        {
+          "id": "VBT.34.2.84.4.1",
+          "book": "VBT",
+          "lesson": 34,
+          "period": 2,
+          "page": 84,
+          "pdfPage": 85,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "pour",
+          "prompt": "Dùng hai ca 250 ml và 100 ml để lấy đúng 50 ml nước.",
+          "answer": {
+            "targetMl": 50,
+            "anyCup": true
+          },
+          "hint": "Dùng thao tác đổ đầy, rót sang ca kia, hoặc đổ hết. Không ước lượng theo mắt.",
+          "solution": "Đổ đầy ca 250 ml, rót đầy ca 100 ml. Đổ hết ca 100 ml rồi rót đầy lần nữa từ ca lớn. Ca 250 ml còn đúng 50 ml.",
+          "visual": {
+            "type": "pour",
+            "capacitiesMl": [
+              250,
+              100
+            ],
+            "initialMl": [
+              0,
+              0
+            ],
+            "allowedActions": [
+              "fill",
+              "empty",
+              "pour"
+            ],
+            "targetMl": 50,
+            "solutionActions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              },
+              {
+                "type": "empty",
+                "cup": 1
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          },
+          "check": {
+            "op": "pour_sequence",
+            "capacitiesMl": [
+              250,
+              100
+            ],
+            "targetMl": 50,
+            "actions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              },
+              {
+                "type": "empty",
+                "cup": 1
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 35,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "VBT.35.1.85.1.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "832 − 228 = ? mm",
+          "answer": 604,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "832 − 228 = 604 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "832 − 228"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.1.3",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "37 + 182 = ? g",
+          "answer": 219,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "37 + 182 = 219 g.",
+          "check": {
+            "op": "expression",
+            "expression": "37 + 182"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.1.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "127 + 328 = ? mm",
+          "answer": 455,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "127 + 328 = 455 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "127 + 328"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.1.5",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "5",
+          "kind": "number",
+          "prompt": "215 + 37 = ? ml",
+          "answer": 252,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "215 + 37 = 252 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "215 + 37"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.1.6",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "6",
+          "kind": "number",
+          "prompt": "32 − 15 + 80 = ? ml",
+          "answer": 97,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "32 − 15 + 80 = 97 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "32 − 15 + 80"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.1.4",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "57 − 37 + 50 = ? g",
+          "answer": 70,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "57 − 37 + 50 = 70 g.",
+          "check": {
+            "op": "expression",
+            "expression": "57 − 37 + 50"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.2.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 2,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Hai kiện hàng giống nhau cân bằng với hai quả cân 500 g. Mỗi kiện nặng bao nhiêu gam?",
+          "answer": 500,
+          "hint": "Cộng hai quả cân rồi chia cho 2.",
+          "solution": "Hai kiện hàng nặng 500 + 500 = 1000 g; mỗi kiện nặng 1000 : 2 = 500 g.",
+          "check": {
+            "op": "expression",
+            "expression": "(500 + 500) : 2"
+          },
+          "visual": {
+            "type": "balance",
+            "leftObjects": [
+              "Kiện hàng",
+              "Kiện hàng"
+            ],
+            "rightWeightsG": [
+              500,
+              500
+            ],
+            "sameMassObjects": true
+          }
+        },
+        {
+          "id": "VBT.35.1.85.2.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 2,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Cốc và 50 g cân bằng 200 g và 100 g. Cốc nặng bao nhiêu gam?",
+          "answer": 250,
+          "hint": "200 + 100 − 50",
+          "solution": "200 + 100 = 300 g. Cốc nặng 300 − 50 = 250 g.",
+          "check": {
+            "op": "expression",
+            "expression": "200 + 100 − 50"
+          },
+          "visual": {
+            "type": "balance",
+            "leftObjects": [
+              "Cốc"
+            ],
+            "leftWeightsG": [
+              50
+            ],
+            "rightWeightsG": [
+              200,
+              100
+            ]
+          }
+        },
+        {
+          "id": "VBT.35.1.85.3.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "42 mm giảm 2 lần được bao nhiêu mm?",
+          "answer": 21,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "42 : 2 = 21 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "42 : 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 42,
+            "op": ":",
+            "factor": 2,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.3.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 3,
+          "part": "2",
+          "kind": "number",
+          "prompt": "42 mm gấp 2 lần được bao nhiêu mm?",
+          "answer": 84,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "42 × 2 = 84 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "42 × 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 42,
+            "op": "×",
+            "factor": 2,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.3.3",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 3,
+          "part": "3",
+          "kind": "number",
+          "prompt": "72 mm giảm 3 lần được bao nhiêu mm?",
+          "answer": 24,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "72 : 3 = 24 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "72 : 3"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 72,
+            "op": ":",
+            "factor": 3,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.35.1.85.3.4",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "T1",
+          "exercise": 3,
+          "part": "4",
+          "kind": "number",
+          "prompt": "38 mm gấp 2 lần được bao nhiêu mm?",
+          "answer": 76,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "38 × 2 = 76 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "38 × 2"
+          },
+          "visual": {
+            "type": "number_machine",
+            "start": 38,
+            "op": "×",
+            "factor": 2,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.35.1.86.4.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 1,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T1",
+          "exercise": 4,
+          "part": "1",
+          "kind": "pour",
+          "prompt": "Dùng hai cốc 250 ml và 400 ml để lấy đúng 100 ml nước.",
+          "answer": {
+            "targetMl": 100,
+            "anyCup": true
+          },
+          "hint": "Dùng thao tác đổ đầy, rót sang ca kia, hoặc đổ hết. Không ước lượng theo mắt.",
+          "solution": "Đổ đầy cốc 250 ml, rót hết vào cốc 400 ml. Đổ đầy cốc 250 ml lần hai, rót sang cốc 400 ml đến khi đầy; cốc 250 ml còn đúng 100 ml.",
+          "visual": {
+            "type": "pour",
+            "capacitiesMl": [
+              250,
+              400
+            ],
+            "initialMl": [
+              0,
+              0
+            ],
+            "allowedActions": [
+              "fill",
+              "empty",
+              "pour"
+            ],
+            "targetMl": 100,
+            "solutionActions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              },
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          },
+          "check": {
+            "op": "pour_sequence",
+            "capacitiesMl": [
+              250,
+              400
+            ],
+            "targetMl": 100,
+            "actions": [
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              },
+              {
+                "type": "fill",
+                "cup": 0
+              },
+              {
+                "type": "pour",
+                "from": 0,
+                "to": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.35.2.86.1.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 1,
+          "part": "1",
+          "kind": "number",
+          "prompt": "24 × 4 = ? mm",
+          "answer": 96,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "24 × 4 = 96 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "24 × 4"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 24,
+            "operations": [
+              {
+                "op": "×",
+                "value": 4
+              },
+              {
+                "op": ":",
+                "value": 3
+              }
+            ],
+            "activeStep": 0,
+            "unit": "mm"
+          }
+        },
+        {
+          "id": "VBT.35.2.86.1.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 1,
+          "part": "2",
+          "kind": "number",
+          "prompt": "96 : 3 = ? mm",
+          "answer": 32,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "96 : 3 = 32 mm.",
+          "check": {
+            "op": "expression",
+            "expression": "96 : 3"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 24,
+            "operations": [
+              {
+                "op": "×",
+                "value": 4
+              },
+              {
+                "op": ":",
+                "value": 3
+              }
+            ],
+            "activeStep": 1,
+            "unit": "mm"
+          },
+          "prerequisite": "VBT.35.2.86.1.1"
+        },
+        {
+          "id": "VBT.35.2.86.1.3",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 1,
+          "part": "3",
+          "kind": "number",
+          "prompt": "60 : 4 = ? ml",
+          "answer": 15,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "60 : 4 = 15 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "60 : 4"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 60,
+            "operations": [
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 2
+              }
+            ],
+            "activeStep": 0,
+            "unit": "ml"
+          }
+        },
+        {
+          "id": "VBT.35.2.86.1.4",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 1,
+          "part": "4",
+          "kind": "number",
+          "prompt": "15 × 2 = ? ml",
+          "answer": 30,
+          "hint": "Tính theo đúng thứ tự các phép tính.",
+          "solution": "15 × 2 = 30 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "15 × 2"
+          },
+          "visual": {
+            "type": "operation_chain",
+            "start": 60,
+            "operations": [
+              {
+                "op": ":",
+                "value": 4
+              },
+              {
+                "op": "×",
+                "value": 2
+              }
+            ],
+            "activeStep": 1,
+            "unit": "ml"
+          },
+          "prerequisite": "VBT.35.2.86.1.3"
+        },
+        {
+          "id": "VBT.35.2.86.2.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 2,
+          "part": "1",
+          "kind": "thermometer",
+          "prompt": "Đọc nhiệt độ cơ thể của Nam trên hình nhiệt kế.",
+          "answer": 38,
+          "hint": "Đọc vạch ngang với đầu cột màu.",
+          "solution": "Vạch cuối cột màu là 38 °C.",
+          "visual": {
+            "type": "clinical_thermometer",
+            "orientation": "horizontal",
+            "valueC": 38,
+            "rangeC": [
+              35,
+              42
+            ],
+            "stepC": 0.1,
+            "majorTickC": 1
+          },
+          "check": {
+            "op": "read_temperature",
+            "valueC": 38
+          }
+        },
+        {
+          "id": "VBT.35.2.86.2.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "T2",
+          "exercise": 2,
+          "part": "2",
+          "kind": "choice",
+          "prompt": "Theo tình huống trong VBT, bác sĩ đo nhiệt độ của Nam là 38 °C. Nam có bị sốt không? Vì sao?",
+          "answer": "Có, nhiệt độ cao hơn bình thường",
+          "hint": "So sánh số đo với mức khoảng 37 °C dùng trong bài học.",
+          "solution": "Theo tình huống bài học, Nam bị sốt vì nhiệt độ 38 °C cao hơn mức khoảng 37 °C. Khi không khỏe, nhờ người lớn hoặc nhân viên y tế kiểm tra; ứng dụng không dùng để chẩn đoán.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "Có, nhiệt độ cao hơn bình thường",
+              "Không, nhiệt độ rất thấp",
+              "Không, 38 °C là nhiệt độ môi trường"
+            ],
+            "requiresReason": true,
+            "reason": "38 °C cao hơn mức khoảng 37 °C trong bài học"
+          },
+          "reviewMethod": "source_context_manual"
+        },
+        {
+          "id": "VBT.35.2.87.3.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "T2",
+          "exercise": 3,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Hộp sữa 250 ml, dùng 80 ml làm bánh. Còn bao nhiêu ml?",
+          "answer": 170,
+          "hint": "250 − 80",
+          "solution": "250 − 80 = 170 ml.",
+          "check": {
+            "op": "expression",
+            "expression": "250 − 80"
+          },
+          "visual": {
+            "type": "quantity_removed",
+            "initial": {
+              "value": 250,
+              "unit": "ml"
+            },
+            "removals": [
+              {
+                "value": 80,
+                "unit": "ml"
+              }
+            ]
+          }
+        },
+        {
+          "id": "VBT.35.2.87.4.1",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "T2",
+          "exercise": 4,
+          "part": "1",
+          "kind": "number",
+          "prompt": "Quan sát hai cân thăng bằng. Mỗi hộp quà B nặng bao nhiêu gam?",
+          "answer": 400,
+          "hint": "500 − 100",
+          "solution": "500 − 100 = 400 g.",
+          "check": {
+            "op": "expression",
+            "expression": "500 − 100"
+          },
+          "visual": {
+            "type": "balance_sequence",
+            "scales": [
+              {
+                "leftObjects": [
+                  "A"
+                ],
+                "rightObjects": [
+                  "B",
+                  "B"
+                ],
+                "relation": "equal"
+              },
+              {
+                "leftObjects": [
+                  "B"
+                ],
+                "leftWeightsG": [
+                  100
+                ],
+                "rightWeightsG": [
+                  500
+                ],
+                "relation": "equal"
+              }
+            ],
+            "sameMassObjects": [
+              "B"
+            ],
+            "activeUnknown": "B"
+          }
+        },
+        {
+          "id": "VBT.35.2.87.4.2",
+          "book": "VBT",
+          "lesson": 35,
+          "period": 2,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "T2",
+          "exercise": 4,
+          "part": "2",
+          "kind": "number",
+          "prompt": "Từ hai cân thăng bằng, tìm khối lượng hộp quà A.",
+          "answer": 800,
+          "hint": "400 × 2",
+          "solution": "400 × 2 = 800 g.",
+          "check": {
+            "op": "expression",
+            "expression": "400 × 2"
+          },
+          "visual": {
+            "type": "balance_sequence",
+            "scales": [
+              {
+                "leftObjects": [
+                  "A"
+                ],
+                "rightObjects": [
+                  "B",
+                  "B"
+                ],
+                "relation": "equal"
+              },
+              {
+                "leftObjects": [
+                  "B"
+                ],
+                "leftWeightsG": [
+                  100
+                ],
+                "rightWeightsG": [
+                  500
+                ],
+                "relation": "equal"
+              }
+            ],
+            "sameMassObjects": [
+              "B"
+            ],
+            "activeUnknown": "A"
+          },
+          "prerequisite": "VBT.35.2.87.4.1"
+        }
+      ]
+    }
+  ]
+}
