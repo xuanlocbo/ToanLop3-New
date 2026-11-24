@@ -33,27 +33,41 @@ final class TrailMissionPanel extends LinearLayout {
             LinearLayout row=ui.row();ui.add(parent,row);
             for(int j=i;j<Math.min(count,i+perRow);j++){
                 final int id=j+offset;
-                ui.smallAction(row,mission.label(id),mission.selected(state,id)?NativeUi.MINT:NativeUi.PALE,()->move(id));
+                boolean selected=mission.selected(state,id);
+                Button control=ui.button((selected?"✓ ":"")+mission.label(id),selected?NativeUi.MINT:NativeUi.PALE,()->move(id));
+                if(mission.kind==TrailMission.Kind.BUILD)control.setContentDescription(mission.label(id)+(selected?", đã chọn":", chưa chọn"));
+                ui.weight(row,control,1);
             }
         }
     }
     void render(){
+        android.view.ViewParent ancestor=getParent();
+        while(ancestor!=null&&!(ancestor instanceof ScrollView))ancestor=ancestor.getParent();
+        final ScrollView viewport=ancestor instanceof ScrollView?(ScrollView)ancestor:null;
+        final int previousScroll=viewport==null?0:viewport.getScrollY();
         removeAllViews();
-        ui.label(this,"Trạm thực hành • Bài "+mission.lesson,17,true);
+        ui.caption(this,"Trạm thực hành • Bài "+mission.lesson);
         ui.label(this,mission.title,25,true);ui.label(this,mission.brief,21,false);
         if(mission.kind==TrailMission.Kind.GROUP){
-            ui.label(this,"Kho còn "+mission.result(state)+" "+mission.unit,23,true);
+            ui.add(this,ui.badge("Kho còn "+mission.result(state)+" "+mission.unit,NativeUi.GOLD));
             LinearLayout.LayoutParams groupArt=new LinearLayout.LayoutParams(-1,ui.dp(120));
             addView(new StationDrawing(getContext(),mission,state),groupArt);
             int per=mission.total>60?4:2;
-            for(int b=0;b<mission.bins;b++){
-                LinearLayout card=ui.card(NativeUi.PALE);ui.add(this,card);
-                ui.label(card,"Nhóm "+(b+1)+"   •   "+state[b]+" "+mission.unit,21,true);
-                rowActions(card,per,per,b*per);
+            int cols=ui.widthDp()>=700?2:1;
+            for(int base=0;base<mission.bins;base+=cols){
+                LinearLayout line=ui.row();line.setGravity(android.view.Gravity.TOP);ui.add(this,line);
+                for(int b=base;b<Math.min(mission.bins,base+cols);b++){
+                    LinearLayout card=ui.card(NativeUi.PALE);ui.weight(line,card,1);
+                    ui.label(card,"Nhóm "+(b+1)+"  ·  "+state[b]+" "+mission.unit,20,true);
+                    rowActions(card,per,per,b*per);
+                }
             }
         }else{
             if(mission.kind==TrailMission.Kind.BUILD)ui.label(this,"Đã ghép / đặt: "+mission.result(state)+" "+mission.unit,23,true);
-            if(mission.kind==TrailMission.Kind.STEPS)ui.label(this,mission.trace(state),24,true);
+            if(mission.kind==TrailMission.Kind.STEPS){
+                LinearLayout trace=ui.card(NativeUi.LAV);ui.add(this,trace);
+                ui.label(trace,mission.trace(state),25,true);
+            }
             if(mission.kind==TrailMission.Kind.POUR||mission.kind==TrailMission.Kind.TEMP||mission.kind==TrailMission.Kind.GRID||mission.kind==TrailMission.Kind.BUILD){
                 LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,ui.dp(mission.kind==TrailMission.Kind.GRID?230:145));
                 addView(new StationDrawing(getContext(),mission,state),lp);
@@ -65,12 +79,13 @@ final class TrailMissionPanel extends LinearLayout {
                 ui.action(this,"Xóa điểm vừa chọn",NativeUi.PALE,()->move(25));
             }else rowActions(this,mission.actionCount(),mission.kind==TrailMission.Kind.BUILD?5:3,0);
         }
-        if(!feedback.isEmpty())ui.label(this,feedback,20,true);
-        if(showHint)ui.label(this,"Gợi ý: "+mission.hint,19,false);
+        if(!feedback.isEmpty()){LinearLayout notice=ui.card(0xffffedda);ui.add(this,notice);ui.label(notice,feedback,20,true);}
+        if(showHint){LinearLayout hint=ui.card(NativeUi.LAV);ui.add(this,hint);ui.label(hint,"Gợi ý: "+mission.hint,19,false);}
         LinearLayout actions=ui.row();ui.add(this,actions);
         ui.smallAction(actions,"Gợi ý",NativeUi.LAV,()->{showHint=!showHint;render();});
         ui.smallAction(actions,"Làm lại",NativeUi.PALE,this::reset);
         ui.smallAction(actions,"Kiểm tra",NativeUi.GREEN,this::check);
+        if(viewport!=null&&previousScroll>0)viewport.post(()->viewport.scrollTo(0,previousScroll));
     }
     final class StationDrawing extends View {
         final Paint p=new Paint(Paint.ANTI_ALIAS_FLAG);final TrailMission m;final int[] s;
@@ -84,7 +99,8 @@ final class TrailMissionPanel extends LinearLayout {
         void text(String t,float x,float y,float size,int col){color(col);p.setTypeface(Typeface.create("sans-serif",Typeface.BOLD));p.setTextSize(size);p.setTextAlign(Paint.Align.CENTER);c.drawText(t,x,y,p);}
         @Override protected void onDraw(Canvas canvas){
             super.onDraw(canvas);c=canvas;w=getWidth();h=getHeight();if(w<=0||h<=0)return;
-            box(0,0,w,h,0xfffff3f8);
+            p.setShader(new LinearGradient(0,0,w,h,0xfffff9f5,0xffffe5f0,Shader.TileMode.CLAMP));
+            c.drawRoundRect(0,0,w,h,16,16,p);p.setShader(null);
             float dp=getResources().getDisplayMetrics().density;
             if(m.kind==TrailMission.Kind.GROUP){
                 float col=w/(m.bins+1),y=h*.23f,bottom=h*.82f;
