@@ -32,11 +32,11 @@ public final class ProgressStore {
         if(!prefs.edit().putString("snapshot",next.toString()).commit())return false;
         state=next;return true;
     }
-    public synchronized boolean setNav(JSONObject nav){JSONObject n=Json.copy(state);Json.put(n,"nav",nav);return save(n);}
+    public synchronized boolean setNav(JSONObject nav){JSONObject n=Json.copy(state);Json.put(n,"nav",Json.copy(nav));return save(n);}
     public synchronized boolean setSound(boolean b){JSONObject n=Json.copy(state);Json.put(n,"sound",b);return save(n);}
     public synchronized boolean saveDraft(String id,JSONObject draft){
         if(!curriculum.questions.containsKey(id))return false;
-        JSONObject n=Json.copy(state);Json.put(Json.obj(n,"drafts"),id,draft);return save(n);
+        JSONObject n=Json.copy(state);Json.put(Json.obj(n,"drafts"),id,Json.copy(draft));return save(n);
     }
     public synchronized boolean resetDraft(String id){return saveDraft(id,new JSONObject());}
     public static final class Result {
