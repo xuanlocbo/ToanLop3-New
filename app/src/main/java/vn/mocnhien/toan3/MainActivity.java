@@ -154,6 +154,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         gamePanel=new AdventurePanel(this,store,lesson,new AdventurePanel.Host(){
             public void openGate(){go("gate");}
             public void returnMap(){go("adventure");}
+            public void nextStage(){if(lesson<AdventurePlan.LAST)openAdventure(lesson+1);else go("adventure");}
             public void sound(boolean positive){feedback(positive);}
         });
         root.addView(gamePanel,new LinearLayout.LayoutParams(-1,0,1));setContentView(root);gamePanel.start();
@@ -174,7 +175,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host {
         if(a.gate>=2&&!a.answered){
             ui.action(body,"Thử thách này để sau",NativeUi.PALE,()->new android.app.AlertDialog.Builder(this)
                 .setTitle("Làm thử thách sau?")
-                .setMessage("Em vẫn có thể về đích. Câu này sẽ chưa được tính hoàn thành và không nhận sao. Có thể làm lại trong Kho báu.")
+                .setMessage("Em vẫn có thể về đích. Bỏ qua không nhận thêm sao; phần đang làm được lưu để học tiếp trong Kho báu.")
                 .setNegativeButton("Ở lại",null).setPositiveButton("Đi tiếp",(d,w)->{
                     if(store.skipAdventureBonus(lesson,a.gate))go("game");else Toast.makeText(this,"Chưa lưu được. Hãy thử lại.",Toast.LENGTH_LONG).show();
                 }).show());
