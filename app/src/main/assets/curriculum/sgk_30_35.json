@@ -1,0 +1,3841 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "book": "SGK",
+    "title": "Toán 3 tập một – Kết nối tri thức với cuộc sống",
+    "printedPages": [
+      85,
+      96
+    ],
+    "pdfPages": [
+      86,
+      97
+    ],
+    "sha256": "ca5720f69357ca5968fc8e96cc4961328a316ba680936548d2eeaae936a3fbcf"
+  },
+  "notes": "Dữ liệu chuyển thể, không sao chép nguyên trang. study là ví dụ. Các số đo hình thực hành không được coi là đáp án chính xác nếu chưa hiệu chuẩn; mục thực hành thực tế không có đáp án cố định.",
+  "lessons": [
+    {
+      "lesson": 30,
+      "title": "Mi-li-mét",
+      "items": [
+        {
+          "id": "SGK.30.85.KP.1.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "KP",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Mi-li-mét là đơn vị đo độ dài; viết tắt mm.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "1 cm = 10 mm; 1 m = 1000 mm. Khoảng cách giữa hai vạch nhỏ liên tiếp trên thước là 1 mm.",
+          "visual": {
+            "type": "ruler",
+            "unit": "mm",
+            "tickStepMm": 1,
+            "maxMm": 80,
+            "segment": {
+              "startMm": 0,
+              "endMm": 1
+            },
+            "context": "độ dày que kem"
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.1.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a",
+          "kind": "ruler",
+          "prompt": "Đo đoạn AB trên thước, theo mm.",
+          "answer": 20,
+          "hint": "Đọc vạch tại đầu B; A ở vạch 0.",
+          "solution": "Kết quả: 20 mm.",
+          "visual": {
+            "type": "ruler",
+            "unit": "mm",
+            "tickStepMm": 1,
+            "maxMm": 45,
+            "segment": {
+              "startMm": 0,
+              "endMm": 20
+            },
+            "labels": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.1.b",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b",
+          "kind": "ruler",
+          "prompt": "Đo đoạn CD trên thước, theo mm.",
+          "answer": 30,
+          "hint": "Đọc vạch tại đầu D; C ở vạch 0.",
+          "solution": "Kết quả: 30 mm.",
+          "visual": {
+            "type": "ruler",
+            "unit": "mm",
+            "tickStepMm": 1,
+            "maxMm": 45,
+            "segment": {
+              "startMm": 0,
+              "endMm": 30
+            },
+            "labels": [
+              "C",
+              "D"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.a1",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "1 cm = ? mm",
+          "answer": 10,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "1 cm = 10 mm",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "cm",
+              "mm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.a2",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "1 m = ? mm",
+          "answer": 1000,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "1 m = 1000 mm",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "m"
+            },
+            "toUnit": "mm"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "m",
+              "mm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.b1",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "10 mm = ? cm",
+          "answer": 1,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "10 mm = 1 cm",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 10,
+              "unit": "mm"
+            },
+            "toUnit": "cm"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              10,
+              "mm",
+              "cm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.b2",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "1000 mm = ? m",
+          "answer": 1,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "1000 mm = 1 m",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1000,
+              "unit": "mm"
+            },
+            "toUnit": "m"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              1000,
+              "mm",
+              "m"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.c1",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "c1",
+          "kind": "number",
+          "prompt": "6 cm = ? mm",
+          "answer": 60,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "6 cm = 60 mm",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 6,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              6,
+              "cm",
+              "mm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.85.HD.2.c2",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 85,
+          "pdfPage": 86,
+          "section": "HD",
+          "exercise": 2,
+          "part": "c2",
+          "kind": "number",
+          "prompt": "2 cm = ? mm",
+          "answer": 20,
+          "hint": "1 m = 1000 mm; 1 cm = 10 mm.",
+          "solution": "2 cm = 20 mm",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 2,
+              "unit": "cm"
+            },
+            "toUnit": "mm"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              2,
+              "cm",
+              "mm"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.HD.3.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "HD",
+          "exercise": 3,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Ve sầu dài 3 cm, kiến dài 3 mm. Bạn nào dài hơn?",
+          "answer": "Ve sầu",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "3 cm = 30 mm; 30 mm lớn hơn 3 mm.",
+          "visual": {
+            "type": "compare_length",
+            "objects": [
+              {
+                "name": "Ve sầu",
+                "value": 3,
+                "unit": "cm"
+              },
+              {
+                "name": "Kiến",
+                "value": 3,
+                "unit": "mm"
+              }
+            ],
+            "options": [
+              "Ve sầu",
+              "Kiến",
+              "Bằng nhau"
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "250 + 100 = ? (mm)",
+          "answer": 350,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "250 + 100 = 350 mm",
+          "check": {
+            "op": "+",
+            "args": [
+              250,
+              100
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.b",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "420 − 150 = ? (mm)",
+          "answer": 270,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "420 − 150 = 270 mm",
+          "check": {
+            "op": "−",
+            "args": [
+              420,
+              150
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.c",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "c",
+          "kind": "number",
+          "prompt": "25 + 3 = ? (mm)",
+          "answer": 28,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "25 + 3 = 28 mm",
+          "check": {
+            "op": "+",
+            "args": [
+              25,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.d",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "d",
+          "kind": "number",
+          "prompt": "64 − 15 = ? (mm)",
+          "answer": 49,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "64 − 15 = 49 mm",
+          "check": {
+            "op": "−",
+            "args": [
+              64,
+              15
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.e",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "e",
+          "kind": "number",
+          "prompt": "11 × 3 = ? (mm)",
+          "answer": 33,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "11 × 3 = 33 mm",
+          "check": {
+            "op": "×",
+            "args": [
+              11,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.1.f",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 1,
+          "part": "f",
+          "kind": "number",
+          "prompt": "50 : 2 = ? (mm)",
+          "answer": 25,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "50 : 2 = 25 mm",
+          "check": {
+            "op": ":",
+            "args": [
+              50,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.2.mau",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 2,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Theo đường nối: 16 mm gấp 5 lần.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "16 × 5 = 80 mm.",
+          "visual": {
+            "type": "matching_lines",
+            "lines": [
+              {
+                "start": 16,
+                "unit": "mm",
+                "op": "×",
+                "factor": 5,
+                "end": 80,
+                "example": true
+              },
+              {
+                "start": 68,
+                "unit": "cm",
+                "op": ":",
+                "factor": 4,
+                "end": 17
+              },
+              {
+                "start": 15,
+                "unit": "mm",
+                "op": "×",
+                "factor": 4,
+                "end": 60
+              },
+              {
+                "start": 78,
+                "unit": "mm",
+                "op": ":",
+                "factor": 3,
+                "end": 26
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.2.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "68 cm giảm 4 lần bằng bao nhiêu cm?",
+          "answer": 17,
+          "hint": "Theo đúng đường nối; gấp dùng nhân, giảm dùng chia.",
+          "solution": "68 : 4 = 17 cm.",
+          "visual": {
+            "type": "matching_lines",
+            "lines": [
+              {
+                "start": 16,
+                "unit": "mm",
+                "op": "×",
+                "factor": 5,
+                "end": 80,
+                "example": true
+              },
+              {
+                "start": 68,
+                "unit": "cm",
+                "op": ":",
+                "factor": 4,
+                "end": 17
+              },
+              {
+                "start": 15,
+                "unit": "mm",
+                "op": "×",
+                "factor": 4,
+                "end": 60
+              },
+              {
+                "start": 78,
+                "unit": "mm",
+                "op": ":",
+                "factor": 3,
+                "end": 26
+              }
+            ],
+            "highlightStart": 68
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              68,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.2.b",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "78 mm giảm 3 lần bằng bao nhiêu mm?",
+          "answer": 26,
+          "hint": "Theo đúng đường nối; gấp dùng nhân, giảm dùng chia.",
+          "solution": "78 : 3 = 26 mm.",
+          "visual": {
+            "type": "matching_lines",
+            "lines": [
+              {
+                "start": 16,
+                "unit": "mm",
+                "op": "×",
+                "factor": 5,
+                "end": 80,
+                "example": true
+              },
+              {
+                "start": 68,
+                "unit": "cm",
+                "op": ":",
+                "factor": 4,
+                "end": 17
+              },
+              {
+                "start": 15,
+                "unit": "mm",
+                "op": "×",
+                "factor": 4,
+                "end": 60
+              },
+              {
+                "start": 78,
+                "unit": "mm",
+                "op": ":",
+                "factor": 3,
+                "end": 26
+              }
+            ],
+            "highlightStart": 78
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              78,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.2.c",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 2,
+          "part": "c",
+          "kind": "number",
+          "prompt": "15 mm gấp 4 lần bằng bao nhiêu mm?",
+          "answer": 60,
+          "hint": "Theo đúng đường nối; gấp dùng nhân, giảm dùng chia.",
+          "solution": "15 × 4 = 60 mm.",
+          "visual": {
+            "type": "matching_lines",
+            "lines": [
+              {
+                "start": 16,
+                "unit": "mm",
+                "op": "×",
+                "factor": 5,
+                "end": 80,
+                "example": true
+              },
+              {
+                "start": 68,
+                "unit": "cm",
+                "op": ":",
+                "factor": 4,
+                "end": 17
+              },
+              {
+                "start": 15,
+                "unit": "mm",
+                "op": "×",
+                "factor": 4,
+                "end": 60
+              },
+              {
+                "start": 78,
+                "unit": "mm",
+                "op": ":",
+                "factor": 3,
+                "end": 26
+              }
+            ],
+            "highlightStart": 15
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              15,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.3.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 3,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Ốc sên đi được 152 mm và còn phải đi 264 mm. Quãng đường từ nhà đến trường dài bao nhiêu mm?",
+          "answer": 416,
+          "hint": "Cộng đoạn đã đi và đoạn còn lại.",
+          "solution": "152 + 264 = 416 (mm).",
+          "visual": {
+            "type": "route_length",
+            "segments": [
+              152,
+              264
+            ],
+            "unit": "mm"
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              152,
+              264
+            ]
+          }
+        },
+        {
+          "id": "SGK.30.86.LT.4.a",
+          "book": "SGK",
+          "lesson": 30,
+          "page": 86,
+          "pdfPage": 87,
+          "section": "LT",
+          "exercise": 4,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Cào cào nhảy xa 12 mm ngày đầu; một tuần sau nhảy xa gấp 3 lần. Khi đó nhảy xa bao nhiêu mm?",
+          "answer": 36,
+          "hint": "Gấp 3 lần là nhân 3.",
+          "solution": "12 × 3 = 36 (mm).",
+          "check": {
+            "op": "×",
+            "args": [
+              12,
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 31,
+      "title": "Gam",
+      "items": [
+        {
+          "id": "SGK.31.87.KP.1.a",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "KP",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Gam là đơn vị đo khối lượng, viết tắt g.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "Hai đĩa cân ngang bằng. Quả cân 100 g cân bằng gói bột ngọt, nên gói bột ngọt nặng 100 g. Có các quả cân nhỏ 1, 2, 5, 10, 20, 50, 100, 200, 500 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100
+            ],
+            "rightObjects": [
+              "gói bột ngọt"
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.87.KP.1.b",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "KP",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "Quan hệ ki-lô-gam và gam.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "1 kg = 1000 g; 1000 g = 1 kg. Cân 1 kg cân bằng hai gói 400 g và 600 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              1000
+            ],
+            "rightWeightsG": [
+              400,
+              600
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.87.HD.1.a",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a",
+          "kind": "balance",
+          "prompt": "gói đường nặng bao nhiêu gam?",
+          "answer": 500,
+          "hint": "Hai đĩa cân ngang bằng; cộng các quả cân.",
+          "solution": "Kết quả: 500 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              500
+            ],
+            "rightObjects": [
+              "gói đường"
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.87.HD.1.b",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 87,
+          "pdfPage": 88,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b",
+          "kind": "balance",
+          "prompt": "gói mì chính nặng bao nhiêu gam?",
+          "answer": 150,
+          "hint": "Hai đĩa cân ngang bằng; cộng các quả cân.",
+          "solution": "Kết quả: 150 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100,
+              50
+            ],
+            "rightObjects": [
+              "gói mì chính"
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.1.c",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 1,
+          "part": "c",
+          "kind": "balance",
+          "prompt": "gói hạt tiêu nặng bao nhiêu gam?",
+          "answer": 40,
+          "hint": "Hai đĩa cân ngang bằng; cộng các quả cân.",
+          "solution": "Kết quả: 40 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              20,
+              20
+            ],
+            "rightObjects": [
+              "gói hạt tiêu"
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.1.d",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 1,
+          "part": "d",
+          "kind": "balance",
+          "prompt": "gói muối nặng bao nhiêu gam?",
+          "answer": 400,
+          "hint": "Hai đĩa cân ngang bằng; cộng các quả cân.",
+          "solution": "Kết quả: 400 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              200,
+              200
+            ],
+            "rightObjects": [
+              "gói muối"
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.2.a",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a",
+          "kind": "scale",
+          "prompt": "Đọc khối lượng túi táo.",
+          "answer": 500,
+          "hint": "Đọc số ở vị trí đầu kim.",
+          "solution": "Kết quả: 500 g.",
+          "visual": {
+            "type": "dial_scale",
+            "object": "túi táo",
+            "valueG": 500,
+            "maxG": 1000,
+            "majorTickG": 250,
+            "labelsG": [
+              0,
+              250,
+              500,
+              750
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.2.b",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b",
+          "kind": "scale",
+          "prompt": "Đọc khối lượng gói bột mì.",
+          "answer": 250,
+          "hint": "Đọc số ở vị trí đầu kim.",
+          "solution": "Kết quả: 250 g.",
+          "visual": {
+            "type": "dial_scale",
+            "object": "gói bột mì",
+            "valueG": 250,
+            "maxG": 1000,
+            "majorTickG": 250,
+            "labelsG": [
+              0,
+              250,
+              500,
+              750
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.2.c1",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 2,
+          "part": "c1",
+          "kind": "number",
+          "prompt": "Túi táo nặng hơn gói bột mì bao nhiêu gam?",
+          "answer": 250,
+          "hint": "Lấy khối lượng túi táo trừ khối lượng gói bột.",
+          "solution": "500 − 250 = 250 g.",
+          "visual": {
+            "type": "scales",
+            "scales": [
+              {
+                "type": "dial_scale",
+                "object": "túi táo",
+                "valueG": 500,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              },
+              {
+                "type": "dial_scale",
+                "object": "gói bột mì",
+                "valueG": 250,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              }
+            ]
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              500,
+              250
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.HD.2.c2",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "HD",
+          "exercise": 2,
+          "part": "c2",
+          "kind": "number",
+          "prompt": "Túi táo và gói bột mì nặng tất cả bao nhiêu gam?",
+          "answer": 750,
+          "hint": "Cộng hai khối lượng.",
+          "solution": "500 + 250 = 750 g.",
+          "visual": {
+            "type": "scales",
+            "scales": [
+              {
+                "type": "dial_scale",
+                "object": "túi táo",
+                "valueG": 500,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              },
+              {
+                "type": "dial_scale",
+                "object": "gói bột mì",
+                "valueG": 250,
+                "maxG": 1000,
+                "majorTickG": 250,
+                "labelsG": [
+                  0,
+                  250,
+                  500,
+                  750
+                ]
+              }
+            ]
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              500,
+              250
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.LT.1.mau1",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "LT",
+          "exercise": 1,
+          "part": "mau1",
+          "kind": "study",
+          "prompt": "Ví dụ cộng gam.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "250 g + 300 g = 550 g."
+        },
+        {
+          "id": "SGK.31.88.LT.1.mau2",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "LT",
+          "exercise": 1,
+          "part": "mau2",
+          "kind": "study",
+          "prompt": "Ví dụ chia gam.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "40 g : 5 = 8 g."
+        },
+        {
+          "id": "SGK.31.88.LT.1.a",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "740 − 360 = ? (g)",
+          "answer": 380,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "740 − 360 = 380 g",
+          "check": {
+            "op": "−",
+            "args": [
+              740,
+              360
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.LT.1.b",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "15 × 4 = ? (g)",
+          "answer": 60,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "15 × 4 = 60 g",
+          "check": {
+            "op": "×",
+            "args": [
+              15,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.31.88.LT.2.a",
+          "book": "SGK",
+          "lesson": 31,
+          "page": 88,
+          "pdfPage": 89,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép mỗi con vật với mức khối lượng hợp lý trong các lựa chọn.",
+          "answer": {
+            "gà": "2 kg",
+            "chó": "20 kg",
+            "chim": "200 g",
+            "bò": "200 kg"
+          },
+          "hint": "Con vật nhỏ thường có khối lượng nhỏ hơn.",
+          "solution": "Gà: 2 kg; chó: 20 kg; chim: 200 g; bò: 200 kg.",
+          "visual": {
+            "type": "match_objects",
+            "objects": [
+              "gà",
+              "chó",
+              "chim",
+              "bò"
+            ],
+            "options": [
+              "20 kg",
+              "2 kg",
+              "200 kg",
+              "200 g"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 32,
+      "title": "Mi-li-lít",
+      "items": [
+        {
+          "id": "SGK.32.89.KP.1.a",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "KP",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Mi-li-lít là đơn vị đo dung tích; viết tắt ml.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "1 l = 1000 ml. Ca 1 l trong ví dụ có vạch chia 100 ml; mực nước ở 500 ml.",
+          "visual": {
+            "type": "cup",
+            "capacityMl": 1000,
+            "tickMl": 100,
+            "valueMl": 500
+          }
+        },
+        {
+          "id": "SGK.32.89.HD.1.a1",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "cup",
+          "prompt": "Ca B chứa bao nhiêu ml nước?",
+          "answer": 200,
+          "hint": "Đọc mực nước ca B; mỗi vạch 100 ml.",
+          "solution": "Kết quả: 200 ml.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.89.HD.1.a2",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "cup",
+          "prompt": "Ca C chứa bao nhiêu ml nước?",
+          "answer": 300,
+          "hint": "Đọc mực nước ca C; mỗi vạch 100 ml.",
+          "solution": "Kết quả: 300 ml.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.89.HD.1.b",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 89,
+          "pdfPage": 90,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Rót hết nước trong bình vào ba ca A, B, C như hình. Ban đầu bình có bao nhiêu ml?",
+          "answer": 1000,
+          "hint": "Cộng lượng nước của cả ba ca.",
+          "solution": "500 + 200 + 300 = 1000 ml.",
+          "visual": {
+            "type": "cups",
+            "tickMl": 100,
+            "cups": [
+              {
+                "id": "A",
+                "capacityMl": 500,
+                "valueMl": 500
+              },
+              {
+                "id": "B",
+                "capacityMl": 500,
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "capacityMl": 500,
+                "valueMl": 300
+              }
+            ]
+          },
+          "check": {
+            "op": "chain",
+            "args": [
+              500,
+              200,
+              300
+            ],
+            "operations": [
+              "+",
+              "+"
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.90.HD.2.a",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "1 l = ? ml",
+          "answer": 1000,
+          "hint": "1 l = 1000 ml.",
+          "solution": "1 l = 1000 ml",
+          "visual": {
+            "type": "conversion",
+            "from": {
+              "value": 1,
+              "unit": "l"
+            },
+            "toUnit": "ml"
+          },
+          "check": {
+            "op": "convert",
+            "args": [
+              1,
+              "l",
+              "ml"
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.90.HD.2.b",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Phích có 1 l nước, rót ra ba ca 200 ml, 200 ml, 100 ml. Còn lại bao nhiêu ml?",
+          "answer": 500,
+          "hint": "Tính lượng đã rót, rồi lấy lượng ban đầu trừ đi.",
+          "solution": "1 l = 1000 ml; đã rót 500 ml; còn 1000 − 500 = 500 ml.",
+          "visual": {
+            "type": "cups",
+            "cups": [
+              {
+                "id": "A",
+                "valueMl": 200
+              },
+              {
+                "id": "B",
+                "valueMl": 200
+              },
+              {
+                "id": "C",
+                "valueMl": 100
+              }
+            ],
+            "initialMl": 1000
+          },
+          "check": {
+            "op": "chain",
+            "args": [
+              1000,
+              200,
+              200,
+              100
+            ],
+            "operations": [
+              "−",
+              "−",
+              "−"
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.90.LT.1.mau1",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "LT",
+          "exercise": 1,
+          "part": "mau1",
+          "kind": "study",
+          "prompt": "Ví dụ cộng dung tích.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "100 ml + 20 ml = 120 ml."
+        },
+        {
+          "id": "SGK.32.90.LT.1.mau2",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "LT",
+          "exercise": 1,
+          "part": "mau2",
+          "kind": "study",
+          "prompt": "Ví dụ nhân dung tích.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "8 ml × 4 = 32 ml."
+        },
+        {
+          "id": "SGK.32.90.LT.1.a",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a",
+          "kind": "number",
+          "prompt": "120 − 20 = ? (ml)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "120 − 20 = 100 ml",
+          "check": {
+            "op": "−",
+            "args": [
+              120,
+              20
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.90.LT.1.b",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b",
+          "kind": "number",
+          "prompt": "12 × 3 = ? (ml)",
+          "answer": 36,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "12 × 3 = 36 ml",
+          "check": {
+            "op": "×",
+            "args": [
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.32.90.LT.2.a",
+          "book": "SGK",
+          "lesson": 32,
+          "page": 90,
+          "pdfPage": 91,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Chai dầu có 750 ml, sau khi nấu còn 350 ml. Đã dùng bao nhiêu ml dầu?",
+          "answer": 400,
+          "hint": "Lấy lượng ban đầu trừ lượng còn lại.",
+          "solution": "750 − 350 = 400 ml.",
+          "check": {
+            "op": "−",
+            "args": [
+              750,
+              350
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 33,
+      "title": "Nhiệt độ. Đơn vị đo nhiệt độ",
+      "items": [
+        {
+          "id": "SGK.33.91.KP.1.a",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "KP",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "So sánh nhiệt độ ba vật: nước nóng, nước nguội, nước đá.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "Cốc A nóng hơn chai B; cốc C lạnh hơn chai B.",
+          "visual": {
+            "type": "temperature_order",
+            "objects": [
+              {
+                "id": "A",
+                "label": "Nước nóng"
+              },
+              {
+                "id": "B",
+                "label": "Nước nguội"
+              },
+              {
+                "id": "C",
+                "label": "Nước đá"
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.91.KP.1.b",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "KP",
+          "exercise": 1,
+          "part": "b",
+          "kind": "study",
+          "prompt": "Đọc và viết nhiệt độ theo độ C.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "10 độ C viết 10 °C; đọc mười độ xê. Trong bảng thời tiết có thể ghi gọn 10°."
+        },
+        {
+          "id": "SGK.33.91.HD.1.a",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "HD",
+          "exercise": 1,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Đọc nhiệt kế không khí trong ví dụ.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "Đầu cột màu ở vạch 30, nhiệt độ là 30 °C.",
+          "visual": {
+            "type": "thermometer",
+            "rangeC": [
+              -30,
+              50
+            ],
+            "stepC": 1,
+            "majorTickC": 5,
+            "valueC": 30
+          }
+        },
+        {
+          "id": "SGK.33.91.HD.1.b1",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "choice",
+          "prompt": "Hà Nội và Lào Cai: nơi nào có nhiệt độ cao hơn?",
+          "answer": "Hà Nội",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "30 °C cao hơn 26 °C.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Địa phương",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Hà Nội",
+                "30 °C"
+              ],
+              [
+                "Lào Cai",
+                "26 °C"
+              ],
+              [
+                "Sa Pa",
+                "10 °C"
+              ]
+            ],
+            "options": [
+              "Hà Nội",
+              "Lào Cai"
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.91.HD.1.b2",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 91,
+          "pdfPage": 92,
+          "section": "HD",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "choice",
+          "prompt": "Sa Pa và Lào Cai: nơi nào có nhiệt độ thấp hơn?",
+          "answer": "Sa Pa",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "10 °C thấp hơn 26 °C.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Địa phương",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Hà Nội",
+                "30 °C"
+              ],
+              [
+                "Lào Cai",
+                "26 °C"
+              ],
+              [
+                "Sa Pa",
+                "10 °C"
+              ]
+            ],
+            "options": [
+              "Sa Pa",
+              "Lào Cai"
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.HD.2.a",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "HD",
+          "exercise": 2,
+          "part": "a",
+          "kind": "study",
+          "prompt": "Đọc nhiệt kế cơ thể trong hình.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "Cột chỉ ở 37, nhiệt độ cơ thể trong ví dụ là 37 °C.",
+          "visual": {
+            "type": "clinical_thermometer",
+            "valueC": 37,
+            "rangeC": [
+              35,
+              42
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.HD.2.b1",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b1",
+          "kind": "thermometer",
+          "prompt": "Theo kết quả bác sĩ đọc, nhiệt độ của Việt là bao nhiêu độ C?",
+          "answer": 37,
+          "hint": "Bác sĩ đọc ba mươi bảy độ xê.",
+          "solution": "Kết quả: 37 °C.",
+          "visual": {
+            "type": "clinical_thermometer",
+            "object": "Việt",
+            "valueC": 37,
+            "rangeC": [
+              35,
+              42
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.HD.2.b2",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "HD",
+          "exercise": 2,
+          "part": "b2",
+          "kind": "thermometer",
+          "prompt": "Theo kết quả bác sĩ đọc, nhiệt độ của Nam là bao nhiêu độ C?",
+          "answer": 38,
+          "hint": "Bác sĩ đọc ba mươi tám độ xê.",
+          "solution": "Kết quả: 38 °C.",
+          "visual": {
+            "type": "clinical_thermometer",
+            "object": "Nam",
+            "valueC": 38,
+            "rangeC": [
+              35,
+              42
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.1.a1",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "Nhiệt độ buổi sáng là bao nhiêu °C?",
+          "answer": 27,
+          "hint": "Đọc đúng cột trong bảng.",
+          "solution": "Buổi sáng: 27 °C.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Buổi",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Sáng",
+                "27 °C"
+              ],
+              [
+                "Trưa",
+                "36 °C"
+              ],
+              [
+                "Đêm",
+                "15 °C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.1.a2",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "Nhiệt độ buổi trưa là bao nhiêu °C?",
+          "answer": 36,
+          "hint": "Đọc đúng cột trong bảng.",
+          "solution": "Buổi trưa: 36 °C.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Buổi",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Sáng",
+                "27 °C"
+              ],
+              [
+                "Trưa",
+                "36 °C"
+              ],
+              [
+                "Đêm",
+                "15 °C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.1.a3",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 1,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "Nhiệt độ buổi đêm là bao nhiêu °C?",
+          "answer": 15,
+          "hint": "Đọc đúng cột trong bảng.",
+          "solution": "Buổi đêm: 15 °C.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Buổi",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Sáng",
+                "27 °C"
+              ],
+              [
+                "Trưa",
+                "36 °C"
+              ],
+              [
+                "Đêm",
+                "15 °C"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.1.b1",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "Nhiệt độ thấp nhất trong bảng là bao nhiêu °C?",
+          "answer": 15,
+          "hint": "So sánh ba số.",
+          "solution": "15 là số bé nhất trong 27, 36, 15.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Buổi",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Sáng",
+                "27 °C"
+              ],
+              [
+                "Trưa",
+                "36 °C"
+              ],
+              [
+                "Đêm",
+                "15 °C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "min",
+            "args": [
+              27,
+              36,
+              15
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.1.b2",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "Nhiệt độ cao nhất trong bảng là bao nhiêu °C?",
+          "answer": 36,
+          "hint": "So sánh ba số.",
+          "solution": "36 là số lớn nhất trong 27, 36, 15.",
+          "visual": {
+            "type": "table",
+            "headers": [
+              "Buổi",
+              "Nhiệt độ"
+            ],
+            "rows": [
+              [
+                "Sáng",
+                "27 °C"
+              ],
+              [
+                "Trưa",
+                "36 °C"
+              ],
+              [
+                "Đêm",
+                "15 °C"
+              ]
+            ]
+          },
+          "check": {
+            "op": "max",
+            "args": [
+              27,
+              36,
+              15
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.2.a",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 2,
+          "part": "a",
+          "kind": "multi",
+          "prompt": "Ba số đo trong sách: 38 °C, 37 °C, 39 °C. Chọn các số cao hơn mốc 37 °C mà đề bài cho.",
+          "answer": [
+            "38 °C",
+            "39 °C"
+          ],
+          "hint": "So sánh với mốc 37 °C trong bài toán.",
+          "solution": "38 và 39 đều lớn hơn 37. Đây là bài so sánh số, không phải hướng dẫn chẩn đoán bệnh.",
+          "visual": {
+            "type": "choices",
+            "options": [
+              "38 °C",
+              "37 °C",
+              "39 °C"
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.3.a",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 3,
+          "part": "a",
+          "kind": "practice",
+          "prompt": "Thực hành ở nhà: quan sát nhiệt kế không khí để lựa chọn quần áo phù hợp.",
+          "answer": null,
+          "hint": "Nhờ người lớn hướng dẫn đọc nhiệt kế.",
+          "solution": "Ghi nhiệt độ thực tế và mô tả cách chọn quần áo. Không có đáp án cố định.",
+          "visual": {
+            "type": "real_world",
+            "adultHelp": true,
+            "fields": [
+              "Nhiệt độ (°C)",
+              "Trang phục phù hợp"
+            ]
+          }
+        },
+        {
+          "id": "SGK.33.92.LT.3.b",
+          "book": "SGK",
+          "lesson": 33,
+          "page": 92,
+          "pdfPage": 93,
+          "section": "LT",
+          "exercise": 3,
+          "part": "b",
+          "kind": "practice",
+          "prompt": "Khi thấy nóng sốt, khó chịu, nhờ người lớn giúp đo nhiệt độ cơ thể và chăm sóc.",
+          "answer": null,
+          "hint": "Không tự dùng nhiệt kế thủy ngân; nhờ người lớn.",
+          "solution": "Bài thực hành an toàn có người lớn hỗ trợ; không tự chẩn đoán bằng ứng dụng.",
+          "visual": {
+            "type": "real_world",
+            "adultHelp": true,
+            "fields": [
+              "Xác nhận đã biết nhờ người lớn"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 34,
+      "title": "Thực hành và trải nghiệm với các đơn vị mi-li-mét, gam, mi-li-lít, độ C",
+      "items": [
+        {
+          "id": "SGK.34.93.HD1.1.mau",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "mau",
+          "kind": "study",
+          "prompt": "Đo bề ngang đồng xu theo mẫu.",
+          "answer": null,
+          "hint": "Quan sát ví dụ và tự giải thích lại.",
+          "solution": "Đồng xu trong mẫu đo được 19 mm.",
+          "visual": {
+            "type": "ruler_object",
+            "object": "đồng xu",
+            "lengthMm": 19
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.1.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "a",
+          "kind": "practice_measure",
+          "prompt": "Dùng thước đo chiều dài hình kẹp giấy bướm theo đơn vị mm.",
+          "answer": null,
+          "hint": "Đặt vạch 0 ở đầu mũi tên, đọc đầu còn lại.",
+          "solution": "Đo trực tiếp hình in trên sách. Nếu dùng mô hình số, thước và hình phải cùng một tỷ lệ; không dùng kích thước thật của màn hình.",
+          "visual": {
+            "type": "ruler_object",
+            "object": "kẹp giấy bướm",
+            "referenceApproxMm": 45,
+            "referenceMethod": "ước tính từ vạch cm cùng trang; cần kiểm tra lại bản in trước khi chấm số tự động",
+            "requiresCalibratedModel": true
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.1.b",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 1,
+          "part": "b",
+          "kind": "practice_measure",
+          "prompt": "Dùng thước đo chiều dài hình cục tẩy theo đơn vị mm.",
+          "answer": null,
+          "hint": "Đặt vạch 0 ở đầu mũi tên, đọc đầu còn lại.",
+          "solution": "Đo trực tiếp hình in trên sách. Nếu dùng mô hình số, thước và hình phải cùng một tỷ lệ; không dùng kích thước thật của màn hình.",
+          "visual": {
+            "type": "ruler_object",
+            "object": "cục tẩy",
+            "referenceApproxMm": 30,
+            "referenceMethod": "ước tính từ vạch cm cùng trang; cần kiểm tra lại bản in trước khi chấm số tự động",
+            "requiresCalibratedModel": true
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.2.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Chọn khối lượng thích hợp cho cục tẩy.",
+          "answer": "20 g",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "cục tẩy: 20 g.",
+          "visual": {
+            "type": "object",
+            "object": "cục tẩy",
+            "options": [
+              "20 kg",
+              "20 g"
+            ]
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.2.b",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 2,
+          "part": "b",
+          "kind": "choice",
+          "prompt": "Chọn khối lượng thích hợp cho hộp sữa.",
+          "answer": "400 g",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "hộp sữa: 400 g.",
+          "visual": {
+            "type": "object",
+            "object": "hộp sữa",
+            "options": [
+              "400 g",
+              "40 g"
+            ]
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.2.c",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 2,
+          "part": "c",
+          "kind": "choice",
+          "prompt": "Chọn khối lượng thích hợp cho quả bí đao.",
+          "answer": "3 kg",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "quả bí đao: 3 kg.",
+          "visual": {
+            "type": "object",
+            "object": "quả bí đao",
+            "options": [
+              "3 kg",
+              "3 g"
+            ]
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.3.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 3,
+          "part": "a",
+          "kind": "balance_select",
+          "prompt": "Chọn các quả cân trong hình để lấy đúng 1 kg gạo.",
+          "answer": {
+            "targetG": 1000,
+            "selectedWeightsG": [
+              100,
+              200,
+              200,
+              500
+            ]
+          },
+          "hint": "Đổi 1 kg ra gam. Chọn các quả cân có tổng bằng số gam đó.",
+          "solution": "1 kg = 1000 g; 500 + 200 + 200 + 100 = 1000 g. Có thể chọn một trong hai quả 100 g.",
+          "visual": {
+            "type": "balance_select",
+            "availableWeightsG": [
+              100,
+              100,
+              200,
+              200,
+              500
+            ],
+            "targetG": 1000,
+            "allowEquivalentSelection": true
+          }
+        },
+        {
+          "id": "SGK.34.93.HD1.4.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 93,
+          "pdfPage": 94,
+          "section": "HD1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "practice",
+          "prompt": "Đo nhiệt độ không khí vào thứ Hai, thứ Ba và thứ Tư rồi ghi bảng.",
+          "answer": null,
+          "hint": "Nhờ người lớn hướng dẫn sử dụng nhiệt kế.",
+          "solution": "Điền số đo thực tế từng ngày, không có đáp án cố định.",
+          "visual": {
+            "type": "real_world_table",
+            "adultHelp": true,
+            "columns": [
+              "Thứ Hai",
+              "Thứ Ba",
+              "Thứ Tư"
+            ],
+            "unit": "°C"
+          }
+        },
+        {
+          "id": "SGK.34.94.HD2.1.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 94,
+          "pdfPage": 95,
+          "section": "HD2",
+          "exercise": 1,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép ba nhiệt kế với cảnh đọc sách thoải mái, nóng phải quạt và lạnh cần sưởi.",
+          "answer": {
+            "Đọc sách": "B",
+            "Quạt vì nóng": "C",
+            "Sưởi vì lạnh": "A"
+          },
+          "hint": "So sánh mức cao, vừa và thấp của ba nhiệt kế.",
+          "solution": "B phù hợp cảnh đọc sách; C phù hợp khi nóng; A phù hợp khi lạnh.",
+          "visual": {
+            "type": "match_thermometers",
+            "thermometers": [
+              {
+                "id": "A",
+                "rank": "low",
+                "approxC": 2
+              },
+              {
+                "id": "B",
+                "rank": "medium",
+                "approxC": 24
+              },
+              {
+                "id": "C",
+                "rank": "high",
+                "approxC": 40
+              }
+            ],
+            "scenes": [
+              "Đọc sách",
+              "Quạt vì nóng",
+              "Sưởi vì lạnh"
+            ],
+            "gradeBy": "matching_not_exact_reading"
+          }
+        },
+        {
+          "id": "SGK.34.94.HD2.2.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 94,
+          "pdfPage": 95,
+          "section": "HD2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "match",
+          "prompt": "Ghép quả trứng, tạ và túi cà chua với mức khối lượng hợp lý trong hình.",
+          "answer": {
+            "Quả trứng": "100 g",
+            "Tạ": "100 kg",
+            "Túi cà chua": "1 kg"
+          },
+          "hint": "So sánh vật nhẹ, vật nặng và túi quả.",
+          "solution": "Quả trứng: 100 g; tạ: 100 kg; túi cà chua: 1 kg (các mức lựa chọn của SGK).",
+          "visual": {
+            "type": "match_objects",
+            "objects": [
+              "Quả trứng",
+              "Tạ",
+              "Túi cà chua"
+            ],
+            "options": [
+              "100 kg",
+              "1 kg",
+              "100 g"
+            ]
+          }
+        },
+        {
+          "id": "SGK.34.94.HD2.3.a",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 94,
+          "pdfPage": 95,
+          "section": "HD2",
+          "exercise": 3,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Ca nào có ít nước nhất?",
+          "answer": "B",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "B có 150 ml, ít nhất.",
+          "visual": {
+            "type": "cups",
+            "cups": [
+              {
+                "id": "A",
+                "valueMl": 300
+              },
+              {
+                "id": "B",
+                "valueMl": 150
+              },
+              {
+                "id": "C",
+                "valueMl": 200
+              },
+              {
+                "id": "D",
+                "valueMl": 250
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        },
+        {
+          "id": "SGK.34.94.HD2.3.b",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 94,
+          "pdfPage": 95,
+          "section": "HD2",
+          "exercise": 3,
+          "part": "b",
+          "kind": "multi",
+          "prompt": "Chọn hai ca khác nhau có tổng 350 ml.",
+          "answer": [
+            "B",
+            "C"
+          ],
+          "hint": "Thử cộng từng cặp khác nhau.",
+          "solution": "150 + 200 = 350 ml.",
+          "visual": {
+            "type": "cups",
+            "cups": [
+              {
+                "id": "A",
+                "valueMl": 300
+              },
+              {
+                "id": "B",
+                "valueMl": 150
+              },
+              {
+                "id": "C",
+                "valueMl": 200
+              },
+              {
+                "id": "D",
+                "valueMl": 250
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "selectCount": 2
+          }
+        },
+        {
+          "id": "SGK.34.94.HD2.3.c",
+          "book": "SGK",
+          "lesson": 34,
+          "page": 94,
+          "pdfPage": 95,
+          "section": "HD2",
+          "exercise": 3,
+          "part": "c",
+          "kind": "multi",
+          "prompt": "Chọn hai ca khác nhau có tổng 550 ml.",
+          "answer": [
+            "A",
+            "D"
+          ],
+          "hint": "Thử cộng từng cặp khác nhau.",
+          "solution": "300 + 250 = 550 ml.",
+          "visual": {
+            "type": "cups",
+            "cups": [
+              {
+                "id": "A",
+                "valueMl": 300
+              },
+              {
+                "id": "B",
+                "valueMl": 150
+              },
+              {
+                "id": "C",
+                "valueMl": 200
+              },
+              {
+                "id": "D",
+                "valueMl": 250
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "selectCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "lesson": 35,
+      "title": "Luyện tập chung",
+      "items": [
+        {
+          "id": "SGK.35.95.LT1.1.a1",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "329 − 135 = ? (ml)",
+          "answer": 194,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "329 − 135 = 194 ml",
+          "check": {
+            "op": "−",
+            "args": [
+              329,
+              135
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.1.a2",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "200 − 150 = ? (g)",
+          "answer": 50,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "200 − 150 = 50 g",
+          "check": {
+            "op": "−",
+            "args": [
+              200,
+              150
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.1.a3",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "a3",
+          "kind": "number",
+          "prompt": "392 + 43 = ? (mm)",
+          "answer": 435,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "392 + 43 = 435 mm",
+          "check": {
+            "op": "+",
+            "args": [
+              392,
+              43
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.1.b1",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "251 + 262 = ? (ml)",
+          "answer": 513,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "251 + 262 = 513 ml",
+          "check": {
+            "op": "+",
+            "args": [
+              251,
+              262
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.1.b2",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "37 + 63 − 30 = ? (g)",
+          "answer": 70,
+          "hint": "Các phép cộng, trừ thực hiện từ trái sang phải.",
+          "solution": "37 + 63 − 30 = 70 g.",
+          "check": {
+            "op": "chain",
+            "args": [
+              37,
+              63,
+              30
+            ],
+            "operations": [
+              "+",
+              "−"
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.1.b3",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 1,
+          "part": "b3",
+          "kind": "number",
+          "prompt": "87 − 17 + 10 = ? (mm)",
+          "answer": 80,
+          "hint": "Các phép cộng, trừ thực hiện từ trái sang phải.",
+          "solution": "87 − 17 + 10 = 80 mm.",
+          "check": {
+            "op": "chain",
+            "args": [
+              87,
+              17,
+              10
+            ],
+            "operations": [
+              "−",
+              "+"
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.2.a",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Hộp quà cùng quả cân 100 g cân bằng quả cân 500 g. Hộp quà nặng bao nhiêu gam?",
+          "answer": 400,
+          "hint": "Trừ khối lượng quả cân đặt cùng hộp.",
+          "solution": "500 − 100 = 400 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              100
+            ],
+            "leftObjects": [
+              "Hộp quà"
+            ],
+            "rightWeightsG": [
+              500
+            ]
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              500,
+              100
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.2.b",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 2,
+          "part": "b",
+          "kind": "number",
+          "prompt": "Chùm nho cùng quả cân 50 g cân bằng hai quả cân 100 g. Chùm nho nặng bao nhiêu gam?",
+          "answer": 150,
+          "hint": "Tính tổng hai quả cân rồi trừ 50 g.",
+          "solution": "100 + 100 = 200 g; 200 − 50 = 150 g.",
+          "visual": {
+            "type": "balance",
+            "leftWeightsG": [
+              50
+            ],
+            "leftObjects": [
+              "Chùm nho"
+            ],
+            "rightWeightsG": [
+              100,
+              100
+            ]
+          },
+          "check": {
+            "op": "chain",
+            "args": [
+              100,
+              100,
+              50
+            ],
+            "operations": [
+              "+",
+              "−"
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.3.a",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 3,
+          "part": "a",
+          "kind": "number",
+          "prompt": "Đơm mỗi chiếc cúc áo hết 70 mm chỉ. Đơm 5 chiếc cần bao nhiêu mm chỉ?",
+          "answer": 350,
+          "hint": "Nhân lượng chỉ cho một chiếc với 5.",
+          "solution": "70 × 5 = 350 (mm).",
+          "check": {
+            "op": "×",
+            "args": [
+              70,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT1.4.a",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT1",
+          "exercise": 4,
+          "part": "a",
+          "kind": "pour",
+          "prompt": "Dùng hai cốc 150 ml và 400 ml, lấy đúng 250 ml nước từ thùng.",
+          "answer": {
+            "targetMl": 250,
+            "anyCup": true
+          },
+          "hint": "Đổ đầy cốc lớn rồi rót sang cốc nhỏ đang rỗng.",
+          "solution": "Đổ đầy cốc 400 ml, rót đầy cốc 150 ml; cốc lớn còn 400 − 150 = 250 ml.",
+          "visual": {
+            "type": "pour",
+            "capacitiesMl": [
+              150,
+              400
+            ],
+            "initialMl": [
+              0,
+              0
+            ],
+            "allowedActions": [
+              "fill",
+              "empty",
+              "pour"
+            ],
+            "targetMl": 250,
+            "solutionActions": [
+              {
+                "type": "fill",
+                "cup": 1
+              },
+              {
+                "type": "pour",
+                "from": 1,
+                "to": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.a1",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a1",
+          "kind": "number",
+          "prompt": "8 × 3 = ? (ml)",
+          "answer": 24,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "8 × 3 = 24 ml",
+          "visual": {
+            "type": "operation_chain",
+            "start": 8,
+            "unit": "ml",
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              8,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.a2",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "a2",
+          "kind": "number",
+          "prompt": "24 : 4 = ? (ml)",
+          "answer": 6,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "24 : 4 = 6 ml",
+          "visual": {
+            "type": "operation_chain",
+            "start": 8,
+            "unit": "ml",
+            "operations": [
+              {
+                "op": "×",
+                "value": 3
+              },
+              {
+                "op": ":",
+                "value": 4
+              }
+            ]
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              24,
+              4
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.b1",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b1",
+          "kind": "number",
+          "prompt": "42 : 3 = ? (g)",
+          "answer": 14,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "42 : 3 = 14 g",
+          "visual": {
+            "type": "operation_chain",
+            "start": 42,
+            "unit": "g",
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 5
+              }
+            ]
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              42,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.b2",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "b2",
+          "kind": "number",
+          "prompt": "14 × 5 = ? (g)",
+          "answer": 70,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "14 × 5 = 70 g",
+          "visual": {
+            "type": "operation_chain",
+            "start": 42,
+            "unit": "g",
+            "operations": [
+              {
+                "op": ":",
+                "value": 3
+              },
+              {
+                "op": "×",
+                "value": 5
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              14,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.c1",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "c1",
+          "kind": "number",
+          "prompt": "20 × 2 = ? (mm)",
+          "answer": 40,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "20 × 2 = 40 mm",
+          "visual": {
+            "type": "operation_chain",
+            "start": 20,
+            "unit": "mm",
+            "operations": [
+              {
+                "op": "×",
+                "value": 2
+              },
+              {
+                "op": ":",
+                "value": 8
+              }
+            ]
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              20,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.1.c2",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 1,
+          "part": "c2",
+          "kind": "number",
+          "prompt": "40 : 8 = ? (mm)",
+          "answer": 5,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "40 : 8 = 5 mm",
+          "visual": {
+            "type": "operation_chain",
+            "start": 20,
+            "unit": "mm",
+            "operations": [
+              {
+                "op": "×",
+                "value": 2
+              },
+              {
+                "op": ":",
+                "value": 8
+              }
+            ]
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              40,
+              8
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.95.LT2.2.a",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 95,
+          "pdfPage": 96,
+          "section": "LT2",
+          "exercise": 2,
+          "part": "a",
+          "kind": "choice",
+          "prompt": "Quan sát ba cân và chọn túi nặng nhất.",
+          "answer": "C",
+          "hint": "So sánh các lựa chọn theo dữ kiện.",
+          "solution": "A = 100 + 200 = 300 g; B = 500 − 200 = 300 g. Đĩa C thấp hơn đĩa B, nên C nặng nhất.",
+          "visual": {
+            "type": "balance_sequence",
+            "scales": [
+              {
+                "leftWeightsG": [
+                  100,
+                  200
+                ],
+                "rightObjects": [
+                  "A"
+                ],
+                "relation": "equal"
+              },
+              {
+                "leftWeightsG": [
+                  500
+                ],
+                "rightWeightsG": [
+                  200
+                ],
+                "rightObjects": [
+                  "B"
+                ],
+                "relation": "equal"
+              },
+              {
+                "leftObjects": [
+                  "B"
+                ],
+                "rightObjects": [
+                  "C"
+                ],
+                "relation": "right_heavier"
+              }
+            ],
+            "options": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.rules",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "rules",
+          "kind": "board_game",
+          "prompt": "Trò chơi Dế mèn phiêu lưu kí: gieo xúc xắc, tiến theo số chấm, thực hiện phép tính ở ô đến.",
+          "answer": {
+            "completion": "return_to_start_after_lap"
+          },
+          "hint": "Ô có con vật: đi theo mũi tên. Trả lời sai: trở về ô trước lượt đi.",
+          "solution": "Đi đúng một vòng và về ô xuất phát. Mỗi ô phép tính có nhiệm vụ tương ứng; không tự động thưởng nếu chưa trả lời đúng.",
+          "visual": {
+            "type": "dice_board",
+            "board": [
+              {
+                "type": "start",
+                "pos": [
+                  0,
+                  0
+                ],
+                "index": 0
+              },
+              {
+                "type": "math",
+                "a": 160,
+                "o": "−",
+                "b": 60,
+                "z": 100,
+                "u": "ml",
+                "pos": [
+                  1,
+                  0
+                ],
+                "index": 1
+              },
+              {
+                "type": "math",
+                "a": 30,
+                "o": "×",
+                "b": 2,
+                "z": 60,
+                "u": "g",
+                "pos": [
+                  2,
+                  0
+                ],
+                "index": 2
+              },
+              {
+                "type": "animal",
+                "animal": "chuồn chuồn",
+                "jump": 2,
+                "pos": [
+                  3,
+                  0
+                ],
+                "index": 3
+              },
+              {
+                "type": "math",
+                "a": 55,
+                "o": "+",
+                "b": 45,
+                "z": 100,
+                "u": "g",
+                "pos": [
+                  4,
+                  0
+                ],
+                "index": 4
+              },
+              {
+                "type": "math",
+                "a": 20,
+                "o": "×",
+                "b": 5,
+                "z": 100,
+                "u": "ml",
+                "pos": [
+                  5,
+                  0
+                ],
+                "index": 5
+              },
+              {
+                "type": "math",
+                "a": 90,
+                "o": ":",
+                "b": 3,
+                "z": 30,
+                "u": "g",
+                "pos": [
+                  5,
+                  1
+                ],
+                "index": 6
+              },
+              {
+                "type": "math",
+                "a": 30,
+                "o": "+",
+                "b": 60,
+                "z": 90,
+                "u": "g",
+                "pos": [
+                  5,
+                  2
+                ],
+                "index": 7
+              },
+              {
+                "type": "animal",
+                "animal": "châu chấu",
+                "jump": 5,
+                "pos": [
+                  4,
+                  2
+                ],
+                "index": 8
+              },
+              {
+                "type": "math",
+                "a": 30,
+                "o": "+",
+                "b": 70,
+                "z": 100,
+                "u": "ml",
+                "pos": [
+                  3,
+                  2
+                ],
+                "index": 9
+              },
+              {
+                "type": "animal",
+                "animal": "chim nước",
+                "jump": 4,
+                "pos": [
+                  2,
+                  2
+                ],
+                "index": 10
+              },
+              {
+                "type": "math",
+                "a": 90,
+                "o": ":",
+                "b": 5,
+                "z": 18,
+                "u": "g",
+                "pos": [
+                  2,
+                  3
+                ],
+                "index": 11
+              },
+              {
+                "type": "math",
+                "a": 1000,
+                "o": "−",
+                "b": 200,
+                "z": 800,
+                "u": "g",
+                "pos": [
+                  2,
+                  4
+                ],
+                "index": 12
+              },
+              {
+                "type": "math",
+                "a": 10,
+                "o": "×",
+                "b": 9,
+                "z": 90,
+                "u": "ml",
+                "pos": [
+                  3,
+                  4
+                ],
+                "index": 13
+              },
+              {
+                "type": "animal",
+                "animal": "dế",
+                "jump": 17,
+                "pos": [
+                  4,
+                  4
+                ],
+                "index": 14
+              },
+              {
+                "type": "math",
+                "a": 30,
+                "o": "+",
+                "b": 90,
+                "z": 120,
+                "u": "cm",
+                "pos": [
+                  5,
+                  4
+                ],
+                "index": 15
+              },
+              {
+                "type": "math",
+                "a": 40,
+                "o": "×",
+                "b": 2,
+                "z": 80,
+                "u": "l",
+                "pos": [
+                  5,
+                  5
+                ],
+                "index": 16
+              },
+              {
+                "type": "math",
+                "a": 500,
+                "o": "−",
+                "b": 50,
+                "z": 450,
+                "u": "kg",
+                "pos": [
+                  5,
+                  6
+                ],
+                "index": 17
+              },
+              {
+                "type": "animal",
+                "animal": "dế",
+                "jump": 21,
+                "pos": [
+                  4,
+                  6
+                ],
+                "index": 18
+              },
+              {
+                "type": "math",
+                "a": 10,
+                "o": "×",
+                "b": 7,
+                "z": 70,
+                "u": "mm",
+                "pos": [
+                  3,
+                  6
+                ],
+                "index": 19
+              },
+              {
+                "type": "animal",
+                "animal": "chuồn chuồn",
+                "jump": 19,
+                "pos": [
+                  2,
+                  6
+                ],
+                "index": 20
+              },
+              {
+                "type": "math",
+                "a": 4,
+                "o": "+",
+                "b": 96,
+                "z": 100,
+                "u": "mm",
+                "pos": [
+                  1,
+                  6
+                ],
+                "index": 21
+              },
+              {
+                "type": "math",
+                "a": 40,
+                "o": "×",
+                "b": 2,
+                "z": 80,
+                "u": "kg",
+                "pos": [
+                  0,
+                  6
+                ],
+                "index": 22
+              },
+              {
+                "type": "animal",
+                "animal": "chim lớn",
+                "jump": 12,
+                "pos": [
+                  0,
+                  5
+                ],
+                "index": 23
+              },
+              {
+                "type": "math",
+                "a": 8,
+                "o": "×",
+                "b": 9,
+                "z": 72,
+                "u": "ml",
+                "pos": [
+                  0,
+                  4
+                ],
+                "index": 24
+              },
+              {
+                "type": "math",
+                "a": 72,
+                "o": ":",
+                "b": 9,
+                "z": 8,
+                "u": "mm",
+                "pos": [
+                  0,
+                  3
+                ],
+                "index": 25
+              },
+              {
+                "type": "math",
+                "a": 56,
+                "o": ":",
+                "b": 7,
+                "z": 8,
+                "u": "g",
+                "pos": [
+                  0,
+                  2
+                ],
+                "index": 26
+              },
+              {
+                "type": "math",
+                "a": 903,
+                "o": "−",
+                "b": 3,
+                "z": 900,
+                "u": "ml",
+                "pos": [
+                  0,
+                  1
+                ],
+                "index": 27
+              }
+            ],
+            "dieSides": 6,
+            "sourceRule": {
+              "wrongAnswer": "return_to_turn_origin",
+              "animal": "jump_along_arrow",
+              "finish": "exact_return_to_start"
+            },
+            "implementationNote": "Quy tắc xử lý lượt gieo vượt số ô còn lại cần chốt khi lập trình; đề chỉ nói đi đúng một vòng. Mô hình chơi một mình/cùng bạn là quyết định phần 8."
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile01",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile01",
+          "kind": "number",
+          "prompt": "160 − 60 = ? (ml)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "160 − 60 = 100 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 1
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              160,
+              60
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile02",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile02",
+          "kind": "number",
+          "prompt": "30 × 2 = ? (g)",
+          "answer": 60,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "30 × 2 = 60 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 2
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              30,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile04",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile04",
+          "kind": "number",
+          "prompt": "55 + 45 = ? (g)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "55 + 45 = 100 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 4
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              55,
+              45
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile05",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile05",
+          "kind": "number",
+          "prompt": "20 × 5 = ? (ml)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "20 × 5 = 100 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 5
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              20,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile06",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile06",
+          "kind": "number",
+          "prompt": "90 : 3 = ? (g)",
+          "answer": 30,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "90 : 3 = 30 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 6
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              90,
+              3
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile07",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile07",
+          "kind": "number",
+          "prompt": "30 + 60 = ? (g)",
+          "answer": 90,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "30 + 60 = 90 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 7
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              30,
+              60
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile09",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile09",
+          "kind": "number",
+          "prompt": "30 + 70 = ? (ml)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "30 + 70 = 100 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 9
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              30,
+              70
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile11",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile11",
+          "kind": "number",
+          "prompt": "90 : 5 = ? (g)",
+          "answer": 18,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "90 : 5 = 18 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 11
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              90,
+              5
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile12",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile12",
+          "kind": "number",
+          "prompt": "1000 − 200 = ? (g)",
+          "answer": 800,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "1000 − 200 = 800 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 12
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              1000,
+              200
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile13",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile13",
+          "kind": "number",
+          "prompt": "10 × 9 = ? (ml)",
+          "answer": 90,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "10 × 9 = 90 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 13
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              10,
+              9
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile15",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile15",
+          "kind": "number",
+          "prompt": "30 + 90 = ? (cm)",
+          "answer": 120,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "30 + 90 = 120 cm",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 15
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              30,
+              90
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile16",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile16",
+          "kind": "number",
+          "prompt": "40 × 2 = ? (l)",
+          "answer": 80,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "40 × 2 = 80 l",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 16
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              40,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile17",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile17",
+          "kind": "number",
+          "prompt": "500 − 50 = ? (kg)",
+          "answer": 450,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "500 − 50 = 450 kg",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 17
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              500,
+              50
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile19",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile19",
+          "kind": "number",
+          "prompt": "10 × 7 = ? (mm)",
+          "answer": 70,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "10 × 7 = 70 mm",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 19
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              10,
+              7
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile21",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile21",
+          "kind": "number",
+          "prompt": "4 + 96 = ? (mm)",
+          "answer": 100,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "4 + 96 = 100 mm",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 21
+          },
+          "check": {
+            "op": "+",
+            "args": [
+              4,
+              96
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile22",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile22",
+          "kind": "number",
+          "prompt": "40 × 2 = ? (kg)",
+          "answer": 80,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "40 × 2 = 80 kg",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 22
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              40,
+              2
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile24",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile24",
+          "kind": "number",
+          "prompt": "8 × 9 = ? (ml)",
+          "answer": 72,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "8 × 9 = 72 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 24
+          },
+          "check": {
+            "op": "×",
+            "args": [
+              8,
+              9
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile25",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile25",
+          "kind": "number",
+          "prompt": "72 : 9 = ? (mm)",
+          "answer": 8,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "72 : 9 = 8 mm",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 25
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              72,
+              9
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile26",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile26",
+          "kind": "number",
+          "prompt": "56 : 7 = ? (g)",
+          "answer": 8,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "56 : 7 = 8 g",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 26
+          },
+          "check": {
+            "op": ":",
+            "args": [
+              56,
+              7
+            ]
+          }
+        },
+        {
+          "id": "SGK.35.96.GAME.1.tile27",
+          "book": "SGK",
+          "lesson": 35,
+          "page": 96,
+          "pdfPage": 97,
+          "section": "GAME",
+          "exercise": 1,
+          "part": "tile27",
+          "kind": "number",
+          "prompt": "903 − 3 = ? (ml)",
+          "answer": 900,
+          "hint": "Thực hiện phép tính với cùng đơn vị.",
+          "solution": "903 − 3 = 900 ml",
+          "visual": {
+            "type": "board_tile",
+            "boardIndex": 27
+          },
+          "check": {
+            "op": "−",
+            "args": [
+              903,
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
