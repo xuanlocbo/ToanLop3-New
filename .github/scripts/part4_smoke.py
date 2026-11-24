@@ -65,7 +65,7 @@ def scroll(direction=1):
     wait(.2)
 
 def find(pattern,cls=None,desc=False,scrollable=True):
-    rx=re.compile(pattern)
+    rx=re.compile(pattern,re.IGNORECASE)
     for attempt in range(13 if scrollable else 3):
         tree=hierarchy()
         nodes=[]
@@ -143,6 +143,7 @@ adb("install","-r",apk)
 adb("shell","pm","clear",PKG)
 adb("shell","settings","put","secure","show_ime_with_hard_keyboard","1")
 launch()
+find(r"^Bắt đầu phiêu lưu$",cls="android.widget.Button",scrollable=False)
 capture("01-home")
 # Actual navigation and completion of an original SGK example.
 click(r"^Bài 26\s+\d+/\d+")
@@ -154,6 +155,7 @@ click(r"^Em đã hiểu$")
 find(r"Đã học xong")
 s=snapshot()
 assert s["done"]["SGK.26.75.KP.1.a"] is True
+find(r"1 đã hoàn thành")
 capture("03-example-done")
 restart()
 find(r"Đã học xong")
@@ -173,6 +175,11 @@ restart()
 click(r"^Tiếp tục$")
 assert check_motion(26)==x
 capture("05-game-resume")
+restart()
+click(r"Trái",scrollable=False)
+wait(1.1)
+assert 40<=check_motion(26)<x, (x,check_motion(26))
+print("RESTORED_GAME_LOOP_PASS",flush=True)
 # Deep gate fixture: use actual fill / transfer / check buttons and restore mid-task.
 fixture(32,"gate",pending=True)
 find(r"Pha nước cầu vồng",scrollable=False)
@@ -211,10 +218,13 @@ assert snapshot()["adventures"]["32"]["motion"]["gate"]==1
 # Optional challenge is not a forced blocker.
 fixture(26,"gate",gate=2,pending=True)
 click(r"^Thử thách này để sau$")
-click(r"^Đi tiếp$")
+capture("09b-defer-dialog")
+click(r"^Đi tiếp$",scrollable=False)
 s=snapshot()
 assert s["adventures"]["26"]["motion"]["gate"]==3
 assert "BONUS.26.1" not in s["claims"]
+capture("09c-deferred-advanced")
+print("DEFERRED_BONUS_PASS",flush=True)
 # Actual screenshots of all four visual regions using clean stage fixtures.
 for l,name in [(30,"10-lake"),(36,"11-crystal"),(43,"12-castle")]:
     fixture(l,"game")
