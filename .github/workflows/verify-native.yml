@@ -25,7 +25,7 @@ jobs:
       - name: Verify data and compile Java
         run: |
           node tests/verify_curriculum_v2.mjs
-          gradle --no-daemon :app:testDebugUnitTest
+          gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug
       - name: Print test details on failure
         if: failure()
         run: |

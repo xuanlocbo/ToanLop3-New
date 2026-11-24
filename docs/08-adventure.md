@@ -1,0 +1,8 @@
+# Phần 8/10 — Phiêu lưu cùng Thỏ Hồng
+
+- 19 màn chơi riêng cho bài 26–44. Mỗi màn có 4 cổng toán (1 SGK, 1 VBT, 2 nâng cao), 8 chướng ngại (4 hồ, 4 khối đá), 12 cánh hoa. Tổng cộng 76 nhiệm vụ được lấy theo ID từ ngân hàng v2, không tự tạo đáp án khác.
+- Canvas Android native, đồ họa vector tự vẽ, bốn nhóm màu/cảnh quan. Di chuyển trái/phải, nhảy, cuộn camera, va chạm, checkpoint. Không mất sao khi rơi hoặc làm sai, không giới hạn lượt thử.
+- Thưởng dùng chung RewardLedger: 10 + 10 + 80 + 120 + 100 = 320 sao tối đa từ các câu chưa từng giải và kho báu mỗi màn; nếu đã nhận trong phần học thì không nhận lần hai. Cánh hoa chỉ là thành tích phiêu lưu, không quy đổi sao. Hoàn thành lưu huy hiệu và kỷ lục cánh hoa. Chơi lại giữ thưởng/huy hiệu đã nhận.
+- Trạng thái game, cánh hoa, số lần rơi, cổng đang chờ, bản nháp game lưu trong cùng snapshot SharedPreferences. Lưu mỗi 700 ms khi di chuyển và ngay khi có sự kiện; dừng/lưu khi rời màn hoặc app mất foreground. Câu trả lời đúng, thưởng và mở khóa cổng được commit cùng một lần; bản nháp học thông thường được giữ riêng. Tương thích snapshot phần 7.
+- Kiểm thử JVM AdventureTest: kiểm tra 19 tuyến vượt chướng ngại bằng điều khiển mô phỏng; kiểm tra 76 cổng và đáp án; chạy qua 19 màn và chơi lại; khôi phục snapshot giữa bước nhảy/cổng, thất bại lưu, mã cổng cũ, đáp án sai, phần thưởng, va chạm, chống nhận trùng. Giữ bộ kiểm tra 959 mục hiện có; CI chạy thêm assembleDebug.
+- Chưa xác nhận UI, cảm giác điều khiển đa chạm, kích thước chữ, khôi phục trên thiết bị thật. Phần 9 thực hiện kiểm thử thiết bị/giả lập và đối chiếu trực quan, phần 10 đóng gói bản APK bàn giao.

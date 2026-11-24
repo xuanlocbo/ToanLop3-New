@@ -12,26 +12,37 @@ import java.util.*;
 final class QuestionPanel extends LinearLayout {
     interface Host { void changed(); void next(); void feedback(boolean correct); }
     final NativeUi ui;final JSONObject q,v;final String id,kind;final ProgressStore store;final Host host;
+    final int adventureLesson,adventureGate;
     JSONObject draft;
     boolean rebuilding;
     QuestionPanel(Context c,JSONObject question,ProgressStore store,Host host){
-        super(c);setOrientation(VERTICAL);ui=new NativeUi(c);this.q=question;v=Json.obj(q,"visual");
-        id=q.optString("id");kind=q.optString("kind");this.store=store;this.host=host;draft=store.draft(id);render();
+        this(c,question,store,host,0,-1);
     }
+    QuestionPanel(Context c,JSONObject question,ProgressStore store,Host host,int adventureLesson,int adventureGate){
+        super(c);setOrientation(VERTICAL);ui=new NativeUi(c);this.q=question;v=Json.obj(q,"visual");
+        id=q.optString("id");kind=q.optString("kind");this.store=store;this.host=host;
+        this.adventureLesson=adventureLesson;this.adventureGate=adventureGate;
+        if(inAdventure()&&!id.equals(AdventurePlan.questionId(adventureLesson,adventureGate)))throw new IllegalArgumentException("Wrong gate question");
+        draft=readDraft();render();
+    }
+    boolean inAdventure(){return adventureLesson!=0;}
+    JSONObject readDraft(){return inAdventure()?store.adventureDraft(adventureLesson,adventureGate):store.draft(id);}
+    boolean writeDraft(JSONObject d){return inAdventure()?store.saveAdventureDraft(adventureLesson,adventureGate,d):store.saveDraft(id,d);}
+    boolean resetAnswer(){return inAdventure()?writeDraft(new JSONObject()):store.resetDraft(id);}
     void warn(){Toast.makeText(getContext(),"Chưa lưu được. Hãy thử lại.",Toast.LENGTH_LONG).show();}
     boolean persist(){
-        if(store.saveDraft(id,draft)){host.changed();return true;}
-        draft=store.draft(id);warn();return false;
+        if(writeDraft(draft)){host.changed();return true;}
+        draft=readDraft();warn();return false;
     }
     void set(String k,Object value,boolean redraw){
         Json.put(draft,k,value);if("retry".equals(draft.optString("status")))draft.remove("status");
         if(persist()&&redraw)render();
     }
-    void clear(){if(store.resetDraft(id)){draft=store.draft(id);host.changed();render();}else warn();}
+    void clear(){if(resetAnswer()){draft=readDraft();host.changed();render();}else warn();}
     void submit(){
-        ProgressStore.Result r=store.submit(id,draft);
-        if(!r.saved){draft=store.draft(id);warn();return;}
-        draft=store.draft(id);host.changed();host.feedback(r.correct);render();
+        ProgressStore.Result r=inAdventure()?store.submitAdventure(adventureLesson,adventureGate,draft):store.submit(id,draft);
+        if(!r.saved){draft=readDraft();warn();return;}
+        draft=readDraft();host.changed();host.feedback(r.correct);render();
     }
     void field(LinearLayout p,String label,String value,boolean number,java.util.function.Consumer<String> action){
         ui.label(p,label,17,true);EditText e=ui.input(label,value,number);ui.add(p,e);
@@ -69,7 +80,7 @@ final class QuestionPanel extends LinearLayout {
             ui.label(win,kind.equals("study")?"Đã học xong!":kind.startsWith("practice")?"Đã ghi nhận thực hành!":"Giỏi lắm! Em làm đúng rồi!",26,true);
             int earned=draft.optInt("earned");ui.label(win,earned>0?"+"+earned+" sao hồng":"Đã lưu kết quả",21,true);
             ui.label(win,q.optString("solution"),20,false);LinearLayout row=ui.row();ui.add(win,row);
-            ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,"Tiếp tục",NativeUi.GREEN,host::next);rebuilding=false;return;
+            if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng":"Tiếp tục",NativeUi.GREEN,host::next);rebuilding=false;return;
         }
         if(kind.equals("board_game")){
             BoardState b=BoardState.replay(q,draft);
