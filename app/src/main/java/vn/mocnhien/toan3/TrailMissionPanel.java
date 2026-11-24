@@ -47,7 +47,7 @@ final class TrailMissionPanel extends LinearLayout {
         final int previousScroll=viewport==null?0:viewport.getScrollY();
         removeAllViews();
         ui.caption(this,"Trạm thực hành • Bài "+mission.lesson);
-        ui.label(this,mission.title,25,true);ui.label(this,mission.brief,21,false);
+        ui.label(this,mission.title,ui.compact()?22:25,true);ui.label(this,mission.brief,ui.compact()?18:21,false);
         if(mission.kind==TrailMission.Kind.GROUP){
             ui.add(this,ui.badge("Kho còn "+mission.result(state)+" "+mission.unit,NativeUi.GOLD));
             LinearLayout.LayoutParams groupArt=new LinearLayout.LayoutParams(-1,ui.dp(120));
@@ -68,16 +68,26 @@ final class TrailMissionPanel extends LinearLayout {
                 LinearLayout trace=ui.card(NativeUi.LAV);ui.add(this,trace);
                 ui.label(trace,mission.trace(state),25,true);
             }
-            if(mission.kind==TrailMission.Kind.POUR||mission.kind==TrailMission.Kind.TEMP||mission.kind==TrailMission.Kind.GRID||mission.kind==TrailMission.Kind.BUILD){
-                LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,ui.dp(mission.kind==TrailMission.Kind.GRID?230:145));
-                addView(new StationDrawing(getContext(),mission,state),lp);
+            boolean illustrated=mission.kind==TrailMission.Kind.POUR||mission.kind==TrailMission.Kind.TEMP||mission.kind==TrailMission.Kind.GRID||mission.kind==TrailMission.Kind.BUILD;
+            boolean two=illustrated&&ui.sideBySide()&&(mission.kind==TrailMission.Kind.POUR||mission.kind==TrailMission.Kind.TEMP||mission.kind==TrailMission.Kind.GRID);
+            LinearLayout stage=two?ui.row():ui.column();
+            stage.setGravity(android.view.Gravity.TOP);ui.add(this,stage);
+            LinearLayout display=ui.column(), controls=ui.column();
+            if(two){ui.weight(stage,display,1);ui.weight(stage,controls,1);}
+            else {ui.add(stage,display);ui.add(stage,controls);}
+            if(illustrated){
+                int height=mission.kind==TrailMission.Kind.GRID?230:145;
+                if(two&&ui.compact())height=mission.kind==TrailMission.Kind.GRID?168:112;
+                LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,ui.dp(height));
+                display.addView(new StationDrawing(getContext(),mission,state),lp);
             }
-            if(mission.kind==TrailMission.Kind.POUR)ui.label(this,"A: "+state[0]+" ml     B: "+state[1]+" ml",22,true);
-            if(mission.kind==TrailMission.Kind.TEMP)ui.label(this,"Hiện tại: "+state[0]+"°C",23,true);
+            if(mission.kind==TrailMission.Kind.POUR)ui.label(display,"A: "+state[0]+" ml     B: "+state[1]+" ml",20,true);
+            if(mission.kind==TrailMission.Kind.TEMP)ui.label(display,"Hiện tại: "+state[0]+"°C",21,true);
             if(mission.kind==TrailMission.Kind.GRID){
-                ui.label(this,"Chạm vào giao điểm trên lưới để chọn đỉnh.",17,false);
-                ui.action(this,"Xóa điểm vừa chọn",NativeUi.PALE,()->move(25));
-            }else rowActions(this,mission.actionCount(),mission.kind==TrailMission.Kind.BUILD?5:3,0);
+                ui.label(controls,"Chạm vào giao điểm trên lưới để chọn đỉnh.",17,false);
+                ui.action(controls,"Xóa điểm vừa chọn",NativeUi.PALE,()->move(25));
+            }else rowActions(controls,mission.actionCount(),mission.kind==TrailMission.Kind.BUILD?5:two?2:3,0);
+
         }
         if(!feedback.isEmpty()){LinearLayout notice=ui.card(0xffffedda);ui.add(this,notice);ui.label(notice,feedback,20,true);}
         if(showHint){LinearLayout hint=ui.card(NativeUi.LAV);ui.add(this,hint);ui.label(hint,"Gợi ý: "+mission.hint,19,false);}
