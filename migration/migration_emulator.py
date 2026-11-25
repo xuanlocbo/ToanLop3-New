@@ -19,7 +19,7 @@ def capture(d,name):
 def main():
     old,new=Path(sys.argv[1]),Path(sys.argv[2])
     source,target=version(old),version(new)
-    need(int(source[1:])<int(target[1:]),"Expected an upgrade to a registered version")
+    need(rank(source)<rank(target),"Expected an upgrade to a registered version")
     serials=[l.split()[0] for l in subprocess.check_output(["adb","devices"],text=True).splitlines() if l.endswith("\tdevice")]
     need(len(serials)==1 and serials[0].startswith("emulator-"),"Isolated emulator required")
     d=Device(serials[0]); d.preflight(); d.call("logcat","-c")
@@ -38,7 +38,7 @@ def main():
             print("DIRECT_UPDATE_NONDESTRUCTIVE_PASS",flush=True)
         switch(d,folder,target,True)
         need(d.current()==target and d.read()==saved,"Actual migration mismatch")
-        launch(d); capture(d,target+"-restored"); d.stop()
+        launch(d); capture(d,source+"-to-"+target+"-restored"); d.stop()
         need(business(d.read())==business(saved),"p02 lost progress")
         launch(d); d.stop()
         need(business(d.read())==business(saved),"p02 restart lost progress")
@@ -46,8 +46,10 @@ def main():
         recovery=Path(t)/"recovery"; prepare(d,recovery,old); newer=verify(recovery,d.serial)
         switch(d,recovery,source,True)
         need(d.current()==source and d.read()==newer,"Actual recovery mismatch")
-        launch(d); capture(d,source+"-recovered"); d.stop()
+        launch(d); capture(d,target+"-to-"+source+"-recovered"); d.stop()
         need(business(d.read())==business(saved),"p01 recovery lost progress")
         print(target.upper()+"_TO_"+source.upper()+"_ACTUAL_RECOVERY_PASS",flush=True)
     print("PART"+target[1:]+"_MIGRATION_PASS",flush=True)
+    # Emulator only: clean up after verified recovery to permit the next exact APK pair.
+    d.uninstall()
 if __name__=="__main__": main()
