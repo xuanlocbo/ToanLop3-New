@@ -1,0 +1,43 @@
+name: Moc Nhien Toan 3 - Step 1 Asset QA
+on:
+  push:
+    branches: [v1.2.1-asset-pack]
+    paths:
+      - 'MocNhien-Toan3-assets-step1.zip'
+      - 'tools/verify_assets_step1.py'
+      - '.github/workflows/asset-step1-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  asset-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install render dependencies
+        run: |
+          python -m pip install 'CairoSVG==2.7.1' 'Pillow==11.3.0'
+      - name: Validate archive and render all 218 assets
+        run: python tools/verify_assets_step1.py
+      - name: Upload review sheets and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MocNhien-step1-asset-QA
+          path: asset-step1-qa/
+          if-no-files-found: error
+      - name: Upload original asset package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MocNhien-step1-asset-package
+          path: MocNhien-Toan3-assets-step1.zip

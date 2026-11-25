@@ -95,6 +95,7 @@ final class QuestionPanel extends LinearLayout {
             Json.put(draft,"boardPosition",b.landing>=0?b.landing:b.position);
         }
         String type=v.optString("type");
+        if(!MathDiagram.supports(type))ArtPack.question(ui,this,q);
         if(!Part05LearningUi.geometry(ui,this,q)&&MathDiagram.supports(type)&&!(kind.startsWith("practice")&&type.equals("ruler_object")))
             drawing(this,new MathDiagram(getContext(),v,draft),type.equals("dice_board")?300:206);
         if(!Part02LearningUi.visual(ui,this,q)&&!Part04LearningUi.visual(ui,this,q))visualText();

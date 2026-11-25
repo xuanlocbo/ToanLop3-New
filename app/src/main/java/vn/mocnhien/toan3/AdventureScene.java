@@ -47,6 +47,8 @@ final class AdventureScene extends View {
         float camera=Math.max(0,Math.min(AdventureWorld.FINISH+100-w,state.x-w*.37f));
         c.drawColor(StoryArt.PALETTES[theme][1]);c.save();c.translate(0,offset);c.scale(scale,scale);
         int[] palette=StoryArt.PALETTES[theme];
+        boolean packed=ArtPack.draw(getContext(),c,ArtPack.theme(theme),0,0,w,HEIGHT);
+        if(!packed){
         fill(palette[0]);p.setShader(new LinearGradient(0,0,0,HEIGHT,palette[0],palette[1],Shader.TileMode.CLAMP));c.drawRect(0,0,w,HEIGHT,p);p.setShader(null);
         fill(0xfffff7c8);p.setShader(new RadialGradient(w-44,36,48,new int[]{0xfafff8ce,0x80fff5c2,0x00fff5c2},new float[]{0,.47f,1},Shader.TileMode.CLAMP));c.drawCircle(w-44,36,48,p);p.setShader(null);
         circle(w-44,36,20,0xffffedac);
@@ -90,10 +92,13 @@ final class AdventureScene extends View {
                 if(bx>-120&&bx<w+120)art.castle(c,bx,GROUND-7,.72f+(i%2)*.08f,theme);
             }
         }
+        }
         c.save();c.translate(-camera,0);
         for(int i=0;i<19;i++){
             float x=70+i*118;if(x<camera-70||x>camera+w+70)continue;
-            art.tree(c,x,GROUND,.93f+(i%3)*.11f,theme,i+world.lesson);
+            float treeSize=66+(i%3)*7;
+            String tree=new String[]{"tree_forest","tree_snow","crystal_cluster","tree_pink"}[theme];
+            if(!ArtPack.fit(getContext(),c,tree,x-treeSize/2,GROUND-treeSize,treeSize,treeSize))art.tree(c,x,GROUND,.93f+(i%3)*.11f,theme,i+world.lesson);
         }
         fill(0xff8cd0e5);p.setShader(new LinearGradient(0,GROUND,0,HEIGHT,theme==0?0xff5ed9f7:0xffb4e9f1,theme==0?0xff148cc7:0xff7fb5dc,Shader.TileMode.CLAMP));c.drawRect(camera,GROUND,camera+w,HEIGHT,p);p.setShader(null);
         for(int i=(int)(camera/37);i<=(camera+w)/37+1;i++){
@@ -120,7 +125,8 @@ final class AdventureScene extends View {
             float x=world.petals[i][0],y=GROUND-world.petals[i][1];
             if(x>=camera-20&&x<=camera+w+20){
                 circle(x,y,13,0x36fff1bc);
-                art.flower(c,x,y,7.3f+pulse*.7f,0xffffb9dd);
+                float petalSize=23+pulse*2;
+                if(!ArtPack.fit(getContext(),c,"petal",x-petalSize/2,y-petalSize/2,petalSize,petalSize))art.flower(c,x,y,7.3f+pulse*.7f,0xffffb9dd);
                 art.sparkle(c,x+10,y-10,3,0xfffff9d8);
             }
         }
@@ -136,13 +142,17 @@ final class AdventureScene extends View {
             poly(g<=state.gate?0xff79cfa1:0xffdfc5d3,x,GROUND-53,x+28,GROUND-45,x,GROUND-33);
         }
         float f=AdventureWorld.FINISH+17;
-        art.chest(c,f,GROUND,1.15f,state.finished);
+        if(!ArtPack.fit(getContext(),c,state.finished?"chest_open":"chest_closed",f-32,GROUND-64,64,64))art.chest(c,f,GROUND,1.15f,state.finished);
         if(state.finished){art.flower(c,f,GROUND-68,9,PINK);text("VỀ ĐÍCH!",f-22,GROUND-86,15,INK);}
         float stride=walking&&state.y==0?(float)Math.sin(now/72.0)*3:0;
         float foot=GROUND-state.y;
         if(state.y==0&&walking)foot-=Math.abs(stride)*.35f;
         if(state.y>0){oval(state.x-13,GROUND-2,26,4,0x285e4561);}
-        art.rabbit(c,state.x,foot,1f,face,stride,now%4200<120,state.finished);
+        String pose=state.finished?"rabbit_happy":state.y>0?"rabbit_jump":walking&&((now/120)%2==0)?"rabbit_run":now%4200<120?"rabbit_blink":"rabbit_idle";
+        c.save();c.scale(face<0?-1:1,1,state.x,foot);
+        boolean rabbitDrawn=ArtPack.fit(getContext(),c,pose,state.x-34,foot-69,68,72);
+        c.restore();
+        if(!rabbitDrawn)art.rabbit(c,state.x,foot,1f,face,stride,now%4200<120,state.finished);
         if(effectAt>0){
             float age=(now-effectAt)/760f;
             if(age>=0&&age<1){
@@ -190,6 +200,9 @@ final class AdventureScene extends View {
     static int visibleFirst(int first,int step,float camera){return first+Math.max(0,(int)Math.floor((camera-80-first)/step))*step;}
     void gate(float x,int g){
         boolean open=g<state.gate;int col=open?0xff7fc9a9:g<2?0xffdd86b4:GOLD;
+        if(ArtPack.draw(getContext(),c,open?"gate_open":g<2?"gate_closed":"gate_bonus",x-22,GROUND-108,98,108)){
+            text(g<2?(g==0?"SGK":"VBT"):"★ "+(g-1),x+27,GROUND-75,13,INK);return;
+        }
         int edge=open?0xff469e7a:g<2?0xffb866a0:0xffc99544;
         rect(x-9,GROUND-83,19,83,edge);rect(x+44,GROUND-83,19,83,edge);
         rect(x-6,GROUND-82,13,81,col);rect(x+47,GROUND-82,13,81,col);
