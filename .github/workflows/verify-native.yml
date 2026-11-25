@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   workflow_call:
   pull_request:
-    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration]
+    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration]
   push:
     branches: [native-curriculum-1.1]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
@@ -35,11 +35,11 @@ jobs:
         with:
           path: ~/.android/debug.keystore
           key: mocnhien-new-debug-keystore-v1
-      - name: Verify part-03 protected baseline
+      - name: Verify part-04 protected baseline
         run: |
           set -euo pipefail
-          git diff --exit-code f57d1d0ea9e2ef9854d737497088c3ff641962df HEAD -- app/src/main/assets tools tests migration app/src/main/AndroidManifest.xml app/src/main/java/vn/mocnhien/toan3/{Bank,BookBank,Textbook,ChallengeBank,LearningContent,Curriculum,ProgressStore,RewardLedger,NativeGrader,AdventureWorld,AdventurePlan,AdventurePanel,AdventureScene,BoardState,TrailMission,TrailMissionPanel,MathDiagram,GridCanvas,StoryArt,GameAudio,SoundPalette,AppModule,GameModule,RewardsModule,ProgressModule,ModuleContext,ModulePage,ModuleHome,NativeUi,Part02Tutor,Part02LearningUi}.java app/src/test/java/vn/mocnhien/toan3/{AdventureTest,NativeCurriculumTest,SoundPaletteTest,TrailMissionTest,ModuleRoutingTest,Part02TutorTest}.java
-          echo PART03_BASELINE_UNCHANGED
+          git diff --exit-code 747bb271c03028ce25752d9949e9a7ce82737dab HEAD -- app/src/main/assets tools tests migration app/src/main/AndroidManifest.xml app/src/main/java/vn/mocnhien/toan3/{Bank,BookBank,Textbook,ChallengeBank,LearningContent,Curriculum,ProgressStore,RewardLedger,NativeGrader,AdventureWorld,AdventurePlan,AdventurePanel,AdventureScene,BoardState,TrailMission,TrailMissionPanel,MathDiagram,GridCanvas,StoryArt,GameAudio,SoundPalette,AppModule,GameModule,RewardsModule,ProgressModule,ModuleContext,ModulePage,ModuleHome,NativeUi,Part02Tutor,Part02LearningUi,Part03Tutor,Part03LearningUi,Json}.java app/src/test/java/vn/mocnhien/toan3/{AdventureTest,NativeCurriculumTest,SoundPaletteTest,TrailMissionTest,ModuleRoutingTest,Part02TutorTest,Part03TutorTest}.java
+          echo PART04_BASELINE_UNCHANGED
       - name: Verify data and compile Java
         run: |
           node tests/verify_curriculum_v2.mjs
@@ -86,28 +86,30 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p03.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p03.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p03.apk | tee output/badging.txt
-          grep -F "package: name='vn.mocnhien.toan3' versionCode='6' versionName='1.2.0-p03'" output/badging.txt
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p03.apk | tee output/permissions.txt
+          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p04.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p04.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p04.apk | tee output/badging.txt
+          grep -F "package: name='vn.mocnhien.toan3' versionCode='7' versionName='1.2.0-p04'" output/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p04.apk | tee output/permissions.txt
           ! grep -F 'android.permission.INTERNET' output/permissions.txt
           python3 - <<'PY'
           import zipfile,json,hashlib,pathlib
-          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p03.apk")
+          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p04.apk")
           with zipfile.ZipFile(p) as z:
               assert z.testzip() is None
               assert {'AndroidManifest.xml','classes.dex','assets/runtime_v2.json'} <= set(z.namelist())
               data=json.loads(z.read('assets/runtime_v2.json'))
               assert len(data['lessons'])==19
+              assert data['recordCount']==959
+              assert hashlib.sha256(z.read('assets/runtime_v2.json')).hexdigest()=='ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3'
               print("APK_ZIP_PASS",p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest())
           PY
-          sha256sum output/MocNhien-Toan3-1.2.0-p03.apk > output/SHA256SUMS.txt
+          sha256sum output/MocNhien-Toan3-1.2.0-p04.apk > output/SHA256SUMS.txt
       - name: Upload verified installation candidate
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.0-p03
-          path: output/MocNhien-Toan3-1.2.0-p03.apk
+          name: MocNhien-Toan3-1.2.0-p04
+          path: output/MocNhien-Toan3-1.2.0-p04.apk
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -130,7 +132,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-1.2.0-p03-QA
+          name: MocNhien-1.2.0-p04-QA
           path: |
             screenshots/
             output/*.txt
