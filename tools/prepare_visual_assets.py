@@ -93,14 +93,16 @@ def main():
             name=a["id"]; p=a["path"]; raw=z.read(p)
             assert re.fullmatch(r"[a-z0-9_]+",name)
             if a["category"]=="layouts":
-                # Layout artwork is design reference, not a runtime screenshot.
+                # The preflight QA renders all 12 design references. They must
+                # not be packaged into runtime assets or used as static screens.
                 ET.fromstring(raw)
                 continue
             if a["category"]=="ui":
                 original=ROOT/"app/src/main/assets/ui"/Path(p).name
                 assert original.read_bytes()==raw, f"Approved original changed: {p}"
                 im=Image.open(io.BytesIO(raw)).convert("RGBA")
-                compiled[name]={"path":"ui/"+Path(p).name,"width":im.width,"height":im.height}
+                compiled[name]={"path":"ui/"+Path(p).name,"width":im.width,"height":im.height,
+                                "sha256":hashlib.sha256(raw).hexdigest()}
             else:
                 assert a["format"]=="svg" and p.startswith("assets/")
                 root=ET.fromstring(raw)
@@ -121,6 +123,9 @@ def main():
                                 "sha256":hashlib.sha256(target.read_bytes()).hexdigest()}
             previews.append((name,im.copy()))
         assert len(compiled)==206 and len(list(images.glob("*.webp")))==201
+        expected_runtime={a["id"] for a in manifest["assets"] if a["category"]!="layouts"}
+        assert set(compiled)==expected_runtime, "Runtime manifest missing or extra image"
+        assert all(s["art"] in compiled for s in stages), "Missing stage artwork"
         aliases={}
         for name,words in manifest["aliases"].items():
             assert name in compiled

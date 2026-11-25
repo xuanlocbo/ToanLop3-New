@@ -196,10 +196,16 @@ def render_one(z, asset, allowed_webp):
 
 def main():
     report["archive_sha256"] = hashlib.sha256(ZIP.read_bytes()).hexdigest()
-    # Guard against changing the baseline Android code or curriculum in step 1.
-    changed = git("diff","--name-only",BASE,"HEAD").decode().splitlines()
-    allowed = {ZIP.name, ".github/workflows/asset-step1-qa.yml", "tools/verify_assets_step1.py"}
-    require(set(changed) <= allowed, "Unexpected change outside step 1: "+str(sorted(set(changed)-allowed)))
+    # Verify the immutable step-1 snapshot separately from subsequent UI integration.
+    # The integration workflow has its own strict allowlist for all code changes.
+    packed_commit = "157091d45a352de48f7e1a9a34f117ebc842e380"
+    changed_at_pack = git("diff","--name-only",BASE,packed_commit).decode().splitlines()
+    require(set(changed_at_pack) == {ZIP.name}, "Original asset-only commit scope")
+    require(git("rev-parse",packed_commit+":"+ZIP.name).strip()==git("hash-object","--stdin",data=ZIP.read_bytes()).strip(),
+            "Original asset archive unchanged")
+    protected = git("diff","--name-only",BASE,"HEAD","--","app/src/main/assets/curriculum","tools/prepare_curriculum.mjs","migration").decode().splitlines()
+    require(not protected, "Protected curriculum/migration changed: "+str(protected))
+    report["integration_present"] = bool(git("diff","--name-only",BASE,"HEAD","--","app/build.gradle","app/src/main/java","app/src/main/kotlin").strip())
     with zipfile.ZipFile(ZIP) as z:
         names = z.namelist()
         report["archive_files"] = len(names)
@@ -304,7 +310,7 @@ finally:
     report["automatic_checks_passed"] = not errors
     report["visual_approval"] = "PENDING_HUMAN_REVIEW"
     report["apk_built"] = False
-    report["step2_started"] = False
+    report["step2_started"] = report.get("integration_present",False)
     (OUT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     lines=["# Bước 1 — Kiểm tra bộ tài nguyên",
            "", "**"+("PASS — Kiểm tra tự động" if not errors else "FAIL — Có lỗi cần sửa")+"**",
@@ -316,7 +322,7 @@ finally:
            f"- Bảng ảnh PNG: {len(report['sheets'])}",
            "", "## Điều kiện còn lại", *["- "+x for x in warnings],
            "", "## Lỗi", *(["- "+x for x in errors] if errors else ["- Không phát hiện lỗi tự động."]),
-           "", "Chưa tích hợp; không xuất APK ở bước này."]
+           "", "Báo cáo này chỉ xác nhận kiểm tra nguồn đồ họa; không xác nhận APK hay kết quả Android."]
     summary="\n".join(lines)+"\n"
     (OUT/"report.md").write_text(summary,encoding="utf-8")
     if os.environ.get("GITHUB_STEP_SUMMARY"):

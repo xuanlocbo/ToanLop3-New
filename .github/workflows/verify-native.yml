@@ -46,8 +46,12 @@ jobs:
           base="94577c1a361365ff852b0e8eb93e02a12dca6654"
           allowed=set(["app/src/main/AndroidManifest.xml","app/build.gradle","app/src/main/res/values/styles.xml","app/src/main/java/vn/mocnhien/toan3/MainActivity.java","app/src/main/java/vn/mocnhien/toan3/NativeUi.java","app/src/main/java/vn/mocnhien/toan3/AdventureScene.java","app/src/main/java/vn/mocnhien/toan3/StoryArt.java","app/src/main/java/vn/mocnhien/toan3/AdventurePanel.java","app/src/main/java/vn/mocnhien/toan3/LearningModule.java","app/src/main/java/vn/mocnhien/toan3/ModulePage.java","app/src/main/java/vn/mocnhien/toan3/QuestionPanel.java","app/src/main/kotlin/vn/mocnhien/toan3/AppModule.kt","app/src/main/kotlin/vn/mocnhien/toan3/ModuleHome.kt","app/src/main/kotlin/vn/mocnhien/toan3/RewardsModule.kt","app/src/main/assets/ui/hero.webp","app/src/main/assets/ui/book.webp","app/src/main/assets/ui/practice.webp","app/src/main/assets/ui/game.webp","app/src/main/assets/ui/reward.webp","app/src/test/java/vn/mocnhien/toan3/KotlinShellParityTest.java",".github/scripts/part4_smoke.py",".github/scripts/ui_upgrade_smoke.py",".github/workflows/verify-native.yml"])
           allowed.update(["MocNhien-Toan3-assets-step1.zip","tools/prepare_visual_assets.py","tools/visual-assets-requirements.txt","app/src/main/java/vn/mocnhien/toan3/ArtPack.java","app/src/main/java/vn/mocnhien/toan3/MathDiagram.java","app/src/main/kotlin/vn/mocnhien/toan3/GameModule.kt"])
+          # The independent asset-QA workflow and script were added after step 1.
+          allowed.update({".github/workflows/asset-step1-qa.yml","tools/verify_assets_step1.py"})
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed,changed-allowed
+          protected=["app/src/main/assets/curriculum","tools/prepare_curriculum.mjs","migration"]
+          assert not subprocess.check_output(["git","diff","--name-only",base,"HEAD","--",*protected],text=True).strip(), "Protected learning data or migration changed"
           print("UI_SCOPE_PASS",sorted(changed))
           PY
       - name: Test bounded Android viewport search
@@ -60,6 +64,18 @@ jobs:
           python3 -m venv /tmp/mocnhien-art-venv
           /tmp/mocnhien-art-venv/bin/pip install -r tools/visual-assets-requirements.txt
           echo "MOCNH_ART_PYTHON=/tmp/mocnhien-art-venv/bin/python" >> "$GITHUB_ENV"
+      - name: Preflight all assets and curriculum before Android build
+        run: |
+          set -euo pipefail
+          "$MOCNH_ART_PYTHON" -m py_compile tools/prepare_visual_assets.py tools/verify_assets_step1.py
+          "$MOCNH_ART_PYTHON" tools/verify_assets_step1.py
+      - name: Upload complete asset source review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MocNhien-asset-source-QA
+          path: asset-step1-qa/
+          if-no-files-found: warn
       - name: Verify data and compile Kotlin and Java
         run: |
           set -euo pipefail

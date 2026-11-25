@@ -22,7 +22,10 @@ tasks.register('prepareVisualAssets', Exec) {
     inputs.file(rootProject.file('MocNhien-Toan3-assets-step1.zip'))
     inputs.file(rootProject.file('tools/prepare_visual_assets.py'))
     inputs.file(rootProject.file('tools/visual-assets-requirements.txt'))
-    inputs.files(fileTree('src/main/assets/curriculum') { include '*.json' })
+    inputs.files(fileTree('src/main/assets/curriculum') {
+        include 'sgk_26_29.json', 'sgk_30_35.json', 'sgk_36_37.json', 'sgk_38_40.json', 'sgk_41_42.json', 'sgk_43_44.json',
+                'vbt_26_29.json', 'vbt_30_35.json', 'vbt_36_38.json', 'vbt_39_41.json', 'vbt_42_44.json', 'bonus_26_44.json'
+    })
     inputs.files(fileTree('src/main/assets/ui') { include '*.webp' })
     outputs.dir(visualOutput)
     outputs.file(visualReport)
