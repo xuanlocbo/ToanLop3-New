@@ -1,0 +1,61 @@
+name: Verify exact p01 to p02 migration
+on:
+  pull_request:
+    branches: [v1.2-part02-learning]
+    paths: ['migration/**', '.github/workflows/verify-progress-migration.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-migration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Ensure tested p02 app remains unchanged
+        run: git diff --exit-code 377853049c8eb0331adcfe310c0f7923f65d24bd HEAD -- app tools tests .github/scripts .github/workflows/verify-native.yml
+      - name: Test migration safeguards
+        run: python3 -m unittest discover -s migration -p 'test_*.py' -v
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p01
+          run-id: 45525768929
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: migration-apks/p01
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p02
+          run-id: 45528517909
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: migration-apks/p02
+      - name: Check original APK digests
+        run: |
+          echo 'b84c4bacb182681fe79c3f23df37b937465996abf62866d9648b870d7299164e  migration-apks/p01/MocNhien-Toan3-1.2.0-p01.apk' | sha256sum -c -
+          echo 'feccf5b3689aba11081014191da9f499a3ad166f5df16c4e68a00c988cf99cb9  migration-apks/p02/MocNhien-Toan3-1.2.0-p02.apk' | sha256sum -c -
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools'
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Actual migration and recovery on Android
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: python3 migration/migration_emulator.py migration-apks/p01/MocNhien-Toan3-1.2.0-p01.apk migration-apks/p02/MocNhien-Toan3-1.2.0-p02.apk
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MocNhien-p02-migration-QA
+          path: migration-qa/
+          if-no-files-found: warn

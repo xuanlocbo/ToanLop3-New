@@ -1,0 +1,6 @@
+# Sổ bàn giao 15 phần
+
+- Phần 1: bản 1.2.0-p01 người dùng đã chốt. Commit ffd5ecbe1099a686fb7b9c6908a0395995a252af; run 45525768929. Giữ nguyên mốc.
+- Phần 2: Bài 26–29, 83 SGK + 100 VBT, 12 hướng dẫn bổ sung. Commit 377853049c8eb0331adcfe310c0f7923f65d24bd; run 45528517909 thành công, 17 kiểm thử đơn vị và 29 ảnh thực tế. 959 mục; runtime_v2.json trong hai APK giống từng byte, SHA256 ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3.
+- Phần 2: ĐẠT theo phương án thay thế chữ ký được người dùng đồng ý. Công cụ migration commit 4aece5247c50f76a6de93dca518864b5dd1dd47a; run 45532939612 thành công, 11/11 kiểm thử bảo vệ bản sao lưu; chuyển p01 → p02, khởi động lại và phục hồi p02 → p01 trên Android đều đạt. Dữ liệu giả lập được bảo toàn từng byte (SHA-256 0e58b866b10bc98059d0fec62510f12dfa0f134a2f4d829b8d5a3f7baee066fe). Không khôi phục khóa ký cũ, không cài đè khác chữ ký. Chưa kiểm thử trên điện thoại thật của người dùng. Khóa ổn định cho các bản phát hành sau phải do chủ dự án lưu riêng, không đưa vào repo công khai.
+- Phần 3 kế tiếp: hoàn thiện nội dung học, minh họa, hướng dẫn giải Bài 30–35. Kế thừa dữ liệu và kết quả đã nghiệm thu, không rà soát lại Bài 26–29 trừ hồi quy.
