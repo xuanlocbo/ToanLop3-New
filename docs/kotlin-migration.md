@@ -10,3 +10,5 @@ Người dùng đã đồng ý chuyển dần sang Kotlin; giữ nguyên kế ho
 - Nếu p05 cần sửa, kế thừa bản sửa trước khi dùng nhánh thí điểm làm nền. Không tự gỡ app có tiến độ. Dùng công cụ migration đã xác minh cho APK được đăng ký chính xác khi cần, không khôi phục khóa cũ.
 
 - Đã biên dịch thử hai lớp Kotlin và đạt 26/26 unit tests. Phần 5 Java đã đạt CI đầy đủ (24/24, 60 ảnh). Nhánh v1.2-part05-kotlin-migration đăng ký hai APK chính xác và kiểm thử p04/p05 ↔ p05-k01. Chưa thay thế nhánh ổn định khi CI Kotlin chưa đạt.
+
+- Thí điểm Kotlin ĐẠT CI 45540144790 (26/26, 60 ảnh Android) và migration 45542760048 (15/15, hai cặp nâng cấp/phục hồi). Chọn làm nền phần 6. Chỉ bổ sung chuyển đổi lớp thuộc phạm vi mỗi phần, không chuyển đồng thời lớp lưu dữ liệu.
