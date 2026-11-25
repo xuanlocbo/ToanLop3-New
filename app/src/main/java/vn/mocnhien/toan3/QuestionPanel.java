@@ -81,7 +81,7 @@ final class QuestionPanel extends LinearLayout {
             ui.label(win,kind.equals("study")?"Đã học xong!":kind.startsWith("practice")?"Đã ghi nhận thực hành!":"Giỏi lắm! Em làm đúng rồi!",26,true);
             int earned=draft.optInt("earned");
             TextView award=ui.badge(earned>0?"★ +"+earned+" sao hồng":"✓ Đã lưu kết quả",earned>0?NativeUi.GOLD:NativeUi.WHITE);ui.add(win,award);
-            ui.label(win,q.optString("solution"),20,false);LinearLayout row=ui.row();ui.add(win,row);
+            ui.label(win,Part02Tutor.solution(q),20,false);LinearLayout row=ui.row();ui.add(win,row);
             if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng →":"Tiếp tục →",NativeUi.GREEN,host::next);
             if(celebrateNext){win.setAlpha(.65f);win.setTranslationY(ui.dp(6));win.animate().alpha(1f).translationY(0).setDuration(230).start();win.post(()->row.requestRectangleOnScreen(new android.graphics.Rect(0,0,row.getWidth(),row.getHeight()),false));}
             celebrateNext=false;rebuilding=false;return;
@@ -93,9 +93,9 @@ final class QuestionPanel extends LinearLayout {
         String type=v.optString("type");
         if(MathDiagram.supports(type)&&!(kind.startsWith("practice")&&type.equals("ruler_object")))
             drawing(this,new MathDiagram(getContext(),v,draft),type.equals("dice_board")?300:206);
-        visualText();
+        if(!Part02LearningUi.visual(ui,this,q))visualText();
         if(kind.equals("study")){
-            LinearLayout c=ui.card(NativeUi.LAV);ui.add(this,c);ui.label(c,"Cùng tìm hiểu",21,true);ui.label(c,q.optString("solution"),21,false);
+            LinearLayout c=ui.card(NativeUi.LAV);ui.add(this,c);ui.label(c,"Cùng tìm hiểu",21,true);ui.label(c,Part02Tutor.solution(q),21,false);
             button(this,"Em đã hiểu",NativeUi.PINK,()->{set("read",true,false);submit();});rebuilding=false;return;
         }
         if(!store.unlocked(q)){ui.label(this,"Hãy hoàn thành bước trước để mở nhiệm vụ này.",20,true);rebuilding=false;return;}
@@ -128,8 +128,8 @@ final class QuestionPanel extends LinearLayout {
             default:throw new IllegalStateException("Unimplemented "+kind);
         }
         if("retry".equals(draft.optString("status"))){LinearLayout tryAgain=ui.card(0xffffedda);ui.add(this,tryAgain);ui.label(tryAgain,"Chưa đúng, mình thử thêm một lần nhé!",21,true);tryAgain.post(()->tryAgain.requestRectangleOnScreen(new android.graphics.Rect(0,0,tryAgain.getWidth(),tryAgain.getHeight()),false));}
-        if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+q.optString("hint"),19,false);
-        if(draft.optBoolean("showSolution"))ui.label(this,"Cách giải: "+q.optString("solution"),19,false);
+        if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+Part02Tutor.hint(q),19,false);
+        if(draft.optBoolean("showSolution"))ui.label(this,"Cách giải: "+Part02Tutor.solution(q),19,false);
         LinearLayout controls=ui.row();ui.add(this,controls);
         ui.smallAction(controls,"Gợi ý",NativeUi.LAV,()->set("showHint",!draft.optBoolean("showHint"),true));
         ui.smallAction(controls,"Làm lại",NativeUi.PALE,this::clear);

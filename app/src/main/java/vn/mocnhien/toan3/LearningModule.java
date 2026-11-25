@@ -42,6 +42,7 @@ final class LearningModule extends ModulePage {
             ui.label(box,b.equals("bonus")?(chest(lesson)?"Kho báu đã mở!":"Hai thử thách • tối đa 300 sao"):"Khám phá và luyện tập",17,false);
             ui.action(box,"Mở "+bookName(b),NativeUi.WHITE,()->openBook(b));
         }
+        Part02LearningUi.addGuide(ui,body,lesson);
         ui.action(body,"🐇  Chơi màn Bài "+lesson,NativeUi.PINK,()->openAdventure(lesson));
         ui.action(body,"Về Học bài",NativeUi.PALE,()->go(AppModule.LEARNING.route));
     }

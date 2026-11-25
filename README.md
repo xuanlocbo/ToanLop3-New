@@ -1,3 +1,14 @@
+# Mộc Nhiên · Toán 3 — 1.2.0-p02
+
+Phần 2/15: nâng chất lượng học Bài 26–29, dựa trên phần 1 đã chốt (ffd5ecbe1099a686fb7b9c6908a0395995a252af).
+- Giữ nguyên toàn bộ 959 mục dữ liệu, trong đó 83 SGK + 100 VBT thuộc Bài 26–29.
+- Thêm 12 ví dụ tự biên soạn theo 4 bài, minh họa và mở từng bước giải. Đây là nội dung bổ trợ, không thay thế sách và không tính sao.
+- Diễn giải từng lượt đặt tính chia (43 mục có mô hình long_division), gợi ý theo dạng bài, trình bày sơ đồ chia nhóm, máy số và chuỗi thao tác; không đọc đáp án ẩn vào hình.
+- Không đổi ID, đáp án, chấm điểm, kho lưu tiến độ, phần thưởng, game hoặc các bài ngoài phạm vi.
+- Phạm vi kiểm thử: giữ bộ kiểm thử phần 1; thêm kiểm thử trình bày, phép chia, phạm vi dữ liệu và UI mở từng hướng dẫn trên Android.
+- PDF gốc chưa được mở lại ở lượt này; dựa trên dữ liệu nguồn đã đối chiếu trong docs/02 và docs/04. Không tuyên bố đối chiếu nguyên văn lần mới.
+- APK debug 1.2.0-p02, versionCode 5; chỉ cài đè khi cùng chữ ký. Không gỡ app cũ có tiến độ.
+
 # Mộc Nhiên · Toán 3 — 1.2.0-p01
 
 Bản kiểm thử phần 1/15: kiến trúc và điều hướng bốn module Android native, phát triển từ commit 1.1.1 a61d71012af08c9b0cbf0e26593591675998bc16.
