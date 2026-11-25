@@ -16,7 +16,9 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 40
+    env:
+      MOCNH_MAVEN_MIRROR: google-cloud
     outputs:
       apk_sha: ${{ steps.package.outputs.apk_sha }}
       apk_bytes: ${{ steps.package.outputs.apk_bytes }}
@@ -34,6 +36,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+          cache-read-only: false
       - name: Restore test signing identity
         uses: actions/cache@v4
         with:
@@ -47,7 +50,7 @@ jobs:
           allowed=set(["app/src/main/AndroidManifest.xml","app/build.gradle","app/src/main/res/values/styles.xml","app/src/main/java/vn/mocnhien/toan3/MainActivity.java","app/src/main/java/vn/mocnhien/toan3/NativeUi.java","app/src/main/java/vn/mocnhien/toan3/AdventureScene.java","app/src/main/java/vn/mocnhien/toan3/StoryArt.java","app/src/main/java/vn/mocnhien/toan3/AdventurePanel.java","app/src/main/java/vn/mocnhien/toan3/LearningModule.java","app/src/main/java/vn/mocnhien/toan3/ModulePage.java","app/src/main/java/vn/mocnhien/toan3/QuestionPanel.java","app/src/main/kotlin/vn/mocnhien/toan3/AppModule.kt","app/src/main/kotlin/vn/mocnhien/toan3/ModuleHome.kt","app/src/main/kotlin/vn/mocnhien/toan3/RewardsModule.kt","app/src/main/assets/ui/hero.webp","app/src/main/assets/ui/book.webp","app/src/main/assets/ui/practice.webp","app/src/main/assets/ui/game.webp","app/src/main/assets/ui/reward.webp","app/src/test/java/vn/mocnhien/toan3/KotlinShellParityTest.java",".github/scripts/part4_smoke.py",".github/scripts/ui_upgrade_smoke.py",".github/workflows/verify-native.yml"])
           allowed.update(["MocNhien-Toan3-assets-step1.zip","tools/prepare_visual_assets.py","tools/visual-assets-requirements.txt","app/src/main/java/vn/mocnhien/toan3/ArtPack.java","app/src/main/java/vn/mocnhien/toan3/MathDiagram.java","app/src/main/kotlin/vn/mocnhien/toan3/GameModule.kt"])
           # The independent asset-QA workflow and script were added after step 1.
-          allowed.update({".github/workflows/asset-step1-qa.yml","tools/verify_assets_step1.py"})
+          allowed.update({".github/workflows/asset-step1-qa.yml","tools/verify_assets_step1.py","settings.gradle"})
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed,changed-allowed
           protected=["app/src/main/assets/curriculum","tools/prepare_curriculum.mjs","migration"]
@@ -76,11 +79,26 @@ jobs:
           name: MocNhien-asset-source-QA
           path: asset-step1-qa/
           if-no-files-found: warn
+      - name: Verify trusted dependency mirror before Gradle
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET
+          base="https://maven-central.storage-download.googleapis.com/maven2/"
+          ns={"m":"http://maven.apache.org/POM/4.0.0"}
+          for name in ("kotlin-gradle-plugin","kotlin-gradle-plugins-bom"):
+              path=f"org/jetbrains/kotlin/{name}/2.1.21/{name}-2.1.21.pom"
+              with urllib.request.urlopen(base+path, timeout=45) as response:
+                  root=ET.fromstring(response.read())
+                  assert root.findtext("m:artifactId",namespaces=ns)==name
+                  assert root.findtext("m:version",namespaces=ns)=="2.1.21"
+              print("MAVEN_MIRROR_POM_PASS", name, "2.1.21", flush=True)
+          PY
       - name: Verify data and compile Kotlin and Java
         run: |
           set -euo pipefail
           node tests/verify_curriculum_v2.mjs
-          # Kotlin pilot needs one-time plugin resolution; Gradle still reuses its cache.
+          # Keep dependency versions fixed; use the documented Google Cloud mirror and restored cache.
           for attempt in 1 2 3; do
             if gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee /tmp/kotlin-build.log; then
               test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/AppModule.class

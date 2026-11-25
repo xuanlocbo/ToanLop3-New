@@ -1,4 +1,40 @@
-pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
-dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS); repositories { google(); mavenCentral() } }
+pluginManagement {
+    repositories {
+        google()
+        // CI uses Google's documented Maven Central mirror, not the rate-limited
+        // direct endpoint or Gradle Plugin Portal's redirect back to that endpoint.
+        if (System.getenv('MOCNH_MAVEN_MIRROR') == 'google-cloud') {
+            maven {
+                name = 'GoogleCloudMavenCentral'
+                url = uri('https://maven-central.storage-download.googleapis.com/maven2/')
+            }
+        } else {
+            mavenCentral()
+            gradlePluginPortal()
+        }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (System.getenv('MOCNH_MAVEN_MIRROR') == 'google-cloud' &&
+                    requested.id.id == 'org.jetbrains.kotlin.android' && requested.version != null) {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        if (System.getenv('MOCNH_MAVEN_MIRROR') == 'google-cloud') {
+            maven {
+                name = 'GoogleCloudMavenCentral'
+                url = uri('https://maven-central.storage-download.googleapis.com/maven2/')
+            }
+        } else {
+            mavenCentral()
+        }
+    }
+}
 rootProject.name='MocNhien'
 include ':app'
