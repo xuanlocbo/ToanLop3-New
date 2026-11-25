@@ -84,4 +84,23 @@ class Tests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             m.bundle(self.folder,"test-device",self.folder/"p01.apk",self.folder/"p02.apk",self.raw)
         self.assertEqual((self.folder/"progress.xml").read_bytes(),self.raw)
+    def test_new_version_pair_and_reverse(self):
+        folder=self.folder.parent/"next-backup"
+        new=self.folder.parent/"p03.apk"
+        new.write_bytes(b"third")
+        m.bundle(folder,"test-device",self.folder/"p02.apk",new,self.raw)
+        d=Fake(self.raw,current="p02")
+        m.switch(d,folder,"p03",True)
+        self.assertEqual((d.current(),d.read()),("p03",self.raw))
+        d.status="version_downgrade"
+        m.switch(d,folder,"p02",True)
+        self.assertEqual((d.current(),d.read()),("p02",self.raw))
+    def test_target_not_in_manifest(self):
+        d=Fake(self.raw)
+        with self.assertRaises(m.MigrationError): m.switch(d,self.folder,"p03",True)
+        self.assertFalse(d.removed); self.assertEqual(d.installs,[])
+    def test_unrelated_installed_version(self):
+        d=Fake(self.raw,current="p03")
+        with self.assertRaises(m.MigrationError): m.switch(d,self.folder,"p02",True)
+        self.assertFalse(d.removed); self.assertEqual(d.installs,[])
 if __name__=="__main__": unittest.main(verbosity=2)
