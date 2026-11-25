@@ -45,6 +45,7 @@ final class LearningModule extends ModulePage {
         Part02LearningUi.addGuide(ui,body,lesson);
         Part03LearningUi.addGuide(ui,body,lesson);
         Part04LearningUi.addGuide(ui,body,lesson);
+        Part05LearningUi.addGuide(ui,body,lesson);
         ui.action(body,"🐇  Chơi màn Bài "+lesson,NativeUi.PINK,()->openAdventure(lesson));
         ui.action(body,"Về Học bài",NativeUi.PALE,()->go(AppModule.LEARNING.route));
     }
