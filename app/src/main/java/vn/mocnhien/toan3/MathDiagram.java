@@ -105,7 +105,12 @@ public final class MathDiagram extends View {
         polygon(new float[]{-25,280,25,280,0,100},GOLD);line(-155,100-dy,155,100+dy,10,INK);circle(0,100,12,PINK);
         for(int i=0;i<2;i++){float xx=i==0?-155:155,yy=100+(i==0?-dy:dy);line(xx,yy,xx,yy+64,3,INK);line(xx-105,yy+64,xx+105,yy+64,6,INK);
             List<String>a=pan(t,i==0?"left":"right");int n=Math.max(1,a.size());float w=200f/n;
-            for(int j=0;j<a.size();j++){float bx=xx-100+j*w;rect(bx+2,yy+12,w-4,50,i==0?GOLD:MINT);label(a.get(j),bx+w/2,yy+44,Math.min(20,(w-6)/Math.max(2,a.get(j).length())*1.7f),INK);}
+            for(int j=0;j<a.size();j++){
+                float bx=xx-100+j*w;rect(bx+2,yy+12,w-4,50,i==0?GOLD:MINT);
+                String name=a.get(j),id=ArtPack.object(getContext(),name);
+                boolean drawn=w>=40&&ArtPack.fit(getContext(),c,id,bx+5,yy+13,w-10,31);
+                label(name,bx+w/2,drawn?yy+57:yy+44,Math.min(drawn?14:20,(w-6)/Math.max(2,name.length())*1.7f),INK);
+            }
         }c.restore();
     }
     void geometry(){
@@ -150,6 +155,6 @@ public final class MathDiagram extends View {
         if(v.has("extra"))label((v.optInt("extra")>=0?"+":"")+v.optInt("extra")+" "+v.optString("unit"),760,260,25,PINK);
     }
     void polyline(){JSONArray a=Json.arr(v,"segments");int n=a.length();if(n==0)return;for(int i=0;i<n;i++){float x=100+i*700f/n,y=i%2==0?215:100,xx=100+(i+1)*700f/n,yy=i%2==0?100:215;JSONObject t=a.optJSONObject(i);line(x,y,xx,yy,5,PINK);circle(x,y,5,INK);circle(xx,yy,5,INK);String name=t.optString("name");if(name.length()>1){label(name.substring(0,1),x,y+27,22,INK);label(name.substring(1),xx,yy+27,22,INK);}String len=t.has("length")?t.optInt("length")+" "+v.optString("unit"):t.has("factor")?"Gấp "+t.optInt("factor")+" lần":"Ngắn hơn "+t.optInt("shorterBy")+" "+v.optString("unit");label(len,(x+xx)/2,(y+yy)/2-23,23,INK);}}
-    void objects(){JSONArray a=Json.arr(v,"objects");float step=900f/Math.max(1,a.length());for(int i=0;i<a.length();i++){JSONObject t=a.optJSONObject(i);float x=step*(i+.5f);rect(x-80,72,160,132,i%2==0?MINT:GOLD);String name=t.optString("name",t.optString("label"));label(name,x,140,Math.min(25,250f/Math.max(4,name.length())),INK);String val=t.has("length")?t.optInt("length")+" "+v.optString("unit"):t.has("value")?t.optInt("value")+" "+t.optString("unit",v.optString("unit")):t.optString("id");label(val,x,250,23,INK);}}
+    void objects(){JSONArray a=Json.arr(v,"objects");float step=900f/Math.max(1,a.length());for(int i=0;i<a.length();i++){JSONObject t=a.optJSONObject(i);float x=step*(i+.5f);rect(x-80,72,160,132,i%2==0?MINT:GOLD);String name=t.optString("name",t.optString("label"));boolean drawn=ArtPack.fit(getContext(),c,ArtPack.object(getContext(),name),x-65,77,130,99);label(name,x,drawn?195:140,Math.min(drawn?20:25,250f/Math.max(4,name.length())),INK);String val=t.has("length")?t.optInt("length")+" "+v.optString("unit"):t.has("value")?t.optInt("value")+" "+t.optString("unit",v.optString("unit")):t.optString("id");label(val,x,250,23,INK);}}
     void board(){JSONArray a=Json.arr(v,"board");for(Object o:Json.list(a)){JSONObject t=(JSONObject)o;JSONArray xy=Json.arr(t,"pos");float x=220+xy.optInt(0)*76,y=18+xy.optInt(1)*44;int col=t.optString("type").equals("animal")?MINT:t.optInt("index")==0?GOLD:WHITE;rect(x,y,73,40,col);String s=t.optString("type").equals("math")?t.optInt("a")+t.optString("o")+t.optInt("b"):t.optInt("index")==0?"ĐÍCH":t.optString("animal");label(s,x+36,y+25,s.length()>9?10:13,INK);int current=d.optInt("boardPosition",0);if(t.optInt("index")==current)circle(x+8,y+8,7,PINK);if(t.optString("type").equals("animal"))label("→"+t.optInt("jump"),x+36,y+38,10,INK);}}
 }

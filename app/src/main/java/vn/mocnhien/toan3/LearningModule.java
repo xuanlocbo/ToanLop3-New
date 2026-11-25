@@ -61,7 +61,7 @@ final class LearningModule extends ModulePage {
         }
     }
     void showLesson(int lesson,String lastId){
-        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.banner(c,AdventurePlan.theme(lesson),false,88);ui.label(c,title(lesson),25,true);progress(c,done(lesson),count(lesson));
+        LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.stageBanner(c,lesson,88);ui.label(c,title(lesson),25,true);progress(c,done(lesson),count(lesson));
         if(bank.questions.containsKey(lastId)&&bank.questions.get(lastId).optInt("lesson")==lesson){JSONObject last=bank.questions.get(lastId);ui.action(c,"Tiếp tục câu đang học",NativeUi.PINK,()->openQuestion(last,false));}
         LinearLayout row=ui.widthDp()>=640?ui.row():ui.column();row.setGravity(Gravity.TOP);ui.add(body,row);
         for(String b:new String[]{"sgk","vbt","bonus"}){

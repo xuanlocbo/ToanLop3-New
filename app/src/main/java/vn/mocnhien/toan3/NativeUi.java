@@ -84,6 +84,15 @@ final class NativeUi {
         image.setLayoutParams(new LinearLayout.LayoutParams(-1,dp(height)));
         return image;
     }
+    ImageView packArt(String id,int height){return ArtPack.image(c,id,dp(height));}
+    void stageBanner(LinearLayout parent,int lesson,int height){
+        ImageView pic=packArt("stage_"+lesson,height);
+        if(pic.getDrawable()==null){banner(parent,AdventurePlan.theme(lesson),false,height);return;}
+        pic.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        pic.setBackground(bg(PALE,18));pic.setClipToOutline(true);
+        LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(height));lp.setMargins(0,dp(4),0,dp(6));
+        parent.addView(pic,lp);
+    }
     void hero(LinearLayout p){
         int h=compact()?70:Math.min(250,Math.min(Math.round((widthDp()-20)*.56f),Math.max(110,(heightDp()-370)/2)));
         ImageView image=art("hero",h);
@@ -122,8 +131,10 @@ final class NativeUi {
         Button b=button(label,selected?PALE:WHITE,click);b.setTextColor(selected?PINK:MUTED);
         b.setContentDescription(label);b.setTextSize(12);b.setMinHeight(dp(54));b.setMinimumHeight(0);
         b.setPadding(dp(1),dp(4),dp(1),dp(4));b.setBackground(bg(selected?PALE:WHITE,16));
-        NavGlyph icon=new NavGlyph(kind,selected?PINK:MUTED);
-        icon.setBounds(0,0,dp(23),dp(23));b.setCompoundDrawables(null,icon,null,null);
+        String id=new String[]{"icon_home","icon_progress","icon_trophy","icon_settings"}[Math.max(0,Math.min(3,kind))];
+        Drawable icon=ArtPack.icon(c,id,dp(23));
+        if(icon==null){icon=new NavGlyph(kind,selected?PINK:MUTED);icon.setBounds(0,0,dp(23),dp(23));}
+        b.setCompoundDrawables(null,icon,null,null);
         b.setCompoundDrawablePadding(dp(2));weight(row,b,1);
     }
     private static final class NavGlyph extends Drawable{
@@ -151,6 +162,10 @@ final class NativeUi {
     }
     void banner(LinearLayout parent,int theme,boolean hero,int height){
         LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(height));lp.setMargins(0,dp(4),0,dp(6));
+        if(!hero){
+            ImageView pic=packArt(ArtPack.theme(theme),height);
+            if(pic.getDrawable()!=null){pic.setScaleType(ImageView.ScaleType.CENTER_CROP);pic.setBackground(bg(PALE,18));pic.setClipToOutline(true);parent.addView(pic,lp);return;}
+        }
         parent.addView(new StoryArt.Banner(c,theme,hero),lp);
     }
     void pad(View v,int n){v.setPadding(dp(n),dp(n),dp(n),dp(n));}

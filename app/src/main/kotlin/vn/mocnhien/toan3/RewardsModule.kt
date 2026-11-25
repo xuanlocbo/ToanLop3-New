@@ -28,7 +28,12 @@ internal class RewardsModule(context:ModuleContext, container:LinearLayout):Modu
                 for(l in base..minOf(regionEnd[region],base+cols-1)){
                     val earned=chest(l);val c=ui.card(if(earned)NativeUi.GOLD else NativeUi.WHITE)
                     ui.weight(row,c,1f)
-                    ui.label(c,"Bài "+l+" • "+(if(earned)"Kho báu đã mở 🎁" else "Kho báu đang chờ"),20,true)
+                    val rewardRow=ui.row()
+                    ui.add(c,rewardRow)
+                    rewardRow.addView(ui.packArt(if(earned)"chest_open" else "chest_closed",50),LinearLayout.LayoutParams(ui.dp(56),ui.dp(50)))
+                    val rewardText=ui.column()
+                    rewardRow.addView(rewardText,LinearLayout.LayoutParams(0,-2,1f))
+                    ui.label(rewardText,"Bài "+l+" • "+(if(earned)"Kho báu đã mở 🎁" else "Kho báu đang chờ"),19,true)
                     val challenges=(1..2).count{store.done("BONUS."+l+"."+it)}
                     ui.caption(c,"Thử thách: "+challenges+"/2 • "+(if(store.adventureBest(l)>=0)"Đã nhận huy hiệu" else "Chưa về đích"))
                     progress(c,done(l),count(l))

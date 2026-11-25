@@ -1,9 +1,9 @@
-name: Moc Nhien Toan 3 - Approved UI update
+name: Moc Nhien Toan 3 - Integrated visual asset verification
 on:
   workflow_dispatch:
   workflow_call:
   pull_request:
-    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration, v1.2-part05-review, v1.2-part05-kotlin-migration, v1.2-part06-migration, v1.2-part07-rainbow]
+    branches: [v1.2.1-ui, native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration, v1.2-part05-review, v1.2-part05-kotlin-migration, v1.2-part06-migration, v1.2-part07-rainbow]
   push:
     branches: [v1.2.1-ui]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
@@ -45,6 +45,7 @@ jobs:
           import subprocess
           base="94577c1a361365ff852b0e8eb93e02a12dca6654"
           allowed=set(["app/src/main/AndroidManifest.xml","app/build.gradle","app/src/main/res/values/styles.xml","app/src/main/java/vn/mocnhien/toan3/MainActivity.java","app/src/main/java/vn/mocnhien/toan3/NativeUi.java","app/src/main/java/vn/mocnhien/toan3/AdventureScene.java","app/src/main/java/vn/mocnhien/toan3/StoryArt.java","app/src/main/java/vn/mocnhien/toan3/AdventurePanel.java","app/src/main/java/vn/mocnhien/toan3/LearningModule.java","app/src/main/java/vn/mocnhien/toan3/ModulePage.java","app/src/main/java/vn/mocnhien/toan3/QuestionPanel.java","app/src/main/kotlin/vn/mocnhien/toan3/AppModule.kt","app/src/main/kotlin/vn/mocnhien/toan3/ModuleHome.kt","app/src/main/kotlin/vn/mocnhien/toan3/RewardsModule.kt","app/src/main/assets/ui/hero.webp","app/src/main/assets/ui/book.webp","app/src/main/assets/ui/practice.webp","app/src/main/assets/ui/game.webp","app/src/main/assets/ui/reward.webp","app/src/test/java/vn/mocnhien/toan3/KotlinShellParityTest.java",".github/scripts/part4_smoke.py",".github/scripts/ui_upgrade_smoke.py",".github/workflows/verify-native.yml"])
+          allowed.update(["MocNhien-Toan3-assets-step1.zip","tools/prepare_visual_assets.py","tools/visual-assets-requirements.txt","app/src/main/java/vn/mocnhien/toan3/ArtPack.java","app/src/main/java/vn/mocnhien/toan3/MathDiagram.java","app/src/main/kotlin/vn/mocnhien/toan3/GameModule.kt"])
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed,changed-allowed
           print("UI_SCOPE_PASS",sorted(changed))
@@ -54,6 +55,11 @@ jobs:
           python3 -m unittest discover -s .github/scripts -p 'test_ui_scan.py' -v
           python3 -m py_compile .github/scripts/part4_smoke.py .github/scripts/ui_upgrade_smoke.py
           python3 -m unittest discover -s migration -p "test_*.py" -v
+      - name: Prepare native graphics compiler
+        run: |
+          python3 -m venv /tmp/mocnhien-art-venv
+          /tmp/mocnhien-art-venv/bin/pip install -r tools/visual-assets-requirements.txt
+          echo "MOCNH_ART_PYTHON=/tmp/mocnhien-art-venv/bin/python" >> "$GITHUB_ENV"
       - name: Verify data and compile Kotlin and Java
         run: |
           set -euo pipefail
@@ -93,21 +99,27 @@ jobs:
           name: native-unit-test-results
           path: app/build/test-results/testDebugUnitTest/
           if-no-files-found: warn
+      - name: Upload complete visual contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: MocNhien-art-contact-sheet
+          path: app/build/reports/visual-pack/contact-sheet.png
+          if-no-files-found: error
       - name: Package and verify the exact tested APK
         id: package
         run: |
           set -euo pipefail
           mkdir -p output
           test -f app/build/outputs/apk/debug/app-debug.apk
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.1-ui.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.1-ui.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.1-ui.apk | tee output/badging.txt
-          grep -F "package: name='vn.mocnhien.toan3' versionCode='20' versionName='1.2.1-ui'" output/badging.txt
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.1-ui.apk | tee output/permissions.txt
+          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.2-art.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.2-art.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.2-art.apk | tee output/badging.txt
+          grep -F "package: name='vn.mocnhien.toan3' versionCode='21' versionName='1.2.2-art'" output/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.2-art.apk | tee output/permissions.txt
           ! grep -F 'android.permission.INTERNET' output/permissions.txt
           python3 - <<'PY'
           import zipfile,json,hashlib,pathlib
-          p=pathlib.Path("output/MocNhien-Toan3-1.2.1-ui.apk")
+          p=pathlib.Path("output/MocNhien-Toan3-1.2.2-art.apk")
           with zipfile.ZipFile(p) as z:
               assert z.testzip() is None
               assert {'AndroidManifest.xml','classes.dex','assets/runtime_v2.json'} <= set(z.namelist())
@@ -115,16 +127,26 @@ jobs:
               assert len(data['lessons'])==19
               assert data['recordCount']==959
               assert hashlib.sha256(z.read('assets/runtime_v2.json')).hexdigest()=='ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3'
+              manifest=json.loads(z.read('assets/visuals/manifest.json'))
+              assert manifest['runtimeCount']==206 and manifest['questionCount']==959 and len(manifest['stages'])==19
+              assert len(manifest['images'])==206
+              for id,entry in manifest['images'].items():
+                  raw=z.read('assets/'+entry['path'])
+                  assert raw[:4]==b'RIFF' and raw[8:12]==b'WEBP',id
+                  if 'sha256' in entry: assert hashlib.sha256(raw).hexdigest()==entry['sha256'],id
+              assert len([n for n in z.namelist() if n.startswith('assets/visuals/images/') and n.endswith('.webp')])==201
+              assert all(id['id'] in manifest['images'] for items in manifest['decorations'].values() for id in items)
+              print("VISUAL_APK_PASS",len(manifest['images']),len(manifest['decorations']))
               print("APK_ZIP_PASS",p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest())
           PY
-          sha256sum output/MocNhien-Toan3-1.2.1-ui.apk > output/SHA256SUMS.txt
+          sha256sum output/MocNhien-Toan3-1.2.2-art.apk > output/SHA256SUMS.txt
           echo "apk_sha=$(cut -d ' ' -f 1 output/SHA256SUMS.txt)" >> "$GITHUB_OUTPUT"
-          echo "apk_bytes=$(stat -c %s output/MocNhien-Toan3-1.2.1-ui.apk)" >> "$GITHUB_OUTPUT"
+          echo "apk_bytes=$(stat -c %s output/MocNhien-Toan3-1.2.2-art.apk)" >> "$GITHUB_OUTPUT"
       - name: Upload verified installation candidate
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.1-ui
-          path: output/MocNhien-Toan3-1.2.1-ui.apk
+          name: MocNhien-Toan3-1.2.2-art
+          path: output/MocNhien-Toan3-1.2.2-art.apk
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -138,11 +160,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.1-ui
+          name: MocNhien-Toan3-1.2.2-art
           path: output
       - name: Verify exact installation candidate
         run: |
-          printf '%s  %s\n' "$CANDIDATE_SHA" output/MocNhien-Toan3-1.2.1-ui.apk | sha256sum -c -
+          printf '%s  %s\n' "$CANDIDATE_SHA" output/MocNhien-Toan3-1.2.2-art.apk | sha256sum -c -
       - uses: android-actions/setup-android@v3
         with:
           packages: 'platform-tools'
@@ -165,7 +187,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-1.2.1-ui-QA
+          name: MocNhien-1.2.2-art-QA
           path: |
             screenshots/
             output/*.txt
@@ -188,12 +210,12 @@ jobs:
           path: original
       - uses: actions/download-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.1-ui
+          name: MocNhien-Toan3-1.2.2-art
           path: output
       - name: Check original and candidate digests
         run: |
           echo '1b6c1e5c6d219ae49652ac11bb115894b25cf3bf0b56b0cd742641266f933391  original/MocNhien-Toan3-1.2.0-p15.apk' | sha256sum -c -
-          printf '%s  %s\n' "$CANDIDATE_SHA" output/MocNhien-Toan3-1.2.1-ui.apk | sha256sum -c -
+          printf '%s  %s\n' "$CANDIDATE_SHA" output/MocNhien-Toan3-1.2.2-art.apk | sha256sum -c -
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -208,7 +230,7 @@ jobs:
           profile: pixel_2
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
-          script: python3 .github/scripts/ui_upgrade_smoke.py original/MocNhien-Toan3-1.2.0-p15.apk output/MocNhien-Toan3-1.2.1-ui.apk
+          script: python3 .github/scripts/ui_upgrade_smoke.py original/MocNhien-Toan3-1.2.0-p15.apk output/MocNhien-Toan3-1.2.2-art.apk
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -221,11 +243,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.1-ui
+          name: MocNhien-Toan3-1.2.2-art
           path: verified
       - uses: actions/download-artifact@v4
         with:
-          name: MocNhien-1.2.1-ui-QA
+          name: MocNhien-1.2.2-art-QA
           path: qa
       - uses: actions/download-artifact@v4
         with:
@@ -250,14 +272,14 @@ jobs:
           for name in ["M01-home-four-modules","M02-learning","UI-practice-index","M04-rewards","04-adventure-forest"]:
               assert any(p.stem==name for p in shots),name
           PY
-          echo "${{ needs.verify.outputs.apk_sha }}  verified/MocNhien-Toan3-1.2.1-ui.apk" | sha256sum -c -
+          echo "${{ needs.verify.outputs.apk_sha }}  verified/MocNhien-Toan3-1.2.2-art.apk" | sha256sum -c -
       - name: Record acceptance limits
         run: |
-          echo 'Technical candidate only. Manual comparison with approved UI remains required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Technical candidate only. Contact sheet and emulator screenshots require manual visual acceptance.' >> "$GITHUB_STEP_SUMMARY"
           echo '20 MB is a reference, not a minimum or maximum; no padding.' >> "$GITHUB_STEP_SUMMARY"
           echo 'If direct_install=signature_mismatch, do not uninstall on a real device; only verified local backup/recovery with owner consent.' >> "$GITHUB_STEP_SUMMARY"
       - name: Prepare single installation file for visual review
-        run: mv verified/MocNhien-Toan3-1.2.1-ui.apk verified/MocNhien-Toan3.apk
+        run: mv verified/MocNhien-Toan3-1.2.2-art.apk verified/MocNhien-Toan3.apk
       - uses: actions/upload-artifact@v4
         with:
           name: MocNhien-Toan3-final-candidate

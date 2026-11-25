@@ -14,6 +14,20 @@ tasks.register('prepareNativeCurriculum', Exec) {
     outputs.file(generatedBank)
     commandLine 'node', rootProject.file('tools/prepare_curriculum.mjs').absolutePath, generatedBank.get().asFile.absolutePath
 }
+def visualOutput = layout.buildDirectory.dir('generated/visualAssets')
+def visualReport = layout.buildDirectory.file('reports/visual-pack/contact-sheet.png')
+def visualPython = System.getenv('MOCNH_ART_PYTHON') ?: 'python3'
+tasks.register('prepareVisualAssets', Exec) {
+    workingDir rootProject.projectDir
+    inputs.file(rootProject.file('MocNhien-Toan3-assets-step1.zip'))
+    inputs.file(rootProject.file('tools/prepare_visual_assets.py'))
+    inputs.file(rootProject.file('tools/visual-assets-requirements.txt'))
+    inputs.files(fileTree('src/main/assets/curriculum') { include '*.json' })
+    inputs.files(fileTree('src/main/assets/ui') { include '*.webp' })
+    outputs.dir(visualOutput)
+    outputs.file(visualReport)
+    commandLine visualPython, rootProject.file('tools/prepare_visual_assets.py').absolutePath, visualOutput.get().asFile.absolutePath, visualReport.get().asFile.absolutePath
+}
 android {
     namespace 'vn.mocnhien.toan3'
     compileSdk 35
@@ -21,17 +35,17 @@ android {
         applicationId 'vn.mocnhien.toan3'
         minSdk 24
         targetSdk 34
-        versionCode 20
-        versionName '1.2.1-ui'
+        versionCode 21
+        versionName '1.2.2-art'
     }
-    sourceSets { main { assets.srcDir(curriculumOutput) } }
+    sourceSets { main { assets.srcDir(curriculumOutput); assets.srcDir(visualOutput) } }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
     testOptions { unitTests.returnDefaultValues = false }
 }
-tasks.named('preBuild').configure { dependsOn tasks.named('prepareNativeCurriculum') }
+tasks.named('preBuild').configure { dependsOn tasks.named('prepareNativeCurriculum'), tasks.named('prepareVisualAssets') }
 tasks.withType(Test).configureEach {
     dependsOn tasks.named('prepareNativeCurriculum')
     systemProperty 'curriculum.path', generatedBank.get().asFile.absolutePath
