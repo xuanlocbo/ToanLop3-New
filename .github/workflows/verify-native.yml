@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   workflow_call:
   pull_request:
-    branches: [native-curriculum-1.1]
+    branches: [native-curriculum-1.1, part2-game-integration]
   push:
     branches: [native-curriculum-1.1]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
@@ -15,9 +15,11 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -33,6 +35,11 @@ jobs:
         with:
           path: ~/.android/debug.keystore
           key: mocnhien-new-debug-keystore-v1
+      - name: Verify part-01 protected baseline
+        run: |
+          set -euo pipefail
+          git diff --exit-code a61d71012af08c9b0cbf0e26593591675998bc16 HEAD -- app/src/main/assets tools/prepare_curriculum.mjs app/src/main/AndroidManifest.xml app/src/main/java/vn/mocnhien/toan3/{Bank,BookBank,Textbook,ChallengeBank,LearningContent,Curriculum,ProgressStore,RewardLedger,NativeGrader,AdventureWorld,AdventurePlan,AdventurePanel,AdventureScene,BoardState,TrailMission,TrailMissionPanel,QuestionPanel,MathDiagram,GridCanvas,StoryArt,GameAudio,SoundPalette}.java app/src/test/java/vn/mocnhien/toan3/{AdventureTest,NativeCurriculumTest,SoundPaletteTest,TrailMissionTest}.java
+          echo PART01_BASELINE_UNCHANGED
       - name: Verify data and compile Java
         run: |
           node tests/verify_curriculum_v2.mjs
@@ -79,15 +86,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.1.1.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.1.1.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.1.1.apk | tee output/badging.txt
-          grep -F "package: name='vn.mocnhien.toan3' versionCode='3' versionName='1.1.1'" output/badging.txt
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.1.1.apk | tee output/permissions.txt
+          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p01.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p01.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p01.apk | tee output/badging.txt
+          grep -F "package: name='vn.mocnhien.toan3' versionCode='4' versionName='1.2.0-p01'" output/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p01.apk | tee output/permissions.txt
           ! grep -F 'android.permission.INTERNET' output/permissions.txt
           python3 - <<'PY'
           import zipfile,json,hashlib,pathlib
-          p=pathlib.Path("output/MocNhien-Toan3-1.1.1.apk")
+          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p01.apk")
           with zipfile.ZipFile(p) as z:
               assert z.testzip() is None
               assert {'AndroidManifest.xml','classes.dex','assets/runtime_v2.json'} <= set(z.namelist())
@@ -95,12 +102,12 @@ jobs:
               assert len(data['lessons'])==19
               print("APK_ZIP_PASS",p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest())
           PY
-          sha256sum output/MocNhien-Toan3-1.1.1.apk > output/SHA256SUMS.txt
+          sha256sum output/MocNhien-Toan3-1.2.0-p01.apk > output/SHA256SUMS.txt
       - name: Upload verified installation candidate
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-Toan3-1.1.1
-          path: output/MocNhien-Toan3-1.1.1.apk
+          name: MocNhien-Toan3-1.2.0-p01
+          path: output/MocNhien-Toan3-1.2.0-p01.apk
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -123,7 +130,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-1.1.1-QA
+          name: MocNhien-1.2.0-p01-QA
           path: |
             screenshots/
             output/*.txt
