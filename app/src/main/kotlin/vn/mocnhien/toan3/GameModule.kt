@@ -28,7 +28,7 @@ internal class GameModule(context: ModuleContext, container: LinearLayout) : Mod
                 ui.add(group,item)
                 val stageHeader=ui.row()
                 ui.add(item,stageHeader)
-                stageHeader.addView(ui.packArt("stage_"+stage,60),LinearLayout.LayoutParams(ui.dp(106),ui.dp(60)))
+                stageHeader.addView(ui.packArt("stage_"+stage,60),LinearLayout.LayoutParams(ui.dp(106f),ui.dp(60f)))
                 val stageText=ui.column()
                 stageHeader.addView(stageText,LinearLayout.LayoutParams(0,-2,1f))
                 ui.label(stageText,"Bài $stage • "+AdventurePlan.name(stage)+(if(best>=0)"  ✓" else ""),20,true)

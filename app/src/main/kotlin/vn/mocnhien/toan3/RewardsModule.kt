@@ -30,7 +30,7 @@ internal class RewardsModule(context:ModuleContext, container:LinearLayout):Modu
                     ui.weight(row,c,1f)
                     val rewardRow=ui.row()
                     ui.add(c,rewardRow)
-                    rewardRow.addView(ui.packArt(if(earned)"chest_open" else "chest_closed",50),LinearLayout.LayoutParams(ui.dp(56),ui.dp(50)))
+                    rewardRow.addView(ui.packArt(if(earned)"chest_open" else "chest_closed",50),LinearLayout.LayoutParams(ui.dp(56f),ui.dp(50f)))
                     val rewardText=ui.column()
                     rewardRow.addView(rewardText,LinearLayout.LayoutParams(0,-2,1f))
                     ui.label(rewardText,"Bài "+l+" • "+(if(earned)"Kho báu đã mở 🎁" else "Kho báu đang chờ"),19,true)
