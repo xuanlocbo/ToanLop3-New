@@ -11,3 +11,5 @@ Các phần sau cập nhật baseline SHA/run-id, tên APK, phiên bản, phạm
 - Recheck 45555229950 fail tại selector Bài 40 dù APK và guard đạt. Sửa tìm kiếm UI theo viewport trong .github/scripts/ui_scan.py, kiểm thử riêng bằng test_ui_scan.py; giữ nguyên bài kiểm thử chức năng. Guard cho phép đúng ba tệp hạ tầng kiểm thử, không đổi mã app/registry/APK. Phần 8 phải kế thừa commit đã sửa sau khi CI đạt và gỡ pin recheck p07 khi build ứng viên mới.
 
 - Bản hợp nhất p15: CI biên dịch/đóng gói chính xác, sau đó Android regression và migration chạy độc lập từ cùng APK, acceptance chỉ chạy nếu cả hai đạt. Chuyển p07 → p15 chỉ được phép trong CI qua --consolidated-final đúng cặp và hash; registry trên đĩa không đổi trước nghiệm thu. Không có p08–p14 giả. Giữ bộ test đã có và bổ sung test chức năng.
+
+- Final p15 dùng PR riêng trên base v1.2-part07-rainbow. Một job đóng gói và hai job Android/migration độc lập chạy từ đúng APK hash; acceptance yêu cầu cả hai. Bảo toàn registry p07 đến khi xác nhận bản p15. Không giảm bộ hồi quy cũ; không tự merge hoặc ký phát hành.

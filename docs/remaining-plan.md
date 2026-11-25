@@ -34,3 +34,5 @@ Cập nhật: phần 7 đã ĐẠT CI tích hợp 45548847319 và rà soát 12 �
 
 ## Quyết định mới nhất của người dùng: một đợt hoàn thiện cuối
 Gộp 8–15 thành v1.2-final, không yêu cầu xác nhận trung gian. Phạm vi sách đã khóa Bài 26–44 theo docs/01-curriculum-scope.md, không thêm Bài 25 ngoài phạm vi chốt. Bảo toàn 959 mục và schema. Nghiệm thu một lần sau CI và rà soát ảnh; bản debug chưa phải release đã ký.
+
+Bản cuối p15: đã cấu hình CI kiểm thử tổng thể, nâng cấp/khôi phục p07↔p15 và biên bản kỹ thuật chung. Không mở lại các phần 8–14. #47 và final kiểm thử độc lập; không công nhận p15 khi chưa đủ bằng chứng.

@@ -98,7 +98,7 @@ final class FinalStationArt extends View {
                 text("0",x,h*.97f,12*dp,NativeUi.INK);
                 text(m.target+" "+m.unit,x+goal,h*.97f,12*dp,NativeUi.INK);
             }else{
-                int count=m.actionCount(),cols=Math.min(8,count);float cell=Math.min(w/(cols+1),h*.43f),start=(w-cols*cell)/2;
+                int count=m.actionCount(),cols=Math.min(8,count);float cell=Math.min(w/(cols+1),h*.81f/((count+cols-1)/cols)),start=(w-cols*cell)/2;
                 for(int i=0;i<count;i++){float x=start+(i%cols)*cell,y=h*.04f+(i/cols)*cell;
                     box(x+3,y+3,x+cell-3,y+cell-3,m.selected(s,i)?colors[i%4]:0xffe9dce5);
                     if(m.lesson==41){
