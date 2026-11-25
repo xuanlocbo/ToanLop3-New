@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local, two-phase migration of exact CI-tested debug p01/p02 APKs; no root/network."""
+"""Local, two-phase migration of registered exact debug APKs (p01 onward); no root/network."""
 import argparse, hashlib, json, os, re, subprocess, sys, tempfile, zipfile
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -7,7 +7,8 @@ import xml.etree.ElementTree as ET
 PKG="vn.mocnhien.toan3"
 PREF="shared_prefs/native_curriculum_progress_v2.xml"
 HASHES={"p01":"b84c4bacb182681fe79c3f23df37b937465996abf62866d9648b870d7299164e",
-        "p02":"feccf5b3689aba11081014191da9f499a3ad166f5df16c4e68a00c988cf99cb9"}
+        "p02":"feccf5b3689aba11081014191da9f499a3ad166f5df16c4e68a00c988cf99cb9",
+        "p03":"e912743d457e27ea56dbc9bf89fe40ab317d76c270dfc206d315a59c09335f19"}
 BANK="ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3"
 MAPS=("drafts","done","review","claims","nav","adventures","adventureBest","deferredBonus")
 class MigrationError(RuntimeError): pass
@@ -39,7 +40,7 @@ def version(path):
     path=Path(path)
     h=sha(path.read_bytes())
     found=[v for v,d in HASHES.items() if h==d]
-    need(len(found)==1,"APK is not an exact verified p01/p02 build")
+    need(len(found)==1,"APK is not an exact registered build")
     with zipfile.ZipFile(path) as z:
         need(z.testzip() is None and sha(z.read("assets/runtime_v2.json"))==BANK,"APK integrity failed")
     return found[0]
@@ -53,9 +54,11 @@ def verify(folder,serial):
     need(m.get("schema")==1 and m.get("package")==PKG and m.get("serial")==serial,"Wrong backup or device")
     need(m.get("source") in HASHES,"Unknown source")
     h=m.get("sha256")
-    need(isinstance(h,dict) and set(h)=={"p01.apk","p02.apk","progress.xml"},"Invalid manifest")
+    need(isinstance(h,dict) and len(h)==3 and "progress.xml" in h,"Invalid manifest")
+    apk_names=set(h)-{"progress.xml"}
+    need(apk_names<={v+".apk" for v in HASHES} and m["source"]+".apk" in apk_names,"Invalid APK pair")
     for name,digest in h.items(): need(sha((folder/name).read_bytes())==digest,"Damaged backup: "+name)
-    for v in HASHES: need(version(folder/(v+".apk"))==v,"Wrong APK")
+    for name in apk_names: need(version(folder/name)==Path(name).stem,"Wrong APK")
     raw=(folder/"progress.xml").read_bytes()
     validate(raw)
     return raw
@@ -147,9 +150,12 @@ def switch(d,folder,target,confirmed=False):
     need(target in HASHES,"Unknown target")
     raw=verify(folder,d.serial)
     apk=folder/(target+".apk")
+    manifest=parse_json((folder/"manifest.json").read_bytes())
+    need(apk.name in manifest["sha256"] and version(apk)==target,"Target absent from verified backup")
     d.stop()
     old=d.current()
     if old is not None:
+        need(old+".apk" in manifest["sha256"],"Installed version not in backup pair")
         current=d.read()
         need(current==raw or (old==target and current is None),"Progress changed; create fresh backup")
         if old==target:
@@ -162,16 +168,16 @@ def switch(d,folder,target,confirmed=False):
         print("Different signing certificates may require removing the old debug app.")
         need(input("Type SWITCH "+target+" to confirm: ").strip()=="SWITCH "+target,"Cancelled")
     # Recheck after confirmation, before any package removal.
-    need(verify(folder,d.serial)==raw,"Backup changed")
+    need(verify(folder,d.serial)==raw and parse_json((folder/"manifest.json").read_bytes())==manifest,"Backup changed")
     d.preflight(); d.stop()
     need(d.current()==old,"Installed APK changed")
     if old is not None:
         need(d.read()==raw,"Progress changed")
         status=d.install(apk,True)
         if status!="success":
-            need(status=="signature_mismatch" or (target=="p01" and status=="version_downgrade"),"Unsafe install failure")
+            need(status=="signature_mismatch" or (int(target[1:])<int(old[1:]) and status=="version_downgrade"),"Unsafe install failure")
             need(d.current()==old and d.read()==raw,"Rejected install changed source")
-            need(verify(folder,d.serial)==raw,"Backup changed")
+            need(verify(folder,d.serial)==raw and parse_json((folder/"manifest.json").read_bytes())==manifest,"Backup changed")
             print("REPLACEMENT_REQUIRED",status,flush=True)
             d.uninstall()
             d.install(apk,False)
