@@ -21,8 +21,8 @@ android {
         applicationId 'vn.mocnhien.toan3'
         minSdk 24
         targetSdk 34
-        versionCode 19
-        versionName '1.2.0-p15'
+        versionCode 20
+        versionName '1.2.1-ui'
     }
     sourceSets { main { assets.srcDir(curriculumOutput) } }
     compileOptions {

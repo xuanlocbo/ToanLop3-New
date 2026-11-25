@@ -23,7 +23,7 @@ final class AdventureScene extends View {
     static final int[] SKY={0xffffdce9,0xffd6f3fa,0xffe5ddff,0xffffe9d3};
     static final int[] HILL={0xffc9eeb9,0xffb2ddda,0xffc7b8ed,0xfff3beca};
     static final int[] GRASS={0xff8bc9a4,0xff73c9c1,0xffb6a4e3,0xfff4a7bb};
-    static final int[] SOIL={0xffd59a8d,0xff8ebdbb,0xffaa96cb,0xffd99b9a};
+    static final int[] SOIL={0xffad7754,0xff8ebdbb,0xffaa96cb,0xffd99b9a};
     static final float GROUND=174,HEIGHT=236;
     AdventureScene(Context c,AdventureWorld world,AdventureWorld.State state){
         super(c);this.world=world;this.state=state;
@@ -80,7 +80,7 @@ final class AdventureScene extends View {
             float x=70+i*118;if(x<camera-70||x>camera+w+70)continue;
             art.tree(c,x,GROUND,.93f+(i%3)*.11f,theme,i+world.lesson);
         }
-        fill(0xff8cd0e5);p.setShader(new LinearGradient(0,GROUND,0,HEIGHT,0xffb4e9f1,0xff7fb5dc,Shader.TileMode.CLAMP));c.drawRect(camera,GROUND,camera+w,HEIGHT,p);p.setShader(null);
+        fill(0xff8cd0e5);p.setShader(new LinearGradient(0,GROUND,0,HEIGHT,theme==0?0xff5ed9f7:0xffb4e9f1,theme==0?0xff148cc7:0xff7fb5dc,Shader.TileMode.CLAMP));c.drawRect(camera,GROUND,camera+w,HEIGHT,p);p.setShader(null);
         for(int i=(int)(camera/37);i<=(camera+w)/37+1;i++){
             float drift=3*pulse,yy=GROUND+13+(i%2)*7;
             line(i*37+drift,yy,i*37+18+drift,yy,1.7f,0xdfffffff);

@@ -19,6 +19,12 @@ public final class KotlinShellParityTest {
         }
     }
 
+    @Test public void workbookShortcutUsesLearningModule(){
+        assertTrue(AppModule.known("practice"));
+        assertEquals(AppModule.LEARNING,AppModule.owner("practice",false));
+        assertEquals("home",AppModule.back("practice",false));
+    }
+
     @Test public void everyLegacyScreenAndBackRoute(){
         String[] screens={"home","learn","lesson","list","question","adventure","game","gate","awards","progress","review","settings",null,"unknown",""};
         AppModule L=AppModule.LEARNING,G=AppModule.GAME,R=AppModule.REWARDS,P=AppModule.PROGRESS;

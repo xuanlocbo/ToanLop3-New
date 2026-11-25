@@ -73,7 +73,11 @@ final class QuestionPanel extends LinearLayout {
     void drawing(LinearLayout p,View diagram,int height){LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,ui.dp(height));lp.setMargins(0,ui.dp(5),0,ui.dp(5));p.addView(diagram,lp);}
     String source(){String book=q.optString("book");return book.equals("BONUS")?"Thử thách kho báu • Câu "+q.optInt("exercise"):book+" • Trang "+q.optInt("page")+" • "+(book.equals("VBT")?"Tiết "+q.optInt("period")+" • ":"")+"Bài tập "+q.optInt("exercise")+" • "+q.optString("part");}
     void render(){
-        rebuilding=true;removeAllViews();ui.caption(this,source());ui.label(this,q.optString("prompt"),25,true);
+        rebuilding=true;removeAllViews();ui.caption(this,source());
+        TextView prompt=ui.text(q.optString("prompt"),ui.compact()?23:26,true);
+        if(q.optString("prompt").length()<55)prompt.setGravity(android.view.Gravity.CENTER);
+        prompt.setPadding(ui.dp(7),ui.dp(9),ui.dp(7),ui.dp(9));
+        prompt.setBackground(ui.bg(NativeUi.PALE,18));ui.add(this,prompt);
         boolean correct="correct".equals(draft.optString("status"));
         if(correct){
             LinearLayout win=ui.card(NativeUi.MINT);ui.add(this,win);
@@ -82,7 +86,7 @@ final class QuestionPanel extends LinearLayout {
             int earned=draft.optInt("earned");
             TextView award=ui.badge(earned>0?"★ +"+earned+" sao hồng":"✓ Đã lưu kết quả",earned>0?NativeUi.GOLD:NativeUi.WHITE);ui.add(win,award);
             ui.label(win,Part05Tutor.solution(q),20,false);LinearLayout row=ui.row();ui.add(win,row);
-            if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng →":"Tiếp tục →",NativeUi.GREEN,host::next);
+            if(!inAdventure())ui.smallAction(row,"Làm lại",NativeUi.PALE,this::clear);ui.smallAction(row,inAdventure()?"Qua cổng →":"Tiếp tục →",NativeUi.PINK,host::next);
             if(celebrateNext){win.setAlpha(.65f);win.setTranslationY(ui.dp(6));win.animate().alpha(1f).translationY(0).setDuration(230).start();win.post(()->row.requestRectangleOnScreen(new android.graphics.Rect(0,0,row.getWidth(),row.getHeight()),false));}
             celebrateNext=false;rebuilding=false;return;
         }
@@ -201,9 +205,23 @@ final class QuestionPanel extends LinearLayout {
     void options(LinearLayout p,boolean multi){
         JSONArray choices=Json.arr(v,"options");
         ui.label(p,multi?"Chạm chọn tất cả đáp án đúng":"Chọn một đáp án",18,true);
-        for(Object x:Json.list(choices)){
+        List<Object> values=Json.list(choices);
+        boolean grid=ui.widthDp()>=320&&values.size()>=2&&values.size()<=8;
+        for(Object x:values)if(Json.str(x).length()>16)grid=false;
+        int[] palette={NativeUi.PALE,NativeUi.GOLD,NativeUi.SKY,NativeUi.LAV};
+        LinearLayout line=null;
+        for(int i=0;i<values.size();i++){
+            final Object x=values.get(i);
             boolean checked=multi?Json.contains(Json.arr(draft,"values"),x):Json.same(draft.opt("value"),x);
-            button(p,(checked?"✓  ":"")+Json.str(x),checked?NativeUi.MINT:NativeUi.PALE,()->{if(multi)toggle("values",x);else set("value",x,true);});
+            Button choice=ui.button((checked?"✓  ":"")+Json.str(x),checked?NativeUi.MINT:palette[i%4],
+                ()->{if(multi)toggle("values",x);else set("value",x,true);});
+            choice.setTextSize(grid?24:20);
+            choice.setMinHeight(ui.dp(grid?66:50));
+            if(grid){
+                if(i%2==0){line=ui.row();ui.add(p,line);}
+                ui.weight(line,choice,1);
+                if(i==values.size()-1&&i%2==0)ui.weight(line,new Space(ui.c),1);
+            }else ui.add(p,choice);
         }
     }
     void pointSelect(LinearLayout p){JSONArray opts=Json.array(Json.keys(Json.obj(v,"points")));for(Object x:Json.list(opts))button(p,(Json.same(draft.opt("value"),x)?"✓  ":"")+"Điểm "+Json.str(x),Json.same(draft.opt("value"),x)?NativeUi.MINT:NativeUi.PALE,()->set("value",x,true));}

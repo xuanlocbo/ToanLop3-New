@@ -14,7 +14,7 @@ enum class AppModule(
     companion object {
         @JvmStatic
         fun known(route: String?): Boolean = when (route) {
-            "home", "learn", "lesson", "list", "question",
+            "home", "learn", "practice", "lesson", "list", "question",
             "adventure", "game", "gate", "awards",
             "progress", "review", "settings" -> true
             else -> false
@@ -22,7 +22,7 @@ enum class AppModule(
 
         @JvmStatic
         fun owner(route: String?, reviewMode: Boolean): AppModule? = when (route) {
-            "learn", "lesson", "list" -> LEARNING
+            "learn", "practice", "lesson", "list" -> LEARNING
             "question" -> if (reviewMode) PROGRESS else LEARNING
             "adventure", "game", "gate" -> GAME
             "awards" -> REWARDS

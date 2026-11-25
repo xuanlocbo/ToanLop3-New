@@ -6,15 +6,20 @@ import android.widget.LinearLayout
 /** Native Kotlin presentation, reading the existing ledger without creating claims. */
 internal class RewardsModule(context:ModuleContext, container:LinearLayout):ModulePage(context,container) {
     fun show(){
-        ui.label(body,"Phần thưởng",26,true)
-        val game=ui.card(NativeUi.LAV);ui.add(body,game)
         val best=(26..44).map{store.adventureBest(it)}.filter{it>=0}
-        ui.label(game,"🐇 Huy hiệu phiêu lưu: "+best.size+"/19 • ✿ "+best.sum()+"/228",22,true)
-        val summary=ui.card(NativeUi.GOLD);ui.add(body,summary)
-        ui.label(summary,"★  "+store.balance()+" sao hồng",30,true)
-        ui.label(summary,"🎁  "+(26..44).count{chest(it)}+" / 19 kho báu đã mở",23,true)
+        val summary=ui.card(NativeUi.WHITE);ui.add(body,summary)
+        val stats=ui.row();summary.addView(stats)
+        stats.addView(ui.art("reward",94),LinearLayout.LayoutParams(ui.dp(110f),ui.dp(94f)))
+        val scores=ui.column();stats.addView(scores,LinearLayout.LayoutParams(0,-2,1f))
+        ui.label(scores,"★  "+store.balance()+" sao hồng",26,true)
+        ui.label(scores,"🏅  "+best.size+" / 19 huy hiệu",20,true)
+        ui.label(summary,"🎁  "+(26..44).count{chest(it)}+" / 19 kho báu đã mở",20,true)
         progress(summary,completed(),bank.questions.size)
         ui.caption(summary,"Sao, kho báu và huy hiệu đã đạt sẽ không mất khi chơi lại.")
+        val game=ui.card(NativeUi.LAV);ui.add(body,game)
+        ui.label(game,"Thành tích phiêu lưu",21,true)
+        ui.caption(game,"Huy hiệu: "+best.size+"/19 • Hoa: "+best.sum()+"/228")
+        ui.label(body,"Kho báu theo bài học",22,true)
         val cols=if(ui.widthDp()>=640)2 else 1
         for(region in regions.indices){
             ui.label(body,regionArt[region]+" "+regions[region],22,true)

@@ -27,12 +27,16 @@ def wait(seconds=.35):
     time.sleep(seconds)
 
 def capture(name):
-    wait(.25)
+    wait(.6)
     data = adb("exec-out", "screencap", "-p")
     assert data.startswith(b"\x89PNG\r\n\x1a\n"), name
     import struct
     width,height = struct.unpack(">II",data[16:24])
-    assert width > height and width >= 720, (name,width,height)
+    assert min(width,height) >= 720, (name,width,height)
+    if name in ("M01-home-four-modules","M02-learning","M03-game","M04-rewards","M05-progress","UI-practice-index","UI-practice-vbt","02-sgk-example","13-settings"):
+        assert height > width, (name,"expected portrait",width,height)
+    if name in ("04-adventure-forest","05-game-resume","06-pour-empty","10-lake","11-crystal","12-castle"):
+        assert width > height, (name,"expected landscape",width,height)
     (OUT / (name+".png")).write_bytes(data)
     print("SCREENSHOT",name,width,height,len(data),flush=True)
 
@@ -99,7 +103,7 @@ def click(pattern,cls="android.widget.Button",desc=False,scrollable=True):
     n=find(pattern,cls,desc,scrollable)
     x1,y1,x2,y2=bounds(n)
     adb("shell","input","tap",(x1+x2)//2,(y1+y2)//2)
-    wait(.3)
+    wait(.65)
 
 def snapshot():
     raw=adb("exec-out","run-as",PKG,"cat",PREF)
@@ -157,7 +161,7 @@ adb("shell","pm","clear",PKG)
 adb("shell","settings","put","secure","show_ime_with_hard_keyboard","1")
 launch()
 # Module entries must all be visible on the first screen without scrolling.
-for title in ("Học bài","Chơi game","Phần thưởng","Tiến độ"):
+for title in ("Bài học","Luyện tập","Trò chơi","Phần thưởng","Trang chủ","Tiến độ","Kho báu","Cài đặt"):
     find("^"+title+"$",cls="android.widget.Button",scrollable=False)
 capture("M01-home-four-modules")
 def route(expected):
@@ -170,26 +174,42 @@ def business_state():
     s.pop("nav",None)
     return s
 
-click(r"^Học bài$",scrollable=False)
+# Practice is a real route to the original workbook, not a mockup.
+click(r"^Luyện tập$",scrollable=False)
+route("practice")
+before_practice=business_state()
+capture("UI-practice-index")
+click(r"^Bài 26$")
+route("list")
+assert snapshot()["nav"]["book"]=="vbt"
+capture("UI-practice-vbt")
+assert business_state()==before_practice
+click(r"^Trang chủ$",scrollable=False)
+route("home")
+click(r"^Phần thưởng$",scrollable=False)
+route("awards")
+assert business_state()==before_practice
+module_back()
+click(r"^Bài học$",scrollable=False)
 route("learn")
-find(r"^Học bài$",cls="android.widget.TextView",scrollable=False)
+find(r"^Bài học$",cls="android.widget.TextView",scrollable=False)
 capture("M02-learning")
 baseline=business_state()
 module_back()
-click(r"^Chơi game$",scrollable=False)
+click(r"^Trò chơi$",scrollable=False)
 route("adventure")
-find(r"^Chơi game$",cls="android.widget.TextView",scrollable=False)
+find(r"^Trò chơi$",cls="android.widget.TextView",scrollable=False)
 capture("M03-game")
 assert business_state()==baseline
 # Switch modules through the actual persistent navigation bar.
-click(r"^Phần thưởng$",scrollable=False)
+click(r"^Kho báu$",scrollable=False)
 route("awards")
-find(r"^Phần thưởng$",cls="android.widget.TextView",scrollable=False)
+find(r"^Kho báu học tập$",cls="android.widget.TextView",scrollable=False)
 capture("M04-rewards")
 assert business_state()==baseline
 restart()
 route("awards")
-find(r"^Phần thưởng$",cls="android.widget.TextView",scrollable=False)
+find(r"^Kho báu học tập$",cls="android.widget.TextView",scrollable=False)
 click(r"^Tiến độ$",scrollable=False)
 route("progress")
 find(r"^Tiến độ$",cls="android.widget.TextView",scrollable=False)
@@ -204,13 +224,13 @@ click(r"^Quay lại$",desc=True,scrollable=False)
 route("progress")
 module_back()
 assert business_state()==baseline
-click(r"^Học bài$",scrollable=False)
+click(r"^Bài học$",scrollable=False)
 route("learn")
 # Actual navigation and completion of an original SGK example.
-click(r"^Bài 26\s+\d+/\d+")
+click(r"^Bài 26$")
 click(r"^Mở Sách giáo khoa$")
 click(r"Bắt đầu / tiếp tục mục chưa hoàn thành")
-find(r"48 : 2",scrollable=False)
+find(r"48 : 2")
 capture("02-sgk-example")
 click(r"^Em đã hiểu$")
 find(r"Đã học xong")
@@ -230,7 +250,7 @@ route("lesson")
 adb("shell","input","keyevent","4")
 route("learn")
 module_back()
-click(r"^Chơi game$",scrollable=False)
+click(r"^Trò chơi$",scrollable=False)
 route("adventure")
 click(r"^Bắt đầu$")
 find(r"Phải",cls="android.widget.Button",scrollable=False)
@@ -287,7 +307,7 @@ assert snapshot()["adventures"]["32"]["motion"]["gate"]==1
 click(r"Bản đồ",scrollable=False)
 route("adventure")
 after_score=business_state()
-click(r"^Phần thưởng$",scrollable=False)
+click(r"^Kho báu$",scrollable=False)
 route("awards")
 find(r"10 sao hồng",cls="android.widget.TextView")
 capture("M06-rewards-after-game")
@@ -330,10 +350,12 @@ print("PART01_MODULE_EMULATOR_SMOKE_PASS",flush=True)
 print("PART4_EMULATOR_SMOKE_PASS",flush=True)
 # Part 02: open each actual mini-lesson, reveal steps, and verify no state mutation.
 before_guides=business_state()
-click(r"^Học bài$",scrollable=False)
+click(r"^Trang chủ$",scrollable=False)
+route("home")
+click(r"^Bài học$",scrollable=False)
 route("learn")
 for l in range(26,30):
-    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    click(r"^Bài "+str(l)+r"$")
     route("lesson")
     click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
     find(r"Hiểu bài trước khi luyện")
@@ -355,7 +377,7 @@ print("PART02_GUIDES_AND_STATE_PASS",flush=True)
 # Part 03: actual optional measurement lesson, one guided example in each lesson.
 before_measurement=business_state()
 for l in range(30,36):
-    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    click(r"^Bài "+str(l)+r"$")
     route("lesson")
     click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
     click(r"^Xem bước 1$")
@@ -374,7 +396,7 @@ print("PART03_MEASUREMENT_GUIDES_PASS",flush=True)
 # Part 04: one real stepwise guide in each lesson; no rewards or progress mutations.
 before_arithmetic=business_state()
 for l in range(36,41):
-    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    click(r"^Bài "+str(l)+r"$")
     route("lesson")
     click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
     click(r"^Xem bước 1$")
@@ -393,7 +415,7 @@ print("PART04_ARITHMETIC_GUIDES_PASS",flush=True)
 # Part 05: real review screens, all four lessons, no state mutation.
 before_review_guides=business_state()
 for l in range(41,45):
-    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    click(r"^Bài "+str(l)+r"$")
     route("lesson")
     click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
     click(r"^Xem bước 1$")

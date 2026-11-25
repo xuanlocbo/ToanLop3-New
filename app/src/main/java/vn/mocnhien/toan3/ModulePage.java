@@ -33,10 +33,7 @@ abstract class ModulePage {
     int reviewCount(){return ctx.reviewCount();}
     boolean chest(int l){return ctx.chest(l);}
     void progress(LinearLayout p,int current,int total){
-        ProgressBar bar=new ProgressBar(ui.c,null,android.R.attr.progressBarStyleHorizontal);
-        bar.setMax(Math.max(1,total));bar.setProgress(current);bar.setProgressTintList(android.content.res.ColorStateList.valueOf(NativeUi.PINK));
-        bar.setProgressBackgroundTintList(android.content.res.ColorStateList.valueOf(0xffeedce6));
-        LinearLayout.LayoutParams progressLp=new LinearLayout.LayoutParams(-1,ui.dp(12));progressLp.setMargins(ui.dp(5),ui.dp(4),ui.dp(5),ui.dp(3));p.addView(bar,progressLp);
+        ui.meter(p,current,total,current==total&&total>0?NativeUi.GREEN:NativeUi.PINK);
         ui.label(p,current+" / "+total+" mục đã hoàn thành",16,true);
     }
     void questionItem(JSONObject q,int index,boolean fromReview){

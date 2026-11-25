@@ -33,8 +33,8 @@ final class AdventurePanel extends LinearLayout {
         addView(scene,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout controls=ui.row();controls.setMotionEventSplittingEnabled(true);ui.pad(controls,3);
         addView(controls,new LinearLayout.LayoutParams(-1,-2));
-        left=ui.button("◀  Trái",NativeUi.LAV,()->tap(-1));
-        right=ui.button("Phải  ▶",NativeUi.LAV,()->tap(1));
+        left=ui.button("◀  Trái",NativeUi.PINK,()->tap(-1));
+        right=ui.button("Phải  ▶",NativeUi.PINK,()->tap(1));
         jump=ui.button("↑  Nhảy",NativeUi.PINK,()->{if(playable())jumpQueued=true;});
         for(Button control:new Button[]{left,right,jump})control.setMinHeight(ui.dp(56));
         left.setContentDescription("Giữ để đi sang trái");
@@ -42,7 +42,7 @@ final class AdventurePanel extends LinearLayout {
         jump.setContentDescription("Nhảy qua chướng ngại vật");
         attachDirection(left,-1);attachDirection(right,1);
         ui.weight(controls,left,1);ui.weight(controls,right,1);ui.weight(controls,jump,1);
-        action=ui.button("Giải toán để mở cổng",NativeUi.GREEN,()->{
+        action=ui.button("Giải toán để mở cổng",NativeUi.ORANGE,()->{
             if(disposed)return;
             if(blocked){if(flush()){blocked=false;update();start();}return;}
             if(!flush())return;
