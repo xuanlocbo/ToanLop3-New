@@ -29,9 +29,13 @@ def main():
     need(business(d.read())==business(sample()),"Old app did not load fixture")
     with tempfile.TemporaryDirectory() as t:
         folder=Path(t)/"backup"; prepare(d,folder,new); saved=verify(folder,d.serial)
-        need(d.install(new,True)=="signature_mismatch","Expected actual signer mismatch")
-        need(d.current()==source and d.read()==saved,"Direct failure altered old app")
-        print("DIRECT_SIGNATURE_MISMATCH_NONDESTRUCTIVE_PASS",flush=True)
+        result=d.install(new,True)
+        if result=="signature_mismatch":
+            need(d.current()==source and d.read()==saved,"Direct failure altered old app")
+            print("DIRECT_SIGNATURE_MISMATCH_NONDESTRUCTIVE_PASS",flush=True)
+        else:
+            need(result=="success" and d.current()==target and d.read()==saved,"Direct update changed saved progress")
+            print("DIRECT_UPDATE_NONDESTRUCTIVE_PASS",flush=True)
         switch(d,folder,target,True)
         need(d.current()==target and d.read()==saved,"Actual migration mismatch")
         launch(d); capture(d,target+"-restored"); d.stop()

@@ -8,7 +8,8 @@ PKG="vn.mocnhien.toan3"
 PREF="shared_prefs/native_curriculum_progress_v2.xml"
 HASHES={"p01":"b84c4bacb182681fe79c3f23df37b937465996abf62866d9648b870d7299164e",
         "p02":"feccf5b3689aba11081014191da9f499a3ad166f5df16c4e68a00c988cf99cb9",
-        "p03":"e912743d457e27ea56dbc9bf89fe40ab317d76c270dfc206d315a59c09335f19"}
+        "p03":"e912743d457e27ea56dbc9bf89fe40ab317d76c270dfc206d315a59c09335f19",
+        "p04":"7eefb9dbeb2b92e9b4a8ac93ef464044f8763eed745b3f38319e7be8a2bd5a29"}
 BANK="ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3"
 MAPS=("drafts","done","review","claims","nav","adventures","adventureBest","deferredBonus")
 class MigrationError(RuntimeError): pass
