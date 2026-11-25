@@ -50,9 +50,27 @@ jobs:
                    "docs/15-part-handoff.md","docs/kotlin-migration.md","docs/remaining-plan.md","docs/ci-continuous.md",
                    "app/src/main/java/vn/mocnhien/toan3/MainActivity.java",
                    "app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationSession.kt","app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationPanel.kt",
-                   "app/src/test/java/vn/mocnhien/toan3/RainbowStationTest.java","migration/ci_candidate.py"}
+                   "app/src/test/java/vn/mocnhien/toan3/RainbowStationTest.java","migration/ci_candidate.py",
+                   "migration/migrate_p01_p02.py","migration/README.md","migration/test_ci_candidate.py"}
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed, changed-allowed
+          # A handoff-only recheck must not substitute a rebuilt APK for the accepted artifact.
+          accepted="606a8aa2f35899050a37efc3bd05a2a5260fcc98"
+          handoff="996a85b8d284b7a839467e46ee480b3c1931ff50"
+          handoff_allowed={"docs/15-part-handoff.md","docs/kotlin-migration.md","docs/remaining-plan.md",
+                           "docs/ci-continuous.md","migration/README.md","migration/migrate_p01_p02.py",
+                           "migration/ci_candidate.py","migration/test_ci_candidate.py",".github/workflows/verify-native.yml"}
+          after=set(subprocess.check_output(["git","diff","--no-renames","--name-only",accepted,"HEAD"],text=True).splitlines())
+          assert after<=handoff_allowed, after-handoff_allowed
+          # The registry and its instructions must match the exact handoff, not arbitrary edits.
+          for path in ("migration/migrate_p01_p02.py","migration/README.md"):
+              assert Path(path).read_bytes()==subprocess.check_output(["git","show",handoff+":"+path]), path
+          registry="migration/migrate_p01_p02.py"
+          original=subprocess.check_output(["git","show",accepted+":"+registry],text=True)
+          before='        "p06":"a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02"}'
+          after_line=before[:-1]+',\n        "p07":"1fb1c7fced612717380fc57e0c698570453661b0997bb9274f378628f3fbccec"}'
+          assert original.count(before)==1 and Path(registry).read_text()==original.replace(before,after_line), "Only exact p07 registration is permitted"
+          print("PART07_HANDOFF_SOURCE_AND_REGISTRY_PASS")
           for cls in ("RainbowStationSession","RainbowStationPanel"):
               assert Path("app/src/main/kotlin/vn/mocnhien/toan3/"+cls+".kt").is_file()
           print("PART07_PROTECTED_BASELINE_PASS",sorted(changed))
@@ -96,12 +114,23 @@ jobs:
           name: native-unit-test-results
           path: app/build/test-results/testDebugUnitTest/
           if-no-files-found: warn
+      - name: Retrieve the immutable accepted p07 APK
+        uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p07
+          run-id: 45548847319
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: accepted-apk
       - name: Package and verify the exact tested APK
         id: package
         run: |
           set -euo pipefail
           mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p07.apk
+          # Compilation and unit tests above still run against current source.
+          # Re-test the registered byte-for-byte APK, not the newly signed debug build.
+          test -f app/build/outputs/apk/debug/app-debug.apk
+          cp accepted-apk/MocNhien-Toan3-1.2.0-p07.apk output/MocNhien-Toan3-1.2.0-p07.apk
+          echo '1fb1c7fced612717380fc57e0c698570453661b0997bb9274f378628f3fbccec  output/MocNhien-Toan3-1.2.0-p07.apk' | sha256sum -c -
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p07.apk
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p07.apk | tee output/badging.txt
           grep -F "package: name='vn.mocnhien.toan3' versionCode='11' versionName='1.2.0-p07'" output/badging.txt
@@ -198,7 +227,7 @@ jobs:
           profile: pixel_2
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
-          script: python3 migration/ci_candidate.py --source p06 --target p07 --source-apk migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk --target-apk migration-apks/p07/MocNhien-Toan3-1.2.0-p07.apk --target-sha "$CANDIDATE_SHA"
+          script: python3 migration/ci_candidate.py --source p06 --target p07 --source-apk migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk --target-apk migration-apks/p07/MocNhien-Toan3-1.2.0-p07.apk --target-sha "$CANDIDATE_SHA" --registered-recheck
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -247,14 +276,14 @@ jobs:
           proof=json.loads((e/"migration"/"migration-proof.json").read_text())
           apk=e/"apk"/"MocNhien-Toan3-1.2.0-p07.apk"
           sha=hashlib.sha256(apk.read_bytes()).hexdigest()
-          assert sha==os.environ["CANDIDATE_SHA"]==proof["target_sha256"]
+          assert sha==os.environ["CANDIDATE_SHA"]==proof["target_sha256"]=="1fb1c7fced612717380fc57e0c698570453661b0997bb9274f378628f3fbccec"
           assert apk.stat().st_size==int(os.environ["CANDIDATE_BYTES"])
           assert proof["source"]=="p06" and proof["target"]=="p07"
           assert proof["source_sha256"]=="a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02"
           assert proof["upgrade"]==proof["recovery"]=="pass"
           data={"part":7,"version":"1.2.0-p07","technical_gate":"pass",
                 "commit":os.environ["GITHUB_SHA"],"run_id":os.environ["GITHUB_RUN_ID"],
-                "source_run":45544219876,"apk_sha256":sha,"apk_bytes":apk.stat().st_size,
+                "source_run":45544219876,"recheck_of_run":45548847319,"apk_sha256":sha,"apk_bytes":apk.stat().st_size,
                 "unit_tests":count,"android_screens":len(app_screens),
                 "migration_screens":len(migration_screens),"migration":proof,
                 "limits":"Debug APK; Android emulator; visual review and handoff still required; no physical-device or release-signing claim."}
@@ -265,7 +294,7 @@ jobs:
               f.write("Commit: "+data["commit"]+"\n\n")
               f.write("APK SHA-256: "+sha+"\n\n")
               f.write(f"Unit tests: {count}; Android screenshots: {len(app_screens)}; migration screenshots: {len(migration_screens)}.\n\n")
-              f.write("Await visual review and recording the exact accepted APK in the handoff before the next part.\n")
+              f.write("Handoff recheck of exact APK from run 45548847319; no new APK registration. Review before advancing.\n")
           print("PART07_TECHNICAL_GATE_PASS",json.dumps(data),flush=True)
           PY
       - uses: actions/upload-artifact@v4
