@@ -3,10 +3,33 @@ package vn.mocnhien.toan3;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import java.util.*;
 
 /** Verify the shell without changing the existing curriculum, game, grading or reward tests. */
 public final class ModuleRoutingTest {
+    // Android's JSONObject stub does not expose org.json's similar().
+    static boolean sameJson(Object a,Object b){
+        if(a==b)return true;
+        if(a instanceof JSONObject&&b instanceof JSONObject){
+            JSONObject x=(JSONObject)a,y=(JSONObject)b;
+            if(x.length()!=y.length())return false;
+            Iterator<String> keys=x.keys();
+            while(keys.hasNext()){
+                String key=keys.next();
+                if(!y.has(key)||!sameJson(x.opt(key),y.opt(key)))return false;
+            }
+            return true;
+        }
+        if(a instanceof JSONArray&&b instanceof JSONArray){
+            JSONArray x=(JSONArray)a,y=(JSONArray)b;
+            if(x.length()!=y.length())return false;
+            for(int i=0;i<x.length();i++)if(!sameJson(x.opt(i),y.opt(i)))return false;
+            return true;
+        }
+        return Objects.equals(a,b);
+    }
+
     @Test public void fourModulesHaveDistinctRoutesAndAllLegacyScreensRemainReachable(){
         Set<String> routes=new HashSet<>();
         assertEquals(4,AppModule.values().length);
@@ -86,7 +109,7 @@ public final class ModuleRoutingTest {
             JSONObject n=store.nav();Json.put(n,"screen",m.route);Json.put(n,"scroll",0);
             assertTrue(store.setNav(n));
             JSONObject after=new JSONObject(disk.data);after.remove("nav");
-            assertTrue(m.label,baseline.similar(after));
+            assertTrue(m.label,sameJson(baseline,after));
             assertEquals(10,store.balance());assertTrue(store.done(id));assertFalse(store.sound());
         }
         store=new ProgressStore(bank,disk);
