@@ -315,3 +315,26 @@ for name in ("M01-home-four-modules","M02-learning","M03-game","M04-rewards","M0
     assert (OUT/(name+".png")).is_file(),name
 print("PART01_MODULE_EMULATOR_SMOKE_PASS",flush=True)
 print("PART4_EMULATOR_SMOKE_PASS",flush=True)
+# Part 02: open each actual mini-lesson, reveal steps, and verify no state mutation.
+before_guides=business_state()
+click(r"^Học bài$",scrollable=False)
+route("learn")
+for l in range(26,30):
+    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    route("lesson")
+    click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
+    find(r"Hiểu bài trước khi luyện")
+    click(r"^Xem bước 1$")
+    find(r"^Xem bước 2$",cls="android.widget.Button")
+    capture("P02-guide-"+str(l)+"-step1")
+    click(r"^Xem bước 2$")
+    click(r"^Xem bước 3$")
+    find(r"^Xem lại từ đầu$",cls="android.widget.Button")
+    capture("P02-guide-"+str(l)+"-solved")
+    assert business_state()==before_guides, "guide changed scored data"
+    adb("shell","input","keyevent","4")
+    route("learn")
+assert business_state()==before_guides
+no_crash()
+print("PART02_GUIDES_AND_STATE_PASS",flush=True)
+
