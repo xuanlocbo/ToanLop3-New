@@ -51,7 +51,8 @@ jobs:
                    "app/src/main/java/vn/mocnhien/toan3/MainActivity.java",
                    "app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationSession.kt","app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationPanel.kt",
                    "app/src/test/java/vn/mocnhien/toan3/RainbowStationTest.java","migration/ci_candidate.py",
-                   "migration/migrate_p01_p02.py","migration/README.md","migration/test_ci_candidate.py"}
+                   "migration/migrate_p01_p02.py","migration/README.md","migration/test_ci_candidate.py",
+                   ".github/scripts/ui_scan.py",".github/scripts/test_ui_scan.py"}
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed, changed-allowed
           # A handoff-only recheck must not substitute a rebuilt APK for the accepted artifact.
@@ -59,7 +60,8 @@ jobs:
           handoff="996a85b8d284b7a839467e46ee480b3c1931ff50"
           handoff_allowed={"docs/15-part-handoff.md","docs/kotlin-migration.md","docs/remaining-plan.md",
                            "docs/ci-continuous.md","migration/README.md","migration/migrate_p01_p02.py",
-                           "migration/ci_candidate.py","migration/test_ci_candidate.py",".github/workflows/verify-native.yml"}
+                           "migration/ci_candidate.py","migration/test_ci_candidate.py",".github/workflows/verify-native.yml",
+                           ".github/scripts/part4_smoke.py",".github/scripts/ui_scan.py",".github/scripts/test_ui_scan.py"}
           after=set(subprocess.check_output(["git","diff","--no-renames","--name-only",accepted,"HEAD"],text=True).splitlines())
           assert after<=handoff_allowed, after-handoff_allowed
           # The registry and its instructions must match the exact handoff, not arbitrary edits.
@@ -75,6 +77,10 @@ jobs:
               assert Path("app/src/main/kotlin/vn/mocnhien/toan3/"+cls+".kt").is_file()
           print("PART07_PROTECTED_BASELINE_PASS",sorted(changed))
           PY
+      - name: Test bounded Android viewport search
+        run: |
+          python3 -m unittest discover -s .github/scripts -p 'test_ui_scan.py' -v
+          python3 -m py_compile .github/scripts/part4_smoke.py
       - name: Verify data and compile Kotlin and Java
         run: |
           set -euo pipefail
