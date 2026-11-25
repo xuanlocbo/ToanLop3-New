@@ -1,3 +1,20 @@
+# Mộc Nhiên · Toán 3 — 1.2.0-p01
+
+Bản kiểm thử phần 1/15: kiến trúc và điều hướng bốn module Android native, phát triển từ commit 1.1.1 a61d71012af08c9b0cbf0e26593591675998bc16.
+
+- Học bài: giữ toàn bộ bài 26–44, SGK, VBT và thử thách.
+- Chơi game: giữ 19 màn và 19 trạm, 76 cổng toán.
+- Phần thưởng: dùng sao, huy hiệu và kho báu từ ProgressStore hiện có.
+- Tiến độ: tổng hợp từng nguồn, từng bài, màn đã hoàn thành và ôn câu sai.
+- Màn hình chính có bốn nút. Cài đặt ở đầu màn hình. Giữ đường dẫn cũ để mở lại bài và game.
+- Dùng chung Curriculum, ProgressStore và RewardLedger; không tạo vùng lưu mới.
+
+Đây là APK debug cài thử, chưa phải bản cuối 15/15. Không thay dữ liệu, luật chơi, chấm điểm hoặc nội dung trong phần 1. Chỉ xác nhận nghiệm thu sau khi unit test, kiểm thử máy ảo và kiểm tra ảnh đều đạt. Bản cài mới vẫn có thể gặp xung đột khóa ký debug với bản cũ nếu cache không khôi phục. Không gỡ app đang có tiến độ trước khi sao lưu.
+
+## Kiểm tra
+Artifact MocNhien-Toan3-1.2.0-p01: APK cài thử đã xác minh cấu trúc và chữ ký. Artifact MocNhien-1.2.0-p01-QA: ảnh chụp thật của bốn module, log package và kết quả chạy hồi quy. Xem trạng thái CI trước khi cài thử.
+
+## Căn cứ phiên bản trước
 # Mộc Nhiên · Toán 3 (1.1.1)
 
 Ứng dụng Android native ngoại tuyến, màn hình ngang, chủ đề 2D hồng pastel. Phạm vi Bài 26–44, 19 bài, 921 mục từ SGK/VBT được chuyển thể và 38 câu nâng cao tự biên soạn (959 mục tổng cộng). Các nội dung đã được kiểm tra bằng chương trình; không tuyên bố mọi hình và câu chữ khớp nguyên văn hai PDF nếu chưa đối chiếu từng mục.
