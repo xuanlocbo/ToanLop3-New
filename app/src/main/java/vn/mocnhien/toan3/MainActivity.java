@@ -170,7 +170,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
         ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
         ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
-        ui.caption(c,"Bản 1.2.0-p02 • Hướng dẫn Bài 26–29 • Android native");
+        ui.caption(c,"Bản 1.2.0-p03 • Hướng dẫn Bài 30–35 • Android native");
     }
     @Override public void changed(){
         if(stars!=null)stars.setText("★ "+store.balance());

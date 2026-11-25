@@ -128,7 +128,7 @@ final class QuestionPanel extends LinearLayout {
             default:throw new IllegalStateException("Unimplemented "+kind);
         }
         if("retry".equals(draft.optString("status"))){LinearLayout tryAgain=ui.card(0xffffedda);ui.add(this,tryAgain);ui.label(tryAgain,"Chưa đúng, mình thử thêm một lần nhé!",21,true);tryAgain.post(()->tryAgain.requestRectangleOnScreen(new android.graphics.Rect(0,0,tryAgain.getWidth(),tryAgain.getHeight()),false));}
-        if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+Part02Tutor.hint(q),19,false);
+        if(draft.optBoolean("showHint"))ui.label(this,"Gợi ý: "+Part03Tutor.hint(q),19,false);
         if(draft.optBoolean("showSolution"))ui.label(this,"Cách giải: "+Part02Tutor.solution(q),19,false);
         LinearLayout controls=ui.row();ui.add(this,controls);
         ui.smallAction(controls,"Gợi ý",NativeUi.LAV,()->set("showHint",!draft.optBoolean("showHint"),true));
