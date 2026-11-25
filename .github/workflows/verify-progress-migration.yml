@@ -1,7 +1,7 @@
-name: Verify p04 and p05 migration to Kotlin
+name: Verify exact p05-k01 to p06 migration
 on:
   pull_request:
-    branches: [v1.2-kotlin-pilot]
+    branches: [v1.2-part06-candy]
     paths: ['migration/**', '.github/workflows/verify-progress-migration.yml']
   workflow_dispatch:
 permissions:
@@ -15,33 +15,26 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Ensure Kotlin pilot sources remain unchanged
-        run: git diff --exit-code 5306da67bcdc01de9dded6cfd641a154e5f0deb2 HEAD -- build.gradle app tools tests .github/scripts .github/workflows/verify-native.yml
+      - name: Ensure tested p06 sources remain unchanged
+        run: git diff --exit-code e60bb0713983abde9ca60785b4cf4f2c064090bc HEAD -- build.gradle app tools tests .github/scripts .github/workflows/verify-native.yml
       - name: Test migration safeguards
         run: python3 -m unittest discover -s migration -p 'test_*.py' -v
-      - uses: actions/download-artifact@v4
-        with:
-          name: MocNhien-Toan3-1.2.0-p04
-          run-id: 45536220818
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: migration-apks/p04
-      - uses: actions/download-artifact@v4
-        with:
-          name: MocNhien-Toan3-1.2.0-p05
-          run-id: 45539283903
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: migration-apks/p05
       - uses: actions/download-artifact@v4
         with:
           name: MocNhien-Toan3-1.2.0-p05-k01
           run-id: 45540144790
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: migration-apks/p05-k01
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p06
+          run-id: 45544219876
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: migration-apks/p06
       - name: Check original APK digests
         run: |
-          echo '7eefb9dbeb2b92e9b4a8ac93ef464044f8763eed745b3f38319e7be8a2bd5a29  migration-apks/p04/MocNhien-Toan3-1.2.0-p04.apk' | sha256sum -c -
-          echo '44b5d4685ac53e59548800466ae248040281f8eaf44d4073ab0e0f87fc212152  migration-apks/p05/MocNhien-Toan3-1.2.0-p05.apk' | sha256sum -c -
           echo '4aa8a16e558e6a88a95f654178ca3067b38d087abf9aede535b97416b41ab4b4  migration-apks/p05-k01/MocNhien-Toan3-1.2.0-p05-k01.apk' | sha256sum -c -
+          echo 'a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02  migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk' | sha256sum -c -
       - uses: android-actions/setup-android@v3
         with:
           packages: 'platform-tools'
@@ -59,12 +52,10 @@ jobs:
           profile: pixel_2
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
-          script: |
-            python3 migration/migration_emulator.py migration-apks/p04/MocNhien-Toan3-1.2.0-p04.apk migration-apks/p05-k01/MocNhien-Toan3-1.2.0-p05-k01.apk
-            python3 migration/migration_emulator.py migration-apks/p05/MocNhien-Toan3-1.2.0-p05.apk migration-apks/p05-k01/MocNhien-Toan3-1.2.0-p05-k01.apk
+          script: python3 migration/migration_emulator.py migration-apks/p05-k01/MocNhien-Toan3-1.2.0-p05-k01.apk migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: MocNhien-p05-k01-migration-QA
+          name: MocNhien-p06-migration-QA
           path: migration-qa/
           if-no-files-found: warn

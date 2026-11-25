@@ -23,3 +23,7 @@ Dự án hiện tại: xuanlocbo/ToanLop3-New. Mốc ổn định trước part0
 Cập nhật: phần 5 đã tự nghiệm thu theo kết quả CI 45539283903, 45540144790, 45542760048. Nền mới là Kotlin p05-k01 và công cụ migration đã đạt. Chuyển sang phần 6, nhánh v1.2-part06-candy. Giữ nguyên các điều kiện phần 15.
 
 Phần 6: đã triển khai ứng viên 1.2.0-p06, cần kiểm thử CI đầy đủ và đăng ký APK chính xác vào công cụ chuyển tiến độ trước tự nghiệm thu. Không tự đánh dấu đạt khi chưa có kết quả.
+
+Phần 6: CI ứng dụng 45544219876 đạt; đang kiểm thử cặp APK p05-k01 ↔ p06 trên v1.2-part06-migration. Giữ đủ bước bắt buộc. Chỉ nghiệm thu sau khi đạt; cung cấp liên kết GitHub Actions ở từng báo cáo tiến độ.
+
+Cập nhật: phần 6 ĐẠT CI ứng dụng 45544219876 và migration 45547456147. Mở phần 7 từ mốc nghiệm thu p06. Theo yêu cầu người dùng, dùng cuộc trò chuyện để lập trình/sửa lỗi; không Codex, không API AI trả phí. Gộp các bước CI và migration theo dependency trong một workflow, chỉ đạt khi tất cả thành công; tạo biên bản SHA/run/APK, không auto-merge hoặc cấp quyền ghi cho runner. Xem docs/ci-continuous.md khi có.

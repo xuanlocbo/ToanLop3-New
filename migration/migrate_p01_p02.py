@@ -11,7 +11,8 @@ HASHES={"p01":"b84c4bacb182681fe79c3f23df37b937465996abf62866d9648b870d7299164e"
         "p03":"e912743d457e27ea56dbc9bf89fe40ab317d76c270dfc206d315a59c09335f19",
         "p04":"7eefb9dbeb2b92e9b4a8ac93ef464044f8763eed745b3f38319e7be8a2bd5a29",
         "p05":"44b5d4685ac53e59548800466ae248040281f8eaf44d4073ab0e0f87fc212152",
-        "p05-k01":"4aa8a16e558e6a88a95f654178ca3067b38d087abf9aede535b97416b41ab4b4"}
+        "p05-k01":"4aa8a16e558e6a88a95f654178ca3067b38d087abf9aede535b97416b41ab4b4",
+        "p06":"a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02"}
 # Ordered, exact registered release IDs; supports suffixes without interpreting them as integers.
 ORDER=tuple(HASHES)
 def rank(v): return ORDER.index(v)
