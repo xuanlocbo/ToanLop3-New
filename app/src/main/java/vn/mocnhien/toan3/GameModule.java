@@ -10,7 +10,7 @@ final class GameModule extends ModulePage {
     GameModule(ModuleContext ctx,LinearLayout body){super(ctx,body);}
     void show(int lesson){
         LinearLayout info=ui.card(NativeUi.WHITE);ui.add(body,info);
-        ui.banner(info,AdventurePlan.theme(lesson),true,108);
+        ui.banner(info,AdventurePlan.theme(lesson),true,ui.compact()?68:108);
         ui.label(info,"Chơi game",26,true);
         ui.label(info,"Phiêu lưu cùng Thỏ Hồng",21,true);
         int resume=ctx.gameResume();
