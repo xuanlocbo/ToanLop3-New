@@ -528,3 +528,39 @@ for l,seed,selector,desc,expected,value in [
     capture("P07-measure-"+str(l)+"-gate")
 no_crash()
 print("PART07_RAINBOW_STATIONS_RESUME_AND_SCORE_PASS",flush=True)
+
+
+# Final consolidation: all nine remaining stations, actual controls and restart.
+for l,seed,selector,expected,value in [
+    (36,"3071",r"^Miếng 13: 1 viên, chưa chọn$","7167",r"Đã ghép / đặt: 372 viên"),
+    (37,"31,31,31,21",r"^Rương 4: \+10$","31,31,31,31",r"Kho còn 0 viên"),
+    (38,"0,-1",r"^Phép tính \+8$","0,1",r"Giá trị hiện tại: 32"),
+    (39,"7",r"^Miếng 4: 6 cm, chưa chọn$","15",r"Đã ghép / đặt: 24 cm"),
+    (40,"0,-1",r"^Phép tính \+120$","0,1",r"Giá trị hiện tại: 480 kg"),
+    (41,"15",r"^Miếng 5: 1 sao, chưa chọn$","31",r"Đã ghép / đặt: 5 sao"),
+    (42,"0,-1",r"^Phép tính :4$","0,1",r"Giá trị hiện tại: 9"),
+    (43,"0,3,13,-1",r"^Đỉnh hàng 3, cột 1$","0,3,13,10",r"Đã chọn 4/4 đỉnh"),
+    (44,"5",r"^Miếng 4: 50 ml, chưa chọn$","13",r"Đã ghép / đặt: 650 ml")]:
+    candy_fixture(l,seed)
+    before=business_state()
+    click(r"^Kiểm tra$")
+    find(r"Chưa hoàn thành")
+    assert not trail(l).get("complete",False)
+    if l==43:
+        click(r"^Chọn đỉnh bằng nút$")
+    click(selector,desc=True)
+    assert trail(l)["draft"]==expected,(l,trail(l))
+    restart()
+    assert trail(l)["draft"]==expected
+    find(value)
+    capture("FINAL-station-"+str(l)+"-restored")
+    click(r"^Kiểm tra$")
+    assert trail(l)["complete"]
+    after=business_state()
+    for key in ("claims","done","review","drafts"):
+        assert after[key]==before[key],key
+    assert after["adventures"][str(l)]["motion"]["pending"]
+    assert not after["adventures"][str(l)]["motion"]["answered"]
+    capture("FINAL-station-"+str(l)+"-gate")
+no_crash()
+print("FINAL_NINE_STATIONS_RESUME_AND_SCORE_PASS",flush=True)

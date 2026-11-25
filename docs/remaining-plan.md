@@ -31,3 +31,8 @@ Cập nhật: phần 6 ĐẠT CI ứng dụng 45544219876 và migration 45547456
 Phần 7: mã ứng viên 1.2.0-p07. Chờ workflow tích hợp verify → migration → acceptance và rà soát bằng chứng; chưa nghiệm thu.
 
 Cập nhật: phần 7 đã ĐẠT CI tích hợp 45548847319 và rà soát 12 ảnh trạm, nền p07. Phần 8 kế tiếp: Thung lũng sao, Bài 36–40; mở từ commit bàn giao p07. Không xin xác nhận lại.
+
+## Quyết định mới nhất của người dùng: một đợt hoàn thiện cuối
+Gộp 8–15 thành v1.2-final, không yêu cầu xác nhận trung gian. Phạm vi sách đã khóa Bài 26–44 theo docs/01-curriculum-scope.md, không thêm Bài 25 ngoài phạm vi chốt. Bảo toàn 959 mục và schema. Nghiệm thu một lần sau CI và rà soát ảnh; bản debug chưa phải release đã ký.
+
+Bản cuối p15: đã cấu hình CI kiểm thử tổng thể, nâng cấp/khôi phục p07↔p15 và biên bản kỹ thuật chung. Không mở lại các phần 8–14. #47 và final kiểm thử độc lập; không công nhận p15 khi chưa đủ bằng chứng.

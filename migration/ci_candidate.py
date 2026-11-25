@@ -17,7 +17,12 @@ def validate_pair(a):
         m.need(m.HASHES[a.target]==a.target_sha,"Recheck must use the exact registered APK")
     else:
         m.need(a.source==m.ORDER[-1],"Previous accepted APK must be latest")
-        m.need(a.target not in m.HASHES and int(a.target[1:])==int(a.source[1:])+1,"Candidate must follow accepted baseline")
+        consolidated=getattr(a,"consolidated_final",False)
+        if consolidated:
+            m.need((a.source,a.target)==("p07","p15"),"Only authorized p07 to p15 consolidation")
+        else:
+            m.need(int(a.target[1:])==int(a.source[1:])+1,"Candidate must follow accepted baseline")
+        m.need(a.target not in m.HASHES,"Candidate already registered")
         m.need(a.target_sha not in m.HASHES.values(),"Candidate matches an older version")
         m.HASHES[a.target]=a.target_sha
         m.ORDER=tuple(m.HASHES)
@@ -30,8 +35,10 @@ def main():
     p.add_argument("--source-apk",type=Path,required=True)
     p.add_argument("--target-apk",type=Path,required=True)
     p.add_argument("--target-sha",required=True)
+    p.add_argument("--consolidated-final",action="store_true",help="CI only: authorized p07 to p15 single final candidate")
     p.add_argument("--registered-recheck",action="store_true",help="CI only: verify the last registered exact APK pair again")
     a=p.parse_args()
+    m.need(not (a.consolidated_final and a.registered_recheck),"Conflicting migration mode")
     validate_pair(a)
     import migration_emulator
     sys.argv=[sys.argv[0],str(a.source_apk),str(a.target_apk)]

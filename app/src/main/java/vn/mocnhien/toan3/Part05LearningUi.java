@@ -10,7 +10,7 @@ final class Part05LearningUi {
         if(!Part05Tutor.applies(q))return false;
         JSONObject v=Json.obj(q,"visual");if(!Part05GeometryView.supports(v))return false;
         View diagram=new Part05GeometryView(parent.getContext(),v);
-        parent.addView(diagram,new LinearLayout.LayoutParams(-1,ui.dp(230)));
+        parent.addView(diagram,new LinearLayout.LayoutParams(-1,ui.dp(ui.compact()?160:230)));
         return true;
     }
     static void addGuide(NativeUi ui,LinearLayout parent,int lesson){
@@ -26,7 +26,7 @@ final class Part05LearningUi {
             if(!g.visual.isEmpty())try{
                 JSONObject v=new JSONObject(g.visual);
                 View model=Part05GeometryView.supports(v)?new Part05GeometryView(c.getContext(),v):new MathDiagram(c.getContext(),v,new JSONObject());
-                c.addView(model,new LinearLayout.LayoutParams(-1,ui.dp(205)));
+                c.addView(model,new LinearLayout.LayoutParams(-1,ui.dp(ui.compact()?155:205)));
             }catch(org.json.JSONException ex){throw new IllegalStateException("Invalid supplementary review model",ex);}
             LinearLayout revealed=ui.column();ui.add(c,revealed);int[] n={0};
             Button next=ui.button("Xem bước 1",NativeUi.PINK,()->{});ui.add(c,next);

@@ -20,3 +20,5 @@ Người dùng đã đồng ý chuyển dần sang Kotlin; giữ nguyên kế ho
 - Phần 7: chuyển sáu trạm đo lường 30–35 sang Kotlin với điều khiển cập nhật tại chỗ, giữ nguyên logic toán và lưu trữ; cần CI và migration đầy đủ.
 
 - Phần 7 đạt 30/30 unit tests, CI tích hợp 45548847319, 6 trạm Kotlin và nâng cấp/phục hồi p06 ↔ p07. Tiếp tục phần 8 trong phạm vi 36–40.
+
+- Bản hợp nhất p15: 19/19 trạm có giao diện Kotlin, bản đồ, phần thưởng và tiến độ Kotlin. Giữ Java đã kiểm chứng cho bộ chấm, vật lý và lưu dữ liệu. Không chuyển ngôn ngữ hàng loạt; chưa có số đo hiệu năng trên điện thoại thật.

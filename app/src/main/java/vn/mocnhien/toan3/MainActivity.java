@@ -78,6 +78,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
     String title(int l){return modules.title(l);}
     String bookName(String b){return modules.bookName(b);}
     void render(){
+        if(audio!=null)audio.game(screen.equals("game"));
         questionProgress=null;
         if(screen.equals("game")){renderGame();return;}
         root=ui.column();root.setBackground(ui.wash(NativeUi.BG,0xffffeaf1,0));ui.pad(root,ui.compact()?5:9);
@@ -138,7 +139,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         if(a.gate==0&&!store.trailComplete(lesson)){
             LinearLayout station=ui.card(NativeUi.WHITE);ui.add(body,station);
             Runnable next=()->{play(SoundPalette.Cue.STATION);render();};
-            View panel=CandyStationSession.supports(lesson)?new CandyStationPanel(this,store,lesson,next):RainbowStationSession.supports(lesson)?new RainbowStationPanel(this,store,lesson,next):new TrailMissionPanel(this,store,lesson,next);
+            View panel=CandyStationSession.supports(lesson)?new CandyStationPanel(this,store,lesson,next):RainbowStationSession.supports(lesson)?new RainbowStationPanel(this,store,lesson,next):new FinalStationPanel(this,store,lesson,next);
             station.addView(panel,new LinearLayout.LayoutParams(-1,-2));
             ui.action(body,"Về màn chơi (giữ nhiệm vụ đang làm)",NativeUi.PALE,()->go("game"));return;
         }
@@ -169,10 +170,11 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
     void settingsPage(){
         LinearLayout c=ui.card(NativeUi.WHITE);ui.add(body,c);ui.label(c,"Cài đặt",25,true);
         ui.action(c,store.sound()?"Âm thanh: đang bật":"Âm thanh: đang tắt",NativeUi.PALE,()->{if(store.setSound(!store.sound())){if(audio!=null)audio.enabled(store.sound());if(store.sound())play(SoundPalette.Cue.PETAL);render();}else Toast.makeText(this,"Chưa lưu được cài đặt.",Toast.LENGTH_LONG).show();});
+        ui.caption(c,"Âm thanh bao gồm hiệu ứng và nhạc nhẹ trong màn chơi; học bài luôn yên tĩnh.");
         ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
         ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
         ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
-        ui.caption(c,"Bản 1.2.0-p07 • Hồ cầu vồng • Kotlin + Java");
+        ui.caption(c,"Bản 1.2.0-p15 • Vương quốc toán học");
     }
     @Override public void changed(){
         if(stars!=null)stars.setText("★ "+store.balance());

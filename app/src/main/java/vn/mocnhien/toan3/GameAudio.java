@@ -8,15 +8,17 @@ import android.os.SystemClock;
 import java.io.*;
 import java.util.*;
 
-/** Foreground-only short audio; honors the existing sound setting and never plays background music. */
+/** Foreground-only short cues and quiet original music, sharing the saved sound setting. */
 final class GameAudio {
     final SoundPool pool;
     final EnumMap<SoundPalette.Cue,Integer> ids=new EnumMap<>(SoundPalette.Cue.class);
     final Set<Integer> loaded=new HashSet<>();
     final EnumMap<SoundPalette.Cue,Long> last=new EnumMap<>(SoundPalette.Cue.class);
     final Set<Integer> streams=new LinkedHashSet<>();
-    boolean active=true,enabled=true,released=false;
+    boolean active=false,enabled=true,released=false,inGame=false;
+    final GameMusic music;
     GameAudio(Context c){
+        music=new GameMusic(c);
         pool=new SoundPool.Builder().setMaxStreams(2).setAudioAttributes(
             new AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION).build()).build();
@@ -32,8 +34,10 @@ final class GameAudio {
             }catch(Exception e){android.util.Log.w("MocNhien","Audio unavailable: "+cue,e);}
         }
     }
-    void enabled(boolean b){enabled=b;if(!b)stop();}
-    void foreground(boolean b){active=b;if(!b)stop();}
+    void enabled(boolean b){enabled=b;if(!b)stop();syncMusic();}
+    void foreground(boolean b){active=b;if(!b)stop();syncMusic();}
+    void game(boolean b){inGame=b;syncMusic();}
+    void syncMusic(){music.desired(!released&&enabled&&active&&inGame);}
     void play(SoundPalette.Cue cue){
         if(released||!active||!enabled)return;
         Integer id=ids.get(cue);if(id==null||!loaded.contains(id))return;
@@ -47,5 +51,5 @@ final class GameAudio {
         }
     }
     void stop(){if(released)return;for(int id:streams)pool.stop(id);streams.clear();pool.autoPause();}
-    void release(){if(released)return;stop();released=true;pool.release();loaded.clear();}
+    void release(){if(released)return;stop();released=true;music.release();pool.release();loaded.clear();}
 }
