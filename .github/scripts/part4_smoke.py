@@ -338,3 +338,22 @@ assert business_state()==before_guides
 no_crash()
 print("PART02_GUIDES_AND_STATE_PASS",flush=True)
 
+
+# Part 03: actual optional measurement lesson, one guided example in each lesson.
+before_measurement=business_state()
+for l in range(30,36):
+    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    route("lesson")
+    click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
+    click(r"^Xem bước 1$")
+    find(r"^Xem bước 2$",cls="android.widget.Button")
+    capture("P03-guide-"+str(l)+"-step1")
+    click(r"^Xem bước 2$")
+    click(r"^Xem bước 3$")
+    find(r"^Xem lại từ đầu$",cls="android.widget.Button")
+    capture("P03-guide-"+str(l)+"-solved")
+    assert business_state()==before_measurement, "measurement guide changed progress"
+    adb("shell","input","keyevent","4")
+    route("learn")
+no_crash()
+print("PART03_MEASUREMENT_GUIDES_PASS",flush=True)
