@@ -1,3 +1,7 @@
+# Mộc Nhiên Toán 3 — 1.2.0-p04
+
+Phần 4/15: Bài 36–40, hướng dẫn đặt tính và biểu thức. Kế thừa phần 3 đã được người dùng chốt. Giữ nguyên toàn bộ 959 mục dữ liệu, ID, chấm điểm, bốn module, lưu tiến độ, trò chơi và phần thưởng. 15 ví dụ bổ sung không tính sao; hình đặt tính chỉ hiện toán hạng, lời giải chỉ ở ví dụ/hướng dẫn hoặc sau khi trẻ được phép xem theo cơ chế hiện có. Mốc và CI ghi trong docs/15-part-handoff.md. APK debug; không gỡ bản cũ có tiến độ. Không xử lý lại khóa ký cũ.
+
 # Mộc Nhiên · Toán 3 — 1.2.0-p02
 
 Phần 2/15: nâng chất lượng học Bài 26–29, dựa trên phần 1 đã chốt (ffd5ecbe1099a686fb7b9c6908a0395995a252af).
