@@ -45,6 +45,24 @@ internal class FinalStationPanel(context:Context, store:ProgressStore, lesson:In
             ui.label(controls,"Chạm lần lượt các giao điểm trên lưới.",17,false)
             ui.add(controls,trace)
             ui.action(controls,"Xóa điểm vừa chọn",NativeUi.PALE){handle(session.move(25))}
+            // Accessible alternative for a child who prefers discrete buttons to canvas taps.
+            val keypad=ui.column()
+            keypad.visibility=View.GONE
+            val toggle=ui.button("Chọn đỉnh bằng nút",NativeUi.LAV){}
+            ui.add(controls,toggle);ui.add(controls,keypad)
+            toggle.setOnClickListener{
+                val open=keypad.visibility!=View.VISIBLE
+                keypad.visibility=if(open)View.VISIBLE else View.GONE
+                toggle.text=if(open)"Ẩn các nút chọn đỉnh" else "Chọn đỉnh bằng nút"
+            }
+            for(r in 0..4){
+                val row=ui.row();ui.add(keypad,row)
+                for(c in 0..4){
+                    val key=ui.button("${r+1},${c+1}",NativeUi.PALE){handle(session.move(r*5+c))}
+                    key.contentDescription="Đỉnh hàng "+(r+1)+", cột "+(c+1)
+                    ui.weight(row,key,1f)
+                }
+            }
         }else {
             if(mission.kind==TrailMission.Kind.STEPS)ui.add(controls,trace)
             val cols=if(mission.kind==TrailMission.Kind.BUILD) {if(ui.widthDp()>=640&&!two)5 else 3} else 2

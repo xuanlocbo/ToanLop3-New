@@ -7,7 +7,8 @@ import android.view.View;
 /** Native diagrams update in place; all coordinates and counts come from the committed mission. */
 final class FinalStationArt extends View {
     final Paint p=new Paint(Paint.ANTI_ALIAS_FLAG);final StoryArt.Painter art=new StoryArt.Painter();final TrailMission m;int[] s;final java.util.function.IntConsumer point;
-    Canvas c;float w,h,gridSize,gridX,gridY;
+    Canvas c;float w,h,gridSize,gridX,gridY,downX,downY;
+    boolean tap;
     FinalStationArt(Context ctx,TrailMission m,int[] s,java.util.function.IntConsumer point){super(ctx);this.m=m;this.s=s.clone();this.point=point;
         setContentDescription(m.kind==TrailMission.Kind.GRID?"Lưới ô vuông. Chạm các điểm để nối hình.":"Mô phỏng "+m.title);
     }
@@ -109,7 +110,11 @@ final class FinalStationArt extends View {
     }
     @Override public boolean onTouchEvent(android.view.MotionEvent e){
         if(m.kind!=TrailMission.Kind.GRID||gridSize<=0)return false;
-        if(e.getAction()==android.view.MotionEvent.ACTION_UP){
+        if(e.getAction()==android.view.MotionEvent.ACTION_DOWN){downX=e.getX();downY=e.getY();tap=true;return true;}
+        if(e.getAction()==android.view.MotionEvent.ACTION_CANCEL){tap=false;return true;}
+        float slop=android.view.ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        if(Math.abs(e.getX()-downX)>slop||Math.abs(e.getY()-downY)>slop)tap=false;
+        if(e.getAction()==android.view.MotionEvent.ACTION_UP&&tap){tap=false;
             int x=Math.round((e.getX()-gridX)/gridSize),y=Math.round((e.getY()-gridY)/gridSize);
             if(x>=0&&x<5&&y>=0&&y<5&&Math.abs(e.getX()-gridX-x*gridSize)<gridSize*.42f&&Math.abs(e.getY()-gridY-y*gridSize)<gridSize*.42f){performClick();point.accept(y*5+x);}return true;
         }

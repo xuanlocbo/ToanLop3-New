@@ -35,7 +35,7 @@ final class AdventureScene extends View {
     void circle(float x,float y,float r,int col){fill(col);c.drawCircle(x,y,r,p);}
     void line(float x,float y,float xx,float yy,float w,int col){fill(col);p.setStrokeWidth(w);p.setStrokeCap(Paint.Cap.ROUND);c.drawLine(x,y,xx,yy,p);}
     void text(String t,float x,float y,float size,int col){fill(col);p.setTypeface(Typeface.create("sans-serif",Typeface.BOLD));p.setTextSize(size);p.setTextAlign(Paint.Align.CENTER);c.drawText(t,x,y,p);}
-    void poly(int col,float... a){Path path=new Path();path.moveTo(a[0],a[1]);for(int i=2;i<a.length;i+=2)path.lineTo(a[i],a[i+1]);path.close();fill(col);c.drawPath(path,p);}
+    void poly(int col,float... a){Path path=outline;path.reset();path.moveTo(a[0],a[1]);for(int i=2;i<a.length;i+=2)path.lineTo(a[i],a[i+1]);path.close();fill(col);c.drawPath(path,p);}
     @Override protected void onDraw(Canvas canvas){
         super.onDraw(canvas);if(getWidth()<=0||getHeight()<=0)return;c=canvas;
         int theme=AdventurePlan.theme(world.lesson);
@@ -86,8 +86,8 @@ final class AdventureScene extends View {
             line(i*37+drift,yy,i*37+18+drift,yy,1.7f,0xdfffffff);
         }
         int start=0;
-        for(AdventureWorld.Hazard h:world.hazards)if(h.pit()){land(start,h.left,theme);start=h.right;}
-        land(start,AdventureWorld.FINISH+140,theme);
+        for(AdventureWorld.Hazard h:world.hazards)if(h.pit()){land(start,h.left,theme,camera,w);start=h.right;}
+        land(start,AdventureWorld.FINISH+140,theme,camera,w);
         for(AdventureWorld.Hazard h:world.hazards){
             if(h.right<camera-40||h.left>camera+w+40)continue;
             if(h.pit()){
@@ -155,16 +155,17 @@ final class AdventureScene extends View {
         }
         c.restore();
     }
-    void land(int start,int end,int theme){
-        if(end<=start)return;
+    void land(int start,int end,int theme,float camera,float visibleWidth){
+        if(end<=start||end<camera-80||start>camera+visibleWidth+80)return;
         int[] palette=StoryArt.PALETTES[theme];
         fill(palette[5]);p.setShader(new LinearGradient(0,GROUND,0,HEIGHT,palette[5],SOIL[theme],Shader.TileMode.CLAMP));c.drawRect(start,GROUND,end,HEIGHT,p);p.setShader(null);
         fill(palette[4]);c.drawRect(start,GROUND,end,GROUND+10,p);
         line(start+1,GROUND+1,end-1,GROUND+1,2.5f,palette[3]);
-        for(int x=start+10;x<end-8;x+=16)oval(x,GROUND+6,12,7,palette[4]);
-        for(int x=start+13;x<end-10;x+=43){oval(x,GROUND+24,12,5,0x36ffffff);line(x+22,GROUND+42,x+34,GROUND+42,2,0x36ffffff);}
-        for(int x=start+27;x<end-20;x+=75)art.flower(c,x,GROUND-3,3.3f,0xffffcfdf);
+        for(int x=visibleFirst(start+10,16,camera);x<end-8&&x<camera+visibleWidth+80;x+=16)oval(x,GROUND+6,12,7,palette[4]);
+        for(int x=visibleFirst(start+13,43,camera);x<end-10&&x<camera+visibleWidth+80;x+=43){oval(x,GROUND+24,12,5,0x36ffffff);line(x+22,GROUND+42,x+34,GROUND+42,2,0x36ffffff);}
+        for(int x=visibleFirst(start+27,75,camera);x<end-20&&x<camera+visibleWidth+80;x+=75)art.flower(c,x,GROUND-3,3.3f,0xffffcfdf);
     }
+    static int visibleFirst(int first,int step,float camera){return first+Math.max(0,(int)Math.floor((camera-80-first)/step))*step;}
     void gate(float x,int g){
         boolean open=g<state.gate;int col=open?0xff7fc9a9:g<2?0xffdd86b4:GOLD;
         int edge=open?0xff469e7a:g<2?0xffb866a0:0xffc99544;

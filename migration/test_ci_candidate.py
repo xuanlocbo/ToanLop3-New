@@ -65,5 +65,26 @@ class CandidateTests(unittest.TestCase):
         with self.assertRaises(m.MigrationError):
             c.validate_pair(self.args)
 
+    def test_consolidation_requires_explicit_exact_pair(self):
+        final=self.new.with_name("p15.apk")
+        final.write_bytes(b"final")
+        a=SimpleNamespace(source="p07",target="p15",source_apk=self.new,target_apk=final,
+                          target_sha=self.sha(final),registered_recheck=False,consolidated_final=False)
+        with self.assertRaises(m.MigrationError):
+            c.validate_pair(a)
+        a.consolidated_final=True
+        c.validate_pair(a)
+        self.assertEqual(m.ORDER,("p06","p07","p15"))
+        self.assertEqual(m.HASHES["p15"],self.sha(final))
+
+    def test_consolidation_does_not_allow_other_skips(self):
+        wrong=self.new.with_name("p14.apk")
+        wrong.write_bytes(b"other")
+        a=SimpleNamespace(source="p07",target="p14",source_apk=self.new,target_apk=wrong,
+                          target_sha=self.sha(wrong),registered_recheck=False,consolidated_final=True)
+        with self.assertRaises(m.MigrationError):
+            c.validate_pair(a)
+        self.assertEqual(m.ORDER,("p06","p07"))
+
 if __name__=="__main__":
     unittest.main()
