@@ -13,7 +13,7 @@ final class ModuleHome extends ModulePage {
         LinearLayout row=ui.sideBySide()?ui.row():ui.column();ui.add(hero,row);
         LinearLayout illustration=ui.column();
         if(ui.sideBySide())ui.weight(row,illustration,1);else ui.add(row,illustration);
-        ui.banner(illustration,0,true,ui.compact()?58:100);
+        ui.banner(illustration,0,true,ui.compact()?54:100);
         LinearLayout welcome=ui.column();
         if(ui.sideBySide())ui.weight(row,welcome,1.35f);else ui.add(row,welcome);
         ui.label(welcome,"Vương quốc toán học",ui.compact()?21:26,true);
@@ -28,7 +28,7 @@ final class ModuleHome extends ModulePage {
                 Button b=ui.button(m.label,m.color,()->go(m.route));
                 b.setContentDescription(m.label);
                 b.setTextSize(ui.compact()?21:23);
-                b.setMinHeight(ui.dp(ui.compact()?56:68));
+                b.setMinHeight(ui.dp(ui.compact()?52:68));
                 if(ui.compact())ui.weight(cards,b,1);
                 else{
                     LinearLayout card=ui.card(m.color);ui.weight(cards,card,1);
