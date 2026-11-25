@@ -15,9 +15,9 @@ final class LearningModule extends ModulePage {
         LinearLayout lead=ui.row();intro.addView(lead);
         ImageView icon=ui.art(practice?"practice":"book",ui.compact()?36:54);
         lead.addView(icon,new LinearLayout.LayoutParams(ui.dp(82),ui.dp(ui.compact()?36:54)));
-        LinearLayout info=ui.column();lead.addView(info,new LinearLayout.LayoutParams(0,-2,1));
-        ui.label(info,practice?"Vở bài tập":"Lớp 3 · Tập 1",22,true);
-        ui.caption(info,practice?"Bài 26–44 • Luyện các bài đã học":"Sách giáo khoa • Vở bài tập • Kho báu");
+        LinearLayout introInfo=ui.column();lead.addView(introInfo,new LinearLayout.LayoutParams(0,-2,1));
+        ui.label(introInfo,practice?"Vở bài tập":"Lớp 3 · Tập 1",22,true);
+        ui.caption(introInfo,practice?"Bài 26–44 • Luyện các bài đã học":"Sách giáo khoa • Vở bài tập • Kho báu");
         JSONObject last=bank.questions.get(lastId);
         if(last!=null&&(!practice||"VBT".equalsIgnoreCase(last.optString("book")))){
             LinearLayout resume=ui.card(NativeUi.GOLD);ui.add(body,resume);
