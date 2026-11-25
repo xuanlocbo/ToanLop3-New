@@ -52,7 +52,8 @@ jobs:
       - name: Test bounded Android viewport search
         run: |
           python3 -m unittest discover -s .github/scripts -p 'test_ui_scan.py' -v
-          python3 -m py_compile .github/scripts/part4_smoke.py
+          python3 -m py_compile .github/scripts/part4_smoke.py .github/scripts/ui_upgrade_smoke.py
+          python3 -m unittest discover -s migration -p "test_*.py" -v
       - name: Verify data and compile Kotlin and Java
         run: |
           set -euo pipefail
@@ -198,7 +199,7 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-      - name: Verify in-place update on Android
+      - name: Verify exact p15 transfer and recovery on isolated Android
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
@@ -226,16 +227,35 @@ jobs:
         with:
           name: MocNhien-1.2.1-ui-QA
           path: qa
-      - name: Check screenshot coverage
+      - uses: actions/download-artifact@v4
+        with:
+          name: UI-upgrade-QA
+          path: migration-qa
+      - name: Check screenshot coverage, original data and migration results
+        env:
+          CANDIDATE_SHA: ${{ needs.verify.outputs.apk_sha }}
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import json,os
+          results=list(Path("migration-qa").rglob("upgrade.json"))
+          assert len(results)==1,results
+          m=json.loads(results[0].read_text())
+          assert m["candidate_sha"]==os.environ["CANDIDATE_SHA"]
+          assert all(m[k]=="pass" for k in ("migration","progress","restart","recovery")),m
+          assert m["direct_install"] in ("success","signature_mismatch"),m
+          print("SIGNING AND DATA TRANSFER:",m)
           shots=list(Path("qa").rglob("*.png"))
           assert len(shots)>=100,len(shots)
           for name in ["M01-home-four-modules","M02-learning","UI-practice-index","M04-rewards","04-adventure-forest"]:
               assert any(p.stem==name for p in shots),name
           PY
           echo "${{ needs.verify.outputs.apk_sha }}  verified/MocNhien-Toan3-1.2.1-ui.apk" | sha256sum -c -
+      - name: Record acceptance limits
+        run: |
+          echo 'Technical candidate only. Manual comparison with approved UI remains required.' >> "$GITHUB_STEP_SUMMARY"
+          echo '20 MB is a reference, not a minimum or maximum; no padding.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'If direct_install=signature_mismatch, do not uninstall on a real device; only verified local backup/recovery with owner consent.' >> "$GITHUB_STEP_SUMMARY"
       - name: Prepare single installation file for visual review
         run: mv verified/MocNhien-Toan3-1.2.1-ui.apk verified/MocNhien-Toan3.apk
       - uses: actions/upload-artifact@v4

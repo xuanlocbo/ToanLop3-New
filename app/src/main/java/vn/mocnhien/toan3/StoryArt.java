@@ -59,7 +59,14 @@ final class StoryArt {
                 rounded(c,-5,-42,10,42,4,0xffb58491);
                 oval(c,-26,-55,52,42,dark);
                 circle(c,0,-52,22,canopy);circle(c,-16,-44,15,canopy);circle(c,16,-43,16,canopy);
-                oval(c,-15,-66,17,10,0x55ffffff);
+                // Soft layered lighting and foliage: decorative only.
+                fill(canopy);p.setShader(new RadialGradient(-9,-59,33,0xfff1ffe5,canopy,Shader.TileMode.CLAMP));
+                if(theme==0)c.drawOval(-21,-72,18,-33,p);
+                p.setShader(null);
+                oval(c,-15,-66,17,10,0x77ffffff);
+                for(int j=0;j<5;j++){float xx=-21+j*10,yy=-41+(j%2)*7;
+                    oval(c,xx,yy,8,4,0x3272a96b);
+                }
                 for(int i=0;i<3;i++){float xx=-15+i*16;float yy=-49-(i%2)*11;
                     if(theme==0)heart(c,xx,yy,4.4f,0xffed88b5);else flower(c,xx,yy,4.2f,CREAM);}
                 line(c,-2,-12,-2,-27,2,0xffd5a7a1);
@@ -95,6 +102,8 @@ final class StoryArt {
             c.save();c.rotate(-13+wave,-6,-39);oval(c,-12,-66,13,31,0xffd9bfd0);oval(c,-11,-65,11,29,CREAM);oval(c,-8,-61,5,20,PINK);c.restore();
             c.save();c.rotate(14-wave,8,-40);oval(c,2,-67,13,32,0xffd9bfd0);oval(c,3,-66,11,30,CREAM);oval(c,6,-62,5,20,PINK);c.restore();
             oval(c,-17,-47,34,32,0xffddc8d6);oval(c,-16,-46,32,30,CREAM);
+            fill(CREAM);p.setShader(new RadialGradient(-7,-39,28,0xffffffff,0xfff2d5e4,Shader.TileMode.CLAMP));
+            c.drawOval(-16,-46,16,-16,p);p.setShader(null);
             oval(c,-10,-43,10,4,0x9cffffff);
             if(blink||happy){line(c,-5,-33,-1,-32,1.6f,INK);line(c,7,-33,11,-34,1.6f,INK);}
             else{oval(c,-6,-36,4.8f,6.8f,INK);oval(c,6,-36,5.3f,7,INK);circle(c,-4,-34.5f,1.1f,CREAM);circle(c,8,-34.5f,1.2f,CREAM);}

@@ -48,7 +48,16 @@ final class AdventureScene extends View {
         c.drawColor(StoryArt.PALETTES[theme][1]);c.save();c.translate(0,offset);c.scale(scale,scale);
         int[] palette=StoryArt.PALETTES[theme];
         fill(palette[0]);p.setShader(new LinearGradient(0,0,0,HEIGHT,palette[0],palette[1],Shader.TileMode.CLAMP));c.drawRect(0,0,w,HEIGHT,p);p.setShader(null);
-        circle(w-44,36,28,0x40fff8cb);circle(w-44,36,23,0xffffedac);
+        fill(0xfffff7c8);p.setShader(new RadialGradient(w-44,36,48,new int[]{0xfafff8ce,0x80fff5c2,0x00fff5c2},new float[]{0,.47f,1},Shader.TileMode.CLAMP));c.drawCircle(w-44,36,48,p);p.setShader(null);
+        circle(w-44,36,20,0xffffedac);
+        // Distant pastel peaks, tiny birds and cloud highlights. Not game objects.
+        if(theme==0){
+            for(int i=0;i<8;i++){
+                float x=i*184-camera*.16f-75;if(x< -220||x>w+100)continue;
+                poly(0xffb4e1ed,x,GROUND,x+96,64+(i%3)*12,x+192,GROUND);
+                poly(0xfff6fdff,x+72,88+(i%3)*12,x+96,64+(i%3)*12,x+118,89+(i%3)*12,x+96,84+(i%3)*12);
+            }
+        }
         for(int i=0;i<9;i++){
             float x=(i*157+32-camera*.10f)%(w+90);if(x<0)x+=w+90;
             if(i%2==0)art.sparkle(c,x,26+i%3*17,2.5f+(i%3),0xbfffffff);
@@ -67,6 +76,12 @@ final class AdventureScene extends View {
             }else{
                 oval(x,79+(i%3)*13,210,164,palette[2]);
                 oval(x+23,106+(i%2)*10,190,143,palette[3]);
+            }
+        }
+        if(theme==0){
+            for(int i=0;i<5;i++){
+                float bx=(i*173+100-camera*.12f)%(w+100)-45,by=48+(i%3)*9;
+                line(bx-4,by-2,bx,by,1.2f,0xff7096a6);line(bx,by,bx+4,by-2,1.2f,0xff7096a6);
             }
         }
         if(theme==3||theme==2){
@@ -161,6 +176,13 @@ final class AdventureScene extends View {
         fill(palette[5]);p.setShader(new LinearGradient(0,GROUND,0,HEIGHT,palette[5],SOIL[theme],Shader.TileMode.CLAMP));c.drawRect(start,GROUND,end,HEIGHT,p);p.setShader(null);
         fill(palette[4]);c.drawRect(start,GROUND,end,GROUND+10,p);
         line(start+1,GROUND+1,end-1,GROUND+1,2.5f,palette[3]);
+        if(theme==0){
+            for(int x=visibleFirst(start+7,24,camera);x<end-5&&x<camera+visibleWidth+80;x+=24){
+                line(x,GROUND+2,x+2,GROUND-3,1.7f,0xff449f44);
+                line(x+2,GROUND-1,x+6,GROUND-4,1.5f,0xff75c94e);
+                oval(x+3,GROUND+15,14,6,0x22fff0cd);
+            }
+        }
         for(int x=visibleFirst(start+10,16,camera);x<end-8&&x<camera+visibleWidth+80;x+=16)oval(x,GROUND+6,12,7,palette[4]);
         for(int x=visibleFirst(start+13,43,camera);x<end-10&&x<camera+visibleWidth+80;x+=43){oval(x,GROUND+24,12,5,0x36ffffff);line(x+22,GROUND+42,x+34,GROUND+42,2,0x36ffffff);}
         for(int x=visibleFirst(start+27,75,camera);x<end-20&&x<camera+visibleWidth+80;x+=75)art.flower(c,x,GROUND-3,3.3f,0xffffcfdf);

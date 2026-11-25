@@ -77,14 +77,18 @@ final class NativeUi {
             }catch(java.io.IOException e){android.util.Log.w("MocNhien","Missing UI art: "+name,e);}
         }
         image.setImageBitmap(bitmap);
+        if(image.getDrawable() instanceof android.graphics.drawable.BitmapDrawable)
+            ((android.graphics.drawable.BitmapDrawable)image.getDrawable()).setFilterBitmap(true);
         image.setScaleType(ImageView.ScaleType.FIT_CENTER);
         image.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
         image.setLayoutParams(new LinearLayout.LayoutParams(-1,dp(height)));
         return image;
     }
     void hero(LinearLayout p){
-        int h=compact()?70:Math.min(220,Math.min(Math.round((widthDp()-20)*.51f),Math.max(105,(heightDp()-370)/2)));
+        int h=compact()?70:Math.min(250,Math.min(Math.round((widthDp()-20)*.56f),Math.max(110,(heightDp()-370)/2)));
         ImageView image=art("hero",h);
+        image.setBackground(wash(0xfffff5fa,0xffffc9e3,24));
+        image.setClipToOutline(true);
         image.setContentDescription("Mộc Nhiên Toán 3 — Học vui mỗi ngày");
         image.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
         p.addView(image);
@@ -105,9 +109,10 @@ final class NativeUi {
     void tile(LinearLayout row,String artName,String label,int color,int tint,Runnable click){
         LinearLayout box=card(tint);box.setGravity(Gravity.CENTER_HORIZONTAL);weight(row,box,1);
         box.setPadding(dp(7),dp(5),dp(7),dp(5));
-        box.addView(art(artName,compact()?36:Math.min(90,Math.max(44,(heightDp()-520)/2))));
+        box.addView(art(artName,compact()?36:Math.min(100,Math.max(46,(heightDp()-510)/2))));
         box.setBackground(wash(tint,artName.equals("book")?0xffffacd5:artName.equals("practice")?0xffd8b3f5:artName.equals("game")?0xffb9e99c:0xffffdc82,23));
         box.setOnClickListener(v->click.run());
+        if(android.os.Build.VERSION.SDK_INT>=28){box.setOutlineAmbientShadowColor(0xffe3a7c7);box.setOutlineSpotShadowColor(0xffe3a7c7);}
         Button b=button(label,color,click);b.setTextSize(compact()?16:18);
         b.setTextColor(color);b.setBackground(new RippleDrawable(ColorStateList.valueOf(0x22ffffff),bg(0x00ffffff,16),bg(WHITE,16)));
         b.setMinHeight(dp(compact()?42:46));b.setMinimumHeight(0);b.setPadding(dp(3),dp(5),dp(3),dp(5));
