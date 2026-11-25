@@ -18,3 +18,5 @@ Người dùng đã đồng ý chuyển dần sang Kotlin; giữ nguyên kế ho
 - Phần 6 đạt CI 45544219876 và migration 45547456147; phần 7 sẽ chuyển giao diện sáu trạm 30–35, giữ luật đo lường và ProgressStore hiện có.
 
 - Phần 7: chuyển sáu trạm đo lường 30–35 sang Kotlin với điều khiển cập nhật tại chỗ, giữ nguyên logic toán và lưu trữ; cần CI và migration đầy đủ.
+
+- Phần 7 đạt 30/30 unit tests, CI tích hợp 45548847319, 6 trạm Kotlin và nâng cấp/phục hồi p06 ↔ p07. Tiếp tục phần 8 trong phạm vi 36–40.
