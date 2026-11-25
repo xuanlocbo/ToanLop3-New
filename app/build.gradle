@@ -1,4 +1,9 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+kotlin { jvmToolchain(17) }
+
 
 def curriculumOutput = layout.buildDirectory.dir('generated/curriculum')
 def generatedBank = curriculumOutput.map { it.file('runtime_v2.json') }
@@ -16,8 +21,8 @@ android {
         applicationId 'vn.mocnhien.toan3'
         minSdk 24
         targetSdk 34
-        versionCode 8
-        versionName '1.2.0-p05'
+        versionCode 9
+        versionName '1.2.0-p05-k01'
     }
     sourceSets { main { assets.srcDir(curriculumOutput) } }
     compileOptions {

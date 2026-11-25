@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   workflow_call:
   pull_request:
-    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration]
+    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration, v1.2-part05-review]
   push:
     branches: [native-curriculum-1.1]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
@@ -35,30 +35,37 @@ jobs:
         with:
           path: ~/.android/debug.keystore
           key: mocnhien-new-debug-keystore-v1
-      - name: Verify part-05 protected baseline
+      - name: Verify Kotlin pilot protected baseline
         run: |
           set -euo pipefail
-          git diff --exit-code b1174f3aa0cc34a9db52eb39dee10dcb30e04135 HEAD -- app/src/main/assets tools tests migration app/src/main/AndroidManifest.xml app/src/main/java/vn/mocnhien/toan3/{Bank,BookBank,Textbook,ChallengeBank,LearningContent,Curriculum,ProgressStore,RewardLedger,NativeGrader,AdventureWorld,AdventurePlan,AdventurePanel,AdventureScene,BoardState,TrailMission,TrailMissionPanel,MathDiagram,GridCanvas,StoryArt,GameAudio,SoundPalette,AppModule,GameModule,RewardsModule,ProgressModule,ModuleContext,ModulePage,ModuleHome,NativeUi,Part02Tutor,Part02LearningUi,Part03Tutor,Part03LearningUi,Part04Tutor,Part04LearningUi,Json}.java app/src/test/java/vn/mocnhien/toan3/{AdventureTest,NativeCurriculumTest,SoundPaletteTest,TrailMissionTest,ModuleRoutingTest,Part02TutorTest,Part03TutorTest,Part04TutorTest}.java
-          echo PART05_BASELINE_UNCHANGED
-      - name: Verify data and compile Java
+          python3 - <<'PY'
+          import subprocess
+          base = "9981c9d40f2bb75810531c16be3b45ae204d4f41"
+          allowed = {"build.gradle","app/build.gradle",".gitignore",".github/workflows/verify-native.yml","docs/15-part-handoff.md","docs/kotlin-migration.md",
+                     "app/src/main/java/vn/mocnhien/toan3/AppModule.java","app/src/main/java/vn/mocnhien/toan3/ModuleHome.java",
+                     "app/src/main/kotlin/vn/mocnhien/toan3/AppModule.kt","app/src/main/kotlin/vn/mocnhien/toan3/ModuleHome.kt",
+                     "app/src/test/java/vn/mocnhien/toan3/KotlinShellParityTest.java"}
+          changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
+          assert changed <= allowed, changed-allowed
+          from pathlib import Path
+          for cls in ("AppModule","ModuleHome"):
+              assert not Path("app/src/main/java/vn/mocnhien/toan3/"+cls+".java").exists()
+              assert Path("app/src/main/kotlin/vn/mocnhien/toan3/"+cls+".kt").is_file()
+          print("KOTLIN_PILOT_PROTECTED_BASELINE_PASS",sorted(changed))
+          PY
+      - name: Verify data and compile Kotlin and Java
         run: |
+          set -euo pipefail
           node tests/verify_curriculum_v2.mjs
-          set -euo pipefail
-          # Prefer the verified Gradle cache. If incomplete, resolve online.
-          # Only retry dependency transport errors; never mask test or compiler failures.
-          if gradle --offline --no-daemon :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee /tmp/native-offline.log; then
-            exit 0
-          fi
-          if ! grep -Eqi 'offline mode|no cached version|not available for offline' /tmp/native-offline.log; then
-            exit 1
-          fi
+          # Kotlin pilot needs one-time plugin resolution; Gradle still reuses its cache.
           for attempt in 1 2 3; do
-            if gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee /tmp/native-online.log; then
+            if gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee /tmp/kotlin-build.log; then
+              test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/AppModule.class
+              test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/ModuleHome.class
+              echo KOTLIN_CLASSES_COMPILED
               exit 0
             fi
-            if ! grep -Eqi 'Received status code (429|502|503|504)|Too Many Requests|Read timed out|Connect timed out|Connection reset' /tmp/native-online.log; then
-              exit 1
-            fi
+            if ! grep -Eqi 'Received status code (429|502|503|504)|Too Many Requests|Read timed out|Connect timed out|Connection reset' /tmp/kotlin-build.log; then exit 1; fi
             if [ "$attempt" = 3 ]; then exit 1; fi
             sleep $((attempt * 20))
           done
@@ -86,15 +93,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p05.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p05.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p05.apk | tee output/badging.txt
-          grep -F "package: name='vn.mocnhien.toan3' versionCode='8' versionName='1.2.0-p05'" output/badging.txt
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p05.apk | tee output/permissions.txt
+          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p05-k01.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p05-k01.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p05-k01.apk | tee output/badging.txt
+          grep -F "package: name='vn.mocnhien.toan3' versionCode='9' versionName='1.2.0-p05-k01'" output/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p05-k01.apk | tee output/permissions.txt
           ! grep -F 'android.permission.INTERNET' output/permissions.txt
           python3 - <<'PY'
           import zipfile,json,hashlib,pathlib
-          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p05.apk")
+          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p05-k01.apk")
           with zipfile.ZipFile(p) as z:
               assert z.testzip() is None
               assert {'AndroidManifest.xml','classes.dex','assets/runtime_v2.json'} <= set(z.namelist())
@@ -104,12 +111,12 @@ jobs:
               assert hashlib.sha256(z.read('assets/runtime_v2.json')).hexdigest()=='ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3'
               print("APK_ZIP_PASS",p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest())
           PY
-          sha256sum output/MocNhien-Toan3-1.2.0-p05.apk > output/SHA256SUMS.txt
+          sha256sum output/MocNhien-Toan3-1.2.0-p05-k01.apk > output/SHA256SUMS.txt
       - name: Upload verified installation candidate
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.0-p05
-          path: output/MocNhien-Toan3-1.2.0-p05.apk
+          name: MocNhien-Toan3-1.2.0-p05-k01
+          path: output/MocNhien-Toan3-1.2.0-p05-k01.apk
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -132,7 +139,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-1.2.0-p05-QA
+          name: MocNhien-1.2.0-p05-k01-QA
           path: |
             screenshots/
             output/*.txt
