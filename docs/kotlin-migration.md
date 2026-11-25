@@ -12,3 +12,5 @@ Người dùng đã đồng ý chuyển dần sang Kotlin; giữ nguyên kế ho
 - Đã biên dịch thử hai lớp Kotlin và đạt 26/26 unit tests. Phần 5 Java đã đạt CI đầy đủ (24/24, 60 ảnh). Nhánh v1.2-part05-kotlin-migration đăng ký hai APK chính xác và kiểm thử p04/p05 ↔ p05-k01. Chưa thay thế nhánh ổn định khi CI Kotlin chưa đạt.
 
 - Thí điểm Kotlin ĐẠT CI 45540144790 (26/26, 60 ảnh Android) và migration 45542760048 (15/15, hai cặp nâng cấp/phục hồi). Chọn làm nền phần 6. Chỉ bổ sung chuyển đổi lớp thuộc phạm vi mỗi phần, không chuyển đồng thời lớp lưu dữ liệu.
+
+- Phần 6: chuyển GameModule sang Kotlin, thêm CandyStationSession/CandyStationPanel cho 26–29, giữ TrailMission và ProgressStore Java. Chưa đo độ mượt trên thiết bị thật; chỉ giảm tái tạo layout trong trạm.

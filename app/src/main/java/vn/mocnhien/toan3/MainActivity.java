@@ -137,7 +137,9 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         if(!a.pending){ui.label(body,"Hãy tới cổng trong màn chơi.",22,true);ui.action(body,"Trở lại màn chơi",NativeUi.PINK,()->go("game"));return;}
         if(a.gate==0&&!store.trailComplete(lesson)){
             LinearLayout station=ui.card(NativeUi.WHITE);ui.add(body,station);
-            station.addView(new TrailMissionPanel(this,store,lesson,()->{play(SoundPalette.Cue.STATION);render();}),new LinearLayout.LayoutParams(-1,-2));
+            Runnable next=()->{play(SoundPalette.Cue.STATION);render();};
+            View panel=CandyStationSession.supports(lesson)?new CandyStationPanel(this,store,lesson,next):new TrailMissionPanel(this,store,lesson,next);
+            station.addView(panel,new LinearLayout.LayoutParams(-1,-2));
             ui.action(body,"Về màn chơi (giữ nhiệm vụ đang làm)",NativeUi.PALE,()->go("game"));return;
         }
         JSONObject q=bank.questions.get(AdventurePlan.questionId(lesson,a.gate));
@@ -170,7 +172,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
         ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
         ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
-        ui.caption(c,"Bản 1.2.0-p05 • Ôn tập Bài 41–44 • Android native");
+        ui.caption(c,"Bản 1.2.0-p06 • Vườn kẹo ngọt • Kotlin + Java");
     }
     @Override public void changed(){
         if(stars!=null)stars.setText("★ "+store.balance());
