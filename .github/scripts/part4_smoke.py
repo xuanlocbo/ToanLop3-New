@@ -376,3 +376,40 @@ for l in range(36,41):
     route("learn")
 no_crash()
 print("PART04_ARITHMETIC_GUIDES_PASS",flush=True)
+
+# Part 05: real review screens, all four lessons, no state mutation.
+before_review_guides=business_state()
+for l in range(41,45):
+    click(r"^Bài "+str(l)+r"\s+\d+/\d+")
+    route("lesson")
+    click(r"^Mở hướng dẫn Bài "+str(l)+r"$")
+    click(r"^Xem bước 1$")
+    find(r"^Xem bước 2$",cls="android.widget.Button")
+    capture("P05-guide-"+str(l)+"-step1")
+    click(r"^Xem bước 2$")
+    click(r"^Xem bước 3$")
+    find(r"^Xem lại từ đầu$",cls="android.widget.Button")
+    capture("P05-guide-"+str(l)+"-solved")
+    assert business_state()==before_review_guides, "review guide changed progress"
+    adb("shell","input","keyevent","4")
+    route("learn")
+no_crash()
+print("PART05_REVIEW_GUIDES_PASS",flush=True)
+
+# Exact source geometry question via a clean navigation-only test fixture.
+s=snapshot()
+s["nav"].update({"screen":"question","lesson":44,"book":"vbt","question":"VBT.44.1.113.3.1","scroll":0,"reviewMode":False})
+adb("shell","am","force-stop",PKG)
+root=ET.Element("map")
+ET.SubElement(root,"string",name="snapshot").text=json.dumps(s,ensure_ascii=False,separators=(",",":"))
+adb("shell","run-as",PKG,"mkdir","-p","shared_prefs")
+adb("shell","run-as",PKG,"rm","-f",PREF+".bak")
+adb("shell",f"run-as {PKG} sh -c 'cat > {PREF}'",data=ET.tostring(root,encoding="utf-8",xml_declaration=True))
+launch()
+route("question")
+find(r"Quan sát hình chữ nhật ABCD")
+find(r"Hình minh họa hình học trên lưới",desc=True)
+capture("P05-circumcircle-full")
+assert business_state()==before_review_guides, "geometry view changed progress"
+no_crash()
+print("PART05_GEOMETRY_VIEW_PASS",flush=True)

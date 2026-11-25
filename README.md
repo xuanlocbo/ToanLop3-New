@@ -1,3 +1,7 @@
+# Mộc Nhiên Toán 3 — 1.2.0-p05
+
+Phần 5/15: Ôn tập Bài 41–44; 258 mục nguồn đã có và 15 ví dụ bổ sung không tính sao. Minh họa hình học co giãn theo đủ đường tròn và điểm, không thay đổi dữ liệu, đáp án, quy tắc chấm hay trạng thái. Kế thừa 4 phần đã nghiệm thu. Mốc CI và APK ghi ở docs/15-part-handoff.md.
+
 # Mộc Nhiên Toán 3 — 1.2.0-p04
 
 Phần 4/15: Bài 36–40, hướng dẫn đặt tính và biểu thức. Kế thừa phần 3 đã được người dùng chốt. Giữ nguyên toàn bộ 959 mục dữ liệu, ID, chấm điểm, bốn module, lưu tiến độ, trò chơi và phần thưởng. 15 ví dụ bổ sung không tính sao; hình đặt tính chỉ hiện toán hạng, lời giải chỉ ở ví dụ/hướng dẫn hoặc sau khi trẻ được phép xem theo cơ chế hiện có. Mốc và CI ghi trong docs/15-part-handoff.md. APK debug; không gỡ bản cũ có tiến độ. Không xử lý lại khóa ký cũ.
