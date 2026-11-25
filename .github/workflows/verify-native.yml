@@ -1,21 +1,25 @@
-name: Verify native Android curriculum
+name: Verify native Android curriculum and migration
 on:
   workflow_dispatch:
   workflow_call:
   pull_request:
-    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration, v1.2-part05-review, v1.2-part05-kotlin-migration]
+    branches: [native-curriculum-1.1, part2-game-integration, v1.2-part01-modules, v1.2-part02-migration, v1.2-part03-migration, v1.2-part04-migration, v1.2-part05-review, v1.2-part05-kotlin-migration, v1.2-part06-migration]
   push:
     branches: [native-curriculum-1.1]
     paths: ['.github/workflows/verify-native.yml', 'app/src/**', 'app/build.gradle', 'tools/**', 'tests/**']
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: native-verify-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 55
+    outputs:
+      apk_sha: ${{ steps.package.outputs.apk_sha }}
+      apk_bytes: ${{ steps.package.outputs.apk_bytes }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,24 +39,23 @@ jobs:
         with:
           path: ~/.android/debug.keystore
           key: mocnhien-new-debug-keystore-v1
-      - name: Verify part-06 protected baseline
+      - name: Verify part-07 protected baseline
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import subprocess
           from pathlib import Path
-          base="b151bd5a2259cb29615057f91f89cb082fc97f51"
+          base="536714b14ec54be91330cc532494a4a25a3e870f"
           allowed={"app/build.gradle",".github/workflows/verify-native.yml",".github/scripts/part4_smoke.py",
-                   "docs/15-part-handoff.md","docs/kotlin-migration.md","docs/remaining-plan.md",
-                   "app/src/main/java/vn/mocnhien/toan3/MainActivity.java","app/src/main/java/vn/mocnhien/toan3/GameModule.java",
-                   "app/src/main/kotlin/vn/mocnhien/toan3/GameModule.kt","app/src/main/kotlin/vn/mocnhien/toan3/CandyStationSession.kt","app/src/main/kotlin/vn/mocnhien/toan3/CandyStationPanel.kt",
-                   "app/src/test/java/vn/mocnhien/toan3/CandyStationTest.java"}
+                   "docs/15-part-handoff.md","docs/kotlin-migration.md","docs/remaining-plan.md","docs/ci-continuous.md",
+                   "app/src/main/java/vn/mocnhien/toan3/MainActivity.java",
+                   "app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationSession.kt","app/src/main/kotlin/vn/mocnhien/toan3/RainbowStationPanel.kt",
+                   "app/src/test/java/vn/mocnhien/toan3/RainbowStationTest.java","migration/ci_candidate.py"}
           changed=set(subprocess.check_output(["git","diff","--no-renames","--name-only",base,"HEAD"],text=True).splitlines())
           assert changed<=allowed, changed-allowed
-          assert not Path("app/src/main/java/vn/mocnhien/toan3/GameModule.java").exists()
-          for cls in ("GameModule","CandyStationSession","CandyStationPanel"):
+          for cls in ("RainbowStationSession","RainbowStationPanel"):
               assert Path("app/src/main/kotlin/vn/mocnhien/toan3/"+cls+".kt").is_file()
-          print("PART06_PROTECTED_BASELINE_PASS",sorted(changed))
+          print("PART07_PROTECTED_BASELINE_PASS",sorted(changed))
           PY
       - name: Verify data and compile Kotlin and Java
         run: |
@@ -63,7 +66,7 @@ jobs:
             if gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee /tmp/kotlin-build.log; then
               test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/AppModule.class
               test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/ModuleHome.class
-              for cls in GameModule CandyStationSession CandyStationPanel; do
+              for cls in GameModule CandyStationSession CandyStationPanel RainbowStationSession RainbowStationPanel; do
                 test -f app/build/tmp/kotlin-classes/debug/vn/mocnhien/toan3/$cls.class
               done
               echo KOTLIN_CLASSES_COMPILED
@@ -94,18 +97,19 @@ jobs:
           path: app/build/test-results/testDebugUnitTest/
           if-no-files-found: warn
       - name: Package and verify the exact tested APK
+        id: package
         run: |
           set -euo pipefail
           mkdir -p output
-          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p06.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p06.apk
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p06.apk | tee output/badging.txt
-          grep -F "package: name='vn.mocnhien.toan3' versionCode='10' versionName='1.2.0-p06'" output/badging.txt
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p06.apk | tee output/permissions.txt
+          cp app/build/outputs/apk/debug/app-debug.apk output/MocNhien-Toan3-1.2.0-p07.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs output/MocNhien-Toan3-1.2.0-p07.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging output/MocNhien-Toan3-1.2.0-p07.apk | tee output/badging.txt
+          grep -F "package: name='vn.mocnhien.toan3' versionCode='11' versionName='1.2.0-p07'" output/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions output/MocNhien-Toan3-1.2.0-p07.apk | tee output/permissions.txt
           ! grep -F 'android.permission.INTERNET' output/permissions.txt
           python3 - <<'PY'
           import zipfile,json,hashlib,pathlib
-          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p06.apk")
+          p=pathlib.Path("output/MocNhien-Toan3-1.2.0-p07.apk")
           with zipfile.ZipFile(p) as z:
               assert z.testzip() is None
               assert {'AndroidManifest.xml','classes.dex','assets/runtime_v2.json'} <= set(z.namelist())
@@ -115,12 +119,14 @@ jobs:
               assert hashlib.sha256(z.read('assets/runtime_v2.json')).hexdigest()=='ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3'
               print("APK_ZIP_PASS",p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest())
           PY
-          sha256sum output/MocNhien-Toan3-1.2.0-p06.apk > output/SHA256SUMS.txt
+          sha256sum output/MocNhien-Toan3-1.2.0-p07.apk > output/SHA256SUMS.txt
+          echo "apk_sha=$(cut -d ' ' -f 1 output/SHA256SUMS.txt)" >> "$GITHUB_OUTPUT"
+          echo "apk_bytes=$(stat -c %s output/MocNhien-Toan3-1.2.0-p07.apk)" >> "$GITHUB_OUTPUT"
       - name: Upload verified installation candidate
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-Toan3-1.2.0-p06
-          path: output/MocNhien-Toan3-1.2.0-p06.apk
+          name: MocNhien-Toan3-1.2.0-p07
+          path: output/MocNhien-Toan3-1.2.0-p07.apk
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -143,9 +149,128 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MocNhien-1.2.0-p06-QA
+          name: MocNhien-1.2.0-p07-QA
           path: |
             screenshots/
             output/*.txt
           if-no-files-found: warn
+          retention-days: 30
+
+  migration:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      CANDIDATE_SHA: ${{ needs.verify.outputs.apk_sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test migration safeguards
+        run: python3 -m unittest discover -s migration -p 'test_*.py' -v
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p06
+          run-id: 45544219876
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: migration-apks/p06
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p07
+          path: migration-apks/p07
+      - name: Check exact original and current candidate digests
+        run: |
+          set -euo pipefail
+          echo 'a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02  migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk' | sha256sum -c -
+          printf '%s  %s\n' "$CANDIDATE_SHA" migration-apks/p07/MocNhien-Toan3-1.2.0-p07.apk | sha256sum -c -
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools'
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Actual upgrade and recovery on Android
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: python3 migration/ci_candidate.py --source p06 --target p07 --source-apk migration-apks/p06/MocNhien-Toan3-1.2.0-p06.apk --target-apk migration-apks/p07/MocNhien-Toan3-1.2.0-p07.apk --target-sha "$CANDIDATE_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MocNhien-p07-migration-QA
+          path: migration-qa/
+          if-no-files-found: error
+          retention-days: 30
+  acceptance:
+    needs: [verify, migration]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      CANDIDATE_SHA: ${{ needs.verify.outputs.apk_sha }}
+      CANDIDATE_BYTES: ${{ needs.verify.outputs.apk_bytes }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: native-unit-test-results
+          path: evidence/unit
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-1.2.0-p07-QA
+          path: evidence/app
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-p07-migration-QA
+          path: evidence/migration
+      - uses: actions/download-artifact@v4
+        with:
+          name: MocNhien-Toan3-1.2.0-p07
+          path: evidence/apk
+      - name: Record complete technical acceptance evidence
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,xml.etree.ElementTree as ET
+          e=pathlib.Path("evidence")
+          suites=[ET.parse(f).getroot() for f in (e/"unit").rglob("TEST-*.xml")]
+          count=sum(int(x.get("tests",0)) for x in suites)
+          assert count>=30 and all(int(x.get(k,0))==0 for x in suites for k in ("failures","errors","skipped")), count
+          app_screens=list((e/"app").rglob("*.png"))
+          migration_screens=list((e/"migration").rglob("*.png"))
+          assert len(app_screens)>=82 and len(migration_screens)>=2,(len(app_screens),len(migration_screens))
+          for l in range(30,36):
+              assert any(p.name==f"P07-measure-{l}-restored.png" for p in app_screens),l
+          proof=json.loads((e/"migration"/"migration-proof.json").read_text())
+          apk=e/"apk"/"MocNhien-Toan3-1.2.0-p07.apk"
+          sha=hashlib.sha256(apk.read_bytes()).hexdigest()
+          assert sha==os.environ["CANDIDATE_SHA"]==proof["target_sha256"]
+          assert apk.stat().st_size==int(os.environ["CANDIDATE_BYTES"])
+          assert proof["source"]=="p06" and proof["target"]=="p07"
+          assert proof["source_sha256"]=="a189e416e4d261dbf14bdb7c97fb75861f99a61e573412fd978a61dfd9956d02"
+          assert proof["upgrade"]==proof["recovery"]=="pass"
+          data={"part":7,"version":"1.2.0-p07","technical_gate":"pass",
+                "commit":os.environ["GITHUB_SHA"],"run_id":os.environ["GITHUB_RUN_ID"],
+                "source_run":45544219876,"apk_sha256":sha,"apk_bytes":apk.stat().st_size,
+                "unit_tests":count,"android_screens":len(app_screens),
+                "migration_screens":len(migration_screens),"migration":proof,
+                "limits":"Debug APK; Android emulator; visual review and handoff still required; no physical-device or release-signing claim."}
+          pathlib.Path("acceptance-p07.json").write_text(json.dumps(data,indent=2)+"\n")
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("# Part 07 - technical gate passed\n\n")
+              f.write("Application, prior regressions, migration and recovery passed on Android emulator.\n\n")
+              f.write("Commit: "+data["commit"]+"\n\n")
+              f.write("APK SHA-256: "+sha+"\n\n")
+              f.write(f"Unit tests: {count}; Android screenshots: {len(app_screens)}; migration screenshots: {len(migration_screens)}.\n\n")
+              f.write("Await visual review and recording the exact accepted APK in the handoff before the next part.\n")
+          print("PART07_TECHNICAL_GATE_PASS",json.dumps(data),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: acceptance-p07
+          path: acceptance-p07.json
+          if-no-files-found: error
           retention-days: 30
