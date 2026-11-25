@@ -143,8 +143,56 @@ adb("install","-r",apk)
 adb("shell","pm","clear",PKG)
 adb("shell","settings","put","secure","show_ime_with_hard_keyboard","1")
 launch()
-find(r"^Bắt đầu phiêu lưu$",cls="android.widget.Button",scrollable=False)
-capture("01-home")
+# Module entries must all be visible on the first screen without scrolling.
+for title in ("Học bài","Chơi game","Phần thưởng","Tiến độ"):
+    find("^"+title+"$",cls="android.widget.Button",scrollable=False)
+capture("M01-home-four-modules")
+def route(expected):
+    assert snapshot()["nav"]["screen"]==expected, (expected,snapshot()["nav"])
+def module_back():
+    click(r"^Quay lại$",desc=True,scrollable=False)
+    route("home")
+def business_state():
+    s=snapshot()
+    s.pop("nav",None)
+    return s
+
+click(r"^Học bài$",scrollable=False)
+route("learn")
+find(r"^Học bài$",cls="android.widget.TextView",scrollable=False)
+capture("M02-learning")
+baseline=business_state()
+module_back()
+click(r"^Chơi game$",scrollable=False)
+route("adventure")
+find(r"^Chơi game$",cls="android.widget.TextView",scrollable=False)
+capture("M03-game")
+assert business_state()==baseline
+# Switch modules through the actual persistent navigation bar.
+click(r"^Phần thưởng$",scrollable=False)
+route("awards")
+find(r"^Phần thưởng$",cls="android.widget.TextView",scrollable=False)
+capture("M04-rewards")
+assert business_state()==baseline
+restart()
+route("awards")
+find(r"^Phần thưởng$",cls="android.widget.TextView",scrollable=False)
+click(r"^Tiến độ$",scrollable=False)
+route("progress")
+find(r"^Tiến độ$",cls="android.widget.TextView",scrollable=False)
+capture("M05-progress")
+assert business_state()==baseline
+restart()
+route("progress")
+click(r"^Ôn lại câu chưa đúng")
+route("review")
+find(r"Chưa có câu nào cần ôn lại")
+click(r"^Quay lại$",desc=True,scrollable=False)
+route("progress")
+module_back()
+assert business_state()==baseline
+click(r"^Học bài$",scrollable=False)
+route("learn")
 # Actual navigation and completion of an original SGK example.
 click(r"^Bài 26\s+\d+/\d+")
 click(r"^Mở Sách giáo khoa$")
@@ -161,8 +209,16 @@ restart()
 find(r"Đã học xong")
 assert snapshot()["done"]["SGK.26.75.KP.1.a"]
 # Actual movement through the map; first steps are not fixture-based.
-fixture(26,"home")
-click(r"^Bắt đầu phiêu lưu$")
+# Return through the shell, not a seeded navigation fixture.
+adb("shell","input","keyevent","4")
+route("list")
+adb("shell","input","keyevent","4")
+route("lesson")
+adb("shell","input","keyevent","4")
+route("learn")
+module_back()
+click(r"^Chơi game$",scrollable=False)
+route("adventure")
 click(r"^Bắt đầu$")
 find(r"Phải",cls="android.widget.Button",scrollable=False)
 capture("04-adventure-forest")
@@ -215,6 +271,19 @@ assert s["adventures"]["32"]["motion"]["answered"]
 capture("09-reward")
 click(r"^Qua cổng")
 assert snapshot()["adventures"]["32"]["motion"]["gate"]==1
+click(r"Bản đồ",scrollable=False)
+route("adventure")
+after_score=business_state()
+click(r"^Phần thưởng$",scrollable=False)
+route("awards")
+find(r"10 sao hồng",cls="android.widget.TextView")
+capture("M06-rewards-after-game")
+click(r"^Tiến độ$",scrollable=False)
+route("progress")
+find(r"2 / 959 mục đã hoàn thành",cls="android.widget.TextView")
+capture("M07-progress-after-game")
+assert business_state()==after_score
+print("FOUR_MODULE_NAVIGATION_AND_SHARED_STATE_PASS",flush=True)
 # Optional challenge is not a forced blocker.
 fixture(26,"gate",gate=2,pending=True)
 click(r"^Thử thách này để sau$")
@@ -231,7 +300,10 @@ for l,name in [(30,"10-lake"),(36,"11-crystal"),(43,"12-castle")]:
     capture(name)
     no_crash()
 # The setting persists, without requiring audio capture on CI.
-fixture(26,"settings")
+click(r"Bản đồ",scrollable=False)
+route("adventure")
+click(r"^Cài đặt$",desc=True,scrollable=False)
+route("settings")
 click(r"^Âm thanh: đang bật$")
 assert snapshot()["sound"] is False
 restart()
@@ -239,4 +311,7 @@ find(r"Âm thanh: đang tắt",scrollable=False)
 capture("13-settings")
 no_crash()
 assert len(set(p.read_bytes() for p in OUT.glob("*.png")))>=12
+for name in ("M01-home-four-modules","M02-learning","M03-game","M04-rewards","M05-progress","M06-rewards-after-game","M07-progress-after-game"):
+    assert (OUT/(name+".png")).is_file(),name
+print("PART01_MODULE_EMULATOR_SMOKE_PASS",flush=True)
 print("PART4_EMULATOR_SMOKE_PASS",flush=True)
