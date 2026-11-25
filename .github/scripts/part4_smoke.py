@@ -484,3 +484,34 @@ for l,seed,wrong,first,second,solved in [
     capture("P06-machine-"+str(l)+"-gate")
 no_crash()
 print("PART06_CANDY_STATIONS_RESUME_AND_SCORE_PASS",flush=True)
+
+
+# Part 07: all six Kotlin measurement stations, exact existing puzzle rules.
+for l,seed,selector,desc,expected,value in [
+    (30,"3",r"^Miếng 4: 12 mm, chưa chọn$",True,"11",r"Đã ghép / đặt: 42 mm"),
+    (31,"3",r"^Miếng 3: 50 g, chưa chọn$",True,"7",r"Đã ghép / đặt: 350 g"),
+    (32,"500,0",r"^A → B$",False,"200,300",r"A: 200 ml\s+B: 300 ml"),
+    (33,"27",r"^\+1°C$",False,"28",r"Hiện tại: 28°C"),
+    (34,"7",r"^Miếng 4: 200 g, chưa chọn$",True,"15",r"Đã ghép / đặt: 1000 g"),
+    (35,"400,0",r"^A → B$",False,"250,150",r"A: 250 ml\s+B: 150 ml")]:
+    candy_fixture(l,seed)
+    before=business_state()
+    click(r"^Kiểm tra$")
+    find(r"Chưa hoàn thành")
+    assert not trail(l).get("complete",False)
+    click(selector,desc=desc)
+    assert trail(l)["draft"]==expected,(l,trail(l))
+    restart()
+    assert trail(l)["draft"]==expected
+    find(value)
+    capture("P07-measure-"+str(l)+"-restored")
+    click(r"^Kiểm tra$")
+    assert trail(l)["complete"]
+    after=business_state()
+    for key in ("claims","done","review","drafts"):
+        assert after[key]==before[key],key
+    assert after["adventures"][str(l)]["motion"]["pending"]
+    assert not after["adventures"][str(l)]["motion"]["answered"]
+    capture("P07-measure-"+str(l)+"-gate")
+no_crash()
+print("PART07_RAINBOW_STATIONS_RESUME_AND_SCORE_PASS",flush=True)

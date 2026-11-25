@@ -16,3 +16,5 @@ Người dùng đã đồng ý chuyển dần sang Kotlin; giữ nguyên kế ho
 - Phần 6: chuyển GameModule sang Kotlin, thêm CandyStationSession/CandyStationPanel cho 26–29, giữ TrailMission và ProgressStore Java. Chưa đo độ mượt trên thiết bị thật; chỉ giảm tái tạo layout trong trạm.
 
 - Phần 6 đạt CI 45544219876 và migration 45547456147; phần 7 sẽ chuyển giao diện sáu trạm 30–35, giữ luật đo lường và ProgressStore hiện có.
+
+- Phần 7: chuyển sáu trạm đo lường 30–35 sang Kotlin với điều khiển cập nhật tại chỗ, giữ nguyên logic toán và lưu trữ; cần CI và migration đầy đủ.
