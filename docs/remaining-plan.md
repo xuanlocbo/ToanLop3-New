@@ -21,3 +21,5 @@ Mỗi phần: xác định vấn đề → sửa đúng phạm vi → test độ
 Dự án hiện tại: xuanlocbo/ToanLop3-New. Mốc ổn định trước part05: b1174f3aa0cc34a9db52eb39dee10dcb30e04135. CI Java part05 đã đạt. Mốc thử Kotlin: 5306da67bcdc01de9dded6cfd641a154e5f0deb2. Đọc docs/15-part-handoff.md và docs/kotlin-migration.md trước khi tiếp tục; đối chiếu HEAD và CI thực tế, không dùng số liệu cũ khi nhánh đã thay đổi.
 
 Cập nhật: phần 5 đã tự nghiệm thu theo kết quả CI 45539283903, 45540144790, 45542760048. Nền mới là Kotlin p05-k01 và công cụ migration đã đạt. Chuyển sang phần 6, nhánh v1.2-part06-candy. Giữ nguyên các điều kiện phần 15.
+
+Phần 6: đã triển khai ứng viên 1.2.0-p06, cần kiểm thử CI đầy đủ và đăng ký APK chính xác vào công cụ chuyển tiến độ trước tự nghiệm thu. Không tự đánh dấu đạt khi chưa có kết quả.

@@ -413,3 +413,74 @@ capture("P05-circumcircle-full")
 assert business_state()==before_review_guides, "geometry view changed progress"
 no_crash()
 print("PART05_GEOMETRY_VIEW_PASS",flush=True)
+
+
+# Part 06: real Kotlin station controls. Fixtures are isolated emulator progress only.
+# Seed the group missions close to completion to exercise real +/- controls quickly.
+def candy_fixture(lesson,draft):
+    s=snapshot()
+    s["nav"].update({"screen":"gate","lesson":lesson,"book":"sgk","scroll":0,"reviewMode":False})
+    s.setdefault("adventures",{})[str(lesson)]={"motion":{
+        "version":1,"x":458,"y":0,"vy":0,"gate":0,"petals":0,"falls":0,
+        "pending":True,"answered":False,"finished":False},
+        "trail":{"draft":draft,"complete":False}}
+    adb("shell","am","force-stop",PKG)
+    root=ET.Element("map")
+    ET.SubElement(root,"string",name="snapshot").text=json.dumps(s,ensure_ascii=False,separators=(",",":"))
+    adb("shell","run-as",PKG,"mkdir","-p","shared_prefs")
+    adb("shell","run-as",PKG,"rm","-f",PREF+".bak")
+    adb("shell",f"run-as {PKG} sh -c 'cat > {PREF}'",data=ET.tostring(root,encoding="utf-8",xml_declaration=True))
+    launch()
+    route("gate")
+
+def trail(lesson):
+    return snapshot()["adventures"][str(lesson)]["trail"]
+
+for l,seed,description,solved in [(26,"5,5,4","Thuyền 3: thêm 1","5,5,5"),(29,"5,5,5,4","Rương 4: thêm 1","5,5,5,5")]:
+    candy_fixture(l,seed)
+    before=snapshot()
+    capture("P06-group-"+str(l)+"-before")
+    click(r"^"+description+r"$",desc=True)
+    assert trail(l)["draft"]==solved,trail(l)
+    restart()
+    assert trail(l)["draft"]==solved
+    find(r"Kho còn "+("2 kiện" if l==26 else "3 viên"))
+    capture("P06-group-"+str(l)+"-restored")
+    click(r"^Kiểm tra$")
+    after=snapshot()
+    assert trail(l)["complete"]
+    for key in ("claims","done","review","drafts"):
+        assert after[key]==before[key],key
+    assert after["adventures"][str(l)]["motion"]["pending"]
+    assert not after["adventures"][str(l)]["motion"]["answered"]
+    capture("P06-group-"+str(l)+"-gate")
+
+for l,seed,wrong,first,second,solved in [
+    (27,"-1","− 4",":4",None,"0"),
+    (28,"-1,-1","+10","− 3","+10","0,1")]:
+    candy_fixture(l,seed)
+    before=snapshot()
+    click(r"^Phép tính "+re.escape(wrong)+r"$",desc=True)
+    click(r"^Kiểm tra$")
+    find(r"Chưa hoàn thành")
+    assert not trail(l).get("complete",False)
+    click(r"^Hoàn tác$",desc=True)
+    assert trail(l)["draft"]==seed
+    click(r"^Phép tính "+re.escape(first)+r"$",desc=True)
+    if second:
+        restart()
+        assert trail(l)["draft"]=="0,-1"
+        click(r"^Phép tính "+re.escape(second)+r"$",desc=True)
+    assert trail(l)["draft"]==solved
+    capture("P06-machine-"+str(l)+"-solved")
+    restart()
+    assert trail(l)["draft"]==solved
+    click(r"^Kiểm tra$")
+    assert trail(l)["complete"]
+    after=snapshot()
+    for key in ("claims","done","review","drafts"):
+        assert after[key]==before[key],key
+    assert not after["adventures"][str(l)]["motion"]["answered"]
+    capture("P06-machine-"+str(l)+"-gate")
+no_crash()
+print("PART06_CANDY_STATIONS_RESUME_AND_SCORE_PASS",flush=True)
