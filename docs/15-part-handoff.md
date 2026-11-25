@@ -14,3 +14,5 @@
 - Phần 5/15: Bài 41–44, 115 mục SGK + 143 mục VBT = 258 mục theo dữ liệu đã đối chiếu. Giữ nguyên các phần 1–4, kế thừa các kết quả kiểm thử, chỉ triển khai sau khi người dùng chốt phần 4. Quy trình: xác định vấn đề → xử lý → hoàn thiện → kiểm thử, nghiệm thu → lưu mốc → bước tiếp theo.
 
 - Người dùng chốt phần 4/15. Phần 5 triển khai trên v1.2-part05-review, mốc b1174f3aa0cc34a9db52eb39dee10dcb30e04135. Giữ nguyên 258 mục Bài 41–44 và cả 959 mục. Bổ sung 15 ví dụ ôn tập riêng, giải thích số học, hình học và đo lường; khắc phục vùng vẽ hình tròn ngoại tiếp bằng cách tính cả biên đường tròn, chỉ trong Bài 41–44. Kiểm thử 24 phép nhân, 24 phép chia, 21 biểu thức, trung điểm/góc bằng tọa độ, bán kính/đường kính đã vẽ, khối sơn mặt, đếm khối và đường gấp khúc. Chưa nghiệm thu trước kết quả CI; không xử lý lại khóa ký cũ.
+
+- Người dùng đồng ý chuyển dần sang Kotlin vì hài lòng trải nghiệm ứng dụng tiếng Anh. Tạo nhánh thí điểm riêng từ p05 đang kiểm thử; xem docs/kotlin-migration.md. Không mở lại các phần đã nghiệm thu và không thay thế p05 trước khi đủ điều kiện. Giai đoạn đầu chuyển AppModule, ModuleHome; CI Kotlin chưa xác nhận.
