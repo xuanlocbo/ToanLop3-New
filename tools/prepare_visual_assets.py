@@ -62,14 +62,28 @@ def main():
         ids={a["id"]:a for a in manifest["assets"]}
         assert len(ids)==218 and len(stages)==19
         assert {s["lesson"] for s in stages}==set(range(26,45))
+        coverage=read(z,"spec/coverage.json")
+        expected=["sgk_26_29","sgk_30_35","sgk_36_37","sgk_38_40","sgk_41_42","sgk_43_44",
+                  "vbt_26_29","vbt_30_35","vbt_36_38","vbt_39_41","vbt_42_44","bonus_26_44"]
+        records=coverage["sourceFiles"]
+        assert [r["name"] for r in records]==[name+".json" for name in expected], "Asset pack source list differs from curriculum generator"
         rows={}
-        for src in sorted(SOURCE.glob("*.json")):
-            data=json.loads(src.read_text(encoding="utf8"))
+        for record in records:
+            src=SOURCE/record["name"]
+            raw=src.read_bytes()
+            # Git blob identity is verified, not merely the filename or count.
+            digest=hashlib.sha1(("blob "+str(len(raw))+"\0").encode("ascii")+raw).hexdigest()
+            assert digest==record["sha"], f"Source changed: {src.name}"
+            data=json.loads(raw)
+            count=0
             for lesson in data["lessons"]:
                 for q in lesson["items"]:
-                    assert q["id"] not in rows
+                    assert q["id"] not in rows, f"Duplicate {q['id']} in {src.name}"
                     rows[q["id"]]=q
-        assert len(rows)==len(qmap)==959 and {q["id"] for q in qmap}==set(rows)
+                    count+=1
+            assert count==record["count"],f"Wrong item count in {src.name}"
+        assert len(rows)==len(qmap)==959 and {q["id"] for q in qmap}==set(rows), "959 unique IDs required"
+        print("VISUAL_CURRICULUM_PASS",len(records),len(rows),flush=True)
         assert all(set(q["assetCandidates"])<=set(ids) for q in qmap)
         assert set(SAFE)<=set(ids)
         if OUT.exists(): shutil.rmtree(OUT)
