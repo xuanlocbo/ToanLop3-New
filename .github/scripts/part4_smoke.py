@@ -9,6 +9,7 @@ import subprocess
 import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from ui_scan import sweep_viewports
 
 PKG = "vn.mocnhien.toan3"
 PREF = "shared_prefs/native_curriculum_progress_v2.xml"
@@ -50,34 +51,46 @@ def norm(t):
 def bounds(n):
     return tuple(map(int,re.findall(r"\d+",n.attrib["bounds"])))
 
-def scroll(direction=1):
-    tree=hierarchy()
+def scroll(direction=1,tree=None):
+    if tree is None:
+        tree=hierarchy()
     candidates=[n for n in tree.iter("node") if n.get("scrollable")=="true"]
-    if candidates:
-        x1,y1,x2,y2=bounds(max(candidates,key=lambda n:(bounds(n)[2]-bounds(n)[0])*(bounds(n)[3]-bounds(n)[1])))
-    else:
-        root=next(tree.iter("node"))
-        x1,y1,x2,y2=bounds(root)
-    x=(x1+x2)//2
-    a=y1+int((y2-y1)*.8);b=y1+int((y2-y1)*.2)
+    if not candidates:
+        wait(.3)
+        return False
+    x1,y1,x2,y2=bounds(max(candidates,key=lambda n:(bounds(n)[2]-bounds(n)[0])*(bounds(n)[3]-bounds(n)[1])))
+    if x2-x1<40 or y2-y1<40:
+        return False
+    # Stay inside a content column, away from the central gap and fixed nav bar.
+    # Slow swipes with overlapping viewports avoid skipping controls.
+    x=x1+int((x2-x1)*.30)
+    a=y1+int((y2-y1)*.86);b=y1+int((y2-y1)*.14)
     if direction<0:a,b=b,a
-    adb("shell","input","swipe",x,a,x,b,300)
-    wait(.2)
+    adb("shell","input","swipe",x,a,x,b,550)
+    wait(.35)
+    return True
 
 def find(pattern,cls=None,desc=False,scrollable=True):
     rx=re.compile(pattern,re.IGNORECASE)
-    for attempt in range(13 if scrollable else 3):
-        tree=hierarchy()
-        nodes=[]
+    def match(tree):
         for n in tree.iter("node"):
             if n.get("enabled")!="true" or cls and n.get("class")!=cls:continue
             t=norm(n.get("content-desc" if desc else "text"))
             if not rx.search(t):continue
             x1,y1,x2,y2=bounds(n)
-            if x2-x1>6 and y2-y1>6:nodes.append(n)
-        if nodes:return nodes[0]
-        if scrollable:scroll(1 if attempt<7 else -1)
-        else:wait(.3)
+            if x2-x1>6 and y2-y1>6:return n
+        return None
+    if scrollable:
+        node,tree=sweep_viewports(
+            hierarchy,match,lambda tree,direction:scroll(direction,tree),
+            lambda tree:ET.tostring(tree,encoding="unicode"))
+        if node is not None:return node
+    else:
+        for _ in range(3):
+            tree=hierarchy()
+            node=match(tree)
+            if node is not None:return node
+            wait(.3)
     capture("failure-selector")
     (OUT/"failure-ui.xml").write_text(ET.tostring(tree,encoding="unicode"))
     raise AssertionError(f"UI selector not found: {pattern}")
@@ -484,3 +497,34 @@ for l,seed,wrong,first,second,solved in [
     capture("P06-machine-"+str(l)+"-gate")
 no_crash()
 print("PART06_CANDY_STATIONS_RESUME_AND_SCORE_PASS",flush=True)
+
+
+# Part 07: all six Kotlin measurement stations, exact existing puzzle rules.
+for l,seed,selector,desc,expected,value in [
+    (30,"3",r"^Miếng 4: 12 mm, chưa chọn$",True,"11",r"Đã ghép / đặt: 42 mm"),
+    (31,"3",r"^Miếng 3: 50 g, chưa chọn$",True,"7",r"Đã ghép / đặt: 350 g"),
+    (32,"500,0",r"^A → B$",False,"200,300",r"A: 200 ml\s+B: 300 ml"),
+    (33,"27",r"^\+1°C$",False,"28",r"Hiện tại: 28°C"),
+    (34,"7",r"^Miếng 4: 200 g, chưa chọn$",True,"15",r"Đã ghép / đặt: 1000 g"),
+    (35,"400,0",r"^A → B$",False,"250,150",r"A: 250 ml\s+B: 150 ml")]:
+    candy_fixture(l,seed)
+    before=business_state()
+    click(r"^Kiểm tra$")
+    find(r"Chưa hoàn thành")
+    assert not trail(l).get("complete",False)
+    click(selector,desc=desc)
+    assert trail(l)["draft"]==expected,(l,trail(l))
+    restart()
+    assert trail(l)["draft"]==expected
+    find(value)
+    capture("P07-measure-"+str(l)+"-restored")
+    click(r"^Kiểm tra$")
+    assert trail(l)["complete"]
+    after=business_state()
+    for key in ("claims","done","review","drafts"):
+        assert after[key]==before[key],key
+    assert after["adventures"][str(l)]["motion"]["pending"]
+    assert not after["adventures"][str(l)]["motion"]["answered"]
+    capture("P07-measure-"+str(l)+"-gate")
+no_crash()
+print("PART07_RAINBOW_STATIONS_RESUME_AND_SCORE_PASS",flush=True)

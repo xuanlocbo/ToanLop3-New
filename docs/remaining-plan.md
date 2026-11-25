@@ -27,3 +27,7 @@ Phần 6: đã triển khai ứng viên 1.2.0-p06, cần kiểm thử CI đầy 
 Phần 6: CI ứng dụng 45544219876 đạt; đang kiểm thử cặp APK p05-k01 ↔ p06 trên v1.2-part06-migration. Giữ đủ bước bắt buộc. Chỉ nghiệm thu sau khi đạt; cung cấp liên kết GitHub Actions ở từng báo cáo tiến độ.
 
 Cập nhật: phần 6 ĐẠT CI ứng dụng 45544219876 và migration 45547456147. Mở phần 7 từ mốc nghiệm thu p06. Theo yêu cầu người dùng, dùng cuộc trò chuyện để lập trình/sửa lỗi; không Codex, không API AI trả phí. Gộp các bước CI và migration theo dependency trong một workflow, chỉ đạt khi tất cả thành công; tạo biên bản SHA/run/APK, không auto-merge hoặc cấp quyền ghi cho runner. Xem docs/ci-continuous.md khi có.
+
+Phần 7: mã ứng viên 1.2.0-p07. Chờ workflow tích hợp verify → migration → acceptance và rà soát bằng chứng; chưa nghiệm thu.
+
+Cập nhật: phần 7 đã ĐẠT CI tích hợp 45548847319 và rà soát 12 ảnh trạm, nền p07. Phần 8 kế tiếp: Thung lũng sao, Bài 36–40; mở từ commit bàn giao p07. Không xin xác nhận lại.
