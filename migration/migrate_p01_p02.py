@@ -9,7 +9,12 @@ PREF="shared_prefs/native_curriculum_progress_v2.xml"
 HASHES={"p01":"b84c4bacb182681fe79c3f23df37b937465996abf62866d9648b870d7299164e",
         "p02":"feccf5b3689aba11081014191da9f499a3ad166f5df16c4e68a00c988cf99cb9",
         "p03":"e912743d457e27ea56dbc9bf89fe40ab317d76c270dfc206d315a59c09335f19",
-        "p04":"7eefb9dbeb2b92e9b4a8ac93ef464044f8763eed745b3f38319e7be8a2bd5a29"}
+        "p04":"7eefb9dbeb2b92e9b4a8ac93ef464044f8763eed745b3f38319e7be8a2bd5a29",
+        "p05":"44b5d4685ac53e59548800466ae248040281f8eaf44d4073ab0e0f87fc212152",
+        "p05-k01":"4aa8a16e558e6a88a95f654178ca3067b38d087abf9aede535b97416b41ab4b4"}
+# Ordered, exact registered release IDs; supports suffixes without interpreting them as integers.
+ORDER=tuple(HASHES)
+def rank(v): return ORDER.index(v)
 BANK="ae6cf6e94c017bdcbfdc008cb91c4c9472a53a34e9a20a4bcf70c009a38193e3"
 MAPS=("drafts","done","review","claims","nav","adventures","adventureBest","deferredBonus")
 class MigrationError(RuntimeError): pass
@@ -176,7 +181,7 @@ def switch(d,folder,target,confirmed=False):
         need(d.read()==raw,"Progress changed")
         status=d.install(apk,True)
         if status!="success":
-            need(status=="signature_mismatch" or (int(target[1:])<int(old[1:]) and status=="version_downgrade"),"Unsafe install failure")
+            need(status=="signature_mismatch" or (rank(target)<rank(old) and status=="version_downgrade"),"Unsafe install failure")
             need(d.current()==old and d.read()==raw,"Rejected install changed source")
             need(verify(folder,d.serial)==raw and parse_json((folder/"manifest.json").read_bytes())==manifest,"Backup changed")
             print("REPLACEMENT_REQUIRED",status,flush=True)

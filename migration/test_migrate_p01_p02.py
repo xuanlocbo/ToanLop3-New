@@ -103,4 +103,18 @@ class Tests(unittest.TestCase):
         d=Fake(self.raw,current="p03")
         with self.assertRaises(m.MigrationError): m.switch(d,self.folder,"p02",True)
         self.assertFalse(d.removed); self.assertEqual(d.installs,[])
+    def test_kotlin_suffix_and_downgrade(self):
+        self.assertLess(m.rank("p04"),m.rank("p05"))
+        self.assertLess(m.rank("p05"),m.rank("p05-k01"))
+        folder=self.folder.parent/"kotlin-backup"
+        old=self.folder.parent/"p05.apk"
+        new=self.folder.parent/"p05-k01.apk"
+        old.write_bytes(b"java-fifth"); new.write_bytes(b"kotlin-fifth")
+        m.bundle(folder,"test-device",old,new,self.raw)
+        d=Fake(self.raw,current="p05")
+        m.switch(d,folder,"p05-k01",True)
+        self.assertEqual((d.current(),d.read()),("p05-k01",self.raw))
+        d.status="version_downgrade"
+        m.switch(d,folder,"p05",True)
+        self.assertEqual((d.current(),d.read()),("p05",self.raw))
 if __name__=="__main__": unittest.main(verbosity=2)
