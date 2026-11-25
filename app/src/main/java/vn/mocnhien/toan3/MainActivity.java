@@ -24,10 +24,6 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
     private String screen="home",book="sgk",question="",lastId="";
     private int lesson=26,restoreScroll=0;
     private boolean reviewMode=false;
-    private final String[] regions={"Vườn kẹo ngọt","Hồ cầu vồng","Thung lũng sao","Đồi mây hồng"};
-    private final String[] regionArt={"✿","≈","★","☁"};
-    private final int[] regionColors={0xffffe3ee,0xffe1f4f3,0xffeee5fb,0xffffe9de};
-    private final int[] regionStart={26,30,36,41},regionEnd={29,35,40,44};
 
     @Override public void onCreate(Bundle saved){
         super.onCreate(saved);ui=new NativeUi(this);
@@ -64,9 +60,10 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
     }
     boolean saveNav(int y){if(store==null)return false;if(store.setNav(nav(y)))return true;Toast.makeText(this,"Chưa lưu được vị trí học. Hãy thử lại.",Toast.LENGTH_LONG).show();return false;}
     public void go(String destination){
+        if(!AppModule.known(destination))throw new IllegalArgumentException("Unknown screen");
         hideKeyboard();
         if(gamePanel!=null){if(!gamePanel.pauseAndSave())return;gamePanel.dispose();gamePanel=null;}
-        if(!AppModule.known(destination))throw new IllegalArgumentException("Unknown screen");
+        if(!destination.equals("question"))reviewMode=false;
         screen=destination;restoreScroll=0;saveNav(0);render();
     }
     public void home(){reviewMode=false;go("home");}
@@ -78,13 +75,8 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         lesson=q.optInt("lesson");book=q.optString("book").toLowerCase(Locale.ROOT);question=q.optString("id");lastId=question;
         reviewMode=fromReview;go("question");
     }
-    String title(int l){return bank.lessons.get(l).optString("title","Bài "+l);}
-    String bookName(String b){return b.equals("sgk")?"Sách giáo khoa":b.equals("vbt")?"Vở bài tập":"Kho báu";}
-    int completed(){return store.completed(bank.questions.values());}
-    int count(int l){return bank.lesson(l).size();}
-    int done(int l){return store.completed(bank.lesson(l));}
-    int reviewCount(){int n=0;for(String id:bank.questions.keySet())if(store.review(id))n++;return n;}
-    boolean chest(int l){return store.done("BONUS."+l+".1")&&store.done("BONUS."+l+".2");}
+    String title(int l){return modules.title(l);}
+    String bookName(String b){return modules.bookName(b);}
     void render(){
         questionProgress=null;
         if(screen.equals("game")){renderGame();return;}
@@ -96,6 +88,8 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         if(screen.equals("question")||screen.equals("gate"))ui.caption(name,"Bài "+lesson+" • "+title(lesson));
         else if(!ui.compact())ui.caption(name,"Vương quốc toán học");
         stars=ui.badge("★ "+store.balance(),NativeUi.GOLD);stars.setTextColor(NativeUi.INK);header.addView(stars,new LinearLayout.LayoutParams(-2,-2));
+        Button settings=ui.button("⚙",NativeUi.PALE,()->go("settings"));
+        settings.setContentDescription("Cài đặt");header.addView(settings,new LinearLayout.LayoutParams(ui.dp(48),-2));
         scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setClipToPadding(false);root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         body=ui.column();ui.pad(body,5);scroll.addView(body,new ScrollView.LayoutParams(-1,-2));
         switch(screen){
@@ -111,12 +105,11 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
             case "settings":settingsPage();break;
             default:new ModuleHome(modules,body).show(lastId);break;
         }
-        if(!screen.equals("question")&&!screen.equals("gate")){
+        if(!screen.equals("home")&&!screen.equals("question")&&!screen.equals("gate")){
             LinearLayout nav=ui.row();nav.setBackground(ui.outlined(NativeUi.WHITE,20,NativeUi.OUTLINE));ui.add(root,nav);
-            if(!screen.equals("home"))for(AppModule m:AppModule.values()){
+            for(AppModule m:AppModule.values()){
                 ui.smallAction(nav,m.label,AppModule.owner(screen,reviewMode)==m?m.color:NativeUi.WHITE,()->go(m.route));
             }
-            ui.smallAction(nav,"Cài đặt",screen.equals("settings")?NativeUi.PALE:NativeUi.WHITE,()->go("settings"));
         }
         setContentView(root);
         int y=restoreScroll;restoreScroll=0;if(y>0)scroll.post(()->scroll.scrollTo(0,y));
@@ -177,7 +170,7 @@ public final class MainActivity extends Activity implements QuestionPanel.Host, 
         ui.label(c,"Tiến độ, bài đang làm và phần thưởng được lưu tự động trên thiết bị.",20,true);
         ui.label(c,"Học ngoại tuyến • Không đăng nhập • Không quảng cáo",19,false);
         ui.label(c,"SGK + VBT Toán 3, bài 26–44. Thử thách nâng cao tự soạn.",18,false);
-        ui.caption(c,"Bản phát triển 1.1 • Android native • Phong cảnh 2D và hiệu ứng âm thanh ngoại tuyến");
+        ui.caption(c,"Bản 1.2.0-p01 • Khung 4 module • Android native");
     }
     @Override public void changed(){
         if(stars!=null)stars.setText("★ "+store.balance());
